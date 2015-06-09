@@ -579,3 +579,9 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+/**
+ * Amazon S3 credentials
+ **/
+$conf['amazons3_bucket']  = 'wgbh-dms-pilots';
+$conf['amazons3_key']       = 'AKIAJZRRDK7YX32N65CQ';
+$conf['amazons3_secret']    = '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';
