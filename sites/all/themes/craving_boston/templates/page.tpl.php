@@ -67,25 +67,18 @@
 <div id="page">
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
-      <div id="logo" class="site-branding col-sm-6">
-        <?php if ($logo): ?><div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a></div><?php endif; ?>
-        <h1 id="site-title">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-        </h1>
+      <div id="site-banner">
+        <a href="/" title="Home">
+          <img src="/sites/all/themes/craving_boston/images/craving_boston_banner.png" />
+        </a>
       </div>
-      <div class="col-sm-6 mainmenu">
+      <div class="col-sm-12 mainmenu">
         <div class="mobilenavi"></div>
         <nav id="navigation" role="navigation">
           <div id="main-menu">
             <?php 
-              if (module_exists('i18n_menu')) {
-                $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
-              } else {
-                $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-              }
-              print drupal_render($main_menu_tree);
+              $topic_menu = menu_navigation_links('menu-topics');
+              print theme('links__menu_topics_menu', array('links' => $topic_menu));
             ?>
           </div>
         </nav>
@@ -95,7 +88,9 @@
 
 
   <?php if ($is_front): ?>
-    <?php print $featured; ?>
+    <div class="container">
+      <?php print views_embed_view('featured', 'lead_article'); ?>
+    </div>
   <?php endif; ?>
 
   <?php if($page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>

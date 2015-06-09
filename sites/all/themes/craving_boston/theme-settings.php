@@ -21,3 +21,4 @@ function craving_boston_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('breadcrumbs','craving_boston'),
     '#description'   => t("Check this option to show breadcrumbs in page. Uncheck to hide."),
   );
+}

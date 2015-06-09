@@ -1,1 +1,133 @@
 /*  This is the Craving Boston custom style sheet */
+/* 
+breakpoints[mobile] = (min-width: 0px)
+breakpoints[narrow] = (min-width: 740px)
+breakpoints[normal] = (min-width: 980px)
+breakpoints[wide] = (min-width: 1220px)
+ */
+ 
+.article {
+  position: relative;
+  margin-left: 1%;
+}
+body {
+  font-family: "Whitney SSm A","Whitney SSm B",Arial,Helvetica,sans-serif;
+  background-image: url(images/bg_confectionary.png)
+}
+
+/* Reset max container width */
+.container {
+  max-width: 994px;
+}
+header {
+  margin-top: 20px;
+}
+img {
+  border-radius: 15px;
+}
+.mainmenu {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  margin: 10px 0;
+}
+#main-menu {
+  height: 40px;
+  margin: 4px 0 12px;
+}
+#main-menu ul li a {
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+  background-color: transparent;
+  text-shadow: none;
+}
+#main-menu ul li a:hover {
+  text-shadow: 1px 1px #fff;
+} 
+#main-menu ul li a.active {
+  text-shadow: 1px 1px #333;
+} 
+.node h2.title a, .page-node h1.page-title {
+  font-size: 22px;
+  color: #333;
+}
+.view h2.title a {
+  font-size: 22px;
+}
+.page-node #content-wrap img {
+  padding: 0;
+  border: none;
+}
+
+/* Recipe styling */
+.page-node.node-type-recipe .field-type-text-with-summary, 
+.page-node.node-type-recipe .field-type-number-integer, 
+.page-node.node-type-recipe .field-type-ingredient-reference, 
+.page-node.node-type-recipe .field-type-text-long, 
+.page-node.node-type-recipe .field-type-taxonomy-term-reference {
+  background-color: #fbe3c2;
+  color: #333;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  border: solid 1px #ccc;
+}
+.page-node.node-type-recipe .field .quantity-unit {
+  font-weight: bold;
+}
+
+#site-banner img {
+  width: 100%;
+}
+#support-banner {
+  background-image: url(images/support_banner_orange_940x92.jpg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 40px;
+  font-size: 1.5em;
+  text-align:center; 
+  color: white;
+  border-radius: 10px;
+}
+.view-featured .article .article-title {
+  position: absolute;
+  bottom: 5px;
+  margin: 0 5px 7px 5px;
+  padding:10px;
+  border-radius:10px;
+  background-color: rgba(191,63,38, 0.7);
+  color: white;
+  font-weight: bold;
+}
+.view-content .article .tease {
+  position: relative;
+}
+.view-content .article .tease .deck {
+  position: absolute;
+  center: 0;
+  bottom: 0;
+  padding: 15px 3%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: solid 1px #666;
+  border-radius: 15px;
+  color: #333;
+  font-size: 0.9em;
+  margin: 0 2% 20px 2%;
+}
+@media (min-width: 980px) {
+  .view-featured .article {
+    width: 74.5%;
+    float:left;
+  }
+  .view-featured .attachment .article {
+    width: 100%;
+  }
+  .view-featured .attachment  {
+    float: left;
+    width:24.5%;
+  }
+}
+
