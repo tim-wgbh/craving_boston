@@ -4,8 +4,9 @@
 /files/*
 /cache
 
-# Ignore .htacces so we can have authentication on ec2
+# Ignore .htacces and settings.php so we can have authentication on ec2
 .htaccess
+/sites/default/settings.php
 
 # ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
 /sites/default/**/files
