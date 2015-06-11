@@ -22,6 +22,10 @@ body {
 header {
   margin-top: 20px;
 }
+h2.has-video {
+  padding-left: 30px;
+  background: url(images/video-icon.png) left 8px no-repeat;
+}
 img {
   border-radius: 15px;
 }

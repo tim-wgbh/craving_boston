@@ -582,6 +582,10 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 /**
  * Amazon S3 credentials
  **/
+$conf['amazon_domain']    = 'ec2-54-172-222-144.compute-1.amazonaws.com';
+$conf['wgbh_site']        = 'craving_boston';
 $conf['amazons3_bucket']  = 'wgbh-dms-pilots';
-$conf['amazons3_key']       = 'AKIAJZRRDK7YX32N65CQ';
-$conf['amazons3_secret']    = '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';
+$conf['amazons3_key']     = 'AKIAJZRRDK7YX32N65CQ';
+$conf['amazons3_secret']  = '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';
+
+$conf['jw_cloud_player']  = 'http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js';
