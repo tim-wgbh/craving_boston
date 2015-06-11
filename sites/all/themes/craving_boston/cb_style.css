@@ -26,6 +26,10 @@ h2.has-video {
   padding-left: 30px;
   background: url(images/video-icon.png) left 8px no-repeat;
 }
+h2.recipe {
+  padding-left: 37px;
+  background: url(images/note-card-icon.png) left 8px no-repeat;
+}
 img {
   border-radius: 15px;
 }

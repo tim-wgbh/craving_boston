@@ -19,25 +19,36 @@ function craving_boston_preprocess_node(&$vars) {
   if ($node->type != 'article') return;
       
   // Video processing for HLS streaming S3 videos
-  $vars['is_video'] = false;
   if (!empty($node->field_video_file['und'][0]['value'])) {
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
     $vars['video'] = wowza_stream($node->field_video_file['und'][0]['value']);
     $vars['poster'] = s3_file($node->field_video_poster['und'][0]['value']);
     $vars['has_video'] = true;
+  } else {
+    $vars['video'] = '';
+    $vars['poster'] = '';
+    $vars['has_video'] = false;
   }
 }
 
 function craving_boston_preprocess_views_view_fields(&$vars) {
   $fields = $vars['fields'];
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
-    if (empty($fields['field_video_file'] || $fields['field_video_file']->content)) {
+    if (empty($fields['field_video_file']->content)) {
       $vars['image'] = $fields['field_image']->content;
       $vars['has_video'] = false;
     } else {
       $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
       $vars['has_video'] = true;
+    }
+
+    if ($fields['type']->raw == 'recipe') {
+      $vars['is_recipe'] = true;
+      $vars['deck'] = $fields['recipe_description']->content;
+    } else {
+      $vars['is_recipe'] = false;
+      $vars['deck'] = $fields['body']->content;
     }
   }
 }
