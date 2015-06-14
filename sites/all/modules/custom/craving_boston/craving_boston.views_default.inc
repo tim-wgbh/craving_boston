@@ -153,7 +153,7 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
-  $handler->display->display_options['pager']['options']['offset'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -196,6 +196,35 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
+  /* Field: Content: Video file */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['label'] = '';
+  $handler->display->display_options['fields']['field_video_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_file']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: Video poster */
+  $handler->display->display_options['fields']['field_video_poster']['id'] = 'field_video_poster';
+  $handler->display->display_options['fields']['field_video_poster']['table'] = 'field_data_field_video_poster';
+  $handler->display->display_options['fields']['field_video_poster']['field'] = 'field_video_poster';
+  $handler->display->display_options['fields']['field_video_poster']['label'] = '';
+  $handler->display->display_options['fields']['field_video_poster']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_poster']['type'] = 'text_plain';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['element_default_classes'] = FALSE;
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['recipe_description']['id'] = 'recipe_description';
+  $handler->display->display_options['fields']['recipe_description']['table'] = 'field_data_recipe_description';
+  $handler->display->display_options['fields']['recipe_description']['field'] = 'recipe_description';
+  $handler->display->display_options['fields']['recipe_description']['label'] = '';
+  $handler->display->display_options['fields']['recipe_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['recipe_description']['element_default_classes'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -214,6 +243,7 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'recipe' => 'recipe',
   );
 
   /* Display: Page */
@@ -409,11 +439,18 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';
   $handler->display->display_options['path'] = 'food';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Chew On This';
+  $handler->display->display_options['menu']['description'] = 'Editorial articles about food';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-topics';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: That's the Spirit! */
-  $handler = $view->new_display('page', 'That\'s the Spirit!', 'page_2');
+  /* Display: That's the Spirit */
+  $handler = $view->new_display('page', 'That\'s the Spirit', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'That\'s the Spirit!';
+  $handler->display->display_options['title'] = 'That\'s the Spirit';
   $handler->display->display_options['display_description'] = 'Articles about beverages';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -442,11 +479,18 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';
   $handler->display->display_options['path'] = 'drink';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'That\'s the Spirit';
+  $handler->display->display_options['menu']['description'] = 'Articles about drink';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-topics';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: City Fare */
-  $handler = $view->new_display('page', 'City Fare', 'page_3');
+  /* Display: Reviews */
+  $handler = $view->new_display('page', 'Reviews', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'City Fare';
+  $handler->display->display_options['title'] = 'Reviews';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -469,16 +513,23 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    9 => '9',
+    12 => '12',
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';
-  $handler->display->display_options['path'] = 'restaurant-reviews';
+  $handler->display->display_options['path'] = 'reviews';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Reviews';
+  $handler->display->display_options['menu']['description'] = 'Reviews of restaurants, food purveyors, and other food experiences';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-topics';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Main Course */
-  $handler = $view->new_display('page', 'Main Course', 'page_4');
+  /* Display: Recipes */
+  $handler = $view->new_display('page', 'Recipes', 'page_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Main Course';
+  $handler->display->display_options['title'] = 'Recipes';
   $handler->display->display_options['display_description'] = 'Recipes';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -562,6 +613,13 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['filters']['recipe_description_summary']['table'] = 'field_data_recipe_description';
   $handler->display->display_options['filters']['recipe_description_summary']['field'] = 'recipe_description_summary';
   $handler->display->display_options['path'] = 'recipes';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Recipes';
+  $handler->display->display_options['menu']['description'] = 'Pretty much self-explanatory';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-topics';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
   /* Display: Neighborhood Nosh */
   $handler = $view->new_display('page', 'Neighborhood Nosh', 'page_5');
@@ -595,12 +653,19 @@ function craving_boston_views_default_views() {
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';
   $handler->display->display_options['path'] = 'neighborhoods';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Neighborhood Nosh';
+  $handler->display->display_options['menu']['description'] = 'Food stories from the neighborhoods of Metro Boston';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-topics';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Fresh from WGBH */
-  $handler = $view->new_display('page', 'Fresh from WGBH', 'page_6');
+  /* Display: Table Talk */
+  $handler = $view->new_display('page', 'Table Talk', 'page_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Fresh from WGBH';
-  $handler->display->display_options['display_description'] = 'Food-related articles from WGBH';
+  $handler->display->display_options['title'] = 'Table Talk';
+  $handler->display->display_options['display_description'] = 'Editorials and weekly wrap-ups';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -627,7 +692,14 @@ function craving_boston_views_default_views() {
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';
-  $handler->display->display_options['path'] = 'wgbh-stories';
+  $handler->display->display_options['path'] = 'table-talk';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Table Talk';
+  $handler->display->display_options['menu']['description'] = 'Editorials and weekly wrap-ups';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-topics';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['topic'] = $view;
 
   return $export;
