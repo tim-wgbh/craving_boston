@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * craving_boston.features.menu_custom.inc
+ */
+
+/**
+ * Implements hook_menu_default_menu_custom().
+ */
+function craving_boston_menu_default_menu_custom() {
+  $menus = array();
+
+  // Exported menu: main-menu.
+  $menus['main-menu'] = array(
+    'menu_name' => 'main-menu',
+    'title' => 'Main menu',
+    'description' => 'The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.',
+  );
+  // Exported menu: menu-footer-menu.
+  $menus['menu-footer-menu'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'title' => 'Footer Menu',
+    'description' => '',
+  );
+  // Exported menu: menu-topics.
+  $menus['menu-topics'] = array(
+    'menu_name' => 'menu-topics',
+    'title' => 'Topics',
+    'description' => 'The main topic menu',
+  );
+  // Exported menu: user-menu.
+  $menus['user-menu'] = array(
+    'menu_name' => 'user-menu',
+    'title' => 'User menu',
+    'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
+  );
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Footer Menu');
+  t('Main menu');
+  t('The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.');
+  t('The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.');
+  t('The main topic menu');
+  t('Topics');
+  t('User menu');
+
+
+  return $menus;
+}
