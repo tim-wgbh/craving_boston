@@ -11,8 +11,31 @@ breakpoints[wide] = (min-width: 1220px)
   margin-left: 1%;
 }
 body {
-  font-family: "Whitney SSm A","Whitney SSm B",Arial,Helvetica,sans-serif;
+  font-family: "cooper_hewittbook",Arial,Helvetica,sans-serif;
   background-image: url(images/bg_confectionary.png)
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
+}
+p {
+  font-size: 16px;
+}
+
+.block.info {
+  padding: 20px;
+  background-color: #ECD5D1;
+}
+#block-menu-menu-footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#block-menu-menu-footer-menu ul li {
+  list-style-type: none;
+  list-style-image: none;
+}
+#block-menu-menu-footer-menu ul li a {
+  color: #999;
 }
 
 /* Reset max container width */
@@ -30,31 +53,35 @@ h2.recipe {
   padding-left: 37px;
   background: url(images/note-card-icon.png) left 8px no-repeat;
 }
-img {
-  border-radius: 15px;
+#navigation {
+  text-align: ceneter;
 }
-.mainmenu {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  margin: 10px 0;
+img {
+  border-radius: 0;
 }
 #main-menu {
   height: 40px;
-  margin: 4px 0 12px;
+  margin: 4px auto 12px auto;
+  float: none;
+  text-align: center
 }
+.mainmenu {
+  margin: 10px 0;
+}
+#main-menu ul {
+  float: none;
+  display: inline-block;
+}
+  
 #main-menu ul li a {
   margin: 0 10px;
   font-weight: bold;
   font-size: 1.2em;
-  color: white;
+  color: #555;
   background-color: transparent;
-  text-shadow: none;
 }
 #main-menu ul li a:hover {
-  text-shadow: 1px 1px #fff;
-} 
-#main-menu ul li a.active {
-  text-shadow: 1px 1px #333;
+  text-shadow: 1px 1px #999;
 } 
 .node h2.title a, .page-node h1.page-title {
   font-size: 22px;
@@ -78,15 +105,15 @@ img {
   color: #333;
   padding: 20px;
   margin: 20px 0;
-  border-radius: 15px;
+  border-radius: 0;
   border: solid 1px #ccc;
 }
 .page-node.node-type-recipe .field .quantity-unit {
   font-weight: bold;
 }
 
-#site-banner img {
-  width: 100%;
+#site-banner {
+  text-align: center;
 }
 #support-banner {
   background-image: url(images/support_banner_orange_940x92.jpg);
@@ -98,18 +125,27 @@ img {
   font-size: 1.5em;
   text-align:center; 
   color: white;
-  border-radius: 10px;
+  border-radius: 0;
 }
 .view-featured .article .article-title {
   position: absolute;
   bottom: 5px;
   margin: 0 5px 7px 5px;
   padding:10px;
-  border-radius:10px;
-  background-color: rgba(191,63,38, 0.7);
-  color: white;
+  border-radius: 0;
+  background-color: #ECD5D1;
+  color: #555;
   font-weight: bold;
 }
+.view-featured .article:first-child .article-title {
+  font-size: 2em;
+  bottom: 20px;
+}
+.attachment .view-featured .article:first-child .article-title {
+  font-size: 1em;
+  bottom: 5px;
+}
+
 .view-content .article .tease {
   position: relative;
 }
@@ -118,9 +154,8 @@ img {
   center: 0;
   bottom: 0;
   padding: 15px 3%;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: solid 1px #666;
-  border-radius: 15px;
+  background-color: #ECD5D1;
+  border-radius: 0;
   color: #333;
   font-size: 0.9em;
   margin: 0 2% 20px 2%;

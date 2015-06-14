@@ -69,7 +69,7 @@
     <div class="row">
       <div id="site-banner">
         <a href="/" title="Home">
-          <img src="/sites/all/themes/craving_boston/images/craving_boston_banner.png" />
+          <img src="/sites/all/themes/craving_boston/images/craving-boston-logo.png" />
         </a>
       </div>
       <div class="col-sm-12 mainmenu">
@@ -170,18 +170,18 @@
     <div id="bottom">
       <div class="container">
         <div class="row">
-          <?php if($page['footer_first']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_first']); ?>
-          </div><?php endif; ?>
-          <?php if($page['footer_second']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_second']); ?>
-          </div><?php endif; ?>
-          <?php if($page['footer_third']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_third']); ?>
-          </div><?php endif; ?>
-          <?php if($page['footer_fourth']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_fourth']); ?>
-          </div><?php endif; ?>
+          <div class="footer-block col-sm-3">
+            <?php if ($page['footer_first']) print render ($page['footer_first']); ?>
+          </div>
+          <div class="footer-block col-sm-3">
+            <?php if ($page['footer_second']) print render ($page['footer_second']); ?>
+          </div>
+          <div class="footer-block col-sm-3">
+            <?php if ($page['footer_third']) print render ($page['footer_third']); ?>
+          </div>
+          <div class="footer-block col-sm-3">
+            <?php if ($page['footer_fourth']) print render ($page['footer_fourth']); ?>
+          </div>
         </div>
       </div>
     </div>

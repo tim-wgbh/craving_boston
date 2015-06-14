@@ -5,7 +5,9 @@ function s3_file($filename) {
 }
 function wowza_stream($filename) {
   global $conf;
-  return 'http://' . $conf['amazon_domain'] . '/vods3/_definst_/mp4:amazons3/' . $conf['amazons3_bucket'] . '/' . $conf['wgbh_site'] . '/' . $filename . '/playlist.m3u8';
+  
+  $video = str_replace('.mp4', '', $filename);
+  return 'http://' . $conf['amazon_domain'] . '/vods3/_definst_/mp4:amazons3/' . $conf['amazons3_bucket'] . '/' . $conf['wgbh_site'] . '/' . $video . '/playlist.m3u8';
 }
     
 function craving_boston_preprocess_node(&$vars) {
