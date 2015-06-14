@@ -2100,59 +2100,19 @@ function craving_boston_menu_default_menu_links() {
     'menu_name' => 'menu-topics',
     'link_path' => 'food',
     'router_path' => 'food',
-    'link_title' => 'Chew on This',
+    'link_title' => 'Chew On This',
     'options' => array(
       'attributes' => array(
-        'title' => 'Food stories',
+        'title' => 'Editorial articles about food',
       ),
       'identifier' => 'menu-topics_chew-on-this:food',
     ),
-    'module' => 'menu',
+    'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -19,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_fresh-from-wgbh:taxonomy/term/12
-  $menu_links['menu-topics_fresh-from-wgbh:taxonomy/term/12'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'taxonomy/term/12',
-    'router_path' => 'taxonomy/term/%',
-    'link_title' => 'Fresh from WGBH',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Food stories from all over',
-      ),
-      'identifier' => 'menu-topics_fresh-from-wgbh:taxonomy/term/12',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -9,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_main-course:recipes
-  $menu_links['menu-topics_main-course:recipes'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'recipes',
-    'router_path' => 'recipes',
-    'link_title' => 'Main Course',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Make something delicious!',
-      ),
-      'identifier' => 'menu-topics_main-course:recipes',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -15,
+    'weight' => -50,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_neighborhood-nosh:neighborhoods
@@ -2163,16 +2123,16 @@ function craving_boston_menu_default_menu_links() {
     'link_title' => 'Neighborhood Nosh',
     'options' => array(
       'attributes' => array(
-        'title' => 'Our neighborhoods are full of great food stories!',
+        'title' => 'Food stories from the neighborhoods of Metro Boston',
       ),
       'identifier' => 'menu-topics_neighborhood-nosh:neighborhoods',
     ),
-    'module' => 'menu',
+    'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -11,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_thats-the-spirit:drink
@@ -2180,19 +2140,19 @@ function craving_boston_menu_default_menu_links() {
     'menu_name' => 'menu-topics',
     'link_path' => 'drink',
     'router_path' => 'drink',
-    'link_title' => 'That\'s the Spirit!',
+    'link_title' => 'That\'s the Spirit',
     'options' => array(
       'attributes' => array(
-        'title' => 'The lowdown on drink',
+        'title' => 'Articles about drink',
       ),
       'identifier' => 'menu-topics_thats-the-spirit:drink',
     ),
-    'module' => 'menu',
+    'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -17,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: navigation_add-content:node/add
@@ -2406,7 +2366,7 @@ function craving_boston_menu_default_menu_links() {
   t('Blocks');
   t('Breakpoints');
   t('CKEditor');
-  t('Chew on This');
+  t('Chew On This');
   t('Clean URLs');
   t('Clear cache');
   t('Comments');
@@ -2430,7 +2390,6 @@ function craving_boston_menu_default_menu_links() {
   t('Field list');
   t('File system');
   t('File types');
-  t('Fresh from WGBH');
   t('Function reference');
   t('Generate content');
   t('Generate menus');
@@ -2448,7 +2407,6 @@ function craving_boston_menu_default_menu_links() {
   t('Index by name');
   t('Log out');
   t('Logging and errors');
-  t('Main Course');
   t('Main menu');
   t('Maintenance mode');
   t('Management');
@@ -2487,7 +2445,7 @@ function craving_boston_menu_default_menu_links() {
   t('System');
   t('Taxonomy');
   t('Text formats');
-  t('That\'s the Spirit!');
+  t('That\'s the Spirit');
   t('Theme registry');
   t('Top \'access denied\' errors');
   t('Top \'page not found\' errors');
