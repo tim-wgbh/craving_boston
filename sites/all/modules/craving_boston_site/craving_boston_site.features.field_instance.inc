@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.field_instance.inc
+ * craving_boston_site.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function craving_boston_field_default_field_instances() {
+function craving_boston_site_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'comment-comment_node_article-comment_body'

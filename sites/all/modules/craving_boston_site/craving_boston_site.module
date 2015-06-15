@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Craving Boston Site feature.
+ */
+
+include_once 'craving_boston_site.features.inc';

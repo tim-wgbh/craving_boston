@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.fe_block_boxes.inc
+ * craving_boston_site.features.fe_block_boxes.inc
  */
 
 /**
  * Implements hook_default_fe_block_boxes().
  */
-function craving_boston_default_fe_block_boxes() {
+function craving_boston_site_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();

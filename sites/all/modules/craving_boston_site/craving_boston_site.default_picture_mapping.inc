@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.default_picture_mapping.inc
+ * craving_boston_site.default_picture_mapping.inc
  */
 
 /**
  * Implements hook_default_picture_mapping().
  */
-function craving_boston_default_picture_mapping() {
+function craving_boston_site_default_picture_mapping() {
   $export = array();
 
   $picture_mapping = new PictureMapping();

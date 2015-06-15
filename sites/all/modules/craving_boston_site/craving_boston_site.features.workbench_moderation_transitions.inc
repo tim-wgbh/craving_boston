@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.workbench_moderation_transitions.inc
+ * craving_boston_site.features.workbench_moderation_transitions.inc
  */
 
 /**
  * Implements hook_workbench_moderation_export_transitions().
  */
-function craving_boston_workbench_moderation_export_transitions() {
+function craving_boston_site_workbench_moderation_export_transitions() {
   $items = array(
     'draft:needs_review' => array(
       'from_name' => 'draft',

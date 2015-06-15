@@ -1,14 +1,37 @@
 <?php
 /**
  * @file
- * craving_boston.features.taxonomy.inc
+ * craving_boston_site.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function craving_boston_taxonomy_default_vocabularies() {
+function craving_boston_site_taxonomy_default_vocabularies() {
   return array(
+    'dfp_ad_categories' => array(
+      'name' => 'DFP Ad Categories',
+      'machine_name' => 'dfp_ad_categories',
+      'description' => NULL,
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'flavor_profile' => array(
       'name' => 'Flavor Profile',
       'machine_name' => 'flavor_profile',

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.qtip_default.inc
+ * craving_boston_site.qtip_default.inc
  */
 
 /**
  * Implements hook_qtip_default_qtips().
  */
-function craving_boston_qtip_default_qtips() {
+function craving_boston_site_qtip_default_qtips() {
   $export = array();
 
   $qtip = new stdClass();

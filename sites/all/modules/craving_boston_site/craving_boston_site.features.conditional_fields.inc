@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.conditional_fields.inc
+ * craving_boston_site.features.conditional_fields.inc
  */
 
 /**
  * Implements hook_conditional_fields_default_fields().
  */
-function craving_boston_conditional_fields_default_fields() {
+function craving_boston_site_conditional_fields_default_fields() {
   $items = array();
 
   $items[] = array(

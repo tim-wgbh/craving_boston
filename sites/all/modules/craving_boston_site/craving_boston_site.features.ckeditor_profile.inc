@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.ckeditor_profile.inc
+ * craving_boston_site.features.ckeditor_profile.inc
  */
 
 /**
  * Implements hook_ckeditor_profile_defaults().
  */
-function craving_boston_ckeditor_profile_defaults() {
+function craving_boston_site_ckeditor_profile_defaults() {
   $data = array(
     'Advanced' => array(
       'name' => 'Advanced',

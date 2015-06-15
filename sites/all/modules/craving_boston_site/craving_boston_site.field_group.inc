@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.field_group.inc
+ * craving_boston_site.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function craving_boston_field_group_info() {
+function craving_boston_site_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();

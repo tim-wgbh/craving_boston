@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.menu_links.inc
+ * craving_boston_site.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function craving_boston_menu_default_menu_links() {
+function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: main-menu_home:the-latest

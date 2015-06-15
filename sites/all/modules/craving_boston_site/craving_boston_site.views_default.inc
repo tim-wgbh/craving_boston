@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.views_default.inc
+ * craving_boston_site.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function craving_boston_views_default_views() {
+function craving_boston_site_views_default_views() {
   $export = array();
 
   $view = new view();

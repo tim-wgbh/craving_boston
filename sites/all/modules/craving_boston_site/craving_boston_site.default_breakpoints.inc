@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.default_breakpoints.inc
+ * craving_boston_site.default_breakpoints.inc
  */
 
 /**
  * Implements hook_default_breakpoints().
  */
-function craving_boston_default_breakpoints() {
+function craving_boston_site_default_breakpoints() {
   $export = array();
 
   $breakpoint = new stdClass();

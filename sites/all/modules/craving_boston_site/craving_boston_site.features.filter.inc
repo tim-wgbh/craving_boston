@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.filter.inc
+ * craving_boston_site.features.filter.inc
  */
 
 /**
  * Implements hook_filter_default_formats().
  */
-function craving_boston_filter_default_formats() {
+function craving_boston_site_filter_default_formats() {
   $formats = array();
 
   // Exported format: Filtered HTML.

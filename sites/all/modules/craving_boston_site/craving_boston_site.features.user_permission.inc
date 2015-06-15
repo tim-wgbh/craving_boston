@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * craving_boston.features.user_permission.inc
+ * craving_boston_site.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function craving_boston_user_default_permissions() {
+function craving_boston_site_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access administration pages'.
