@@ -6,13 +6,11 @@ breakpoints[normal] = (min-width: 980px)
 breakpoints[wide] = (min-width: 1220px)
  */
  
-.article {
-  position: relative;
-  margin-left: 1%;
-}
+/* Basic settings */ 
 body {
   font-family: "cooper_hewittbook",Arial,Helvetica,sans-serif;
-  background-image: url(images/bg_confectionary.png)
+  background-image: url(images/bg_confectionary.png);
+  color: #555;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
@@ -20,7 +18,18 @@ h1,h2,h3,h4,h5,h6 {
 p {
   font-size: 16px;
 }
+a, a:visited {
+  color: #BD3E27;
+}
 
+/* More specific settings */
+.article {
+  position: relative;
+  margin-left: 1%;
+}
+#bottom {
+  background-color: #ddd;
+}
 .block.info {
   padding: 20px;
   background-color: #ECD5D1;
@@ -34,8 +43,10 @@ p {
   list-style-type: none;
   list-style-image: none;
 }
+/* 
 #block-menu-menu-footer-menu ul li a {
   color: #999;
+ */
 }
 
 /* Reset max container width */
@@ -130,7 +141,7 @@ img {
 .view-featured .article .article-title {
   position: absolute;
   bottom: 5px;
-  margin: 0 5px 7px 5px;
+  margin: 0 5px 7px 0px;
   padding:10px;
   border-radius: 0;
   background-color: #ECD5D1;
@@ -159,6 +170,20 @@ img {
   color: #333;
   font-size: 0.9em;
   margin: 0 2% 20px 2%;
+}
+.wgbh-credit {
+  text-align: center;
+  font-size: 0.9em;
+  background-color: #666;
+  color: white;
+}
+.wgbh-credit img {
+  display: inline-block;
+  padding-top: 7px;
+}
+.wgbh-credit .text {
+  position:relative;
+  top:-7px;
 }
 @media (min-width: 980px) {
   .view-featured .article {

@@ -50,9 +50,12 @@ function craving_boston_site_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Newsletter sign-up';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'block_newsletter_signup';
-  $fe_block_boxes->body = '<h2>Sign up for our newsletter!</h2>
+  $fe_block_boxes->body = '<p><a>Sign up for our newsletter!</a></p>
+
+<p><input size="25" /><br />
+<button class="btn btn-sm">Feed Me</button></p>
 ';
 
   $export['block_newsletter_signup'] = $fe_block_boxes;
@@ -61,7 +64,9 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Support Banner';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'block_support_banner';
-  $fe_block_boxes->body = '<p><em>Support WGBH.</em> We couldn\'t do it without you.</p>
+  $fe_block_boxes->body = '<div id="support-banner">
+  <em>Support WGBH.</em> We couldn\'t do it without you.
+</div>
 ';
 
   $export['block_support_banner'] = $fe_block_boxes;

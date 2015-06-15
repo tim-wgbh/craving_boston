@@ -65,6 +65,10 @@
  */
 ?>
 <div id="page">
+  <div class="wgbh-credit">
+    <img src="sites/all/themes/craving_boston/images/wgbh-logo-tiny.png" alt="WGBH" /> <span class="text">welcomes you.</span>
+  </div>
+
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
       <div id="site-banner">
@@ -85,7 +89,6 @@
       </div>
     </div>
   </header>
-
 
   <?php if ($is_front): ?>
     <div class="container">
