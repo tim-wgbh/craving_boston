@@ -12,6 +12,9 @@ body {
   background-image: url(images/bg_confectionary.png);
   color: #555;
 }
+body.page-admin, body.page-node-add {
+  background-image: none;
+}
 h1,h2,h3,h4,h5,h6 {
   font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
 }

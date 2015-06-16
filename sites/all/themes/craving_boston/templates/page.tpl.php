@@ -65,9 +65,12 @@
  */
 ?>
 <div id="page">
+  <?php if (!$admin_page): ?>
+
   <div class="wgbh-credit">
-    <img src="sites/all/themes/craving_boston/images/wgbh-logo-tiny.png" alt="WGBH" /> <span class="text">welcomes you.</span>
+    <img src="/sites/all/themes/craving_boston/images/wgbh-logo-tiny.png" alt="WGBH" /> <span class="text">welcomes you.</span>
   </div>
+  
 
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
@@ -89,6 +92,8 @@
       </div>
     </div>
   </header>
+  
+  <?php endif; ?>
 
   <?php if ($is_front): ?>
     <div class="container">
@@ -130,7 +135,7 @@
     <div id="main-content">
     <div class="container"> 
       <div class="row">
-        <?php if($page['sidebar_first']) { $primary_col = 8; } else { $primary_col = 12; } ?>
+        <?php if($page['sidebar_first'] && !$admin_page) { $primary_col = 8; } else { $primary_col = 12; } ?>
         <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
           <section id="content" role="main" class="clearfix">
             <?php if (theme_get_setting('breadcrumbs')): ?><?php if ($breadcrumb): ?><div id="breadcrumbs"><?php print $breadcrumb; ?></div><?php endif;?><?php endif; ?>
@@ -147,7 +152,7 @@
             </div>
           </section>
         </div>
-        <?php if ($page['sidebar_first']): ?>
+        <?php if ($page['sidebar_first'] && !$admin_page): ?>
           <aside id="sidebar" class="col-sm-4" role="complementary">
            <?php print render($page['sidebar_first']); ?>
           </aside> 

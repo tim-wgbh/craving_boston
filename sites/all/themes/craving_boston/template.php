@@ -3,11 +3,20 @@ function s3_file($filename) {
   global $conf;
   return 'http://s3.amazonaws.com/' . $conf['amazons3_bucket'].'/' . $conf['wgbh_site'].'/' . $filename;
 }
+
 function wowza_stream($filename) {
   global $conf;
   
   $video = str_replace('.mp4', '', $filename);
   return 'http://' . $conf['amazon_domain'] . '/vods3/_definst_/mp4:amazons3/' . $conf['amazons3_bucket'] . '/' . $conf['wgbh_site'] . '/' . $video . '/playlist.m3u8';
+}
+
+function craving_boston_preprocess_page(&$vars) {
+  if (preg_match('/admin/', current_path()) || current_path() == 'node/add') {
+    $vars['admin_page'] = true;
+  } else {
+    $vars['admin_page'] = false;
+  }
 }
     
 function craving_boston_preprocess_node(&$vars) {
