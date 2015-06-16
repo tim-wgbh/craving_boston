@@ -12,7 +12,7 @@ function wowza_stream($filename) {
 }
 
 function craving_boston_preprocess_page(&$vars) {
-  if (preg_match('/admin/', current_path()) || current_path() == 'node/add') {
+  if (preg_match('/admin/', current_path()) || preg_match('/node\/add/', current_path())) {
     $vars['admin_page'] = true;
   } else {
     $vars['admin_page'] = false;
