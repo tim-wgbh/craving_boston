@@ -72,6 +72,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -135,6 +137,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access toolbar'] = array(
     'name' => 'access toolbar',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'toolbar',
@@ -155,6 +159,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access workbench'] = array(
     'name' => 'access workbench',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'workbench',
@@ -410,6 +416,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer shortcuts'] = array(
     'name' => 'administer shortcuts',
     'roles' => array(
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'shortcut',
@@ -624,6 +631,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
     'roles' => array(
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'shortcut',
