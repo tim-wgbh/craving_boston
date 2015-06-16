@@ -1080,7 +1080,6 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'site administrator' => 'site administrator',
     ),
     'module' => 'filter',
   );
@@ -1089,6 +1088,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['use text format full_html'] = array(
     'name' => 'use text format full_html',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'filter',

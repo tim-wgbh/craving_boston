@@ -56,19 +56,19 @@ function craving_boston_site_filter_default_formats() {
     'weight' => 1,
     'filters' => array(
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
       'filter_autop' => array(
-        'weight' => 1,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(),
       ),

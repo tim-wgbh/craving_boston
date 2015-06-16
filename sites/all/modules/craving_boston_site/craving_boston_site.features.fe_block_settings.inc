@@ -65,7 +65,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -16,
+        'weight' => -17,
       ),
       'seven' => array(
         'region' => '',
@@ -98,7 +98,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -13,
+        'weight' => -15,
       ),
       'seven' => array(
         'region' => '',
@@ -131,7 +131,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -14,
+        'weight' => -16,
       ),
       'seven' => array(
         'region' => '',
@@ -924,7 +924,7 @@ recipes/*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -12,
+        'weight' => -18,
       ),
       'seven' => array(
         'region' => 'content',
