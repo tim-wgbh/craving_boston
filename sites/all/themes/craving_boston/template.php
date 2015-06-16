@@ -1,15 +1,15 @@
 <?php
-function s3_file($filename) {
-  global $conf;
-  return 'http://s3.amazonaws.com/' . $conf['amazons3_bucket'].'/' . $conf['wgbh_site'].'/' . $filename;
+
+drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/craving_boston.js');
+
+/**
+ * Theme an img tag for displaying the image.
+ */
+function craving_boston_image_display($node, $label, $url, $attributes) {
+  $attributes['class'] = "caption ". (isset($attributes['class']) ? $attributes['class'] : "");
+  return theme('image', $url, $node->title, $node->title, $attributes, FALSE);
 }
 
-function wowza_stream($filename) {
-  global $conf;
-  
-  $video = str_replace('.mp4', '', $filename);
-  return 'http://' . $conf['amazon_domain'] . '/vods3/_definst_/mp4:amazons3/' . $conf['amazons3_bucket'] . '/' . $conf['wgbh_site'] . '/' . $video . '/playlist.m3u8';
-}
 
 function craving_boston_preprocess_page(&$vars) {
   if (preg_match('/admin/', current_path()) || preg_match('/node\/add/', current_path())) {
@@ -63,3 +63,19 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
     }
   }
 }
+/**********
+ * Utility functions to handle S3 and streaming files
+ */
+ 
+function s3_file($filename) {
+  global $conf;
+  return 'http://s3.amazonaws.com/' . $conf['amazons3_bucket'].'/' . $conf['wgbh_site'].'/' . $filename;
+}
+
+function wowza_stream($filename) {
+  global $conf;
+  
+  $video = str_replace('.mp4', '', $filename);
+  return 'http://' . $conf['amazon_domain'] . '/vods3/_definst_/mp4:amazons3/' . $conf['amazons3_bucket'] . '/' . $conf['wgbh_site'] . '/' . $video . '/playlist.m3u8';
+}
+

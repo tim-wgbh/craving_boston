@@ -56,6 +56,9 @@ a, a:visited {
 .container {
   max-width: 994px;
 }
+.field-name-body {
+  margin-top: 30px;
+}
 header {
   margin-top: 20px;
 }
@@ -67,8 +70,12 @@ h2.recipe {
   padding-left: 37px;
   background: url(images/note-card-icon.png) left 8px no-repeat;
 }
-#navigation {
-  text-align: ceneter;
+.image-caption {
+  padding-bottom: 3px;
+  border-bottom: solid 1px #ccc;
+}
+.image-caption-container {
+  
 }
 img {
   border-radius: 0;
@@ -97,12 +104,12 @@ img {
 #main-menu ul li a:hover {
   text-shadow: 1px 1px #999;
 } 
+#navigation {
+  text-align: ceneter;
+}
 .node h2.title a, .page-node h1.page-title {
   font-size: 22px;
   color: #333;
-}
-.view h2.title a {
-  font-size: 22px;
 }
 .page-node #content-wrap img {
   padding: 0;
@@ -159,7 +166,9 @@ img {
   font-size: 1em;
   bottom: 5px;
 }
-
+.view h2.title a {
+  font-size: 22px;
+}
 .view-content .article .tease {
   position: relative;
 }
