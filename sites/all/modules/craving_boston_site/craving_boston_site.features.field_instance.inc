@@ -234,7 +234,7 @@ function craving_boston_site_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => 'field/image',
+      'file_directory' => 'article_images',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -246,13 +246,6 @@ function craving_boston_site_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
-        ),
-        'allowed_types' => array(
-          0 => 'image',
-        ),
         'preview_image_style' => 'medium',
         'progress_indicator' => 'throbber',
       ),
@@ -521,7 +514,7 @@ function craving_boston_site_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 134,
-      'file_directory' => '',
+      'file_directory' => 'article_images',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',

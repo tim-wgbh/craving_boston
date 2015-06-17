@@ -306,6 +306,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer imce'] = array(
     'name' => 'administer imce',
     'roles' => array(
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'imce',

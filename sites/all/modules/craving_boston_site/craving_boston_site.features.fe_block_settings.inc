@@ -78,72 +78,6 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['block-block_fake_ad'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'machine_name' => 'block_fake_ad',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'craving_boston',
-        'weight' => -15,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['block-block_fake_donation_request'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'machine_name' => 'block_fake_donation_request',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'craving_boston',
-        'weight' => -16,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['block-block_footer_logo'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -208,39 +142,6 @@ function craving_boston_site_default_fe_block_settings() {
     ),
     'title' => '',
     'visibility' => 0,
-  );
-
-  $export['block-block_support_banner'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'machine_name' => 'block_support_banner',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '<front>',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
   );
 
   $export['comment-recent'] = array(
