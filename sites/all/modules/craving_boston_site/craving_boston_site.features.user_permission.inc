@@ -306,7 +306,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer imce'] = array(
     'name' => 'administer imce',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'imce',
@@ -463,7 +462,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'path',
@@ -613,7 +611,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'path',
