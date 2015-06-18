@@ -166,16 +166,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'workbench',
   );
 
-  // Exported permission: 'access workbench access by role'.
-  $permissions['access workbench access by role'] = array(
-    'name' => 'access workbench access by role',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_access',
-  );
-
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -494,15 +484,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'workbench',
   );
 
-  // Exported permission: 'administer workbench access'.
-  $permissions['administer workbench access'] = array(
-    'name' => 'administer workbench access',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_access',
-  );
-
   // Exported permission: 'administer workbench moderation'.
   $permissions['administer workbench moderation'] = array(
     'name' => 'administer workbench moderation',
@@ -510,24 +491,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'assign workbench access'.
-  $permissions['assign workbench access'] = array(
-    'name' => 'assign workbench access',
-    'roles' => array(
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_access',
-  );
-
-  // Exported permission: 'batch update workbench access'.
-  $permissions['batch update workbench access'] = array(
-    'name' => 'batch update workbench access',
-    'roles' => array(
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_access',
   );
 
   // Exported permission: 'block IP addresses'.
@@ -1198,24 +1161,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'system',
-  );
-
-  // Exported permission: 'view workbench access information'.
-  $permissions['view workbench access information'] = array(
-    'name' => 'view workbench access information',
-    'roles' => array(
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_access',
-  );
-
-  // Exported permission: 'view workbench taxonomy pages'.
-  $permissions['view workbench taxonomy pages'] = array(
-    'name' => 'view workbench taxonomy pages',
-    'roles' => array(
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_access',
   );
 
   return $permissions;
