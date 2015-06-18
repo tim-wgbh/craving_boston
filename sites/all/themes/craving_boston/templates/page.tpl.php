@@ -68,7 +68,12 @@
   <?php if (!$admin_page): ?>
 
   <div class="wgbh-credit">
-    <img src="/sites/all/themes/craving_boston/images/wgbh-logo-tiny.png" alt="WGBH" /> <span class="text">welcomes you.</span>
+    <div class="welcome pull-left">
+      <img src="/sites/all/themes/craving_boston/images/wgbh-logo-tiny.png" alt="WGBH" /> <span class="text">welcomes you.</span>
+    </div>
+    <div class="pull-right">
+      <span class="donate">Donate</span> to WGBH
+    </div>
   </div>
   
 
