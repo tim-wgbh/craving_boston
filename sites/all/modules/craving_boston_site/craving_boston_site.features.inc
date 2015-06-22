@@ -251,6 +251,14 @@ function craving_boston_site_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'multi_recipe' => array(
+      'name' => t('Multi-Recipe'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'page' => array(
       'name' => t('Basic page'),
       'base' => 'node_content',
