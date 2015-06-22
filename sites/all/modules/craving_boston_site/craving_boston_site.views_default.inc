@@ -513,7 +513,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['operator'] = 'and';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    12 => '12',
+    9 => '9',
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';

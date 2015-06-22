@@ -150,7 +150,7 @@ function craving_boston_site_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -250,7 +250,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -291,7 +291,7 @@ function craving_boston_site_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -321,7 +321,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -470,7 +470,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -510,7 +510,7 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_image',
     'label' => 'Image',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 134,
@@ -530,7 +530,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 0,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -571,7 +571,7 @@ function craving_boston_site_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -612,7 +612,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -654,7 +654,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 0,
+      'weight' => 9,
     ),
   );
 
@@ -699,7 +699,7 @@ function craving_boston_site_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -5,
+      'weight' => 4,
     ),
   );
 
@@ -735,13 +735,13 @@ function craving_boston_site_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'recipe',
       'settings' => array(
-        'default_unit' => '',
+        'default_unit' => 'unit',
       ),
       'type' => 'recipe_ingredient_autocomplete',
-      'weight' => -2,
+      'weight' => 5,
     ),
   );
 
@@ -781,7 +781,7 @@ function craving_boston_site_field_default_field_instances() {
         'rows' => 10,
       ),
       'type' => 'text_textarea',
-      'weight' => -1,
+      'weight' => 6,
     ),
   );
 
@@ -821,7 +821,7 @@ function craving_boston_site_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -1,
+      'weight' => 7,
     ),
   );
 
@@ -862,7 +862,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 0,
+      'weight' => 8,
     ),
   );
 
@@ -901,7 +901,7 @@ function craving_boston_site_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => -1,
+      'weight' => 1,
     ),
   );
 

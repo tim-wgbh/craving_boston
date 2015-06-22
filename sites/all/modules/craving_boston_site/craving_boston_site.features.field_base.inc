@@ -291,7 +291,7 @@ function craving_boston_site_field_default_field_bases() {
     'locked' => 0,
     'module' => 'recipe',
     'settings' => array(
-      'ingredient_name_normalize' => 0,
+      'ingredient_name_normalize' => 1,
     ),
     'translatable' => 0,
     'type' => 'ingredient_reference',

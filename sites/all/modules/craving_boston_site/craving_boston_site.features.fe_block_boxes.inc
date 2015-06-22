@@ -22,24 +22,6 @@ function craving_boston_site_default_fe_block_boxes() {
   $export['block_about_craving_boston'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Fake Ad';
-  $fe_block_boxes->format = 'full_html';
-  $fe_block_boxes->machine_name = 'block_fake_ad';
-  $fe_block_boxes->body = '<p><img alt="" src="/sites/default/files/fake_add.png" /></p>
-';
-
-  $export['block_fake_ad'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Fake Donation Request';
-  $fe_block_boxes->format = 'full_html';
-  $fe_block_boxes->machine_name = 'block_fake_donation_request';
-  $fe_block_boxes->body = '<p><img alt="" src="/sites/default/files/fake-donate.png" style="height:264px; width:309px" /></p>
-';
-
-  $export['block_fake_donation_request'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Footer Logo';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'block_footer_logo';
@@ -59,17 +41,6 @@ function craving_boston_site_default_fe_block_boxes() {
 ';
 
   $export['block_newsletter_signup'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Support Banner';
-  $fe_block_boxes->format = 'full_html';
-  $fe_block_boxes->machine_name = 'block_support_banner';
-  $fe_block_boxes->body = '<div id="support-banner">
-  <em>Support WGBH.</em> We couldn\'t do it without you.
-</div>
-';
-
-  $export['block_support_banner'] = $fe_block_boxes;
 
   return $export;
 }
