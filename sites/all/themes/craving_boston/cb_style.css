@@ -74,8 +74,8 @@ h2.recipe {
   padding-bottom: 3px;
   border-bottom: solid 1px #ccc;
 }
-.image-caption-container {
-  
+.image-with-caption {
+  margin-bottom: 20px;
 }
 img {
   border-radius: 0;
