@@ -44,6 +44,7 @@ function craving_boston_preprocess_node(&$vars) {
 }
 
 function craving_boston_preprocess_views_view_fields(&$vars) {
+  $vars['display'] = true;
   $fields = $vars['fields'];
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
     if (empty($fields['field_video_file']->content)) {
@@ -55,8 +56,16 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
     }
 
     if ($fields['type']->raw == 'recipe') {
+      if ($fields['field_part_of_multi_recipe']->content == 'yes') {
+        $vars['display'] = false;
+      }
       $vars['is_recipe'] = true;
-      $vars['deck'] = $fields['recipe_description']->content;
+      $vars['deck'] = null;
+//       $vars['deck'] = $fields['recipe_description']->content;
+    } else if ($fields['type']->raw == 'multi_recipe') {
+      $vars['is_recipe'] = true;
+      $vars['deck'] = $fields['field_recipe']->content;
+//      $vars['deck'] = $fields['body']->content;
     } else {
       $vars['is_recipe'] = false;
       $vars['deck'] = $fields['body']->content;
