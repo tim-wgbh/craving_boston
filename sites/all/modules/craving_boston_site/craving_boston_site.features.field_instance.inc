@@ -333,7 +333,7 @@ function craving_boston_site_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'You should select at least 1 topic - you may select up to 3.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -346,11 +346,12 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topic',
     'label' => 'Topic',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
@@ -887,7 +888,7 @@ function craving_boston_site_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The topic Recipes is selected for you. You may select up to 2 other topics.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1231,11 +1232,13 @@ function craving_boston_site_field_default_field_instances() {
   t('Recipe');
   t('Step by step instructions on how to prepare and cook the recipe.');
   t('Tags');
+  t('The topic Recipes is selected for you. You may select up to 2 other topics.');
   t('This category is just for fun');
   t('Topic');
   t('Upload an image to go with this article.');
   t('Video file');
   t('Video poster');
+  t('You should select at least 1 topic - you may select up to 3.');
 
   return $field_instances;
 }
