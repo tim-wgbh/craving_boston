@@ -81,7 +81,7 @@
     <div class="row">
       <div id="site-banner">
         <a href="/" title="Home">
-          <img src="/sites/all/themes/craving_boston/images/craving-boston-logo.png" />
+          <img src="/sites/all/themes/craving_boston/images/craving-boston-banner-logo.png" />
         </a>
       </div>
       <div class="col-sm-12 mainmenu">

@@ -101,10 +101,16 @@ img {
   color: #555;
   background-color: transparent;
   text-transform: uppercase;
+  padding-right: 13px;
 }
 #main-menu ul li a:hover {
   font-style: italic;
 } 
+#main-menu #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
+    background-image: url("/sites/all/themes/craving_boston/images/indicator-dot.png");
+    background-position: right 0 top 18px;
+    background-repeat: no-repeat;
+}
 #navigation {
   text-align: ceneter;
 }
