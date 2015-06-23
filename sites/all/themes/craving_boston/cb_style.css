@@ -106,13 +106,18 @@ img {
 #main-menu ul li a:hover {
   font-style: italic;
 } 
+/* 
 #main-menu #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
     background-image: url("/sites/all/themes/craving_boston/images/indicator-dot.png");
     background-position: right 0 top 18px;
     background-repeat: no-repeat;
 }
+ */
+#main-menu #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
+  text-decoration: underline;
+}
 #navigation {
-  text-align: ceneter;
+  text-align: center;
 }
 .node h2.title a, .page-node h1.page-title {
   font-size: 22px;
@@ -173,8 +178,10 @@ img {
   font-size: 1em;
   bottom: 5px;
 }
-.view h2.title a {
+.view h2 a {
   font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 20px;
 }
 .view-content .article .tease {
   position: relative;
