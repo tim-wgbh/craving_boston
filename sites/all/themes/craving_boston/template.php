@@ -45,11 +45,11 @@ function craving_boston_preprocess_node(&$vars) {
 
 function craving_boston_preprocess_views_view_fields(&$vars) {
   $vars['display'] = true;
+  $vars['has_video'] = false;
   $fields = $vars['fields'];
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
     if (empty($fields['field_video_file']->content)) {
       $vars['image'] = $fields['field_image']->content;
-      $vars['has_video'] = false;
     } else {
       $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
       $vars['has_video'] = true;
