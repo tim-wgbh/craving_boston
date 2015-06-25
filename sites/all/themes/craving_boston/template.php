@@ -20,6 +20,8 @@ function craving_boston_preprocess_page(&$vars) {
 }
     
 function craving_boston_preprocess_node(&$vars) {
+
+  $vars['has_video'] = false; 
   
   $node = $vars['node'];
 //   if ($vars['view_mode'] == 'full' && node_is_page($vars['node'])) {
@@ -39,7 +41,6 @@ function craving_boston_preprocess_node(&$vars) {
   } else {
     $vars['video'] = '';
     $vars['poster'] = '';
-    $vars['has_video'] = false;
   }
 }
 

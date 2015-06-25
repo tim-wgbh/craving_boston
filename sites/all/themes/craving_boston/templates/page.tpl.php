@@ -84,6 +84,9 @@
           <img src="/sites/all/themes/craving_boston/images/craving-boston-banner-logo.png" />
         </a>
       </div>
+      <?php if ($site_slogan): ?>
+      <div id="site-slogan"><?php print $site_slogan; ?></div>
+      <?php endif; ?>
       <div class="col-sm-12 mainmenu">
         <div class="mobilenavi"></div>
         <nav id="navigation" role="navigation">
@@ -126,12 +129,10 @@
   <?php endif; ?>
 
   <?php if($page['header']) : ?>
-    <div id="header-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <?php print render($page['header']); ?>
-          </div>
+    <div id="support" class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <?php print render($page['header']); ?>
         </div>
       </div>
     </div>
