@@ -154,7 +154,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -183,7 +183,7 @@ function craving_boston_site_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -200,7 +200,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -218,7 +218,7 @@ function craving_boston_site_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -246,7 +246,7 @@ function craving_boston_site_field_default_field_instances() {
           'picture_mapping' => 'article_mapping',
         ),
         'type' => 'picture',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -283,9 +283,43 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-article-field_subhead'
+  $field_instances['node-article-field_subhead'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subhead',
+    'label' => 'Subhead',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
   );
 
   // Exported field_instance: 'node-article-field_tags'
@@ -300,7 +334,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -324,7 +358,7 @@ function craving_boston_site_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -340,7 +374,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -355,7 +389,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -370,7 +404,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -404,7 +438,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -578,7 +612,7 @@ function craving_boston_site_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'node_reference',
         'settings' => array(
           'node_reference_view_mode' => 'full',
@@ -1231,6 +1265,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Preparation time');
   t('Recipe');
   t('Step by step instructions on how to prepare and cook the recipe.');
+  t('Subhead');
   t('Tags');
   t('The topic Recipes is selected for you. You may select up to 2 other topics.');
   t('This category is just for fun');

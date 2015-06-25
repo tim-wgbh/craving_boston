@@ -48,7 +48,7 @@ function craving_boston_site_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Video',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_video_file',
       1 => 'field_video_poster',

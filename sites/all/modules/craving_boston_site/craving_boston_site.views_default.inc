@@ -243,6 +243,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
     'recipe' => 'recipe',
   );
 
@@ -283,6 +284,11 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -411,6 +417,14 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Chew on This', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Chew on This';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Food news to keep you hungry and thinking';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -452,6 +466,14 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'That\'s the Spirit';
   $handler->display->display_options['display_description'] = 'Articles about beverages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Wine, craft beer, cocktails – curated to quench your thirst';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -491,6 +513,14 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Reviews', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Reviews';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Restaurant reviews from around Boston and New England';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -531,6 +561,14 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recipes';
   $handler->display->display_options['display_description'] = 'Recipes';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Specially curated local recipes - prepare something wicked fresh tonight';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -641,6 +679,13 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Neighborhood Nosh';
   $handler->display->display_options['display_description'] = 'Stories from Boston\'s neighborhoods';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Good stories and great eats from your favorite local neighborhoods';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -681,6 +726,13 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Table Talk';
   $handler->display->display_options['display_description'] = 'Editorials and weekly wrap-ups';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Feature articles and commentaries about the deep connection our region has with its local food, and weekly editorials to keep you updated';
+  $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

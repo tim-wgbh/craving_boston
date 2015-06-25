@@ -14,9 +14,9 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->info = 'About Craving Boston';
   $fe_block_boxes->format = 'filtered_html';
   $fe_block_boxes->machine_name = 'block_about_craving_boston';
-  $fe_block_boxes->body = '<p>It’s our mission to provide you thoughtful content you can use everyday, and inspire you to explore the deep connection between our region and its cuisine. Whether<br />
-&nbsp;you want to learn more about how innovation is affecting our food culture, read about a new local restaurant, or are looking for a locally-inspired recipe for dinner tonight,<br />
-<em>Craving Boston</em> is your daily destination for food in Boston and New England.</p>
+  $fe_block_boxes->body = '<p>WGBH and managing editor Catherine Smart, an award-winning Boston Globe food journalist, have come together to provide you thoughtful content you can use everyday, and to inspire you to explore the deep connection between our region and its cuisine.</p>
+
+<p>Whether you want to learn more about how innovation is affecting our fare culture, read about a new local restaurant, or to look for a locally inspired recipe for dinner tonight, Craving Boston&nbsp;is your daily destination for food in Boston and New England.</p>
 ';
 
   $export['block_about_craving_boston'] = $fe_block_boxes;

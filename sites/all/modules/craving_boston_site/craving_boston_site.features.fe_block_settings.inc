@@ -525,10 +525,10 @@ recipes/*',
         'weight' => -1,
       ),
       'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -15,
+        'weight' => -18,
       ),
       'seven' => array(
         'region' => 'dashboard_sidebar',
