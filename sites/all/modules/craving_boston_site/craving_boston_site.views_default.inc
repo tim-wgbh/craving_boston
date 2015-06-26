@@ -66,6 +66,12 @@ function craving_boston_site_views_default_views() {
     'fallback_image_style' => 'featured_sub_mobile',
     'image_link' => 'content',
   );
+  /* Field: Content: Part of multi-recipe */
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['label'] = '';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -84,7 +90,16 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
     'recipe' => 'recipe',
+  );
+  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Lead Article */
@@ -120,6 +135,12 @@ function craving_boston_site_views_default_views() {
     'fallback_image_style' => 'featured_main_large',
     'image_link' => 'content',
   );
+  /* Field: Content: Part of multi-recipe */
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['label'] = '';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'Lead Article';
 
   /* Display: Attachment */
@@ -225,6 +246,19 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['recipe_description']['label'] = '';
   $handler->display->display_options['fields']['recipe_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['recipe_description']['element_default_classes'] = FALSE;
+  /* Field: Content: Part of multi-recipe */
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['label'] = '';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['element_label_colon'] = FALSE;
+  /* Field: Content: Recipe */
+  $handler->display->display_options['fields']['field_recipe']['id'] = 'field_recipe';
+  $handler->display->display_options['fields']['field_recipe']['table'] = 'field_data_field_recipe';
+  $handler->display->display_options['fields']['field_recipe']['field'] = 'field_recipe';
+  $handler->display->display_options['fields']['field_recipe']['label'] = '';
+  $handler->display->display_options['fields']['field_recipe']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_recipe']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -245,6 +279,14 @@ function craving_boston_site_views_default_views() {
     'article' => 'article',
     'multi_recipe' => 'multi_recipe',
     'recipe' => 'recipe',
+  );
+  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Page */
@@ -638,6 +680,12 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
+  /* Field: Content: Part of multi-recipe */
+  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['id'] = 'field_part_of_multi_recipe_1';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['field'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['label'] = '';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
