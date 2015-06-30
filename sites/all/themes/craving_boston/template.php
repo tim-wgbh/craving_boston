@@ -135,7 +135,6 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
  */
 function cloudfront_file($filename) {
   global $conf;
-  dpm($conf);
   return 'http://' . $conf['cloudfront_domain'] . '/'  . $conf['wgbh_site'].'/' . $filename;
 }
  
