@@ -10,8 +10,8 @@ drupal_add_css('sites/all/wgbh_links/wgbh_links.css');
 function craving_boston_field__field_video_file($vars) {
   
   // No label and we must convert the file name to video and post files
-  $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
-  $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
+  $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
+  $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
   $output = <<<EOC
     <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
     <div id="jw-player"></div>
@@ -133,6 +133,11 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 /**********
  * Utility functions to handle S3 and streaming files
  */
+function cloudfront_file($filename) {
+  global $conf;
+  dpm($conf);
+  return 'http://' . $conf['cloudfront_domain'] . '/'  . $conf['wgbh_site'].'/' . $filename;
+}
  
 function s3_file($filename) {
   global $conf;
