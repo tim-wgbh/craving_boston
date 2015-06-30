@@ -1,0 +1,35 @@
+.wgbh-links {
+  height: 47px;
+  background-color:#333;
+  position:fixed;
+  top: 0;
+  left: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100%;
+  z-index: 500;
+  padding: 7px 0;
+  line-height: 0;
+}
+.wgbh-links ul.menu, .wgbh-links ul.menu > li {
+  list-style-type: none;
+}
+.wgbh-links ul.menu > li {
+  display: table-cell;
+  vertical-align: middle;
+}
+.wgbh-links ul.menu > li > a, .wgbh-links ul.menu > li > a:visited {
+  padding: 20px;
+  text-transform: uppercase;
+  color: white;
+}
+.wgbh-links ul.menu > li > a:hover {
+  color:#e77e00;
+}
+.wgbh-links ul.menu > li > a.donate {
+  padding: 7px 8px;
+  border-radius: 4px;
+  background-color: #e77e00;
+}
+.wgbh-links ul.menu > li.donate > a.donate:hover {
+  color: #333;
+}
