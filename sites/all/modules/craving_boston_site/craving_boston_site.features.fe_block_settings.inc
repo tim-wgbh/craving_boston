@@ -525,7 +525,7 @@ recipes/*',
         'weight' => -1,
       ),
       'craving_boston' => array(
-        'region' => 'sidebar_first',
+        'region' => 'menu_buddy',
         'status' => 1,
         'theme' => 'craving_boston',
         'weight' => -18,

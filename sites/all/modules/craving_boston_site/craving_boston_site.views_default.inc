@@ -52,7 +52,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'article-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -121,7 +120,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'article-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -132,7 +130,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_image']['type'] = 'picture';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'picture_mapping' => 'featured_main_mapping',
-    'fallback_image_style' => 'featured_main_large',
+    'fallback_image_style' => 'featured_sub_mobile',
     'image_link' => 'content',
   );
   /* Field: Content: Part of multi-recipe */
@@ -217,7 +215,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Field: Content: Video file */
+  /* Field: Content: Video name */
   $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
   $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
   $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
@@ -382,7 +380,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Video file */
+  /* Field: Content: Video name */
   $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
   $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
   $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';

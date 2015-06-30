@@ -1,6 +1,47 @@
 <?php
 
 drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/craving_boston.js');
+drupal_add_css('sites/all/wgbh_links/wgbh_links.css');
+
+/**
+ * Theming the video field makes it possible to move it around as necessary using
+ * the admin interface
+ */
+function craving_boston_field__field_video_file($vars) {
+  
+  // No label and we must convert the file name to video and post files
+  $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
+  $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
+  $output = <<<EOC
+    <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
+    <div id="jw-player"></div>
+    <script type='text/javascript'>
+      jwplayer('jw-player').setup({
+        file: "$video_file",
+        image: "$poster",
+        width:  640,
+        height: 360,
+        primary: 'flash'
+      });
+    </script>
+EOC;
+  return $output;
+// 
+//   // Render the label, if it's not hidden.
+//   if (!$variables['label_hidden']) {
+//     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
+//   }
+//   // Render the items.
+//   $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
+//   foreach ($variables['items'] as $delta => $item) {
+//     $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
+//     $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
+//   }
+//   $output .= '</div>';
+//   // Render the top-level DIV.
+//   $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
+//   return $output;
+}
 
 /**
  * Theme an img tag for displaying the image.
@@ -11,6 +52,13 @@ function craving_boston_image_display($node, $label, $url, $attributes) {
 }
 
 
+function craving_boston_preprocess_html(&$vars) {
+  $topics = ["food","drink","reviews","recipes","neighborhoods","table-talk"];
+  $path = explode('/',preg_replace("/#.*/", '',drupal_get_path_alias()));
+  if (in_array($path[0], $topics)) {
+    $vars['classes_array'][] = 'topic-page';
+  }
+}
 function craving_boston_preprocess_page(&$vars) {
   if (preg_match('/admin/', current_path()) || preg_match('/node\/add/', current_path())) {
     $vars['admin_page'] = true;
@@ -32,15 +80,26 @@ function craving_boston_preprocess_node(&$vars) {
   if ($node->type != 'article') return;
       
   // Video processing for HLS streaming S3 videos
-  if (!empty($node->field_video_file['und'][0]['value'])) {
+  $vars['video'] = '';
+  $vars['poster'] = '';
+  if (!empty($node->field_internet_video) || !empty($node->field_video_file)) {
+    $vars['has_video'] = true;
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
-    $vars['video'] = wowza_stream($node->field_video_file['und'][0]['value']);
-    $vars['poster'] = s3_file($node->field_video_poster['und'][0]['value']);
-    $vars['has_video'] = true;
-  } else {
-    $vars['video'] = '';
-    $vars['poster'] = '';
+    if ($node->field_internet_video) {
+      $vars['video'] = $node->field_internet_video['und'][0]['value']->content;
+    } else {
+      $vars['video'] = s3_file($node->field_video_file['und'][0]['value'] . ".mp4");
+      $vars['poster'] = s3_file($node->field_video_file['und'][0]['value'] . ".jpg");
+    
+    //NO STREAMING VIDEO FOR THE MOMENT
+//       if (preg_match('/\.m3u8$/', $node->field_video_file['und'][0]['value'])) {
+//         $vars['video'] = wowza_stream($node->field_video_file['und'][0]['value']);
+//       } else {
+//         $vars['video'] = s3_file($node->field_video_file['und'][0]['value']);
+//       }      
+//       $vars['poster'] = s3_file($node->field_video_poster['und'][0]['value']);
+    }
   }
 }
 
@@ -49,13 +108,11 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
   $vars['has_video'] = false;
   $fields = $vars['fields'];
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
-    if (empty($fields['field_video_file']->content)) {
-      $vars['image'] = $fields['field_image']->content;
-    } else {
+    $vars['image'] = $fields['field_image']->content;
+    if (!empty($fields['field_video_file']->content) && !empty($fields['field_internet_video']->content)) {
       $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
-      $vars['has_video'] = true;
+       $vars['has_video'] = true;
     }
-
     if ($fields['type']->raw == 'recipe') {
       if ($fields['field_part_of_multi_recipe']->content == 'yes') {
         $vars['display'] = false;

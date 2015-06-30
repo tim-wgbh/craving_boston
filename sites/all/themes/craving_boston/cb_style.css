@@ -43,7 +43,7 @@ ul {
 /* More specific settings */
 .article {
   position: relative;
-  margin-left: 1%;
+  margin-left: 5px;
 }
 #bottom {
   background-color: #ddd;
@@ -74,19 +74,51 @@ ul {
 .container {
   max-width: 994px;
 }
+
+/* Search block */
+#masthead .row {
+  position: relative;
+}
+#masthead .row .menu-buddy {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  text-align: right;
+}
+#search-block-form .form-text {
+  width: 60%;
+}
+#block-search-form {
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+
+/* 
+input#edit-search-block-form--2 {
+  display: none;
+}
+ */
 .field-name-body {
   margin-top: 30px;
 }
 .field-type-node-reference h2 {
   font-size: 0.7em;
 }
+.page-node .field-name-field-subhead {
+  color: #666;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
 header {
   margin-top: 20px;
 }
-h1.page-title {
+.topic-page h1.page-title {
   font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
   font-size: 4em;
   color: #20452B;
+  margin-bottom: 0;
 }
 h2.has-video {
   padding-left: 30px;
@@ -149,10 +181,6 @@ img {
 #navigation {
   text-align: center;
 }
-.node h2.title a, .page-node h1.page-title {
-  font-size: 3em;
-  color: #20452B;
-}
 .page-node #content-wrap img {
   padding: 0;
   border: none;
@@ -167,19 +195,22 @@ img {
 .page-node.node-type-recipe .field-type-text-with-summary, 
 .page-node.node-type-recipe .field-type-number-integer, 
 .page-node.node-type-recipe .field-type-ingredient-reference, 
-.page-node.node-type-recipe .field-type-text-long, 
 .page-node.node-type-recipe .field-type-taxonomy-term-reference {
   color: #333;
-  padding: 20px;
   margin: 20px 0;
-  border-radius: 0;
-  border: solid 1px #ccc;
+}
+.page-node.node-type-recipe .field-type-ingredient-reference .field-items {
+  margin-left: 4em;
+}
+.page-node.node-type-recipe .field-name-recipe-ingredient .field-label,
+.page-node.node-type-recipe .field-name-recipe-instructions .field-label
+ {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
 }
 .page-node.node-type-recipe .field .quantity-unit {
   font-weight: bold;
-}
-#search-block-form .form-text {
-  width:78%;
 }
 #site-banner {
   margin-top: 24px;
@@ -203,7 +234,7 @@ img {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 39px;
+  padding: 40px;
   font-size: 1.5em;
   text-align:center; 
   color: white;
@@ -211,7 +242,8 @@ img {
 }
 
 /* view elements */
-.article-title, .article h2.title {
+.article-title, .article h2.title, .page-node h1.page-title {
+  font-family: cooper_hewittbook;
   font-size: 3em;
   font-weight: bold;
   line-height: 1.2;
@@ -253,45 +285,11 @@ img {
   margin: 0 3% 20px 0;
 }
 .view-topic .view-header {
-  color: #5AC57A;
+  color: #333;
   font-style: italic;
   font-weight: bold;
-}
-.wgbh-credit {
-  width: 100%;
-  text-align: center;
-  font-size: 0.9em;
-  background-color: #666;
-  color: white;
-  position:fixed;
-  left: 0;
-  top: 0;
-  -webkit-box-shadow: 0px 3px 3px rgba(64,64,64,0.5);
-  -moz-box-shadow: 0px 3px 3px rgba(64,64,64,0.5);
-  box-shadow: 0px 3px 3px rgba(64,64,64,0.5);
-  z-index: 20;
-}
-.wgbh-credit .donate {
-  display: inline-block;
-  text-transform: uppercase;
-  padding: 3px;
-  background-color: #BD3E27;
-  border-radius: 3px;
-} 
-.wgbh-credit img {
-  display: inline-block;
-  padding-top: 7px;
-}
-.wgbh-credit .pull-left {
-  padding-left: 2em;
-}
-.wgbh-credit .pull-right {
-  padding-right: 2em;
-  margin-top:3px;
-}
-.wgbh-credit .text {
-  position:relative;
-  top:-7px;
+  margin-bottom: 40px;
+  padding-left: 25px;
 }
 @media (min-width: 980px) {
   .view-featured .article {

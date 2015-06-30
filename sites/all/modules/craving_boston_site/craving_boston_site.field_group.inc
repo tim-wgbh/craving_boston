@@ -21,7 +21,7 @@ function craving_boston_site_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recipes',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_recipe',
     ),

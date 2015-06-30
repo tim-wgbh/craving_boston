@@ -7,6 +7,7 @@ stylesheets[all][] = fonts.css
 stylesheets[all][] = cb_style.css
 
 ; Regions
+regions[menu_buddy]   = Menu Buddy
 regions[sidebar_first]  = First Sidebar
 regions[header]         = Header
 regions[preface_first]  = Preface First

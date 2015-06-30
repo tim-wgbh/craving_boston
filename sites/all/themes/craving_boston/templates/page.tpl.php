@@ -66,28 +66,31 @@
 ?>
 <div id="page">
   <?php if (!$admin_page): ?>
-
-  <div class="wgbh-credit">
-    <div class="welcome pull-left">
-      <img src="/sites/all/themes/craving_boston/images/wgbh-logo-tiny.png" alt="WGBH" /> <span class="text">welcomes you.</span>
-    </div>
-    <div class="pull-right">
-      <span class="donate">Donate</span> to WGBH
-    </div>
-  </div>
-  
+    <div class="wgbh-links">
+      <ul class="menu">
+        <li><a href="http://www.wgbh.org" title="WGBH.org"  class="image"><img src="/sites/all/wgbh_links/wgbh_mini_logo.png" alt="WGBH" /></a>
+        <li><a href="http://www.wgbh.org/donateButton" title="Donate to WGBH"  class="donate">Donate</a></li>
+        <li><a href="http://www.wgbh.org/support" title="Find out all the ways to support WGBH">Support</a></li>
+        <li><a href="http://www.wgbh.org/mywgbh" title="Got to myWGBH">MyWGBH</a></li>
+      </ul>
+    </div>      
+  <?php endif; ?>  
 
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
-      <div id="site-banner">
-        <a href="/" title="Home">
-          <img src="/sites/all/themes/craving_boston/images/craving-boston-banner-logo.png" />
-        </a>
-      </div>
-      <?php if ($site_slogan): ?>
-      <div id="site-slogan"><?php print $site_slogan; ?></div>
-      <?php endif; ?>
       <div class="col-sm-12 mainmenu">
+        <div id="site-banner">
+          <a href="/" title="Home">
+            <img src="/sites/all/themes/craving_boston/images/craving-boston-banner-logo.png" />
+          </a>
+        </div>
+        <?php if ($site_slogan): ?>
+        <div id="site-slogan"><?php print $site_slogan; ?></div>
+        <?php endif; ?>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 mainmenu">
         <div class="mobilenavi"></div>
         <nav id="navigation" role="navigation">
           <div id="main-menu">
@@ -98,11 +101,12 @@
           </div>
         </nav>
       </div>
+      <div class="col-sm-2 menu-buddy">
+        <?php print render ($page['menu_buddy']); ?>
+      </div>
     </div>
   </header>
   
-  <?php endif; ?>
-
   <?php if ($is_front): ?>
     <div class="container">
       <?php print views_embed_view('featured', 'lead_article'); ?>

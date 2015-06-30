@@ -102,20 +102,6 @@
       hide($content['comments']);
       hide($content['links']);
     ?>
-    <?php if ($node->type == 'article' && $video != ''): ?>
-    <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
-    <div id="jw-player"></div>
-    <script type='text/javascript'>
-      jwplayer('jw-player').setup({
-        file: "<?php print $video; ?>",
-        image: "<?php print $poster; ?>",
-        width:  640,
-        height: 360,
-        primary: 'flash'
-      });
-    </script>
-    <?php endif; ?>
-      
       <?php print render($content); ?>
   </div>
 
