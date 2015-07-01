@@ -3064,7 +3064,7 @@ function drupal_add_css($data = NULL, $options = NULL) {
         $css[$data] = $options;
     }
   }
-  dpm($css);
+
   return $css;
 }
 
