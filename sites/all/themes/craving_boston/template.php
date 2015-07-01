@@ -58,6 +58,9 @@ function craving_boston_preprocess_html(&$vars) {
   if (in_array($path[0], $topics)) {
     $vars['classes_array'][] = 'topic-page';
   }
+  if (user_access('access_toolbar')) {
+    $vars['classes_array'][] = 'is_admin';
+  }
 }
 function craving_boston_preprocess_page(&$vars) {
   if (preg_match('/admin/', current_path()) || preg_match('/node\/add/', current_path())) {

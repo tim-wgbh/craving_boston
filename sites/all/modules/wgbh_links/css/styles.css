@@ -2,7 +2,7 @@
   height: 47px;
   background-color:#333;
   position:fixed;
-  top: 0;
+  top: -47px;
   left: 0;
   font-family: Helvetica, Arial, sans-serif;
   width: 100%;

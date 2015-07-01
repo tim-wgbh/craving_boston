@@ -65,17 +65,6 @@
  */
 ?>
 <div id="page">
-  <?php if (!$admin_page): ?>
-    <div class="wgbh-links">
-      <ul class="menu">
-        <li><a href="http://www.wgbh.org" title="WGBH.org"  class="image"><img src="/sites/all/wgbh_links/wgbh_mini_logo.png" alt="WGBH" /></a>
-        <li><a href="http://www.wgbh.org/donateButton" title="Donate to WGBH"  class="donate">Donate</a></li>
-        <li><a href="http://www.wgbh.org/support" title="Find out all the ways to support WGBH">Support</a></li>
-        <li><a href="http://www.wgbh.org/mywgbh" title="Got to myWGBH">MyWGBH</a></li>
-      </ul>
-    </div>      
-  <?php endif; ?>  
-
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
       <div class="col-sm-12 mainmenu">

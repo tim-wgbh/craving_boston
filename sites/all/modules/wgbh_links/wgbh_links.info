@@ -1,0 +1,7 @@
+name = WGBH Links
+description = Adds a WGBH link bar to the top of all web pages
+package = Custom
+core = 7.x
+project = "wgbh_links"
+scripts[] = js/wgbh_links.js
+stylesheets[all][] = css/styles.css
