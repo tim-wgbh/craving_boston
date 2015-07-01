@@ -244,6 +244,10 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['recipe_description']['label'] = '';
   $handler->display->display_options['fields']['recipe_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['recipe_description']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['recipe_description']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['recipe_description']['settings'] = array(
+    'trim_length' => '600',
+  );
   /* Field: Content: Part of multi-recipe */
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
