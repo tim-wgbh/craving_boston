@@ -231,6 +231,7 @@ img {
 #support #block-block-1 {
   margin-bottom: 0;
 }
+/* 
 #support-banner {
   background-image: url(images/support_banner-blue-1024x100.jpg);
   background-size: contain;
@@ -242,6 +243,7 @@ img {
   color: white;
   border-radius: 0;
 }
+ */
 
 /* view elements */
 .article-title, .article h2.title, .page-node h1.page-title {
