@@ -19,8 +19,13 @@
 }
 .wgbh-links ul.menu > li > a, .wgbh-links ul.menu > li > a:visited {
   padding: 20px;
-  text-transform: uppercase;
   color: white;
+}
+.wgbh-links ul.menu > li {
+  text-transform: uppercase;
+}
+.wgbh-links ul.menu > li.my-wgbh {
+  text-transform: none;
 }
 .wgbh-links ul.menu > li > a:hover {
   color:#e77e00;
@@ -32,4 +37,7 @@
 }
 .wgbh-links ul.menu > li.donate > a.donate:hover {
   color: #333;
+}
+.wgbh-links ul.menu.pull-right {
+  margin: 16px 40px 0 0;
 }
