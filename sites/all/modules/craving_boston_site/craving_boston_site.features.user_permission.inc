@@ -109,9 +109,7 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'access overlay'.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
+    'roles' => array(),
     'module' => 'overlay',
   );
 
@@ -880,6 +878,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['manipulate queues'] = array(
     'name' => 'manipulate queues',
     'roles' => array(
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'nodequeue',
