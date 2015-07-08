@@ -464,6 +464,24 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer uuid'.
+  $permissions['administer uuid'] = array(
+    'name' => 'administer uuid',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'uuid',
+  );
+
+  // Exported permission: 'administer video styles'.
+  $permissions['administer video styles'] = array(
+    'name' => 'administer video styles',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'video_embed_field',
+  );
+
   // Exported permission: 'administer views'.
   $permissions['administer views'] = array(
     'name' => 'administer views',
@@ -549,6 +567,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create multi_recipe content'.
+  $permissions['create multi_recipe content'] = array(
+    'name' => 'create multi_recipe content',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
@@ -605,6 +633,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any multi_recipe content'.
+  $permissions['delete any multi_recipe content'] = array(
+    'name' => 'delete any multi_recipe content',
+    'roles' => array(
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
@@ -635,6 +672,16 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own multi_recipe content'.
+  $permissions['delete own multi_recipe content'] = array(
+    'name' => 'delete own multi_recipe content',
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
@@ -711,6 +758,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any multi_recipe content'.
+  $permissions['edit any multi_recipe content'] = array(
+    'name' => 'edit any multi_recipe content',
+    'roles' => array(
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
@@ -757,6 +813,16 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'comment',
+  );
+
+  // Exported permission: 'edit own multi_recipe content'.
+  $permissions['edit own multi_recipe content'] = array(
+    'name' => 'edit own multi_recipe content',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit own page content'.
@@ -816,6 +882,24 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'devel',
+  );
+
+  // Exported permission: 'export nodes'.
+  $permissions['export nodes'] = array(
+    'name' => 'export nodes',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node_export',
+  );
+
+  // Exported permission: 'export own nodes'.
+  $permissions['export own nodes'] = array(
+    'name' => 'export own nodes',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node_export',
   );
 
   // Exported permission: 'export recipes'.
