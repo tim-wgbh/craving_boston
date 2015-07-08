@@ -1,7 +1,6 @@
 <?php
 
 drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/craving_boston.js');
-drupal_add_css('sites/all/wgbh_links/wgbh_links.css');
 
 /**
  * Theming the video field makes it possible to move it around as necessary using
@@ -80,6 +79,15 @@ function craving_boston_preprocess_node(&$vars) {
 //    }
   $vars['date'] = t('!datetime', array('!datetime' =>  date('j F Y', $vars['created'])));
   
+  # Combine byline and subhea  
+  switch ($node->type) {
+    case 'recipe':
+      $vars['subhead_byline'] = $node->field_subhead['und'][0]['safe_value'] . '&nbsp;&nbsp;By ' . $node->field_source['und'][0]['safe_value'];
+    default:
+      $vars['subhead_byline'] = $node->field_subhead['und'][0]['safe_value'] . '&nbsp;&nbsp;By ' . $node->field_author['und'][0]['safe_value'];
+  }
+  
+  # Set up video display for articles
   if ($node->type != 'article') return;
       
   // Video processing for HLS streaming S3 videos
@@ -89,8 +97,9 @@ function craving_boston_preprocess_node(&$vars) {
     $vars['has_video'] = true;
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
-    if ($node->field_internet_video) {
-      $vars['video'] = $node->field_internet_video['und'][0]['value']->content;
+    if (!empty($node->field_internet_video)) {
+      dpm($node->field_internet_video);
+      $vars['video'] = $node->field_internet_video['und'][0]['video_url'];
     } else {
       $vars['video'] = s3_file($node->field_video_file['und'][0]['value'] . ".mp4");
       $vars['poster'] = s3_file($node->field_video_file['und'][0]['value'] . ".jpg");

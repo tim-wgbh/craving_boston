@@ -198,7 +198,7 @@
     <div class="container">
       <div class="row">
         <div class="fcred col-sm-12">
-          <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('Theme by'); ?>  <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
+           <img src="<?php print drupal_get_path('theme', 'craving_boston') . '/images/wgbh_micro_logo.png' ?>" /> &copy; <?php echo date("Y"); ?> The WGBH Educational Foundation
         </div>
       </div>
     </div>
