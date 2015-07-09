@@ -64,13 +64,10 @@ ul {
   list-style-type: none;
   list-style-image: none;
 }
-/* 
-#block-menu-menu-footer-menu ul li a {
-  color: #999;
- */
-}
-button.sign-up {
-  margin-bottom: 9px;
+.btn.sign-up {
+  margin: 0 0 7px 5px;
+  font-weight: bold;
+  font-size: 0.7em;
 }
 
 /* Reset max container width */
@@ -226,12 +223,12 @@ img {
 }
 #site-slogan {
   width: 30%;
-  color: #43925A;
-  margin-top: 65px;
+  color: #666;
+  margin-top: 95px;
   padding: 0 0 7px 1%;
   font-weight: bold;
   font-style: italic;
-  font-size: 1.1em;
+  font-size: 0.9em;
   float: right;
   text-align: right;
 }
@@ -281,8 +278,8 @@ img {
 }
 .view-featured .article .info .article-subhead {
   font-size: 1.2em;
+  font-weight: normal;
   color: #666;
-  padding-left: 2em;
 }
 .view-featured .article:first-child .info {
   bottom: 20px;

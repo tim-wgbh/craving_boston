@@ -79,12 +79,18 @@ function craving_boston_preprocess_node(&$vars) {
 //    }
   $vars['date'] = t('!datetime', array('!datetime' =>  date('j F Y', $vars['created'])));
   
-  # Combine byline and subhea  
+  # Combine byline and subhead  
   switch ($node->type) {
     case 'recipe':
-      $vars['subhead_byline'] = $node->field_subhead['und'][0]['safe_value'] . '&nbsp;&nbsp;By ' . $node->field_source['und'][0]['safe_value'];
+      $byline = 'By ' . strip_tags($node->field_source['und'][0]['safe_value']);
     default:
-      $vars['subhead_byline'] = $node->field_subhead['und'][0]['safe_value'] . '&nbsp;&nbsp;By ' . $node->field_author['und'][0]['safe_value'];
+      $byline = 'By ' . $node->field_author['und'][0]['safe_value'];
+  }
+  
+  if ($node->field_subhead && array_key_exists('und', $node->field_subhead)) {
+    $vars['subhead_byline'] = strip_tags($node->field_subhead['und'][0]['safe_value']) . '&nbsp;&nbsp;' . $byline;
+  } else {
+    $vars['subhead_byline'] = $byline;  
   }
   
   # Set up video display for articles
@@ -98,7 +104,6 @@ function craving_boston_preprocess_node(&$vars) {
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
     if (!empty($node->field_internet_video)) {
-      dpm($node->field_internet_video);
       $vars['video'] = $node->field_internet_video['und'][0]['video_url'];
     } else {
       $vars['video'] = s3_file($node->field_video_file['und'][0]['value'] . ".mp4");
