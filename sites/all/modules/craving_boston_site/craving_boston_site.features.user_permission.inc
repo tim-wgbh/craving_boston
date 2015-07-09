@@ -46,17 +46,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'backup_migrate',
   );
 
-  // Exported permission: 'access comments'.
-  $permissions['access comments'] = array(
-    'name' => 'access comments',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'comment',
-  );
-
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -227,15 +216,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'ckeditor',
   );
 
-  // Exported permission: 'administer comments'.
-  $permissions['administer comments'] = array(
-    'name' => 'administer comments',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'comment',
-  );
-
   // Exported permission: 'administer content types'.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
@@ -252,6 +232,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'conditional_fields',
+  );
+
+  // Exported permission: 'administer disqus'.
+  $permissions['administer disqus'] = array(
+    'name' => 'administer disqus',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'disqus',
   );
 
   // Exported permission: 'administer features'.
@@ -297,6 +286,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'imce',
+  );
+
+  // Exported permission: 'administer masquerade'.
+  $permissions['administer masquerade'] = array(
+    'name' => 'administer masquerade',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'masquerade',
   );
 
   // Exported permission: 'administer media'.
@@ -749,6 +747,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'display disqus comments on profile'.
+  $permissions['display disqus comments on profile'] = array(
+    'name' => 'display disqus comments on profile',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'disqus',
+  );
+
   // Exported permission: 'edit any article content'.
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
@@ -804,15 +811,6 @@ function craving_boston_site_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'edit own comments'.
-  $permissions['edit own comments'] = array(
-    'name' => 'edit own comments',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'comment',
   );
 
   // Exported permission: 'edit own multi_recipe content'.
@@ -968,6 +966,33 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'nodequeue',
   );
 
+  // Exported permission: 'masquerade as admin'.
+  $permissions['masquerade as admin'] = array(
+    'name' => 'masquerade as admin',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'masquerade',
+  );
+
+  // Exported permission: 'masquerade as any user'.
+  $permissions['masquerade as any user'] = array(
+    'name' => 'masquerade as any user',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'masquerade',
+  );
+
+  // Exported permission: 'masquerade as user'.
+  $permissions['masquerade as user'] = array(
+    'name' => 'masquerade as user',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'masquerade',
+  );
+
   // Exported permission: 'moderate content from draft to needs_review'.
   $permissions['moderate content from draft to needs_review'] = array(
     'name' => 'moderate content from draft to needs_review',
@@ -1012,16 +1037,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'backup_migrate',
-  );
-
-  // Exported permission: 'post comments'.
-  $permissions['post comments'] = array(
-    'name' => 'post comments',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'comment',
   );
 
   // Exported permission: 'rename features'.
@@ -1072,16 +1087,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'skip comment approval'.
-  $permissions['skip comment approval'] = array(
-    'name' => 'skip comment approval',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'comment',
-  );
-
   // Exported permission: 'switch shortcut sets'.
   $permissions['switch shortcut sets'] = array(
     'name' => 'switch shortcut sets',
@@ -1098,6 +1103,24 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'devel',
+  );
+
+  // Exported permission: 'toggle disqus comments'.
+  $permissions['toggle disqus comments'] = array(
+    'name' => 'toggle disqus comments',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'disqus',
+  );
+
+  // Exported permission: 'use PHP to import nodes'.
+  $permissions['use PHP to import nodes'] = array(
+    'name' => 'use PHP to import nodes',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node_export',
   );
 
   // Exported permission: 'use advanced search'.
@@ -1180,6 +1203,17 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'workbench_moderation',
+  );
+
+  // Exported permission: 'view disqus comments'.
+  $permissions['view disqus comments'] = array(
+    'name' => 'view disqus comments',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'disqus',
   );
 
   // Exported permission: 'view media'.

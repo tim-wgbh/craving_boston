@@ -177,39 +177,6 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 1,
   );
 
-  $export['comment-recent'] = array(
-    'cache' => 1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'recent',
-    'module' => 'comment',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => 'dashboard_inactive',
-        'status' => 1,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['devel-execute_php'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -262,6 +229,204 @@ function craving_boston_site_default_fe_block_settings() {
       'craving_boston' => array(
         'region' => '',
         'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['disqus-disqus_combination_widget'] = array(
+    'cache' => 8,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'disqus_combination_widget',
+    'module' => 'disqus',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['disqus-disqus_comments'] = array(
+    'cache' => -2,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'disqus_comments',
+    'module' => 'disqus',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['disqus-disqus_popular_threads'] = array(
+    'cache' => 8,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'disqus_popular_threads',
+    'module' => 'disqus',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['disqus-disqus_recent_comments'] = array(
+    'cache' => 8,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'disqus_recent_comments',
+    'module' => 'disqus',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['disqus-disqus_top_commenters'] = array(
+    'cache' => 8,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'disqus_top_commenters',
+    'module' => 'disqus',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['masquerade-masquerade'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'masquerade',
+    'module' => 'masquerade',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'footer_third',
+        'status' => 1,
         'theme' => 'craving_boston',
         'weight' => 0,
       ),

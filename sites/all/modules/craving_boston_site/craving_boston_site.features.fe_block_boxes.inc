@@ -36,7 +36,7 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->machine_name = 'block_newsletter_signup';
   $fe_block_boxes->body = '<p><a>Sign up for our newsletter</a></p>
 
-<p><input size="20" /><button class="btn sign-up">Feed Me</button></p>
+<p><input size="10" /><button class="btn sign-up">Feed Me</button></p>
 ';
 
   $export['block_newsletter_signup'] = $fe_block_boxes;
