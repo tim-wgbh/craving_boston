@@ -79,12 +79,17 @@ function craving_boston_preprocess_node(&$vars) {
 //    }
   $vars['date'] = t('!datetime', array('!datetime' =>  date('j F Y', $vars['created'])));
   
-  # Combine byline and subhead  
+  # Combine byline and subhead
+  $byline = '';
   switch ($node->type) {
     case 'recipe':
-      $byline = 'By ' . strip_tags($node->field_source['und'][0]['safe_value']);
+      if (!empty($node->field_source)) {
+        $byline = 'By ' . strip_tags($node->field_source['und'][0]['safe_value']);
+      }
     default:
-      $byline = 'By ' . $node->field_author['und'][0]['safe_value'];
+      if (!empty($node->field_source)) {
+        $byline = 'By ' . $node->field_author['und'][0]['safe_value'];
+      }
   }
   
   if ($node->field_subhead && array_key_exists('und', $node->field_subhead)) {
