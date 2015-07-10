@@ -81,17 +81,18 @@ function craving_boston_preprocess_node(&$vars) {
   
   # Combine byline and subhead
   $byline = '';
+
   switch ($node->type) {
     case 'recipe':
       if (!empty($node->field_source)) {
         $byline = 'By ' . strip_tags($node->field_source['und'][0]['safe_value']);
       }
     default:
-      if (!empty($node->field_source)) {
+      if (!empty($node->field_author)) {
         $byline = 'By ' . $node->field_author['und'][0]['safe_value'];
       }
   }
-  
+    
   if ($node->field_subhead && array_key_exists('und', $node->field_subhead)) {
     $vars['subhead_byline'] = strip_tags($node->field_subhead['und'][0]['safe_value']) . '&nbsp;&nbsp;' . $byline;
   } else {
