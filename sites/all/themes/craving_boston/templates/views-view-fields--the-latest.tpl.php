@@ -3,5 +3,8 @@
   <div class="image">
     <?php print $image; ?>
   </div>
-  <div class="deck"><?php print $deck; ?></div>
+  <div class="deck">
+    <?php print $deck; ?>
+    <div class="byline">&mdash; <?php print $byline; ?></div>
+  </div>
 </div>

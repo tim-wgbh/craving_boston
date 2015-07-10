@@ -79,24 +79,18 @@ function craving_boston_preprocess_node(&$vars) {
 //    }
   $vars['date'] = t('!datetime', array('!datetime' =>  date('j F Y', $vars['created'])));
   
-  # Combine byline and subhead
-  $byline = '';
+  # Get byline
+  $vars['byline'] = '';
 
   switch ($node->type) {
     case 'recipe':
       if (!empty($node->field_source)) {
-        $byline = 'By ' . strip_tags($node->field_source['und'][0]['safe_value']);
+        $vars['byline'] = strip_tags($node->field_source['und'][0]['safe_value']);
       }
     default:
       if (!empty($node->field_author)) {
-        $byline = 'By ' . $node->field_author['und'][0]['safe_value'];
+        $vars['byline'] = $node->field_author['und'][0]['safe_value'];
       }
-  }
-    
-  if ($node->field_subhead && array_key_exists('und', $node->field_subhead)) {
-    $vars['subhead_byline'] = strip_tags($node->field_subhead['und'][0]['safe_value']) . '&nbsp;&nbsp;' . $byline;
-  } else {
-    $vars['subhead_byline'] = $byline;  
   }
   
   # Set up video display for articles
@@ -127,9 +121,18 @@ function craving_boston_preprocess_node(&$vars) {
 }
 
 function craving_boston_preprocess_views_view_fields(&$vars) {
+
+  # Get byline
+  $fields = $vars['fields'];
+  
+  $vars['byline'] = '';
+  
+  if (array_key_exists('field_author', $fields)) {
+    $vars['byline'] = $fields['field_author']->content;
+  }
+
   $vars['display'] = true;
   $vars['has_video'] = false;
-  $fields = $vars['fields'];
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
     $vars['image'] = $fields['field_image']->content;
     if (!empty($fields['field_video_file']->content) && !empty($fields['field_internet_video']->content)) {
@@ -172,4 +175,3 @@ function wowza_stream($filename) {
   $video = str_replace('.mp4', '', $filename);
   return 'http://' . $conf['amazon_domain'] . '/vods3/_definst_/mp4:amazons3/' . $conf['amazons3_bucket'] . '/' . $conf['wgbh_site'] . '/' . $video . '/playlist.m3u8';
 }
-

@@ -6,6 +6,7 @@
     </div>
     <?php if ($deck): ?>
       <div class="deck"><?php print $deck; ?></div>
+      <div class="byline">By: <?php print $byline; ?></div>
     <?php endif; ?>
   </div>
 <?php endif; ?>

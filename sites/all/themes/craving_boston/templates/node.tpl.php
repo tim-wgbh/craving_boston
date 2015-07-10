@@ -102,10 +102,7 @@
       hide($content['comments']);
       hide($content['links']);
     ?>
-      <div class="subhead">
-        <?php print $subhead_byline; ?>
-      </div>
-      <?php print render($content); ?>
+    <?php print render($content); ?>
   </div>
 
   <?php if (!empty($content['links'])): ?>

@@ -124,7 +124,7 @@ input#edit-search-block-form--2 {
 .field-type-node-reference h2 {
   font-size: 0.7em;
 }
-.page-node .field-name-field-subhead, .page-node .subhead {
+.page-node .field-name-field-subhead, .page-node .subhead, .page-node .field-name-field-author {
   color: #666;
   font-style: italic;
   font-weight: bold;

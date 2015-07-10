@@ -158,6 +158,18 @@
       </div>
     </div>
   </div>
+  
+  <?php if($page['disqus']) : ?>
+    <section class="disqus">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <?php print render($page['disqus']); ?>
+          </div>
+        </div>
+      </div>
+    </section
+  <?php endif; ?>
 
   <?php if($page['footer']) : ?>
     <div id="footer-block">
