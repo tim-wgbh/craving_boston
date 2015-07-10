@@ -293,8 +293,8 @@ function craving_boston_site_default_fe_block_settings() {
         'weight' => 0,
       ),
       'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'disqus',
+        'status' => 1,
         'theme' => 'craving_boston',
         'weight' => 0,
       ),
