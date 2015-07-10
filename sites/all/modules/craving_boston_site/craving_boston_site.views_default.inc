@@ -798,6 +798,83 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Wine, craft beer, cocktails – curated to quench your thirst';
   $handler->display->display_options['header']['area']['format'] = 'plain_text';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Contributor */
+  $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
+  $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
+  $handler->display->display_options['fields']['field_author']['field'] = 'field_author';
+  $handler->display->display_options['fields']['field_author']['label'] = 'By';
+  $handler->display->display_options['fields']['field_author']['element_default_classes'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'picture_mapping' => 'article_mapping',
+    'fallback_image_style' => '',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'node';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Posted';
+  $handler->display->display_options['fields']['created']['date_format'] = 'custom';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'j M, Y';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Video name */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['label'] = '';
+  $handler->display->display_options['fields']['field_video_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_file']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: Video poster */
+  $handler->display->display_options['fields']['field_video_poster']['id'] = 'field_video_poster';
+  $handler->display->display_options['fields']['field_video_poster']['table'] = 'field_data_field_video_poster';
+  $handler->display->display_options['fields']['field_video_poster']['field'] = 'field_video_poster';
+  $handler->display->display_options['fields']['field_video_poster']['label'] = '';
+  $handler->display->display_options['fields']['field_video_poster']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_poster']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_video_poster']['type'] = 'text_plain';
+  /* Field: Content: Recipe */
+  $handler->display->display_options['fields']['field_recipe']['id'] = 'field_recipe';
+  $handler->display->display_options['fields']['field_recipe']['table'] = 'field_data_field_recipe';
+  $handler->display->display_options['fields']['field_recipe']['field'] = 'field_recipe';
+  $handler->display->display_options['fields']['field_recipe']['label'] = '';
+  $handler->display->display_options['fields']['field_recipe']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_recipe']['type'] = 'node_reference_plain';
+  $handler->display->display_options['fields']['field_recipe']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_recipe']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -968,12 +1045,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
-  /* Field: Content: Part of multi-recipe */
-  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['id'] = 'field_part_of_multi_recipe_1';
-  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['table'] = 'field_data_field_part_of_multi_recipe';
-  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['field'] = 'field_part_of_multi_recipe';
-  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['label'] = '';
-  $handler->display->display_options['fields']['field_part_of_multi_recipe_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
