@@ -25,7 +25,6 @@ body.page-admin, body.page-node-add {
   background-image: none;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "cooper_hewittbook",Arial,Helvetica,sans-serif;
   font-weight: bold;
 }
 p {
@@ -74,6 +73,7 @@ ul {
 .container {
   max-width: 994px;
 }
+
 
 /* Search block */
 #masthead .row {
@@ -139,6 +139,7 @@ header {
   font-size: 4em;
   color: #20452B;
   margin-bottom: 0;
+  font-weight: normal;
 }
 h2.has-video {
   padding-left: 30px;
@@ -261,66 +262,44 @@ img {
 #support #block-block-1 {
   margin-bottom: 0;
 }
-/* 
-#support-banner {
-  background-image: url(images/support_banner-blue-1024x100.jpg);
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 40px;
-  font-size: 1.5em;
-  text-align:center; 
-  color: white;
-  border-radius: 0;
-}
- */
 
-/* view elements */
-.article-title, .article h2.title, .page-node h1.page-title {
-  font-family: cooper_hewittbook;
-  font-size: 3em;
-  font-weight: bold;
-  line-height: 1.2;
-  margin: 30px 0 10px;
-}
-.article-title:first-child, .article:first-child h2.title {
-  margin-top: 0;
-}
-.attachment .article-title {
-  font-size: 1.2em;
-}
-.view-featured .article .info {
-  position: absolute;
-  bottom: 5px;
-  margin: 0 2% 2% 0;
-  padding: 10px;
-  border-radius: 0;
-  background-color: rgba(230,230,230, 0.8); /* highlight-background with opacity*/
-  color: #333;
-  font-weight: bold;
-}
-.view-featured .article .info .article-subhead {
-  font-size: 1.2em;
-  font-weight: normal;
-  color: #666;
-}
-.view-featured .article:first-child .info {
-  bottom: 20px;
-}
-.attachment .view-featured .article:first-child .info {
-  bottom: 5px;
-}
-.view-content .article .tease {
+/* View styling - more general to more specific */
+.view-content .article {
   position: relative;
 }
-.view-content .article .tease .deck {
+.view-content .article .byline {
+  font-style: italic;
+}
+.view-content .article .deck p {
+  margin-bottom: 0.5em;
+}
+.view-content .article .info {
   position: absolute;
-  center: 0;
-  bottom: 0;
+  bottom: 1em;
   padding: 10px 2%;
   background-color: rgba(230,230,230, 0.8); /* highlight-background with opacity*/
   color: #333;
-  margin: 0 3% 20px 0;
+  width: 95%;
+}
+
+.view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+}
+.attachment .view-content .info .article-title {
+  font-size: 1.1em;
+}
+.view-featured .article:first-child .info {
+  padding: 10px;
+  bottom: 20px;
+  font-size: 1.2em;
+}
+
+.attachment .view-featured .article .info {
+  padding: 4px;
+  bottom: 12px;
 }
 .view-topic .view-header {
   color: #333;
