@@ -223,6 +223,7 @@ features[menu_custom][] = user-menu
 features[menu_links][] = menu-footer-menu_about:<front>
 features[menu_links][] = menu-footer-menu_contact:<front>
 features[menu_links][] = menu-footer-menu_privacy-policy:<front>
+features[menu_links][] = menu-footer-menu_supportbecome-a-member:<front>
 features[menu_links][] = menu-footer-menu_terms-of-use:<front>
 features[menu_links][] = menu-topics_chew-on-this:food
 features[menu_links][] = menu-topics_neighborhood-nosh:neighborhoods

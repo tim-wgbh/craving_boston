@@ -285,6 +285,9 @@ h2.recipe {
   line-height: 1.2;
   margin-top: 20px;
 }
+.view-content .article:first-child h2.title {
+  margin-top: 0;
+}
 .view-featured .article-title {
   margin-top: 0;
 }

@@ -70,6 +70,26 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
+  // Exported menu link: menu-footer-menu_supportbecome-a-member:<front>
+  $menu_links['menu-footer-menu_supportbecome-a-member:<front>'] = array(
+    'menu_name' => 'menu-footer-menu',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Support/Become a Member',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Get involved - we owe our success to you!',
+      ),
+      'identifier' => 'menu-footer-menu_supportbecome-a-member:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
   // Exported menu link: menu-footer-menu_terms-of-use:<front>
   $menu_links['menu-footer-menu_terms-of-use:<front>'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -219,6 +239,7 @@ function craving_boston_site_menu_default_menu_links() {
   t('Privacy Policy');
   t('Recipes');
   t('Reviews');
+  t('Support/Become a Member');
   t('Table Talk');
   t('Terms of Use');
   t('That\'s the Spirit');
