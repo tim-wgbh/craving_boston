@@ -35,7 +35,7 @@
   border-radius: 4px;
   background-color: #e77e00;
 }
-.wgbh-links ul.menu > li.donate > a.donate:hover {
+.wgbh-links ul.menu > li > a.donate:hover {
   color: #333;
 }
 .wgbh-links ul.menu.pull-right {
