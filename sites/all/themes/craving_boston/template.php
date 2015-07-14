@@ -148,7 +148,7 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 //       $vars['deck'] = $fields['recipe_description']->content;
     } else if ($fields['type']->raw == 'multi_recipe') {
       $vars['is_recipe'] = true;
-      $vars['deck'] = $fields['field_recipe']->content;
+      $vars['deck'] = $fields['body']->content;
 //      $vars['deck'] = $fields['body']->content;
     } else {
       $vars['is_recipe'] = false;
