@@ -51,6 +51,15 @@ function craving_boston_site_default_fe_block_boxes() {
   $export['block_support_banner'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Fake Ad Craft Beer Festival';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'craft_beer_ad';
+  $fe_block_boxes->body = '<p><img alt="" src="/sites/default/files/Craft-Beer-Festival.jpg" style="height:264px; width:309px" /></p>
+';
+
+  $export['craft_beer_ad'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Food at WGBH';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'food_at_wgbh';
@@ -58,6 +67,15 @@ function craving_boston_site_default_fe_block_boxes() {
 ';
 
   $export['food_at_wgbh'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Fake Ad Food & Wine';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'food_wine_ad';
+  $fe_block_boxes->body = '<p><img alt="" src="/sites/default/files/Food+Wine-ad.jpg" /></p>
+';
+
+  $export['food_wine_ad'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Rail Newsletter Signup';

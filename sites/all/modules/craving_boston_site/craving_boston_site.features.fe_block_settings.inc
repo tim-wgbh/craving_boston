@@ -177,6 +177,39 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 1,
   );
 
+  $export['block-craft_beer_ad'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'machine_name' => 'craft_beer_ad',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -19,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['block-food_at_wgbh'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -198,6 +231,39 @@ function craving_boston_site_default_fe_block_settings() {
         'status' => 1,
         'theme' => 'craving_boston',
         'weight' => -20,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['block-food_wine_ad'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'machine_name' => 'food_wine_ad',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -18,
       ),
       'seven' => array(
         'region' => '',
