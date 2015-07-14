@@ -65,7 +65,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -17,
+        'weight' => -22,
       ),
       'seven' => array(
         'region' => '',
@@ -175,6 +175,72 @@ function craving_boston_site_default_fe_block_settings() {
     ),
     'title' => '',
     'visibility' => 1,
+  );
+
+  $export['block-food_at_wgbh'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'machine_name' => 'food_at_wgbh',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -20,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['block-rail_newsletter_signup'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'machine_name' => 'rail_newsletter_signup',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -21,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['devel-execute_php'] = array(

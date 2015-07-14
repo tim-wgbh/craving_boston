@@ -50,5 +50,27 @@ function craving_boston_site_default_fe_block_boxes() {
 
   $export['block_support_banner'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Food at WGBH';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'food_at_wgbh';
+  $fe_block_boxes->body = '<p><img alt="Food at WGBH" src="/sites/default/files/food-at-wgbh.jpg" /></p>
+';
+
+  $export['food_at_wgbh'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Rail Newsletter Signup';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'rail_newsletter_signup';
+  $fe_block_boxes->body = '<p><img alt="Place setting" src="/sites/default/files/place-setting-art-blenda-tyvoll.jpg" /></p>
+
+<p><a>Sign up for our newsletter</a></p>
+
+<p><input size="10" /><button class="btn sign-up">Feed Me</button></p>
+';
+
+  $export['rail_newsletter_signup'] = $fe_block_boxes;
+
   return $export;
 }
