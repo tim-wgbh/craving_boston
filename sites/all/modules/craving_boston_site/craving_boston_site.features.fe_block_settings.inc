@@ -212,7 +212,7 @@ function craving_boston_site_default_fe_block_settings() {
 
   $export['block-food_at_wgbh'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'wgbh-food-links',
     'custom' => 0,
     'machine_name' => 'food_at_wgbh',
     'module' => 'block',

@@ -61,10 +61,13 @@ function craving_boston_site_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Food at WGBH';
-  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'food_at_wgbh';
-  $fe_block_boxes->body = '<p><img alt="Food at WGBH" src="/sites/default/files/food-at-wgbh.jpg" /></p>
-';
+  $fe_block_boxes->body = '<div class="headline">FOOD @ <img alt="WGBH" src="/sites/default/files/wgbh-blue-shadow.png" /></div>
+<?php
+  $menu = menu_navigation_links(\'menu-wgbh-food-links\'); 
+  print theme(\'links__menu_wgbh_food_links\', array(\'links\' => $menu)); 
+?>';
 
   $export['food_at_wgbh'] = $fe_block_boxes;
 
@@ -81,9 +84,7 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Rail Newsletter Signup';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'rail_newsletter_signup';
-  $fe_block_boxes->body = '<p><img alt="Place setting" src="/sites/default/files/place-setting-art-blenda-tyvoll.jpg" /></p>
-
-<p><a>Sign up for our newsletter</a></p>
+  $fe_block_boxes->body = '<p><a>Sign up for our newsletter</a></p>
 
 <p><input size="10" /><button class="btn sign-up">Feed Me</button></p>
 ';

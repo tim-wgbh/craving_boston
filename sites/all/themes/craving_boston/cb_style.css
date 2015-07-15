@@ -311,6 +311,42 @@ h2.recipe {
   margin-bottom: 40px;
   padding-left: 25px;
 }
+
+/* Dusky red: ed564b */
+.wgbh-food-links {
+  color: #ed564b;
+  border-top: solid 4px #ed564b;
+  border-bottom: solid 4px #ed564b;
+  margin: 20px 0;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.wgbh-food-links .headline {
+  font-size: 22px;
+  font-weight: bold; 
+  margin-bottom: 20px;
+}
+.wgbh-food-links .headline img {
+  vertical-align: -9px;
+}
+.wgbh-food-links ul, .wgbh-food-links ul li {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+.wgbh-food-links ul li {
+  line-height: 1.5;
+}
+.wgbh-food-links ul > li > a {
+  background: none;
+  color: #ed564b;
+  padding: 0;
+}
+.wgbh-food-links ul > li > a:hover {
+  background: none;
+  text-decoration: underline;
+}
 @media (min-width: 980px) {
   .view-featured .article {
     width: 74.5%;

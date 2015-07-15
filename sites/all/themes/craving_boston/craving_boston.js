@@ -24,6 +24,7 @@ Drupal.behaviors.cravingBostonTheme = {
       });
       $('#search-block-form .container-inline .form-type-textfield input').animate({boxShadow: '3px 1px 2px #999'});
     });
+    $('.wgbh-food-links a').append('&nbsp;&nbsp;>');
   }
 };
 
