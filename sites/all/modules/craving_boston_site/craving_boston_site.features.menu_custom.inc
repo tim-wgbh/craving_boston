@@ -46,6 +46,12 @@ function craving_boston_site_menu_default_menu_custom() {
     'title' => 'Topics',
     'description' => 'The main topic menu',
   );
+  // Exported menu: menu-wgbh-food-links.
+  $menus['menu-wgbh-food-links'] = array(
+    'menu_name' => 'menu-wgbh-food-links',
+    'title' => 'WGBH Food Links',
+    'description' => 'Food links from the WGBH web site',
+  );
   // Exported menu: navigation.
   $menus['navigation'] = array(
     'menu_name' => 'navigation',
@@ -63,6 +69,7 @@ function craving_boston_site_menu_default_menu_custom() {
   t('Development');
   t('Development link');
   t('Features');
+  t('Food links from the WGBH web site');
   t('Footer Menu');
   t('Main menu');
   t('Management');
@@ -75,6 +82,7 @@ function craving_boston_site_menu_default_menu_custom() {
   t('The main topic menu');
   t('Topics');
   t('User menu');
+  t('WGBH Food Links');
 
 
   return $menus;

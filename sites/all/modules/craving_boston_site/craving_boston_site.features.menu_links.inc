@@ -230,15 +230,78 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
+  // Exported menu link: menu-wgbh-food-links_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
+  $menu_links['menu-wgbh-food-links_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87'] = array(
+    'menu_name' => 'menu-wgbh-food-links',
+    'link_path' => 'http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
+    'router_path' => '',
+    'link_title' => 'America\'s Test Kitchen',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Go to WGBH.org',
+      ),
+      'identifier' => 'menu-wgbh-food-links_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-wgbh-food-links_neighborhood-kitchens:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859
+  $menu_links['menu-wgbh-food-links_neighborhood-kitchens:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859'] = array(
+    'menu_name' => 'menu-wgbh-food-links',
+    'link_path' => 'http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
+    'router_path' => '',
+    'link_title' => 'Neighborhood Kitchens',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Go to WGBH.org',
+      ),
+      'identifier' => 'menu-wgbh-food-links_neighborhood-kitchens:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-wgbh-food-links_simply-ming:http://www.wgbh.org/programs/Simply-Ming-86
+  $menu_links['menu-wgbh-food-links_simply-ming:http://www.wgbh.org/programs/Simply-Ming-86'] = array(
+    'menu_name' => 'menu-wgbh-food-links',
+    'link_path' => 'http://www.wgbh.org/programs/Simply-Ming-86',
+    'router_path' => '',
+    'link_title' => 'Simply Ming',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Go to WGBH.org',
+      ),
+      'identifier' => 'menu-wgbh-food-links_simply-ming:http://www.wgbh.org/programs/Simply-Ming-86',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
+  t('America\'s Test Kitchen');
   t('Chew On This');
   t('Contact');
+  t('Neighborhood Kitchens');
   t('Neighborhood Nosh');
   t('Privacy Policy');
   t('Recipes');
   t('Reviews');
+  t('Simply Ming');
   t('Support/Become a Member');
   t('Table Talk');
   t('Terms of Use');
