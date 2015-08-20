@@ -290,6 +290,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
@@ -306,7 +307,6 @@ function craving_boston_site_menu_default_menu_links() {
   t('Table Talk');
   t('Terms of Use');
   t('That\'s the Spirit');
-
 
   return $menu_links;
 }
