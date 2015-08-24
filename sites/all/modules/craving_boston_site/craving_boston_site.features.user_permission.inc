@@ -162,15 +162,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'administer amazons3'.
-  $permissions['administer amazons3'] = array(
-    'name' => 'administer amazons3',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'amazons3',
-  );
-
   // Exported permission: 'administer backup and migrate'.
   $permissions['administer backup and migrate'] = array(
     'name' => 'administer backup and migrate',
