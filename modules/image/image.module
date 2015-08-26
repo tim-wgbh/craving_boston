@@ -546,11 +546,6 @@ function image_field_update_instance($instance, $prior_instance) {
  *   The Drupal file path to the original image.
  */
 function image_path_flush($path) {
-  // Pantheon optimization: one bulk operation is better.
-  if (function_exists('pantheon_api_image_path_flush') && function_exists('pantheon_bulk_file_delete')) {
-    pantheon_api_image_path_flush($path);
-    return;
-  }
   $styles = image_styles();
   foreach ($styles as $style) {
     $image_path = image_style_path($style['name'], $path);
@@ -1105,9 +1100,7 @@ function image_style_path($style_name, $uri) {
     $path = $uri;
     $scheme = file_default_scheme();
   }
-  $result = $scheme . '://styles/' . $style_name . '/' . $scheme . '/' . $path;
-  drupal_alter('image_style_path', $result, $style_name, $uri);
-  return $result;
+  return $scheme . '://styles/' . $style_name . '/' . $scheme . '/' . $path;
 }
 
 /**

@@ -275,7 +275,6 @@ function file_default_scheme() {
 function file_stream_wrapper_uri_normalize($uri) {
   $scheme = file_uri_scheme($uri);
 
-  $target = NULL;
   if ($scheme && file_stream_wrapper_valid_scheme($scheme)) {
     $target = file_uri_target($uri);
 
@@ -283,7 +282,6 @@ function file_stream_wrapper_uri_normalize($uri) {
       $uri = $scheme . '://' . $target;
     }
   }
-  drupal_alter('file_stream_wrapper_uri_normalize', $uri, $scheme, $target);
   return $uri;
 }
 
@@ -477,10 +475,6 @@ function file_ensure_htaccess() {
  *   already present. Defaults to FALSE.
  */
 function file_create_htaccess($directory, $private = TRUE, $force_overwrite = FALSE) {
-  if (isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
-    // Skip on Pantheon since we use nginx and this can hang.
-    return;
-  }
   if (file_uri_scheme($directory)) {
     $directory = file_stream_wrapper_uri_normalize($directory);
   }
