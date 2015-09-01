@@ -282,6 +282,78 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['dfp-leaderboard'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'delta' => 'leaderboard',
+    'module' => 'dfp',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  $export['dfp-medium_rectangle_1'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'delta' => 'medium_rectangle_1',
+    'module' => 'dfp',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  $export['dfp-medium_rectangle_2'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'delta' => 'medium_rectangle_2',
+    'module' => 'dfp',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   $export['disqus-disqus_combination_widget'] = array(
     'cache' => 8,
     'css_class' => '',

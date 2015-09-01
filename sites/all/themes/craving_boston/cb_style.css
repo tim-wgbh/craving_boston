@@ -253,8 +253,14 @@ h2.recipe {
   float: right;
   text-align: right;
 }
+.region-header .block {
+  margin-bottom: 20px;
+}
 #support {
   margin-top: 20px;
+  text-align: center;
+  background-color: #ccc;
+  padding: 10px;
 }
 #support #block-block-1 {
   margin-bottom: 0;

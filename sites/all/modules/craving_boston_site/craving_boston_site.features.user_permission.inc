@@ -160,6 +160,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'workbench',
   );
 
+  // Exported permission: 'administer DFP'.
+  $permissions['administer DFP'] = array(
+    'name' => 'administer DFP',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'dfp',
+  );
+
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
