@@ -60,18 +60,6 @@ function craving_boston_site_default_fe_block_boxes() {
   $export['craft_beer_ad'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Food at WGBH';
-  $fe_block_boxes->format = 'php_code';
-  $fe_block_boxes->machine_name = 'food_at_wgbh';
-  $fe_block_boxes->body = '<div class="headline">FOOD @ <img alt="WGBH" src="/sites/default/files/wgbh-blue-shadow.png" /></div>
-<?php
-  $menu = menu_navigation_links(\'menu-wgbh-food-links\'); 
-  print theme(\'links__menu_wgbh_food_links\', array(\'links\' => $menu)); 
-?>';
-
-  $export['food_at_wgbh'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Fake Ad Food & Wine';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'food_wine_ad';

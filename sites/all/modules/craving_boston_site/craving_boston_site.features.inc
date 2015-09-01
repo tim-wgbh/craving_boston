@@ -17,6 +17,12 @@ function craving_boston_site_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
+  if ($module == "file_entity" && $api == "file_default_displays") {
+    return array("version" => "1");
+  }
+  if ($module == "file_entity" && $api == "file_type") {
+    return array("version" => "1");
+  }
   if ($module == "picture" && $api == "default_picture_mapping") {
     return array("version" => "2");
   }
@@ -296,6 +302,22 @@ function craving_boston_site_image_default_styles() {
           'height' => 800,
         ),
         'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: square_thumbnail.
+  $styles['square_thumbnail'] = array(
+    'label' => 'square_thumbnail',
+    'effects' => array(
+      17 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 180,
+          'height' => 180,
+          'weight' => 0,
+        ),
+        'weight' => 0,
       ),
     ),
   );

@@ -174,33 +174,6 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['block-food_at_wgbh'] = array(
-    'cache' => -1,
-    'css_class' => 'wgbh-food-links',
-    'custom' => 0,
-    'machine_name' => 'food_at_wgbh',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['block-food_wine_ad'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -576,6 +549,33 @@ function craving_boston_site_default_fe_block_settings() {
       ),
     ),
     'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu-menu-wgbh-food-links'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-wgbh-food-links',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Food at WGBH',
     'visibility' => 0,
   );
 

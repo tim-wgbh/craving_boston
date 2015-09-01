@@ -288,17 +288,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'masquerade',
   );
 
-  // Exported permission: 'administer media'.
-  $permissions['administer media'] = array(
-    'name' => 'administer media',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'media',
-  );
-
   // Exported permission: 'administer menu'.
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
@@ -783,17 +772,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit media'.
-  $permissions['edit media'] = array(
-    'name' => 'edit media',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'media',
-  );
-
   // Exported permission: 'edit own article content'.
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
@@ -907,17 +885,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'features',
-  );
-
-  // Exported permission: 'import media'.
-  $permissions['import media'] = array(
-    'name' => 'import media',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'import recipes'.
@@ -1205,19 +1172,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'disqus',
-  );
-
-  // Exported permission: 'view media'.
-  $permissions['view media'] = array(
-    'name' => 'view media',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'media',
   );
 
   // Exported permission: 'view moderation history'.
