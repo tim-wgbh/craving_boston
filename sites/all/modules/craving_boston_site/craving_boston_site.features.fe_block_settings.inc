@@ -417,6 +417,33 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['logintoboggan-logintoboggan_logged_in'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'logintoboggan_logged_in',
+    'module' => 'logintoboggan',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['masquerade-masquerade'] = array(
     'cache' => -1,
     'css_class' => '',
