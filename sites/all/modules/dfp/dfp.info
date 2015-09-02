@@ -13,15 +13,17 @@ configure = admin/structure/dfp_ads/settings
 dependencies[] = system
 dependencies[] = ctools
 dependencies[] = taxonomy
+dependencies[] = entity_modified
 
 files[] = plugins/export_ui/dfp_tag_ui.class.inc
 files[] = plugins/export_ui/dfp_ctools_export_ui.inc
 files[] = tests/dfp.test
 
 testing_api = 2.x
-; Information added by Drupal.org packaging script on 2015-01-29
-version = "7.x-1.3"
+
+; Information added by Drupal.org packaging script on 2015-06-05
+version = "7.x-1.4"
 core = "7.x"
 project = "dfp"
-datestamp = "1422549182"
+datestamp = "1433521683"
 
