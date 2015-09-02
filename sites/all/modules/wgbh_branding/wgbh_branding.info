@@ -1,0 +1,7 @@
+name = WGBH Branding
+description = Adds a WGBH link bar to the top of all web pages, provides WGBH assets
+package = Custom
+core = 7.x
+project = "wgbh_branding"
+scripts[] = js/wgbh_branding.js
+stylesheets[all][] = css/styles.css
