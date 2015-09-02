@@ -372,9 +372,10 @@ ini_set('session.cookie_lifetime', 2000000);
   
  $conf['composer_manager_file_dir']       = '../craving_boston_support';
  
- $conf['site_name'] = 'Craving Boston';
+ $conf['site_name']     = 'Craving Boston';
  $conf['theme_default'] = 'craving_boston';
- $conf['anonymous'] = 'Visitor';
+ $conf['favicon_path']  = 'sites/all/themes/craving_boston/favicon.ico';
+ $conf['anonymous']     = 'Visitor';
 
 /**
  * DFP account (network)
