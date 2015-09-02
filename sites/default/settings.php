@@ -280,7 +280,7 @@ $drupal_hash_salt = 'zFReiI20w1Ij3ihXmmqf2d_Jo0ch4HZAnvz9d5uDWQE';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-$base_url = 'http://craving_boston.dev';  // NO trailing slash!
+$base_url = "http://$_SERVER[HTTP_HOST]";  // NO trailing slash!
 
 /**
  * PHP settings:
@@ -358,6 +358,18 @@ ini_set('session.cookie_lifetime', 2000000);
  $conf['s3fs_bucket']         = 'craving-boston';
  $conf['s3fs_region']         = 'us-east-1';
  $conf['s3fs_bucket']         = 'craving-boston';
+ 
+ if (defined('PANTHEON_ENVIRONMENT')) {
+   if ($_ENV['PANTHEON_ENVIRONMENT'] == 'dev') {
+      $conf['s3fs_root_folder'] = 'pantheon-dev';
+   } else if ($_ENV['PANTHEON_ENVIRONMENT'] == 'live' || $_ENV['PANTHEON_ENVIRONMENT'] == 'test') {
+     $conf['s3fs_root_folder'] = 'production';
+   }
+ } else {
+   $conf['s3fs_root_folder'] = 'dev';
+ }
+
+  
  $conf['composer_manager_file_dir']       = '../craving_boston_support';
  
  $conf['site_name'] = 'Craving Boston';
