@@ -59,6 +59,5 @@
          url('fonts/cooperhewitt-semibolditalic-webfont.ttf') format('truetype'),
          url('fonts/cooperhewitt-semibolditalic-webfont.svg#cooper_hewittsemibold_italic') format('svg');
     font-weight: bold;
-    font-style: italic;
-
+    font-style: italic;    
 }

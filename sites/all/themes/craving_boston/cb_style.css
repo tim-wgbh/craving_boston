@@ -39,10 +39,19 @@ ul {
   list-style-type: square;
 }
 
+/* Utility class to remove padding from column */
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* More specific settings */
 .article {
   position: relative;
   margin-left: 5px;
+}
+.article .image {
+  width: 100%;
 }
 #bottom {
   background-color: #ddd;
@@ -76,21 +85,18 @@ ul {
 
 
 /* Search block */
-#masthead .row {
-  position: relative;
+.row.mainmenu {
+  padding-top: 0;
+  margin-top: 0;
 }
-#masthead .row .menu-buddy {
-  position: absolute;
-  right: 0;
-  width: 20%;
+#search-form {
   text-align: right;
+}  
+#search-form .form-item {
+  vertical-align: 15px;
 }
 
-/* Search block styling */
-#block-search-form {
-  margin: 5px 0 0 0;
-  padding: 0;
-}
+/*
 #search-block-form .form-text {
   width: 80%;
 }
@@ -105,13 +111,8 @@ ul {
   z-index: 100;
 }
 #search-block-form .container-inline #edit-actions {
-  position: absolute;
-  display: none;
-  right: 0;
-  top: -10px;
-  z-index: 100;
 }
-
+*/
 
 /* 
 input#edit-search-block-form--2 {
@@ -160,7 +161,7 @@ h2.recipe {
 }
 #main-menu {
   height: 40px;
-  margin: 4px 0 12px 0;
+  margin: 10px 0 0 ;
   float: none;
 }
 .mainmenu {
@@ -181,7 +182,7 @@ h2.recipe {
 }
 #main-menu ul li a {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #555;
   background-color: transparent;
   text-transform: uppercase;
@@ -238,19 +239,19 @@ h2.recipe {
 #masthead {
   margin-top: 24px;
 }
+/* 
 #site-banner {
-  width: 66%;
+  width: 100%;
   float: left;
 }
+ */
 #site-slogan {
-  width: 33%;
   color: #888;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.3;
-  margin-top: 75px;
+  margin-top: 73px;
   padding: 0 0 7px 1%;
   font-weight: bold;
-  float: right;
   text-align: right;
 }
 .region-header .block {
@@ -286,7 +287,7 @@ h2.recipe {
   font-size: 18px;
 }
 .view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bold;
   line-height: 1.2;
   margin-top: 20px;
@@ -300,6 +301,17 @@ h2.recipe {
 .attachment .view-content .info .article-title {
   font-size: 18px;
 }
+  .view-featured .article {
+    width: 74.5%;
+    float:left;
+  }
+  .view-featured .attachment .article {
+    width: 100%;
+  }
+  .view-featured .attachment  {
+    float: left;
+    width:24.5%;
+  }
 .view-featured .article:first-child .info {
   padding: 10px;
   bottom: 20px;
@@ -353,17 +365,46 @@ h2.recipe {
   background: none;
   text-decoration: underline;
 }
-@media (min-width: 980px) {
-  .view-featured .article {
-    width: 74.5%;
-    float:left;
+
+/* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
+/* Anything smaller than tablet */
+@media (max-width: 768px) {
+  p {
+    font-size: 14px;
   }
-  .view-featured .attachment .article {
+  #search-form {
+    text-align: left;
+  }  
+  #site-slogan {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+  #support {
+    background-color: #fff;
+  }
+  .view-featured .attachment {
     width: 100%;
+    float: none;
+  } 
+  .view-featured .article, .view-featured .article .info, .attachment .view-content .info,
+  .view-the-latest .article, .view-the-latest .article .info {
+    position:static;
+    width: 100%;
+    float: none;
   }
-  .view-featured .attachment  {
-    float: left;
-    width:24.5%;
+  .view-featured .article-title, .attachment .view-content .article-title {
+    font-size: 18px;
   }
-}
+  .view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
+    font-size: 18px;
+    background-color: rgba(230,230,230, 0.8);
+    margin-bottom: 0;
+  }
+  .view-content .byline {
+    display: none;
+  }
+  .view-featured .article .image, .attachment .view-content .article .image {
+    margin-bottom: 10px;
+  }
 

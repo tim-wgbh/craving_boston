@@ -25,23 +25,7 @@ function craving_boston_field__field_video_file($vars) {
     </script>
 EOC;
   return $output;
-// 
-//   // Render the label, if it's not hidden.
-//   if (!$variables['label_hidden']) {
-//     $output .= '<div class="field-label"' . $variables['title_attributes'] . '>' . $variables['label'] . ':&nbsp;</div>';
-//   }
-//   // Render the items.
-//   $output .= '<div class="field-items"' . $variables['content_attributes'] . '>';
-//   foreach ($variables['items'] as $delta => $item) {
-//     $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
-//     $output .= '<div class="' . $classes . '"' . $variables['item_attributes'][$delta] . '>' . drupal_render($item) . '</div>';
-//   }
-//   $output .= '</div>';
-//   // Render the top-level DIV.
-//   $output = '<div class="' . $variables['classes'] . '"' . $variables['attributes'] . '>' . $output . '</div>';
-//   return $output;
 }
-
 /**
  * Theme an img tag for displaying the image.
  */
@@ -156,6 +140,22 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
     }
   }
 }
+/**
+* hook_form_FORM_ID_alter
+*/
+function craving_boston_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
+  $form['search_block_form']['#size']          = 10;  // define size of the textfield
+  $form['actions']['submit']['#type'] = 'image_button';
+  $form['actions']['submit']['#value'] = '';
+  $form['actions']['submit'] = array(
+    '#type' => 'image_button', 
+    '#src' => base_path() . drupal_get_path('theme', 'craving_boston') . '/images/search_button_image.png'
+  );
+  
+  // Alternative (HTML5) placeholder attribute instead of using the javascript
+  $form['search_block_form']['#attributes']['placeholder'] = t('Search...');
+} 
 /**********
  * Utility functions to handle S3 and streaming files
  */

@@ -67,19 +67,21 @@
 <div id="page">
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
-      <div class="col-sm-12 mainmenu">
+      <div class="col-md-8 col-sm-12">
         <div id="site-banner">
           <a href="/" title="Home">
             <img src="/sites/all/themes/craving_boston/images/craving-boston-banner-logo.png" />
           </a>
         </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
         <?php if ($site_slogan): ?>
         <div id="site-slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-10 mainmenu">
+    <div class="row mainmenu">
+      <div class="col-md-10 col-sm-12">
         <div class="mobilenavi"></div>
         <nav id="navigation" role="navigation">
           <div id="main-menu">
@@ -90,8 +92,13 @@
           </div>
         </nav>
       </div>
-      <div class="col-sm-2 menu-buddy">
-        <?php print render ($page['menu_buddy']); ?>
+      <div class="col-md-2 col-sm-12 no-padding">
+        <div id="search-form">
+          <?php
+            $block = module_invoke('search', 'block_view', 'search');
+            print render($block); 
+          ?>
+        </div> 
       </div>
     </div>
   </header>
