@@ -128,61 +128,45 @@ function craving_boston_site_image_default_styles() {
     ),
   );
 
-  // Exported image style: articlebreakpoints_theme_craving_boston_mobile_1x.
-  $styles['articlebreakpoints_theme_craving_boston_mobile_1x'] = array(
-    'label' => 'articlebreakpoints_theme_craving_boston_mobile_1x',
+  // Exported image style: default_large.
+  $styles['default_large'] = array(
+    'label' => 'Default Large',
     'effects' => array(
-      12 => array(
+      19 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 690,
+          'height' => 460,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: default_medium.
+  $styles['default_medium'] = array(
+    'label' => 'Default Medium',
+    'effects' => array(
+      20 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 690,
+          'height' => 460,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: default_small.
+  $styles['default_small'] = array(
+    'label' => 'Default Small',
+    'effects' => array(
+      21 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 480,
           'height' => 320,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: articlebreakpoints_theme_craving_boston_narrow_1x.
-  $styles['articlebreakpoints_theme_craving_boston_narrow_1x'] = array(
-    'label' => 'articlebreakpoints_theme_craving_boston_narrow_1x',
-    'effects' => array(
-      3 => array(
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => 510,
-          'height' => 340,
-          'upscale' => 0,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: articlebreakpoints_theme_craving_boston_normal_1x.
-  $styles['articlebreakpoints_theme_craving_boston_normal_1x'] = array(
-    'label' => 'articlebreakpoints_theme_craving_boston_normal_1x',
-    'effects' => array(
-      11 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 780,
-          'height' => 520,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: articlebreakpoints_theme_craving_boston_wide_1x.
-  $styles['articlebreakpoints_theme_craving_boston_wide_1x'] = array(
-    'label' => 'articlebreakpoints_theme_craving_boston_wide_1x',
-    'effects' => array(
-      10 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 780,
-          'height' => 520,
         ),
         'weight' => 1,
       ),
@@ -226,8 +210,23 @@ function craving_boston_site_image_default_styles() {
       7 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 305,
-          'height' => 202,
+          'width' => 480,
+          'height' => 320,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: featured_sub_medium.
+  $styles['featured_sub_medium'] = array(
+    'label' => 'featured_sub_medium',
+    'effects' => array(
+      22 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 780,
+          'height' => 520,
         ),
         'weight' => 1,
       ),
@@ -241,68 +240,8 @@ function craving_boston_site_image_default_styles() {
       9 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 200,
-          'height' => 200,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: node_mobile.
-  $styles['node_mobile'] = array(
-    'label' => 'node_mobile',
-    'effects' => array(
-      16 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
           'width' => 480,
           'height' => 320,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: node_narrow.
-  $styles['node_narrow'] = array(
-    'label' => 'node_narrow',
-    'effects' => array(
-      15 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => ' 780',
-          'height' => 520,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: node_normal.
-  $styles['node_normal'] = array(
-    'label' => 'node_normal',
-    'effects' => array(
-      14 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 1024,
-          'height' => 683,
-        ),
-        'weight' => 1,
-      ),
-    ),
-  );
-
-  // Exported image style: node_wide.
-  $styles['node_wide'] = array(
-    'label' => 'node_wide',
-    'effects' => array(
-      13 => array(
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 1200,
-          'height' => 800,
         ),
         'weight' => 1,
       ),

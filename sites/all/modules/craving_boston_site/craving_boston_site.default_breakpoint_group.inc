@@ -16,10 +16,9 @@ function craving_boston_site_default_breakpoint_group() {
   $breakpoint_group->machine_name = 'craving_boston';
   $breakpoint_group->name = 'Craving Boston Theme';
   $breakpoint_group->breakpoints = array(
-    0 => 'breakpoints.theme.craving_boston.wide',
-    1 => 'breakpoints.theme.craving_boston.normal',
-    2 => 'breakpoints.theme.craving_boston.narrow',
-    3 => 'breakpoints.theme.craving_boston.mobile',
+    0 => 'breakpoints.theme.craving_boston.large',
+    1 => 'breakpoints.theme.craving_boston.medium',
+    2 => 'breakpoints.theme.craving_boston.small',
   );
   $breakpoint_group->type = 'theme';
   $breakpoint_group->overridden = 0;

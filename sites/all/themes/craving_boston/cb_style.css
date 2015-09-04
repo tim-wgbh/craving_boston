@@ -159,6 +159,47 @@ h2.recipe {
 .image-with-caption {
   margin-bottom: 20px;
 }
+
+/* Mobile menu */
+#mobile-select {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color:#BD3E27;
+  color:white;
+  padding: 3px 3px 3px 5px;
+  z-index: 5000;
+  display: none;
+}
+#mobile-select a {  
+  color: white;
+  font-weight: bold;
+}
+#mobile-menu {
+  position: absolute;
+  top: 0;
+  right: -360px;
+  width: 360px;
+  background-color: #BD3E27;
+  z-index: 20000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  display: none;
+}
+#mobile-menu ul, #mobile-menu ul > li {
+  list-style-type: none;
+  margin: 0;
+  border-bottom: solid 1px #ccc;
+  padding: 10px 0 10px 3px;
+}
+#mobile-menu ul > li > a {
+  background-color: transparent;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+/* Desktop menu */
 #main-menu {
   height: 40px;
   margin: 10px 0 0 ;
@@ -173,6 +214,9 @@ h2.recipe {
 #main-menu ul li {
   margin: 0;
   padding 0 10px;
+}
+#main-menu ul li.last {
+  display: none;
 }  
 #main-menu > ul > li > a {
   padding: 0 13px;
@@ -259,9 +303,10 @@ h2.recipe {
 }
 #support {
   margin-top: 20px;
+  margin-bottom: 10px;
   text-align: center;
   background-color: #ccc;
-  padding: 10px;
+  padding: 10px 0;
 }
 #support #block-block-1 {
   margin-bottom: 0;
@@ -307,6 +352,7 @@ h2.recipe {
   }
   .view-featured .attachment .article {
     width: 100%;
+    margin-bottom: 3px;
   }
   .view-featured .attachment  {
     float: left;
@@ -369,6 +415,9 @@ h2.recipe {
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
 /* Anything smaller than tablet */
 @media (max-width: 768px) {
+  #mobile-menu, #mobile-select {
+    display: block;
+  }
   p {
     font-size: 14px;
   }
@@ -407,4 +456,4 @@ h2.recipe {
   .view-featured .article .image, .attachment .view-content .article .image {
     margin-bottom: 10px;
   }
-
+}

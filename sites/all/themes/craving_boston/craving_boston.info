@@ -3,11 +3,11 @@ description = Craving Boston Theme is a sub-theme of Nexus, developed by <a href
 core = 7.x
 base theme = nexus
 engine = phptemplate
+stylesheets[all][] = bootstrap.min.css
 stylesheets[all][] = fonts.css
 stylesheets[all][] = cb_style.css
 
 ; Regions
-regions[menu_buddy]   = Menu Buddy
 regions[sidebar_first]  = First Sidebar
 regions[header]         = Header
 regions[preface_first]  = Preface First
@@ -28,10 +28,9 @@ settings[slideshow_display]  = 1
 settings[breadcrumbs]  = 1
 
 ; Breakpoints
-breakpoints[wide] = (min-width: 1220px)
-breakpoints[normal] = (min-width: 980px)
-breakpoints[narrow] = (min-width: 740px)
-breakpoints[mobile] = (min-width: 0px)
+breakpoints[large]  = (min-width: 768px)
+breakpoints[medium] = (min-width: 480px)
+breakpoints[small]  = (min-width: 0px)
 
 version = "7.x-1.0"
 core = "7.x"

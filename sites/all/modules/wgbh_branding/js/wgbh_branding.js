@@ -1,6 +1,6 @@
 (function ($) {
 
-Drupal.behaviors.wgbhLinksModule = {
+Drupal.behaviors.wgbhBrandingModule = {
   attach: function (context) {
     
     $('body').css({'margin-top': '0'});
@@ -8,7 +8,7 @@ Drupal.behaviors.wgbhLinksModule = {
     var links =
       "<div class='wgbh-links'>\n" +
       "  <ul class='menu pull-left'>\n" +
-      "    <li><a href='http://www.wgbh.org' title='WGBH.org'  class='image'><img src='/sites/all/modules/wgbh_links/images/wgbh_mini_logo.png' alt='WGBH' /></a>\n" +
+      "    <li><a href='http://www.wgbh.org' title='WGBH.org'  class='image'><img src='/sites/all/modules/wgbh_branding/images/wgbh_mini_logo.png' alt='WGBH' /></a>\n" +
       "  </ul>\n" +
       "  <ul class='menu pull-right'>\n" +
       "    <li class='my-wgbh'><a href='http://www.wgbh.org/mywgbh' title='Go to myWGBH'>myWGBH</a></li>\n" +

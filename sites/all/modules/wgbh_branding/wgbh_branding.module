@@ -2,7 +2,7 @@
 /**
  * Is anything necessary here?
  */
-function wgbh_links_help($path, $arg) {
+function wgbh_branding_help($path, $arg) {
   // re: http://drupal.org/node/767204
   // 5. We need a master group (Examples) that will be in a main
   // examples.module.

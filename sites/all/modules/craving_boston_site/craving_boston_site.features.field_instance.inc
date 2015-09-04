@@ -947,7 +947,7 @@ function craving_boston_site_field_default_field_instances() {
           ),
           'fallback_image_style' => '',
           'image_link' => '',
-          'picture_mapping' => 'single_node',
+          'picture_mapping' => 'article_mapping',
         ),
         'type' => 'picture',
         'weight' => 3,

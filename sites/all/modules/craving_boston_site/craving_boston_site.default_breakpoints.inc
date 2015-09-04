@@ -13,62 +13,47 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint = new stdClass();
   $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
   $breakpoint->api_version = 1;
-  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.mobile';
-  $breakpoint->name = 'mobile';
+  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.large';
+  $breakpoint->name = 'large';
+  $breakpoint->breakpoint = '(min-width: 768px)';
+  $breakpoint->source = 'craving_boston';
+  $breakpoint->source_type = 'theme';
+  $breakpoint->status = 1;
+  $breakpoint->weight = 5;
+  $breakpoint->multipliers = array(
+    '1x' => '1x',
+  );
+  $export['breakpoints.theme.craving_boston.large'] = $breakpoint;
+
+  $breakpoint = new stdClass();
+  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
+  $breakpoint->api_version = 1;
+  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.medium';
+  $breakpoint->name = 'medium';
+  $breakpoint->breakpoint = '(min-width: 480px)';
+  $breakpoint->source = 'craving_boston';
+  $breakpoint->source_type = 'theme';
+  $breakpoint->status = 1;
+  $breakpoint->weight = 6;
+  $breakpoint->multipliers = array(
+    '1x' => '1x',
+  );
+  $export['breakpoints.theme.craving_boston.medium'] = $breakpoint;
+
+  $breakpoint = new stdClass();
+  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
+  $breakpoint->api_version = 1;
+  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.small';
+  $breakpoint->name = 'small';
   $breakpoint->breakpoint = '(min-width: 0px)';
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
-  $breakpoint->weight = 3;
+  $breakpoint->weight = 7;
   $breakpoint->multipliers = array(
     '1x' => '1x',
   );
-  $export['breakpoints.theme.craving_boston.mobile'] = $breakpoint;
-
-  $breakpoint = new stdClass();
-  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
-  $breakpoint->api_version = 1;
-  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.narrow';
-  $breakpoint->name = 'narrow';
-  $breakpoint->breakpoint = '(min-width: 740px)';
-  $breakpoint->source = 'craving_boston';
-  $breakpoint->source_type = 'theme';
-  $breakpoint->status = 1;
-  $breakpoint->weight = 2;
-  $breakpoint->multipliers = array(
-    '1x' => '1x',
-  );
-  $export['breakpoints.theme.craving_boston.narrow'] = $breakpoint;
-
-  $breakpoint = new stdClass();
-  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
-  $breakpoint->api_version = 1;
-  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.normal';
-  $breakpoint->name = 'normal';
-  $breakpoint->breakpoint = '(min-width: 980px)';
-  $breakpoint->source = 'craving_boston';
-  $breakpoint->source_type = 'theme';
-  $breakpoint->status = 1;
-  $breakpoint->weight = 1;
-  $breakpoint->multipliers = array(
-    '1x' => '1x',
-  );
-  $export['breakpoints.theme.craving_boston.normal'] = $breakpoint;
-
-  $breakpoint = new stdClass();
-  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
-  $breakpoint->api_version = 1;
-  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.wide';
-  $breakpoint->name = 'wide';
-  $breakpoint->breakpoint = '(min-width: 1220px)';
-  $breakpoint->source = 'craving_boston';
-  $breakpoint->source_type = 'theme';
-  $breakpoint->status = 1;
-  $breakpoint->weight = 0;
-  $breakpoint->multipliers = array(
-    '1x' => '1x',
-  );
-  $export['breakpoints.theme.craving_boston.wide'] = $breakpoint;
+  $export['breakpoints.theme.craving_boston.small'] = $breakpoint;
 
   return $export;
 }

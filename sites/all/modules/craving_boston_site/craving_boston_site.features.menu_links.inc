@@ -325,6 +325,26 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+  // Exported menu link: menu-topics_home:<front>
+  $menu_links['menu-topics_home:<front>'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Home',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-topics_home:<front>',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: menu-topics_neighborhood-nosh:neighborhoods
   $menu_links['menu-topics_neighborhood-nosh:neighborhoods'] = array(
     'menu_name' => 'menu-topics',
@@ -551,6 +571,7 @@ function craving_boston_site_menu_default_menu_links() {
   t('Chew On This');
   t('Contact');
   t('Devel Generate Image Providers');
+  t('Home');
   t('Index by ingredient');
   t('Index by name');
   t('Main menu');

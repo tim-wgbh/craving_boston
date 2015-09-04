@@ -64,7 +64,14 @@
  * @see template_process()
  */
 ?>
+<div id="mobile-menu">
+  <?php 
+    $topic_menu = menu_navigation_links('menu-topics');
+    print theme('links__menu_topics_menu', array('links' => $topic_menu));
+  ?>
+</div>
 <div id="page">
+  <div id="mobile-select"><a href="#"> MENU &gt;&gt;</a></div>
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
       <div class="col-md-8 col-sm-12">
@@ -82,7 +89,6 @@
     </div>
     <div class="row mainmenu">
       <div class="col-md-10 col-sm-12">
-        <div class="mobilenavi"></div>
         <nav id="navigation" role="navigation">
           <div id="main-menu">
             <?php 
@@ -92,13 +98,13 @@
           </div>
         </nav>
       </div>
-      <div class="col-md-2 col-sm-12 no-padding">
+      <div class="col-md-2 col-sm-12 no-padding"> 
         <div id="search-form">
           <?php
             $block = module_invoke('search', 'block_view', 'search');
             print render($block); 
           ?>
-        </div> 
+        </div>
       </div>
     </div>
   </header>
@@ -129,10 +135,12 @@
   <?php endif; ?>
 
   <?php if($page['header']) : ?>
-    <div id="support" class="container">
+    <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <?php print render($page['header']); ?>
+          <div id="support">
+            <?php print render($page['header']); ?>
+          </div>
         </div>
       </div>
     </div>
