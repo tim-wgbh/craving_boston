@@ -13,6 +13,35 @@ function craving_boston_site_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_hero|node|article|form';
+  $field_group->group_name = 'group_hero';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'article';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Hero',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_image',
+      1 => 'field_carousel',
+      2 => 'group_video',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-hero field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_hero|node|article|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_recipes|node|multi_recipe|form';
   $field_group->group_name = 'group_recipes';
   $field_group->entity_type = 'node';
@@ -45,10 +74,10 @@ function craving_boston_site_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'article';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_hero';
   $field_group->data = array(
     'label' => 'Video',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
       0 => 'field_video_file',
       1 => 'field_video_poster',

@@ -295,6 +295,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'administer flexslider'.
+  $permissions['administer flexslider'] = array(
+    'name' => 'administer flexslider',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'flexslider',
+  );
+
   // Exported permission: 'administer google analytics'.
   $permissions['administer google analytics'] = array(
     'name' => 'administer google analytics',

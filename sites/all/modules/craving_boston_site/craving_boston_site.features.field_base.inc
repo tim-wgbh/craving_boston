@@ -52,6 +52,28 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_carousel'
+  $field_bases['field_carousel'] = array(
+    'active' => 1,
+    'cardinality' => 10,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_carousel',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 's3',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_dfp_ad_categories'
   $field_bases['field_dfp_ad_categories'] = array(
     'active' => 1,
