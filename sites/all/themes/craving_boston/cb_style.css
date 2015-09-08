@@ -82,7 +82,28 @@ ul {
 .container {
   max-width: 994px;
 }
-
+/* flexslider */
+.flex-caption {
+  background-color: rgba(255,255,255,0.8);
+  left: 0;
+  top: inherit;
+  bottom: 5%;
+  color: #555;
+  margin-left: 0;
+  padding: 10px;
+  text-align: left;
+  width: 90%;
+}
+.flex-direction-nav .flex-prev {
+  left: 12px;
+}
+.flex-direction-nav .flex-next {
+  right: 27px;
+}
+.flex-direction-nav a {
+  top: 54%;
+  background-image: url(images/cb-flexslider-nav.png);
+}
 
 /* Search block */
 .row.mainmenu {
@@ -415,6 +436,11 @@ h2.recipe {
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
 /* Anything smaller than tablet */
 @media (max-width: 768px) {
+  .flex-caption {
+    padding: 5px;
+    width: 100%;
+    font-size: 0.9em;
+  }
   #mobile-menu, #mobile-select {
     display: block;
   }
