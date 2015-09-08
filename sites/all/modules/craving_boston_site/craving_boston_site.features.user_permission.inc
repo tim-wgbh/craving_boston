@@ -295,6 +295,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'administer google analytics'.
+  $permissions['administer google analytics'] = array(
+    'name' => 'administer google analytics',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'googleanalytics',
+  );
+
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
@@ -1220,6 +1229,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'pathauto',
   );
 
+  // Exported permission: 'opt-in or out of tracking'.
+  $permissions['opt-in or out of tracking'] = array(
+    'name' => 'opt-in or out of tracking',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'googleanalytics',
+  );
+
   // Exported permission: 'perform backup'.
   $permissions['perform backup'] = array(
     'name' => 'perform backup',
@@ -1302,6 +1320,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'disqus',
+  );
+
+  // Exported permission: 'use PHP for tracking visibility'.
+  $permissions['use PHP for tracking visibility'] = array(
+    'name' => 'use PHP for tracking visibility',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'googleanalytics',
   );
 
   // Exported permission: 'use PHP to import nodes'.
