@@ -11,6 +11,73 @@ function craving_boston_site_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'faqs';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'FAQs';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'FAQ Page';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'faq';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'faqs' => 'faqs',
+    'featured_articles' => 0,
+    'latest_articles' => 0,
+    'contributor_bios' => 0,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Nodequeue: Position */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '1';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'about/faqs';
+  $export['faqs'] = $view;
+
+  $view = new view();
   $view->name = 'featured';
   $view->description = 'Featured content for the front page image block';
   $view->tag = 'default';
@@ -300,6 +367,79 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['menu']['title'] = 'Manage Articles';
   $handler->display->display_options['menu']['name'] = 'management';
   $export['manage_articles'] = $view;
+
+  $view = new view();
+  $view->name = 'site_contributors';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Site Contributors';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Site Contributors';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'full';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'contributor_bios' => 'contributor_bios',
+    'featured_articles' => 0,
+    'latest_articles' => 0,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Nodequeue: Position */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'bio' => 'bio',
+  );
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '1';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'about/site-contributors';
+  $export['site_contributors'] = $view;
 
   $view = new view();
   $view->name = 'the_latest';
@@ -685,6 +825,22 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_video_poster']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_video_poster']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_video_poster']['type'] = 'text_plain';
+  /* Field: Content: Carousel */
+  $handler->display->display_options['fields']['field_carousel']['id'] = 'field_carousel';
+  $handler->display->display_options['fields']['field_carousel']['table'] = 'field_data_field_carousel';
+  $handler->display->display_options['fields']['field_carousel']['field'] = 'field_carousel';
+  $handler->display->display_options['fields']['field_carousel']['label'] = '';
+  $handler->display->display_options['fields']['field_carousel']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_carousel']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_carousel']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_carousel']['settings'] = array(
+    'picture_mapping' => 'article_mapping',
+    'fallback_image_style' => '',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_carousel']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

@@ -10,6 +10,40 @@
 function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu_home:curated-articles
+  $menu_links['main-menu_home:curated-articles'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'curated-articles',
+    'router_path' => 'curated-articles',
+    'link_title' => 'Home',
+    'options' => array(
+      'identifier' => 'main-menu_home:curated-articles',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 0,
+  );
+  // Exported menu link: main-menu_home:the-latest
+  $menu_links['main-menu_home:the-latest'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'the-latest',
+    'router_path' => 'the-latest',
+    'link_title' => 'Home',
+    'options' => array(
+      'identifier' => 'main-menu_home:the-latest',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 0,
+  );
   // Exported menu link: management_jquery-update:admin/config/development/jquery_update
   $menu_links['management_jquery-update:admin/config/development/jquery_update'] = array(
     'menu_name' => 'management',
@@ -162,21 +196,21 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-footer-menu_contact:<front>
-  $menu_links['menu-footer-menu_contact:<front>'] = array(
+  // Exported menu link: menu-footer-menu_contact:contact
+  $menu_links['menu-footer-menu_contact:contact'] = array(
     'menu_name' => 'menu-footer-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
+    'link_path' => 'contact',
+    'router_path' => 'contact',
     'link_title' => 'Contact',
     'options' => array(
       'attributes' => array(
-        'title' => '',
+        'title' => 'Display the contact form',
       ),
-      'identifier' => 'menu-footer-menu_contact:<front>',
+      'identifier' => 'menu-footer-menu_contact:contact',
     ),
     'module' => 'menu',
     'hidden' => 0,
-    'external' => 1,
+    'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -49,
@@ -242,6 +276,26 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
+  // Exported menu link: menu-topics_chew-on-this:food
+  $menu_links['menu-topics_chew-on-this:food'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => 'food',
+    'router_path' => 'food',
+    'link_title' => 'Chew On This',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Editorial articles about food',
+      ),
+      'identifier' => 'menu-topics_chew-on-this:food',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
   // Exported menu link: menu-topics_home:<front>
   $menu_links['menu-topics_home:<front>'] = array(
     'menu_name' => 'menu-topics',
@@ -260,6 +314,106 @@ function craving_boston_site_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-topics_neighborhood-nosh:neighborhoods
+  $menu_links['menu-topics_neighborhood-nosh:neighborhoods'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => 'neighborhoods',
+    'router_path' => 'neighborhoods',
+    'link_title' => 'Neighborhood Nosh',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Food stories from the neighborhoods of Metro Boston',
+      ),
+      'identifier' => 'menu-topics_neighborhood-nosh:neighborhoods',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-topics_recipes:recipes
+  $menu_links['menu-topics_recipes:recipes'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => 'recipes',
+    'router_path' => 'recipes',
+    'link_title' => 'Recipes',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Pretty much self-explanatory',
+      ),
+      'identifier' => 'menu-topics_recipes:recipes',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-topics_reviews:reviews
+  $menu_links['menu-topics_reviews:reviews'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => 'reviews',
+    'router_path' => 'reviews',
+    'link_title' => 'Reviews',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Reviews of restaurants, food purveyors, and other food experiences',
+      ),
+      'identifier' => 'menu-topics_reviews:reviews',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-topics_table-talk:table-talk
+  $menu_links['menu-topics_table-talk:table-talk'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => 'table-talk',
+    'router_path' => 'table-talk',
+    'link_title' => 'Table Talk',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Editorials and weekly wrap-ups',
+      ),
+      'identifier' => 'menu-topics_table-talk:table-talk',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-topics_thats-the-spirit:drink
+  $menu_links['menu-topics_thats-the-spirit:drink'] = array(
+    'menu_name' => 'menu-topics',
+    'link_path' => 'drink',
+    'router_path' => 'drink',
+    'link_title' => 'That\'s the Spirit',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Articles about drink',
+      ),
+      'identifier' => 'menu-topics_thats-the-spirit:drink',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: menu-wgbh-food-links_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
@@ -384,6 +538,7 @@ function craving_boston_site_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About');
   t('America\'s Test Kitchen');
+  t('Chew On This');
   t('Contact');
   t('Home');
   t('Index by ingredient');
@@ -392,12 +547,17 @@ function craving_boston_site_menu_default_menu_links() {
   t('Management');
   t('Navigation');
   t('Neighborhood Kitchens');
+  t('Neighborhood Nosh');
   t('Node export');
   t('Node export: import');
   t('Privacy Policy');
+  t('Recipes');
+  t('Reviews');
   t('Simply Ming');
   t('Support/Become a Member');
+  t('Table Talk');
   t('Terms of Use');
+  t('That\'s the Spirit');
   t('Topics');
   t('User menu');
   t('jQuery Update');

@@ -118,7 +118,11 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
   $vars['display'] = true;
   $vars['has_video'] = false;
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
-    $vars['image'] = $fields['field_image']->content;
+    if (!empty($fields['field_carousel']->content)) {
+      $vars['image'] = render($vars['row']->field_field_carousel[0]['rendered']);
+    } else {
+      $vars['image'] = $fields['field_image']->content;
+    }
     if (!empty($fields['field_video_file']->content) && !empty($fields['field_internet_video']->content)) {
       $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
        $vars['has_video'] = true;

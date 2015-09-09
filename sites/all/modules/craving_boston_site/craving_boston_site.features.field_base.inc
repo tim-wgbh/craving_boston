@@ -100,6 +100,48 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_favorite_dish_to_eat'
+  $field_bases['field_favorite_dish_to_eat'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_favorite_dish_to_eat',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_favorite_dish_to_make'
+  $field_bases['field_favorite_dish_to_make'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_favorite_dish_to_make',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_file_image_alt_text'
   $field_bases['field_file_image_alt_text'] = array(
     'active' => 1,
@@ -204,6 +246,27 @@ function craving_boston_site_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'video_embed_field',
+  );
+
+  // Exported field_base: 'field_least_favorite_food'
+  $field_bases['field_least_favorite_food'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_least_favorite_food',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_part_of_multi_recipe'

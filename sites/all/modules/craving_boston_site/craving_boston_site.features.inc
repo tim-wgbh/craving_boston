@@ -254,6 +254,21 @@ function craving_boston_site_image_default_styles() {
     ),
   );
 
+  // Exported image style: mobile_square.
+  $styles['mobile_square'] = array(
+    'label' => 'Mobile Square',
+    'effects' => array(
+      23 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 320,
+          'height' => 320,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: square_thumbnail.
   $styles['square_thumbnail'] = array(
     'label' => 'square_thumbnail',
@@ -284,6 +299,22 @@ function craving_boston_site_node_info() {
       'description' => t('Use <em>articles</em> for general article contributions to this site.'),
       'has_title' => '1',
       'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'bio' => array(
+      'name' => t('Bio'),
+      'base' => 'node_content',
+      'description' => t('Site contributor biographies'),
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
+    'faq' => array(
+      'name' => t('FAQ'),
+      'base' => 'node_content',
+      'description' => t('Frequently asked question'),
+      'has_title' => '1',
+      'title_label' => t('Question'),
       'help' => '',
     ),
     'multi_recipe' => array(

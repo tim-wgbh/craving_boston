@@ -545,6 +545,265 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-bio-body'
+  $field_instances['node-bio-body'] = array(
+    'bundle' => 'bio',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-bio-field_favorite_dish_to_eat'
+  $field_instances['node-bio-field_favorite_dish_to_eat'] = array(
+    'bundle' => 'bio',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_favorite_dish_to_eat',
+    'label' => 'Favorite dish to eat',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-bio-field_favorite_dish_to_make'
+  $field_instances['node-bio-field_favorite_dish_to_make'] = array(
+    'bundle' => 'bio',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_favorite_dish_to_make',
+    'label' => 'Favorite dish to make',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-bio-field_image'
+  $field_instances['node-bio-field_image'] = array(
+    'bundle' => 'bio',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'mobile_square',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 250,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '320x320',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-bio-field_least_favorite_food'
+  $field_instances['node-bio-field_least_favorite_food'] = array(
+    'bundle' => 'bio',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_least_favorite_food',
+    'label' => 'Least favorite food',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-faq-body'
+  $field_instances['node-faq-body'] = array(
+    'bundle' => 'faq',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Answer',
+    'required' => 1,
+    'settings' => array(
+      'display_summary' => 1,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-multi_recipe-body'
   $field_instances['node-multi_recipe-body'] = array(
     'bundle' => 'multi_recipe',
@@ -1456,6 +1715,7 @@ function craving_boston_site_field_default_field_instances() {
   t('A short description or "teaser" for the recipe.');
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
+  t('Answer');
   t('Body');
   t('By');
   t('Carousel');
@@ -1463,6 +1723,8 @@ function craving_boston_site_field_default_field_instances() {
   t('Description');
   t('Directions');
   t('Enter a comma-separated list of words to describe your content.');
+  t('Favorite dish to eat');
+  t('Favorite dish to make');
   t('Flavor Profile');
   t('How long does this recipe take to cook, in <strong>minutes</strong>?');
   t('How long does this recipe take to prepare, in <strong>minutes</strong>?');
@@ -1475,6 +1737,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Image');
   t('Ingredients');
   t('Internet Video');
+  t('Least favorite food');
   t('Multiple tags should be separated by commas, e.g. red, green, blue (limit of 10)');
   t('Notes');
   t('Optional. Describe a great dining experience relating to this recipe, or note which wine or other dishes complement this recipe.');
