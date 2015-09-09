@@ -10,48 +10,6 @@
 function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: management_backup-and-migrate:admin/config/system/backup_migrate
-  $menu_links['management_backup-and-migrate:admin/config/system/backup_migrate'] = array(
-    'menu_name' => 'management',
-    'link_path' => 'admin/config/system/backup_migrate',
-    'router_path' => 'admin/config/system/backup_migrate',
-    'link_title' => 'Backup and Migrate',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Backup/restore your database and files or migrate data to or from another Drupal site.',
-      ),
-      'identifier' => 'management_backup-and-migrate:admin/config/system/backup_migrate',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'management_system:admin/config/system',
-  );
-  // Exported menu link: management_devel-generate-image-providers:admin/config/development/devel_generate_image_provider
-  $menu_links['management_devel-generate-image-providers:admin/config/development/devel_generate_image_provider'] = array(
-    'menu_name' => 'management',
-    'link_path' => 'admin/config/development/devel_generate_image_provider',
-    'router_path' => 'admin/config/development/devel_generate_image_provider',
-    'link_title' => 'Devel Generate Image Providers',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Allow choose image provider in content generation',
-      ),
-      'identifier' => 'management_devel-generate-image-providers:admin/config/development/devel_generate_image_provider',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'management_development:admin/config/development',
-  );
   // Exported menu link: management_jquery-update:admin/config/development/jquery_update
   $menu_links['management_jquery-update:admin/config/development/jquery_update'] = array(
     'menu_name' => 'management',
@@ -184,27 +142,6 @@ function craving_boston_site_menu_default_menu_links() {
     'customized' => 0,
     'parent_identifier' => 'management_menus:admin/structure/menu',
   );
-  // Exported menu link: management_video-embed-styles:admin/config/media/vef_video_styles
-  $menu_links['management_video-embed-styles:admin/config/media/vef_video_styles'] = array(
-    'menu_name' => 'management',
-    'link_path' => 'admin/config/media/vef_video_styles',
-    'router_path' => 'admin/config/media/vef_video_styles',
-    'link_title' => 'Video Embed Styles',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Administer Video Embed Field\'s video styles.',
-      ),
-      'identifier' => 'management_video-embed-styles:admin/config/media/vef_video_styles',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-    'parent_identifier' => 'management_media:admin/config/media',
-  );
   // Exported menu link: menu-footer-menu_about:<front>
   $menu_links['menu-footer-menu_about:<front>'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -305,26 +242,6 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-topics_chew-on-this:food
-  $menu_links['menu-topics_chew-on-this:food'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'food',
-    'router_path' => 'food',
-    'link_title' => 'Chew On This',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Editorial articles about food',
-      ),
-      'identifier' => 'menu-topics_chew-on-this:food',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
   // Exported menu link: menu-topics_home:<front>
   $menu_links['menu-topics_home:<front>'] = array(
     'menu_name' => 'menu-topics',
@@ -343,106 +260,6 @@ function craving_boston_site_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => 0,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_neighborhood-nosh:neighborhoods
-  $menu_links['menu-topics_neighborhood-nosh:neighborhoods'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'neighborhoods',
-    'router_path' => 'neighborhoods',
-    'link_title' => 'Neighborhood Nosh',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Food stories from the neighborhoods of Metro Boston',
-      ),
-      'identifier' => 'menu-topics_neighborhood-nosh:neighborhoods',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_recipes:recipes
-  $menu_links['menu-topics_recipes:recipes'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'recipes',
-    'router_path' => 'recipes',
-    'link_title' => 'Recipes',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Pretty much self-explanatory',
-      ),
-      'identifier' => 'menu-topics_recipes:recipes',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_reviews:reviews
-  $menu_links['menu-topics_reviews:reviews'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'reviews',
-    'router_path' => 'reviews',
-    'link_title' => 'Reviews',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Reviews of restaurants, food purveyors, and other food experiences',
-      ),
-      'identifier' => 'menu-topics_reviews:reviews',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_table-talk:table-talk
-  $menu_links['menu-topics_table-talk:table-talk'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'table-talk',
-    'router_path' => 'table-talk',
-    'link_title' => 'Table Talk',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Editorials and weekly wrap-ups',
-      ),
-      'identifier' => 'menu-topics_table-talk:table-talk',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -45,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_thats-the-spirit:drink
-  $menu_links['menu-topics_thats-the-spirit:drink'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'drink',
-    'router_path' => 'drink',
-    'link_title' => 'That\'s the Spirit',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Articles about drink',
-      ),
-      'identifier' => 'menu-topics_thats-the-spirit:drink',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: menu-wgbh-food-links_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
@@ -567,10 +384,7 @@ function craving_boston_site_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About');
   t('America\'s Test Kitchen');
-  t('Backup and Migrate');
-  t('Chew On This');
   t('Contact');
-  t('Devel Generate Image Providers');
   t('Home');
   t('Index by ingredient');
   t('Index by name');
@@ -578,20 +392,14 @@ function craving_boston_site_menu_default_menu_links() {
   t('Management');
   t('Navigation');
   t('Neighborhood Kitchens');
-  t('Neighborhood Nosh');
   t('Node export');
   t('Node export: import');
   t('Privacy Policy');
-  t('Recipes');
-  t('Reviews');
   t('Simply Ming');
   t('Support/Become a Member');
-  t('Table Talk');
   t('Terms of Use');
-  t('That\'s the Spirit');
   t('Topics');
   t('User menu');
-  t('Video Embed Styles');
   t('jQuery Update');
 
   return $menu_links;

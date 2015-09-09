@@ -19,7 +19,7 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
-  $breakpoint->weight = 5;
+  $breakpoint->weight = 0;
   $breakpoint->multipliers = array(
     '1x' => '1x',
   );
@@ -34,7 +34,7 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
-  $breakpoint->weight = 6;
+  $breakpoint->weight = 1;
   $breakpoint->multipliers = array(
     '1x' => '1x',
   );
@@ -49,7 +49,7 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
-  $breakpoint->weight = 7;
+  $breakpoint->weight = 2;
   $breakpoint->multipliers = array(
     '1x' => '1x',
   );

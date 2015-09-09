@@ -12,39 +12,6 @@ function craving_boston_site_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['backup_migrate-quick_backup'] = array(
-    'cache' => 1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'quick_backup',
-    'module' => 'backup_migrate',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['block-block_about_craving_boston'] = array(
     'cache' => -1,
     'css_class' => 'info',
@@ -1374,39 +1341,6 @@ recipes/*',
     'css_class' => '',
     'custom' => 0,
     'delta' => '9cf22433e0efbd8b206c8e4c2edb177c',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-featured-lead_article'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'featured-lead_article',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
