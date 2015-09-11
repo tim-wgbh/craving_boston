@@ -51,6 +51,11 @@ function craving_boston_preprocess_page(&$vars) {
   } else {
     $vars['admin_page'] = false;
   }
+  
+  // No sidebar for about page, faqs, contact
+  if (preg_match('/(about|faqs|contact)/', current_path())) {
+    $vars['page']['sidebar_first'] = null;
+  }
 }
     
 function craving_boston_preprocess_node(&$vars) {
