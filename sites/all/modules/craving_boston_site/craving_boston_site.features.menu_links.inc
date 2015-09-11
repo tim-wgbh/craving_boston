@@ -10,40 +10,6 @@
 function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_home:curated-articles
-  $menu_links['main-menu_home:curated-articles'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'curated-articles',
-    'router_path' => 'curated-articles',
-    'link_title' => 'Home',
-    'options' => array(
-      'identifier' => 'main-menu_home:curated-articles',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-  );
-  // Exported menu link: main-menu_home:the-latest
-  $menu_links['main-menu_home:the-latest'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'the-latest',
-    'router_path' => 'the-latest',
-    'link_title' => 'Home',
-    'options' => array(
-      'identifier' => 'main-menu_home:the-latest',
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 0,
-  );
   // Exported menu link: management_jquery-update:admin/config/development/jquery_update
   $menu_links['management_jquery-update:admin/config/development/jquery_update'] = array(
     'menu_name' => 'management',
@@ -176,17 +142,17 @@ function craving_boston_site_menu_default_menu_links() {
     'customized' => 0,
     'parent_identifier' => 'management_menus:admin/structure/menu',
   );
-  // Exported menu link: menu-craving-boston_about:node/169
-  $menu_links['menu-craving-boston_about:node/169'] = array(
+  // Exported menu link: menu-craving-boston_about:about
+  $menu_links['menu-craving-boston_about:about'] = array(
     'menu_name' => 'menu-craving-boston',
-    'link_path' => 'node/169',
-    'router_path' => 'node/%',
+    'link_path' => 'about',
+    'router_path' => 'about',
     'link_title' => 'About',
     'options' => array(
       'attributes' => array(
-        'title' => 'Get the back-story',
+        'title' => '',
       ),
-      'identifier' => 'menu-craving-boston_about:node/169',
+      'identifier' => 'menu-craving-boston_about:about',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -216,17 +182,17 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-craving-boston_faqs:about/faqs
-  $menu_links['menu-craving-boston_faqs:about/faqs'] = array(
+  // Exported menu link: menu-craving-boston_faqs:faqs
+  $menu_links['menu-craving-boston_faqs:faqs'] = array(
     'menu_name' => 'menu-craving-boston',
-    'link_path' => 'about/faqs',
-    'router_path' => 'about/faqs',
+    'link_path' => 'faqs',
+    'router_path' => 'faqs',
     'link_title' => 'FAQs',
     'options' => array(
       'attributes' => array(
         'title' => 'Just the faqs, ma\'am',
       ),
-      'identifier' => 'menu-craving-boston_faqs:about/faqs',
+      'identifier' => 'menu-craving-boston_faqs:faqs',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -236,17 +202,17 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-craving-boston_rss-feed-no-pun-intended:rss.xml
-  $menu_links['menu-craving-boston_rss-feed-no-pun-intended:rss.xml'] = array(
+  // Exported menu link: menu-craving-boston_rss-feed:rss.xml
+  $menu_links['menu-craving-boston_rss-feed:rss.xml'] = array(
     'menu_name' => 'menu-craving-boston',
     'link_path' => 'rss.xml',
     'router_path' => 'rss.xml',
-    'link_title' => 'RSS Feed (no pun intended)',
+    'link_title' => 'RSS Feed',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-craving-boston_rss-feed-no-pun-intended:rss.xml',
+      'identifier' => 'menu-craving-boston_rss-feed:rss.xml',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -798,7 +764,7 @@ function craving_boston_site_menu_default_menu_links() {
   t('Node export');
   t('Node export: import');
   t('Privacy Policy');
-  t('RSS Feed (no pun intended)');
+  t('RSS Feed');
   t('Recipes');
   t('Reviews');
   t('Simply Ming >>');
