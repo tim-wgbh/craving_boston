@@ -10,6 +10,40 @@
 function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu_home:curated-articles
+  $menu_links['main-menu_home:curated-articles'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'curated-articles',
+    'router_path' => 'curated-articles',
+    'link_title' => 'Home',
+    'options' => array(
+      'identifier' => 'main-menu_home:curated-articles',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 0,
+  );
+  // Exported menu link: main-menu_home:the-latest
+  $menu_links['main-menu_home:the-latest'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'the-latest',
+    'router_path' => 'the-latest',
+    'link_title' => 'Home',
+    'options' => array(
+      'identifier' => 'main-menu_home:the-latest',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 0,
+  );
   // Exported menu link: management_jquery-update:admin/config/development/jquery_update
   $menu_links['management_jquery-update:admin/config/development/jquery_update'] = array(
     'menu_name' => 'management',
@@ -519,86 +553,6 @@ function craving_boston_site_menu_default_menu_links() {
     'customized' => 0,
     'parent_identifier' => 'navigation_add-content:node/add',
   );
-  // Exported menu link: wgbh-food-links-menu_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
-  $menu_links['wgbh-food-links-menu_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87'] = array(
-    'menu_name' => 'wgbh-food-links-menu',
-    'link_path' => 'http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
-    'router_path' => '',
-    'link_title' => 'America\'s Test Kitchen',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'wgbh-food-links-menu_americas-test-kitchen:http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
-  // Exported menu link: wgbh-food-links-menu_neighborhood-kitchens:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859
-  $menu_links['wgbh-food-links-menu_neighborhood-kitchens:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859'] = array(
-    'menu_name' => 'wgbh-food-links-menu',
-    'link_path' => 'http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
-    'router_path' => '',
-    'link_title' => 'Neighborhood Kitchens',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'wgbh-food-links-menu_neighborhood-kitchens:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-  );
-  // Exported menu link: wgbh-food-links-menu_random-food:http://food.example.com
-  $menu_links['wgbh-food-links-menu_random-food:http://food.example.com'] = array(
-    'menu_name' => 'wgbh-food-links-menu',
-    'link_path' => 'http://food.example.com',
-    'router_path' => '',
-    'link_title' => 'Random Food',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'wgbh-food-links-menu_random-food:http://food.example.com',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 1,
-  );
-  // Exported menu link: wgbh-food-links-menu_simply-ming:http://www.wgbh.org/programs/Simply-Ming-86
-  $menu_links['wgbh-food-links-menu_simply-ming:http://www.wgbh.org/programs/Simply-Ming-86'] = array(
-    'menu_name' => 'wgbh-food-links-menu',
-    'link_path' => 'http://www.wgbh.org/programs/Simply-Ming-86',
-    'router_path' => '',
-    'link_title' => 'Simply Ming',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'wgbh-food-links-menu_simply-ming:http://www.wgbh.org/programs/Simply-Ming-86',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-  );
   // Exported menu link: wgbh-links-menu_about-wgbh:http://www.wgbh.org/about
   $menu_links['wgbh-links-menu_about-wgbh:http://www.wgbh.org/about'] = array(
     'menu_name' => 'wgbh-links-menu',
@@ -677,6 +631,66 @@ function craving_boston_site_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
+  $menu_links['wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
+    'router_path' => '',
+    'link_title' => 'America\'s Test Kitchen >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859
+  $menu_links['wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
+    'router_path' => '',
+    'link_title' => 'Neighborhood Kitchens >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86
+  $menu_links['wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/Simply-Ming-86',
+    'router_path' => '',
+    'link_title' => 'Simply Ming >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: wgbh-support-links-menu_become-a-member:http://www.wghb.org/support
@@ -764,7 +778,7 @@ function craving_boston_site_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('About');
   t('About WGBH');
-  t('America\'s Test Kitchen');
+  t('America\'s Test Kitchen >>');
   t('Become a Member');
   t('Chew On This');
   t('Contact');
@@ -779,16 +793,15 @@ function craving_boston_site_menu_default_menu_links() {
   t('Main menu');
   t('Management');
   t('Navigation');
-  t('Neighborhood Kitchens');
+  t('Neighborhood Kitchens >>');
   t('Neighborhood Nosh');
   t('Node export');
   t('Node export: import');
   t('Privacy Policy');
   t('RSS Feed (no pun intended)');
-  t('Random Food');
   t('Recipes');
   t('Reviews');
-  t('Simply Ming');
+  t('Simply Ming >>');
   t('Support/Become a Member');
   t('Table Talk');
   t('Terms of Use');

@@ -64,17 +64,17 @@ function craving_boston_site_menu_default_menu_custom() {
     'title' => 'User menu',
     'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
   );
-  // Exported menu: wgbh-food-links-menu.
-  $menus['wgbh-food-links-menu'] = array(
-    'menu_name' => 'wgbh-food-links-menu',
-    'title' => 'WGBH Food Links',
-    'description' => NULL,
-  );
   // Exported menu: wgbh-links-menu.
   $menus['wgbh-links-menu'] = array(
     'menu_name' => 'wgbh-links-menu',
     'title' => 'WGBH Identity Links',
     'description' => NULL,
+  );
+  // Exported menu: wgbh-related-links-menu.
+  $menus['wgbh-related-links-menu'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'title' => 'WGBH Related Links',
+    'description' => '',
   );
   // Exported menu: wgbh-support-links-menu.
   $menus['wgbh-support-links-menu'] = array(
@@ -101,8 +101,8 @@ function craving_boston_site_menu_default_menu_custom() {
   t('The main topic menu');
   t('Topics');
   t('User menu');
-  t('WGBH Food Links');
   t('WGBH Identity Links');
+  t('WGBH Related Links');
   t('WGBH Support Links');
 
 
