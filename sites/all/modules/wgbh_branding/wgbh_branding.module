@@ -1,12 +1,25 @@
 <?php
 /**
- * Is anything necessary here?
+ * Define WGBH-specific content
  */
-function wgbh_branding_help($path, $arg) {
-  // re: http://drupal.org/node/767204
-  // 5. We need a master group (Examples) that will be in a main
-  // examples.module.
-  // The examples.module should be mostly doxy comments that point to the other
-  // examples.  It will also have a hook_help() explaining its purpose and how
-  // to access the other examples.
+
+/**
+ * Implement hook_theme_registry_alter
+ */
+function wgbh_branding_theme_registry_alter(&$theme_registry) {
+  $module_path = drupal_get_path('module', 'wgbh_branding');
+  
+  // Get template files in the module path
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.tpl.php', $module_path);
+  
+  // Iterate over any template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+  
+    //If the template hasn't been overriden, alter the theme path
+    if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      $theme_registry[$key]['theme path'] = $module_path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+      $theme_registry[$key]['type'] = 'module';
+    }
+  }
 }

@@ -1,0 +1,55 @@
+<?php
+/**
+ * Implement hook_enable()
+ */
+function wgbh_branding_enable() {
+  $wgbh_menus = wgbh_branding_define_menus();
+  $menu_count = count($wgbh_menus);
+  
+  foreach ($wgbh_menus as $menu) {
+    menu_save($menu);
+  }
+  cache_clear_all('*', 'cache_menu', TRUE);
+
+  drupal_set_message(
+    $message = t('The WGBH branding module was successfully installed and {$menu_count} menus were created. '), 
+    $type = 'status'
+  );
+}
+
+/**
+ * Implement hook_uninstall()
+ */
+function wgbh_branding_uninstall() {
+  $wgbh_menus = wgbh_branding_define_menus();
+  $menu_count = count($wgbh_menus);
+  
+  foreach ($wgbh_menus as $menu) {
+    menu_delete($menu);
+  }
+  
+  drupal_set_message(
+    $message = t("The WGBH branding module was successfully uninstalled and {$menu_count} WGBH menus were deleted."), 
+    $type = 'status'
+  );
+}
+function wgbh_branding_define_menus() {
+  $wgbh_menus = array(
+    'identity_links' => array(
+      'menu_name' => 'wgbh-links-menu',
+      'title' => 'WGBH Identity Links',
+      'description', 'Links to food-related content at wgbh.org'
+    ),
+    'food_links'  => array(
+      'menu_name' => 'wgbh-food-links-menu',
+      'title' => 'WGBH Food Links',
+      'description', 'Links to food-related content at wgbh.org'
+    ),
+    'support_links' => array(
+      'menu_name' => 'wgbh-support-links-menu',
+      'title' => 'WGBH Support Links',
+      'description', 'Links to ways of supporting wgbh.org'
+    )
+  );
+  return $wgbh_menus;
+}
