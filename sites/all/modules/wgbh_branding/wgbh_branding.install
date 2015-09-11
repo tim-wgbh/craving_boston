@@ -12,7 +12,7 @@ function wgbh_branding_enable() {
   cache_clear_all('*', 'cache_menu', TRUE);
 
   drupal_set_message(
-    $message = t('The WGBH branding module was successfully installed and {$menu_count} menus were created. '), 
+    $message = t("The WGBH branding module was successfully installed and {$menu_count} menus were created."), 
     $type = 'status'
   );
 }
@@ -40,10 +40,10 @@ function wgbh_branding_define_menus() {
       'title' => 'WGBH Identity Links',
       'description', 'Links to food-related content at wgbh.org'
     ),
-    'food_links'  => array(
-      'menu_name' => 'wgbh-food-links-menu',
-      'title' => 'WGBH Food Links',
-      'description', 'Links to food-related content at wgbh.org'
+    'related_links'  => array(
+      'menu_name' => 'wgbh-related-links-menu',
+      'title' => 'WGBH Related Links',
+      'description', 'Links to WGBH-related content at wgbh.org.'
     ),
     'support_links' => array(
       'menu_name' => 'wgbh-support-links-menu',

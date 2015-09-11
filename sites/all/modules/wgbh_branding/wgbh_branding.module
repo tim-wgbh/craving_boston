@@ -23,3 +23,31 @@ function wgbh_branding_theme_registry_alter(&$theme_registry) {
     }
   }
 }
+/**
+ * Implement hook_form_alter
+ */
+function wgbh_branding_form_block_admin_configure_alter(&$form, &$form_state, $form_id) {  
+  if ($form['delta']['#value'] == 'wgbh-related-links-menu') {
+    // New field
+    $form['settings']['wgbh_related_links_type'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Type of related content (keep it short and sweet)'),
+      '#default_value' => variable_get('wgbh_related_links_type', ''),
+      '#maxlength' => 20,
+      '#size' => 20,
+    );
+    
+    //Hide the title and css
+    $form['settings']['title']['#access'] = FALSE;
+    $form['settings']['css_class']['#access'] = FALSE;
+    $form['#submit'][] = 'wgbh_related_links_type_save';
+  }
+}
+
+/**
+ * Submit function to save the link type
+ */
+function wgbh_related_links_type_save($form, &$form_state) {
+  variable_set('wgbh_related_links_type', $form_state['values']['wgbh_related_links_type']);
+}
+  

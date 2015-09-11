@@ -41,3 +41,40 @@
 .wgbh-links ul.menu.pull-right {
   margin: 16px 40px 0 0;
 }
+
+/* Dusky red: ed564b */
+.wgbh-related-links {
+  color: #ed564b;
+  border-top: solid 4px #ed564b;
+  border-bottom: solid 4px #ed564b;
+  margin: 20px 0;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.wgbh-related-links .headline {
+  font-size: 22px;
+  font-weight: bold; 
+  margin-bottom: 20px;
+}
+.wgbh-related-links .headline img {
+  vertical-align: -9px;
+}
+.wgbh-related-links ul, .wgbh-related-links ul li {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+.wgbh-related-links ul li {
+  line-height: 1.5;
+}
+.wgbh-related-links ul > li > a {
+  background: none;
+  color: #ed564b;
+  padding: 0;
+}
+.wgbh-related-links ul > li > a:hover {
+  background: none;
+  text-decoration: underline;
+}
+
