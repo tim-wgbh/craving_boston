@@ -35,6 +35,9 @@ p {
 a, a:visited {
   color: #78201F;
 }
+a:hover {
+  color: #b52e18;
+}
 ul {
   list-style-type: square;
 }
@@ -55,10 +58,11 @@ ul {
 }
 #bottom {
   background-color: #ddd;
+  border-top: 5px solid #9e1d20;
 }
 .block.info {
   padding: 20px;
-  background-color: #9CCFAB;  /* highlight-background */
+  background-color: #FFCDC9;  /* highlight-background */
   color: #333;
 }
 #sidebar .block.info h2 {
@@ -159,7 +163,7 @@ header {
 .topic-page h1.page-title {
   font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
   font-size: 4em;
-  color: #20452B;
+  color: #5C9E4C;
   margin-bottom: 0;
   font-weight: normal;
 }
@@ -254,7 +258,7 @@ h2.recipe {
 }
 #main-menu ul li a:hover {
   font-style: italic;
-  color: #43925A;
+  color: #5B9E4B;
 } 
 /* 
 #main-menu #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
@@ -265,7 +269,7 @@ h2.recipe {
  */
 #main-menu #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
   text-decoration: underline;
-  color: #43925A;
+  color: #5B9E4B;
 }
 #navigation {
   text-align: center;
@@ -395,6 +399,16 @@ h2.recipe {
   font-weight: bold;
   margin-bottom: 40px;
   padding-left: 25px;
+}
+
+/* Override related links colors from wgbh_branding module*/
+.wgbh-related-links {
+  color: #ea2825;
+  border-top: solid 4px #ea2825;
+  border-bottom: solid 4px #ea2825;
+}
+.wgbh-related-links ul > li > a {
+  color: #ea2825;
 }
 
 
