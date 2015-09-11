@@ -32,7 +32,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -25,
+        'weight' => -27,
       ),
       'seven' => array(
         'region' => '',
@@ -95,8 +95,8 @@ function craving_boston_site_default_fe_block_settings() {
         'weight' => 0,
       ),
       'craving_boston' => array(
-        'region' => 'footer_second',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'craving_boston',
         'weight' => 0,
       ),
@@ -230,7 +230,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -24,
+        'weight' => -26,
       ),
       'seven' => array(
         'region' => '',
@@ -364,7 +364,7 @@ admin/*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -22,
+        'weight' => -24,
       ),
       'seven' => array(
         'region' => '',
@@ -398,7 +398,7 @@ admin/*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -21,
+        'weight' => -23,
       ),
       'seven' => array(
         'region' => '',
@@ -626,8 +626,8 @@ admin/*',
         'weight' => 0,
       ),
       'craving_boston' => array(
-        'region' => 'footer_third',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'craving_boston',
         'weight' => 0,
       ),
@@ -708,6 +708,36 @@ admin/*',
     'visibility' => 0,
   );
 
+  $export['menu-menu-craving-boston'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'delta' => 'menu-craving-boston',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'footer_second',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   $export['menu-menu-footer-menu'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -725,8 +755,8 @@ admin/*',
         'weight' => 0,
       ),
       'craving_boston' => array(
-        'region' => 'footer_fourth',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'craving_boston',
         'weight' => 0,
       ),
@@ -774,11 +804,11 @@ admin/*',
     'visibility' => 0,
   );
 
-  $export['menu-menu-wgbh-food-links'] = array(
+  $export['menu-wgbh-food-links-menu'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => 0,
-    'delta' => 'menu-wgbh-food-links',
+    'delta' => 'wgbh-food-links-menu',
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -794,7 +824,7 @@ admin/*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -23,
+        'weight' => -25,
       ),
       'seven' => array(
         'region' => '',
@@ -803,7 +833,73 @@ admin/*',
         'weight' => 0,
       ),
     ),
-    'title' => 'Food at WGBH',
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu-wgbh-links-menu'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'wgbh-links-menu',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'footer_third',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'WGBH',
+    'visibility' => 0,
+  );
+
+  $export['menu-wgbh-support-links-menu'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'wgbh-support-links-menu',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'footer_fourth',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Support WGBH',
     'visibility' => 0,
   );
 

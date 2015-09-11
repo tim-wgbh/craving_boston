@@ -34,6 +34,12 @@ function craving_boston_site_menu_default_menu_custom() {
     'title' => 'Management',
     'description' => 'The <em>Management</em> menu contains links for administrative tasks.',
   );
+  // Exported menu: menu-craving-boston.
+  $menus['menu-craving-boston'] = array(
+    'menu_name' => 'menu-craving-boston',
+    'title' => 'Craving Boston',
+    'description' => 'Footer menu for Craving Boston business',
+  );
   // Exported menu: menu-footer-menu.
   $menus['menu-footer-menu'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -45,12 +51,6 @@ function craving_boston_site_menu_default_menu_custom() {
     'menu_name' => 'menu-topics',
     'title' => 'Topics',
     'description' => 'The main topic menu',
-  );
-  // Exported menu: menu-wgbh-food-links.
-  $menus['menu-wgbh-food-links'] = array(
-    'menu_name' => 'menu-wgbh-food-links',
-    'title' => 'WGBH Food Links',
-    'description' => 'Food links from the WGBH web site',
   );
   // Exported menu: navigation.
   $menus['navigation'] = array(
@@ -64,13 +64,32 @@ function craving_boston_site_menu_default_menu_custom() {
     'title' => 'User menu',
     'description' => 'The <em>User</em> menu contains links related to the user\'s account, as well as the \'Log out\' link.',
   );
+  // Exported menu: wgbh-food-links-menu.
+  $menus['wgbh-food-links-menu'] = array(
+    'menu_name' => 'wgbh-food-links-menu',
+    'title' => 'WGBH Food Links',
+    'description' => NULL,
+  );
+  // Exported menu: wgbh-links-menu.
+  $menus['wgbh-links-menu'] = array(
+    'menu_name' => 'wgbh-links-menu',
+    'title' => 'WGBH Identity Links',
+    'description' => NULL,
+  );
+  // Exported menu: wgbh-support-links-menu.
+  $menus['wgbh-support-links-menu'] = array(
+    'menu_name' => 'wgbh-support-links-menu',
+    'title' => 'WGBH Support Links',
+    'description' => NULL,
+  );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Craving Boston');
   t('Development');
   t('Development link');
   t('Features');
-  t('Food links from the WGBH web site');
   t('Footer Menu');
+  t('Footer menu for Craving Boston business');
   t('Main menu');
   t('Management');
   t('Menu items for any enabled features.');
@@ -83,6 +102,8 @@ function craving_boston_site_menu_default_menu_custom() {
   t('Topics');
   t('User menu');
   t('WGBH Food Links');
+  t('WGBH Identity Links');
+  t('WGBH Support Links');
 
 
   return $menus;

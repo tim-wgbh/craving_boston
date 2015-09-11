@@ -38,6 +38,9 @@ function craving_boston_site_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "qtip" && $api == "qtip_default") {
     return array("version" => "1.0");
   }
+  if ($module == "video_embed_field" && $api == "default_video_embed_styles") {
+    return array("version" => "1");
+  }
 }
 
 /**
@@ -52,6 +55,58 @@ function craving_boston_site_views_api($module = NULL, $api = NULL) {
  */
 function craving_boston_site_fe_nodequeue_export_fields() {
   $nodequeues = array();
+
+  // Exported nodequeues: contributor_bios
+  $nodequeues['contributor_bios'] = array(
+    'name' => 'contributor_bios',
+    'title' => 'Contributor Bios',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => 'Add bio',
+    'link_remove' => 'Remove bio',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 1,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'bio',
+    ),
+    'roles' => array(
+      0 => 'editor',
+    ),
+    'count' => 0,
+  );
+
+  // Exported nodequeues: faqs
+  $nodequeues['faqs'] = array(
+    'name' => 'faqs',
+    'title' => 'FAQs',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => 'Add FAQ',
+    'link_remove' => 'Remove FAQ',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 1,
+    'reference' => 0,
+    'reverse' => 0,
+    'insert_at_front' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'faq',
+    ),
+    'roles' => array(
+      0 => 'editor',
+    ),
+    'count' => 0,
+  );
 
   // Exported nodequeues: featured_articles
   $nodequeues['featured_articles'] = array(
