@@ -183,7 +183,7 @@
           </div>
         </div>
       </div>
-    </section
+    </section>
   <?php endif; ?>
 
   <?php if($page['footer']) : ?>
@@ -198,9 +198,9 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third'] || $page['footer_fourth']): ?>
-    <?php $footer_col = ( 12 / ( (bool) $page['footer_first'] + (bool) $page['footer_second'] + (bool) $page['footer_third'] + (bool) $page['footer_fourth'] ) ); ?>
-    <div id="bottom">
+  <div id="cb-bottom-links">
+    <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third'] || $page['footer_fourth']): ?>
+      <?php $footer_col = ( 12 / ( (bool) $page['footer_first'] + (bool) $page['footer_second'] + (bool) $page['footer_third'] + (bool) $page['footer_fourth'] ) ); ?>
       <div class="container">
         <div class="row">
           <div class="footer-block col-sm-3">
@@ -217,8 +217,8 @@
           </div>
         </div>
       </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
+  </div>
 
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container">

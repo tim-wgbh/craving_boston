@@ -57,13 +57,17 @@ ul {
 .article .image {
   width: 100%;
 }
-#bottom {
+#cb-bottom-links {
   background-color: #ddd;
   border-top: 5px solid #9e1d20;
 }
+#cb-bottom-links img {
+  display: inline-block;
+  margin-top: 15px;
+}
 .block.info {
   padding: 20px;
-  background-color: #FFCDC9;  /* highlight-background */
+  background-color: #ffeedd;  /* highlight-background */
   color: #333;
 }
 #sidebar .block.info h2 {
