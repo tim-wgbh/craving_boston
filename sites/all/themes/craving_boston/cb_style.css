@@ -34,10 +34,10 @@ p {
   margin-bottom: 10px;
 }
 a, a:visited {
-  color: #78201F;
+  color: #b52e18;
 }
 a:hover {
-  color: #b52e18;
+  color: #78201F;
 }
 ul {
   list-style-type: square;
@@ -56,6 +56,18 @@ ul {
 }
 .article .image {
   width: 100%;
+}
+.bio {
+  border-top: solid 1px #999;
+  padding-top: 10px;
+}
+.bio .name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.bio .bio-text {
+  font-size: 1em;
 }
 #cb-bottom-links {
   background-color: #ddd;
@@ -91,6 +103,21 @@ ul {
 .container {
   max-width: 994px;
 }
+
+/* faqs */
+.faq .well {
+  background-color: #ffeedd;
+  border: 2px solid #ffaaaa;
+}
+.faq .question {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.faq .answer p {
+  font-size: 1.1em;
+}
+
 /* flexslider */
 .flex-caption {
   background-color: rgba(255,255,255,0.8);
@@ -112,6 +139,10 @@ ul {
 .flex-direction-nav a {
   top: 54%;
   background-image: url(images/cb-flexslider-nav.png);
+}
+
+.footer-block .block {
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.4);
 }
 
 /* Search block */
@@ -165,13 +196,15 @@ input#edit-search-block-form--2 {
 header {
   margin-top: 20px;
 }
-.topic-page h1.page-title {
+h1.page-title {
   font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
-  font-size: 4em;
+  font-size: 3em;
   color: #5C9E4C;
-  margin-bottom: 0;
   font-weight: normal;
 }
+.topic-page h1.page-title {
+  margin-bottom: 0;
+} 
 h2.has-video {
   padding-left: 30px;
   background: url(images/video-icon.png) left 8px no-repeat;
@@ -362,7 +395,7 @@ h2.recipe {
   font-size: 18px;
 }
 .view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   line-height: 1.2;
   margin-top: 20px;
@@ -416,10 +449,12 @@ h2.recipe {
   color: #ea2825;
 }
 
-
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
 /* Anything smaller than tablet */
 @media (max-width: 768px) {
+  #cb-bottom-links #block-block-5 {
+    display: none;
+  }
   .flex-caption {
     padding: 5px;
     width: 100%;

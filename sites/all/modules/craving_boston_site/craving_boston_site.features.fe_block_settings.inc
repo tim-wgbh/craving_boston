@@ -317,7 +317,10 @@ function craving_boston_site_default_fe_block_settings() {
     'module' => 'dfp',
     'node_types' => array(),
     'pages' => 'users/*
-admin/*',
+admin/*
+faqs
+about
+rss.xml',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(

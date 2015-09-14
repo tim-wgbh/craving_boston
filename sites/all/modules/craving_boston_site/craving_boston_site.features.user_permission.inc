@@ -356,6 +356,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'administer meta tags'.
+  $permissions['administer meta tags'] = array(
+    'name' => 'administer meta tags',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'metatag',
+  );
+
   // Exported permission: 'administer module filter'.
   $permissions['administer module filter'] = array(
     'name' => 'administer module filter',
@@ -1039,6 +1048,16 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit any video files',
     'roles' => array(),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit meta tags'.
+  $permissions['edit meta tags'] = array(
+    'name' => 'edit meta tags',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'metatag',
   );
 
   // Exported permission: 'edit own article content'.
