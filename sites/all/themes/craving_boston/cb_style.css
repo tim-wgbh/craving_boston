@@ -42,6 +42,11 @@ a:hover {
 ul {
   list-style-type: square;
 }
+strong {
+  font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
+  background-image: url(images/bg_greyzz.png);
+  font-weight: normal;
+}
 
 /* Utility class to remove padding from column */
 .no-padding {
@@ -83,6 +88,7 @@ ul {
   color: #333;
 }
 #sidebar .block.info h2 {
+  margin-top: 0;
 }
 #block-menu-menu-footer-menu ul {
   list-style: none;
@@ -141,14 +147,16 @@ ul {
   background-image: url(images/cb-flexslider-nav.png);
 }
 
-.footer-block .block {
-  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.4);
+.footer-block .block h2{
+  color: #555;
+  padding-bottom: 0;
 }
 
 /* Search block */
 .row.mainmenu {
   padding-top: 0;
   margin-top: 0;
+  margin-bottom: 0;
 }
 #search-form {
   text-align: right;
@@ -189,6 +197,11 @@ h1.page-title {
   color: #5C9E4C;
   font-weight: normal;
 }
+.node h2.title a, .node h2.title a:visited {
+  font-size: 2em;
+  color: #b52e18;
+}
+/* Multi-recipe */
 .topic-page h1.page-title {
   margin-bottom: 0;
 } 
@@ -378,11 +391,19 @@ h2.recipe {
 .view-content .article .info .deck {
   font-size: 18px;
 }
-.view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
+.view-content .article-title, .view-content .article h2.title {
   font-size: 2em;
   font-weight: bold;
   line-height: 1.2;
   margin-top: 20px;
+}
+.page-node h1.page-title {
+  font-family: "cooper_hewittbook",Arial,Helvetica,sans-serif;
+  font-size: 2em;
+  color: #b52e18;
+  line-height: 1.2;
+  margin-top: 20px;
+  font-weight: bold;
 }
 .view-content .article:first-child h2.title {
   margin-top: 0;
@@ -422,14 +443,14 @@ h2.recipe {
   margin: 10px 0 40px;
 }
 
-/* Override related links colors from wgbh_branding module*/
+/* Override related links colors from wgbh_branding module */    
 .wgbh-related-links {
-  color: #ea2825;
-  border-top: solid 4px #ea2825;
-  border-bottom: solid 4px #ea2825;
+  color: #b52e18;
+  border-top: solid 4px #b52e18;
+  border-bottom: solid 4px #b52e18;
 }
 .wgbh-related-links ul > li > a {
-  color: #ea2825;
+  color: #b52e18;
 }
 
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/

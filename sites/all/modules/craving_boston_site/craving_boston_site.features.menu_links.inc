@@ -310,6 +310,26 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
+  // Exported menu link: wgbh-related-links-menu_a-moveable-feast-:http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392
+  $menu_links['wgbh-related-links-menu_a-moveable-feast-:http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392',
+    'router_path' => '',
+    'link_title' => 'A Moveable Feast >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Fine Cooking\'s tasty show',
+      ),
+      'identifier' => 'wgbh-related-links-menu_a-moveable-feast-:http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
   // Exported menu link: wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
   $menu_links['wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87'] = array(
     'menu_name' => 'wgbh-related-links-menu',
@@ -327,7 +347,87 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -50,
+    'weight' => -49,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_cooks-country-:http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88
+  $menu_links['wgbh-related-links-menu_cooks-country-:http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88',
+    'router_path' => '',
+    'link_title' => 'Cook\'s Country >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Down home cooking from the creators of America\'s Test Kitchen',
+      ),
+      'identifier' => 'wgbh-related-links-menu_cooks-country-:http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_ill-have-what-phils-having-prime-time-:http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425
+  $menu_links['wgbh-related-links-menu_ill-have-what-phils-having-prime-time-:http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425',
+    'router_path' => '',
+    'link_title' => 'I\'ll Have What Phil\'s Having (prime-time) >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'A new prime-time food show from the creator of Everybody Loves Raymond',
+      ),
+      'identifier' => 'wgbh-related-links-menu_ill-have-what-phils-having-prime-time-:http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412
+  $menu_links['wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/Lidias-Kitchen-2412',
+    'router_path' => '',
+    'link_title' => 'Lidia\'s Kitchen >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Home cooking from the renowned Lidia Bastianich',
+      ),
+      'identifier' => 'wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+  );
+  // Exported menu link: wgbh-related-links-menu_mind-of-a-chef-:http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065
+  $menu_links['wgbh-related-links-menu_mind-of-a-chef-:http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065'] = array(
+    'menu_name' => 'wgbh-related-links-menu',
+    'link_path' => 'http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065',
+    'router_path' => '',
+    'link_title' => 'Mind of a Chef >>',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'wgbh-related-links-menu_mind-of-a-chef-:http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
     'customized' => 1,
   );
   // Exported menu link: wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859
@@ -347,7 +447,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -44,
     'customized' => 1,
   );
   // Exported menu link: wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86
@@ -367,7 +467,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -43,
     'customized' => 1,
   );
   // Exported menu link: wgbh-support-links-menu_become-a-member:http://www.wghb.org/support
@@ -453,6 +553,7 @@ function craving_boston_site_menu_default_menu_links() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('A Moveable Feast >>');
   t('About');
   t('About WGBH');
   t('America\'s Test Kitchen >>');
@@ -460,10 +561,14 @@ function craving_boston_site_menu_default_menu_links() {
   t('Chew On This');
   t('Contact Us');
   t('Contact WGBH');
+  t('Cook\'s Country >>');
   t('Corporate Sponsorship');
   t('Donate');
   t('FAQs');
   t('Home');
+  t('I\'ll Have What Phil\'s Having (prime-time) >>');
+  t('Lidia\'s Kitchen >>');
+  t('Mind of a Chef >>');
   t('Neighborhood Kitchens >>');
   t('Neighborhood Nosh');
   t('Privacy Policy');
