@@ -25,6 +25,11 @@ function craving_boston_site_filter_default_formats() {
           'filter_url_length' => 72,
         ),
       ),
+      'picture' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'filter_html' => array(
         'weight' => 1,
         'status' => 1,
@@ -56,19 +61,24 @@ function craving_boston_site_filter_default_formats() {
     'weight' => -8,
     'filters' => array(
       'filter_url' => array(
-        'weight' => -48,
+        'weight' => -50,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
       'filter_autop' => array(
-        'weight' => -46,
+        'weight' => -49,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'picture' => array(
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -44,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(),
       ),

@@ -20,7 +20,7 @@ function craving_boston_site_default_dfp_tag() {
   $tag->block = 1;
   $tag->settings = array(
     'out_of_page' => 0,
-    'slug' => '',
+    'slug' => '<none>',
     'short_tag' => 0,
     'adsense_ad_types' => '',
     'adsense_channel_ids' => '',

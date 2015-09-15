@@ -353,7 +353,6 @@ h2.recipe {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
-  background-color: #ffeedd;
   padding: 10px 0;
 }
 #support #block-block-1 {
@@ -420,8 +419,7 @@ h2.recipe {
   color: #333;
   font-style: italic;
   font-weight: bold;
-  margin-bottom: 40px;
-  padding-left: 25px;
+  margin: 10px 0 40px;
 }
 
 /* Override related links colors from wgbh_branding module*/

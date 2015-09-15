@@ -214,15 +214,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'breakpoints',
   );
 
-  // Exported permission: 'administer ckeditor'.
-  $permissions['administer ckeditor'] = array(
-    'name' => 'administer ckeditor',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'ckeditor',
-  );
-
   // Exported permission: 'administer contact forms'.
   $permissions['administer contact forms'] = array(
     'name' => 'administer contact forms',
@@ -695,15 +686,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'path',
-  );
-
-  // Exported permission: 'customize ckeditor'.
-  $permissions['customize ckeditor'] = array(
-    'name' => 'customize ckeditor',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'ckeditor',
   );
 
   // Exported permission: 'customize shortcut links'.

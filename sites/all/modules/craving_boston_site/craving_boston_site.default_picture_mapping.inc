@@ -94,24 +94,5 @@ function craving_boston_site_default_picture_mapping() {
   );
   $export['featured_sub_mapping'] = $picture_mapping;
 
-  $picture_mapping = new PictureMapping();
-  $picture_mapping->disabled = FALSE; /* Edit this to true to make a default picture_mapping disabled initially */
-  $picture_mapping->api_version = 2;
-  $picture_mapping->label = 'Single Node';
-  $picture_mapping->machine_name = 'single_node';
-  $picture_mapping->breakpoint_group = 'craving_boston';
-  $picture_mapping->mapping = array(
-    'breakpoints.theme.craving_boston.large' => array(
-      '1x' => '',
-    ),
-    'breakpoints.theme.craving_boston.medium' => array(
-      '1x' => '',
-    ),
-    'breakpoints.theme.craving_boston.small' => array(
-      '1x' => '',
-    ),
-  );
-  $export['single_node'] = $picture_mapping;
-
   return $export;
 }
