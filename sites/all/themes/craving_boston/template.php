@@ -9,8 +9,10 @@ drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/craving_boston.js')
 function craving_boston_field__field_video_file($vars) {
   
   // No label and we must convert the file name to video and post files
-  $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
-  $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
+  $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
+  $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
+//   $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
+//   $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
   $output = <<<EOC
     <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
     <div id="jw-player"></div>
@@ -175,7 +177,7 @@ function cloudfront_file($filename) {
  
 function s3_file($filename) {
   global $conf;
-  return 'http://s3.amazonaws.com/' . $conf['amazons3_bucket'].'/' . $conf['wgbh_site'].'/' . $filename;
+  return 'http://s3.amazonaws.com/' . $conf['s3fs_bucket'].'/video/' . $filename;
 }
 
 function wowza_stream($filename) {
