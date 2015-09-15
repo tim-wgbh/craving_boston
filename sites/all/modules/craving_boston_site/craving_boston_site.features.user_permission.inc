@@ -178,6 +178,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'administer addtoany'.
+  $permissions['administer addtoany'] = array(
+    'name' => 'administer addtoany',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'addtoany',
+  );
+
   // Exported permission: 'administer block classes'.
   $permissions['administer block classes'] = array(
     'name' => 'administer block classes',

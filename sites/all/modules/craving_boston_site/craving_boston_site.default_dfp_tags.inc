@@ -14,9 +14,9 @@ function craving_boston_site_default_dfp_tag() {
   $tag->disabled = FALSE; /* Edit this to true to make a default tag disabled initially */
   $tag->api_version = 1;
   $tag->machinename = 'leaderboard';
-  $tag->slot = 'Leaderboard';
+  $tag->slot = 'Leaderboard (with supe rleaderboard)';
   $tag->adunit = 'craving_boston_leaderboard';
-  $tag->size = '728x90, 320x50';
+  $tag->size = '970x90,728x90, 320x50';
   $tag->block = 1;
   $tag->settings = array(
     'out_of_page' => 0,
@@ -34,8 +34,16 @@ function craving_boston_site_default_dfp_tag() {
     'targeting' => array(),
     'breakpoints' => array(
       0 => array(
-        'browser_size' => '800x600',
+        'browser_size' => '1024x728',
+        'ad_sizes' => '970x90',
+      ),
+      1 => array(
+        'browser_size' => '728x600',
         'ad_sizes' => '728x90',
+      ),
+      2 => array(
+        'browser_size' => '320x480',
+        'ad_sizes' => '320x50',
       ),
     ),
   );

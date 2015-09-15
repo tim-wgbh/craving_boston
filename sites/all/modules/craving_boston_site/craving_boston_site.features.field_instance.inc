@@ -148,7 +148,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -232,7 +232,7 @@ function craving_boston_site_field_default_field_instances() {
           'optionset' => 'craving_boston',
         ),
         'type' => 'flexslider',
-        'weight' => 4,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -288,7 +288,7 @@ function craving_boston_site_field_default_field_instances() {
           'picture_mapping' => 'article_mapping',
         ),
         'type' => 'picture',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -412,7 +412,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -452,7 +452,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -488,7 +488,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -816,7 +816,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -914,7 +914,7 @@ function craving_boston_site_field_default_field_instances() {
           'picture_mapping' => 'article_mapping',
         ),
         'type' => 'picture',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -964,7 +964,7 @@ function craving_boston_site_field_default_field_instances() {
           'node_reference_view_mode' => 'full',
         ),
         'type' => 'node_reference_node',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1045,7 +1045,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1260,7 +1260,7 @@ function craving_boston_site_field_default_field_instances() {
           'picture_mapping' => 'article_mapping',
         ),
         'type' => 'picture',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1312,7 +1312,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1391,7 +1391,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1473,7 +1473,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'recipe',
         'settings' => array(),
         'type' => 'recipe_duration',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1514,7 +1514,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1562,7 +1562,7 @@ function craving_boston_site_field_default_field_instances() {
           'unit_abbreviation' => 0,
         ),
         'type' => 'recipe_ingredient_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1601,7 +1601,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1641,7 +1641,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1681,7 +1681,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'recipe',
         'settings' => array(),
         'type' => 'recipe_duration',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
