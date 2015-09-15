@@ -84,18 +84,20 @@
       <?php if (!$page): ?>
       <h2 class="title<?php $has_video ? ' has-video' : ''; ?>" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php endif; ?>
+      <?php if ($page): ?>
+      <div class="pull-right a2a_kit a2a_kit_size_16 a2a_default_style">
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_pinterest"></a>
+        <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
+      </div>
+      <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+      <?php endif; ?>
       <?php print render($title_suffix); ?>
   
-      <?php if ($display_submitted): ?>
-        <ul class="meta clearfix">
-          <li><?php print $date; ?></li> 
-        </ul>
-      <?php endif; ?>
-
     <?php if (!$page): ?>
       </header>
   <?php endif; ?>
-
   <div class="content"<?php print $content_attributes; ?>>
     <?php
       // Hide comments and links now so that we can render them later.
@@ -104,6 +106,14 @@
     ?>
     <?php print render($content); ?>
   </div>
+  
+  <?php if ($display_submitted): ?>
+    <ul class="meta clearfix">
+      <li><?php print $date; ?></li> 
+    </ul>
+  <?php endif; ?>
+
+  
 
   <?php if (!empty($content['links'])): ?>
     <footer>

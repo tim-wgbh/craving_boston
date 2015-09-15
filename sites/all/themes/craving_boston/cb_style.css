@@ -191,7 +191,7 @@ input#edit-search-block-form--2 {
   font-style: italic;
   font-weight: bold;
   font-size: 1.2em;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 header {
   margin-top: 20px;
@@ -345,13 +345,10 @@ h2.recipe {
 }
 #masthead {
   margin-top: 24px;
-}
-/* 
+} 
 #site-banner {
-  width: 100%;
-  float: left;
+  margin: 10px 0;
 }
- */
 #site-slogan {
   color: #888;
   font-size: 1.1em;
@@ -368,7 +365,7 @@ h2.recipe {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: center;
-  background-color: #ccc;
+  background-color: #ffeedd;
   padding: 10px 0;
 }
 #support #block-block-1 {

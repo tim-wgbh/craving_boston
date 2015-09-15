@@ -66,7 +66,7 @@ function craving_boston_preprocess_node(&$vars) {
 //   if ($vars['view_mode'] == 'full' && node_is_page($vars['node'])) {
 //      $vars['classes_array'][] = 'node-full';
 //    }
-  $vars['date'] = t('!datetime', array('!datetime' =>  date('j F Y', $vars['created'])));
+  $vars['date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $vars['created'])));
   
   # Get byline
   $vars['byline'] = '';
