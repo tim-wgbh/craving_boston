@@ -97,7 +97,7 @@
       </div>
     </div>
     <div class="row mainmenu">
-      <div class="no-padding col-md-10 col-sm-12">
+      <div class="no-padding col-md-9 col-sm-12">
         <nav id="navigation" role="navigation">
           <div id="main-menu">
             <?php 
@@ -107,7 +107,7 @@
           </div>
         </nav>
       </div>
-      <div class="col-md-2 col-sm-12 no-padding"> 
+      <div class="col-md-3 col-sm-12 no-padding"> 
         <div id="search-form">
           <?php
             $block = module_invoke('search', 'block_view', 'search');

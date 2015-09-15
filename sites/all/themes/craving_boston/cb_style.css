@@ -157,23 +157,10 @@ ul {
   vertical-align: 15px;
 }
 
-/*
-#search-block-form .form-text {
-  width: 80%;
+/* #search-block-form */
+#search-block-form #edit-actions input {
+  margin-right: 0;
 }
-#search-block-form #search-block-form .container-inline {
-  position: relative;
-  overflow: hidden;
-}
-#search-block-form .container-inline .form-type-textfield {
-  position: absolute;
-  right:0;
-  width: 100%;
-  z-index: 100;
-}
-#search-block-form .container-inline #edit-actions {
-}
-*/
 
 /* 
 input#edit-search-block-form--2 {
@@ -348,6 +335,7 @@ h2.recipe {
 } 
 #site-banner {
   margin: 10px 0;
+  width: 90%;
 }
 #site-slogan {
   color: #888;

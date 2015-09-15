@@ -156,7 +156,7 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 */
 function craving_boston_form_search_block_form_alter(&$form, &$form_state, $form_id) {
   $form['search_block_form']['#title_display'] = 'invisible'; // Toggle label visibilty
-  $form['search_block_form']['#size']          = 10;  // define size of the textfield
+  $form['search_block_form']['#size']          = 25;  // define size of the textfield
   $form['actions']['submit']['#type'] = 'image_button';
   $form['actions']['submit']['#value'] = '';
   $form['actions']['submit'] = array(
