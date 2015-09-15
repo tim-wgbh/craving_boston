@@ -85,15 +85,6 @@
         <?php if ($site_slogan): ?>
         <div id="site-slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
-        <?php if ($is_front): ?>
-        <div class="pull-right a2a_kit a2a_kit_size_16 a2a_default_style">
-          <a class="a2a_button_facebook"></a>
-          <a class="a2a_button_twitter"></a>
-          <a class="a2a_button_pinterest"></a>
-          <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
-        </div>
-        <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-        <?php endif; ?>
       </div>
     </div>
     <div class="row mainmenu">
