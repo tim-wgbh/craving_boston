@@ -71,7 +71,6 @@
   ?>
 </div>
 <div id="page">
-  <div id="mobile-select"><a href="#"> MENU &gt;&gt;</a></div>
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
       <div class="col-md-8 col-sm-12">
@@ -107,6 +106,7 @@
         </div>
       </div>
     </div>
+    <div id="mobile-select"><img src="/sites/all/themes/craving_boston/images/menu-button.png" /></div>
   </header>
   
   <?php if ($is_front): ?>

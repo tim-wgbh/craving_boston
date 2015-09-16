@@ -228,24 +228,19 @@ h2.recipe {
 /* Mobile menu */
 #mobile-select {
   position: absolute;
-  right: 0;
-  top: 0;
-  background-color:#BD3E27;
-  color:white;
-  padding: 3px 3px 3px 5px;
+  right: 20px;
+  bottom: 5px;
+  width: 52px;
+  height: 52px;
   z-index: 5000;
   display: none;
-}
-#mobile-select a {  
-  color: white;
-  font-weight: bold;
 }
 #mobile-menu {
   position: absolute;
   top: 0;
   right: -360px;
   width: 360px;
-  background-color: #BD3E27;
+  background-color: #9e1d20;
   z-index: 20000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.7);
   display: none;
@@ -253,14 +248,15 @@ h2.recipe {
 #mobile-menu ul, #mobile-menu ul > li {
   list-style-type: none;
   margin: 0;
-  border-bottom: solid 1px #ccc;
+}
+#mobile-menu ul > li {
   padding: 10px 0 10px 3px;
+  border-bottom: solid 1px #ccc;
 }
 #mobile-menu ul > li > a {
   background-color: transparent;
   text-transform: uppercase;
   color: white;
-  font-weight: bold;
   text-shadow: none;
 }
 

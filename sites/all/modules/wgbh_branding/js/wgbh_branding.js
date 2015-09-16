@@ -7,13 +7,9 @@ Drupal.behaviors.wgbhBrandingModule = {
     // Create WGBH links
     var links =
       "<div class='wgbh-links'>\n" +
-      "  <ul class='menu pull-left'>\n" +
-      "    <li><a href='http://www.wgbh.org' title='WGBH.org'  class='image'><img src='/sites/all/modules/wgbh_branding/images/wgbh_mini_logo.png' alt='WGBH' /></a>\n" +
-      "  </ul>\n" +
-      "  <ul class='menu pull-right'>\n" +
-      "    <li class='my-wgbh'><a href='http://www.wgbh.org/mywgbh' title='Go to myWGBH'>myWGBH</a></li>\n" +
-      "    <li><a href='http://www.wgbh.org/donateButton' title='Donate to WGBH'  class='donate'>Donate</a></li>\n" +
-      "  </ul>\n" +
+      "  <div class='wgbh-logo'><a href='http://www.wgbh.org' title='WGBH.org'  class='image'><img src='/sites/all/modules/wgbh_branding/images/wgbh_mini_logo.png' alt='WGBH' /></a></div>\n" +
+      "  <div class='my-wgbh'><a href='http://www.wgbh.org/mywgbh' title='Go to myWGBH'>myWGBH</a></div>\n" +
+      "  <div class='donate-button'><a href='http://www.wgbh.org/donateButton' title='Donate to WGBH'>Donate</a></div>\n" +
       "</div>\n";      
     
     

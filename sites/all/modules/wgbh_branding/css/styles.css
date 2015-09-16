@@ -7,39 +7,37 @@
   font-family: Helvetica, Arial, sans-serif;
   width: 100%;
   z-index: 500;
-  padding: 7px 0;
+  padding: 7px 10px;
   line-height: 0;
 }
-.wgbh-links ul.menu, .wgbh-links ul.menu > li {
-  list-style-type: none;
+.wgbh-links .my-wgbh {
+  position: absolute;
+  right: 100px;
+  top: 23px;
 }
-.wgbh-links ul.menu > li {
-  display: table-cell;
-  vertical-align: middle;
+.wgbh-links .donate-button {
+  position: absolute;
+  right: 20px;
+  top: 23px;
 }
-.wgbh-links ul.menu > li > a, .wgbh-links ul.menu > li > a:visited {
-  padding: 20px;
-  color: white;
-}
-.wgbh-links ul.menu > li {
-  text-transform: uppercase;
-}
-.wgbh-links ul.menu > li.my-wgbh {
-  text-transform: none;
-}
-.wgbh-links ul.menu > li > a:hover {
+.wgbh-links  a:hover {
   color:#e77e00;
 }
-.wgbh-links ul.menu > li > a.donate {
+.wgbh-links .donate-button a {
   padding: 7px 8px;
   border-radius: 4px;
   background-color: #e77e00;
+  color: white;
+  text-transform:uppercase;
 }
-.wgbh-links ul.menu > li > a.donate:hover {
+.wgbh-links .donate-button a:hover {
   color: #333;
 }
-.wgbh-links ul.menu.pull-right {
-  margin: 16px 40px 0 0;
+.wgbh-links .my-wgbh a {
+  padding: 7px 8px;
+  border-radius: 4px;
+  background-color: #1C62A0;
+  color: white;
 }
 
 /* Dusky red: ed564b */
