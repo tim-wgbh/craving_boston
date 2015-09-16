@@ -14,12 +14,14 @@
   position: absolute;
   right: 100px;
   top: 23px;
+  z-index: 600;
   -webkit-backface-visibility: hidden;
 }
 .wgbh-links .donate-button {
   position: absolute;
   right: 20px;
   top: 23px;
+  z-index: 700;
   -webkit-backface-visibility: hidden;
 }
 .wgbh-links  a:hover {
