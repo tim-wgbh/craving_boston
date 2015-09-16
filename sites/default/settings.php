@@ -607,3 +607,14 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
+// Remove WWW.
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
+  $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
+  if ($_SERVER['HTTP_HOST'] == 'www.cravingboston.wgbh.org' ||
+      $_SERVER['HTTP_HOST'] == 'live-craving-boston.pantheon.io') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: http://cravingboston.wgbh.org'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
+
