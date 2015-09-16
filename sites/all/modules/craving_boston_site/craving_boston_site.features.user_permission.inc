@@ -113,6 +113,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access site-wide contact form'] = array(
     'name' => 'access site-wide contact form',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'site administrator' => 'site administrator',
     ),
     'module' => 'contact',

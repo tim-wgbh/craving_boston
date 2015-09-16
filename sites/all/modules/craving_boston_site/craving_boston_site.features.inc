@@ -309,6 +309,21 @@ function craving_boston_site_image_default_styles() {
     ),
   );
 
+  // Exported image style: half_mobile_square.
+  $styles['half_mobile_square'] = array(
+    'label' => 'Half Mobile Square',
+    'effects' => array(
+      24 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 160,
+          'height' => 160,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: mobile_square.
   $styles['mobile_square'] = array(
     'label' => 'Mobile Square',

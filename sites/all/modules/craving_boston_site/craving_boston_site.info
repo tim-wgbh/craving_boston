@@ -255,6 +255,7 @@ features[image][] = featured_main_mobile
 features[image][] = featured_sub_large
 features[image][] = featured_sub_medium
 features[image][] = featured_sub_mobile
+features[image][] = half_mobile_square
 features[image][] = mobile_square
 features[image][] = square_thumbnail
 features[menu_custom][] = menu-craving-boston
