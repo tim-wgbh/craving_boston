@@ -252,6 +252,7 @@ h2.recipe {
 #mobile-menu ul > li {
   padding: 10px 0 10px 3px;
   border-bottom: solid 1px #ccc;
+  cursor: pointer;
 }
 #mobile-menu ul > li > a {
   background-color: transparent;
@@ -467,6 +468,9 @@ h2.recipe {
   }
   p {
     font-size: 14px;
+  }
+  input#edit-search-block-form--2 {
+    width: 100px;
   }
   #search-form {
     text-align: left;

@@ -21,6 +21,12 @@ Drupal.behaviors.cravingBostonTheme = {
       $('#mobile-menu').animate({ left: 0 });
       $('#mobile-select').animate({right: -100});
     });
+    
+    //Make full mobile menu item block clickable
+    $('body').on('click', '#mobile-menu li', function(e) {
+      var target = $(this).find('a').attr('href');
+      window.location.href = target;
+    });
   }
 };
 
