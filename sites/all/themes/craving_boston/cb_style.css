@@ -18,7 +18,7 @@ breakpoints[wide] = (min-width: 1220px)
  
 /* Basic settings */ 
 body {
-  font-family: "cooper_hewittbook",Arial,Helvetica,sans-serif;
+  font-family: "CooperHewitt",Arial,Helvetica,sans-serif;
   background-image: url(images/bg_greyzz.png);
   color: #555;
 }
@@ -42,11 +42,13 @@ a:hover {
 ul {
   list-style-type: square;
 }
+/* 
 strong {
   font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
   background-image: url(images/bg_greyzz.png);
   font-weight: normal;
 }
+ */
 
 /* Utility class to remove padding from column */
 .no-padding {
@@ -192,10 +194,10 @@ header {
   margin-top: 20px;
 }
 h1.page-title {
-  font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
+  font-family: "CooperHewitt",Arial,Helvetica,sans-serif;
   font-size: 3em;
   color: #5C9E4C;
-  font-weight: normal;
+  font-weight: bold;
 }
 .node h2.title a, .node h2.title a:visited {
   font-size: 2em;
@@ -398,7 +400,7 @@ h2.recipe {
   margin-top: 20px;
 }
 .page-node h1.page-title {
-  font-family: "cooper_hewittbook",Arial,Helvetica,sans-serif;
+  font-family: "CooperHewitt",Arial,Helvetica,sans-serif;
   font-size: 2em;
   color: #b52e18;
   line-height: 1.2;

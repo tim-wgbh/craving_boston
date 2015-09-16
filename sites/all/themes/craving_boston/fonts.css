@@ -3,7 +3,7 @@
 
 
 @font-face {
-    font-family: 'cooper_hewittbook';
+    font-family: 'CooperHewitt';
     src: url('fonts/cooperhewitt-book-webfont.eot');
     src: url('fonts/cooperhewitt-book-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/cooperhewitt-book-webfont.woff2') format('woff2'),
@@ -19,7 +19,7 @@
 
 
 @font-face {
-    font-family: 'cooper_hewittbook_italic';
+    font-family: 'CooperHewitt';
     src: url('fonts/cooperhewitt-bookitalic-webfont.eot');
     src: url('fonts/cooperhewitt-bookitalic-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/cooperhewitt-bookitalic-webfont.woff2') format('woff2'),
@@ -35,7 +35,7 @@
 
 
 @font-face {
-    font-family: 'cooper_hewittsemibold';
+    font-family: 'CooperHewitt';
     src: url('fonts/cooperhewitt-semibold-webfont.eot');
     src: url('fonts/cooperhewitt-semibold-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/cooperhewitt-semibold-webfont.woff2') format('woff2'),
@@ -51,7 +51,7 @@
 
 
 @font-face {
-    font-family: 'cooper_hewittsemibold_italic';
+    font-family: 'CooperHewitt';
     src: url('fonts/cooperhewitt-semibolditalic-webfont.eot');
     src: url('fonts/cooperhewitt-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/cooperhewitt-semibolditalic-webfont.woff2') format('woff2'),
