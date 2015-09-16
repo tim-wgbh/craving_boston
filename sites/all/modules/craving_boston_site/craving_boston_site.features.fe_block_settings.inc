@@ -245,7 +245,7 @@ function craving_boston_site_default_fe_block_settings() {
 
   $export['block-rail_newsletter_signup'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'signup',
     'custom' => 0,
     'machine_name' => 'rail_newsletter_signup',
     'module' => 'block',
@@ -263,7 +263,7 @@ function craving_boston_site_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -27,
+        'weight' => -26,
       ),
       'seven' => array(
         'region' => '',
@@ -863,7 +863,7 @@ admin/*',
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'craving_boston',
-        'weight' => -26,
+        'weight' => -27,
       ),
       'seven' => array(
         'region' => '',

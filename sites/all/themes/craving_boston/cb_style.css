@@ -84,7 +84,7 @@ strong {
   display: inline-block;
   margin-top: 15px;
 }
-.block.info {
+.block.info, .block.signup {
   padding: 20px;
   background-color: #ffeedd;  /* highlight-background */
   color: #333;

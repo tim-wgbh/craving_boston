@@ -10,38 +10,34 @@
   padding: 7px 10px;
   line-height: 0;
 }
-.wgbh-links .my-wgbh {
-  position: absolute;
-  right: 100px;
-  top: 23px;
-  z-index: 600;
-  -webkit-transform:translateZ(0);
+.wgbh-links td {
+  vertical-align: middle;
+  padding: 0 10px;
 }
-.wgbh-links .donate-button {
-  position: absolute;
-  right: 20px;
-  top: 23px;
-  z-index: 700;
-  -webkit-transform:translateZ(0);
+.wgbh-links td.my-wgbh {
+  width: 33%;
 }
-.wgbh-links  a:hover {
-  color:#e77e00;
+.wgbh-links td.actions {
+  width: 66%;
+  text-align: right;
+}
+.wgbh-links a:hover {
+  color:#fff;
 }
 .wgbh-links .donate-button a {
+  background-color: #e77e00;
+  text-transform:uppercase;
+  color: white;
   padding: 7px 8px;
   border-radius: 4px;
-  background-color: #e77e00;
-  color: white;
-  text-transform:uppercase;
-}
-.wgbh-links .donate-button a:hover {
-  color: #333;
+  margin: 0 2px;
 }
 .wgbh-links .my-wgbh a {
-  padding: 7px 8px;
-  border-radius: 4px;
   background-color: #1C62A0;
   color: white;
+  padding: 7px 8px;
+  border-radius: 4px;
+  margin: 0 2px;
 }
 
 /* Dusky red: ed564b */

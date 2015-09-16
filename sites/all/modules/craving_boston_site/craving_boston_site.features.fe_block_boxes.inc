@@ -12,15 +12,9 @@ function craving_boston_site_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'About Craving Boston';
-  $fe_block_boxes->format = 'filtered_html';
+  $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'block_about_craving_boston';
-  $fe_block_boxes->body = '<p>WGBH and award-winning food editor Catherine Smart have come together to provide you thoughtful content you can use everyday, and to inspire you to explore the deep connection between our region and its cuisine.</p>
-
-
-
-<p>Whether you want to learn more about how innovation is affecting our fare culture, read about a new local restaurant, or to look for a locally inspired recipe for dinner tonight, Craving Boston&nbsp;is your daily destination for food in Boston and New England.</p>
-
-';
+  $fe_block_boxes->body = '<p>WGBH and award-winning journalist Catherine Smart are on a mission to bring you the best local food stories, served fresh daily. For decades, we&#39;ve delivered the cooking shows you know and love. Now we&rsquo;re going out into the community to explore all aspects of our region&#39;s food culture.</p><p>Whether you want to learn more about how innovation is affecting the way we eat, find out if the fries at that new hotspot are really worth the wait, or need a tried and tested recipe for an impromptu dinner party, <em>Craving Boston</em> is your one-stop shop for all things food in Boston and New England.</p><p><a href="/about" title="Learn more">Learn more &gt;</a></p>';
 
   $export['block_about_craving_boston'] = $fe_block_boxes;
 
@@ -82,13 +76,7 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Rail Newsletter Signup';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'rail_newsletter_signup';
-  $fe_block_boxes->body = '<p><a>Sign up for our newsletter</a></p>
-
-
-
-<p><input size="10" /><button class="btn sign-up">Feed Me</button></p>
-
-';
+  $fe_block_boxes->body = '<p>Sign-up for updates from the WGBH <strong><em>Your Don&#39;t-Miss List</em></strong>, WGBH promotions, and previews of what&#39;s coming up on WGBH TV.</p><p><iframe align="left" frameborder="0" height="80" marginheight="0" marginwidth="0" scrolling="no" src="http://be.wgbh.org/subscription/atgbhsignupcravingboston.htm" width="250"></iframe></p><div class="clearfix">&nbsp;</div>';
 
   $export['rail_newsletter_signup'] = $fe_block_boxes;
 
