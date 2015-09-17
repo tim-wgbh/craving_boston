@@ -166,17 +166,10 @@ strong {
 #search-form .form-item {
   vertical-align: 15px;
 }
-
-/* #search-block-form */
-#search-block-form #edit-actions input {
-  margin-right: 0;
-}
-
-/* 
 input#edit-search-block-form--2 {
-  display: none;
+  margin-right: 0;
+  width: 125px;
 }
- */
 .field-name-body {
   margin-top: 30px;
 }
@@ -465,7 +458,7 @@ h2.recipe {
     width: 100%;
     font-size: 0.9em;
   }
-  #mobile-menu, #mobile-select {
+  #mobile-select {
     display: block;
   }
   p {
