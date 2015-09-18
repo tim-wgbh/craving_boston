@@ -221,8 +221,8 @@ h2.recipe {
 /* Mobile menu */
 #mobile-select {
   position: absolute;
-  right: 20px;
-  bottom: 5px;
+  right: 12px;
+  bottom: 7px;
   width: 52px;
   height: 52px;
   z-index: 5000;
@@ -254,6 +254,12 @@ h2.recipe {
   display: inline-block;
   width: 100%;
   height: 100%;
+  text-align: center;
+  margin 0 auto;
+}
+#mobile-menu ul > li.close-menu {
+  padding: 3px;
+  background-color: #444
 }
 
 /* Desktop menu */

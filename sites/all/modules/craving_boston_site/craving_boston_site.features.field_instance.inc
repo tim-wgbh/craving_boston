@@ -1559,7 +1559,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'recipe',
         'settings' => array(
           'fraction_format' => '{%d }%d&frasl;%d',
-          'unit_abbreviation' => 0,
+          'unit_abbreviation' => 1,
         ),
         'type' => 'recipe_ingredient_default',
         'weight' => 6,

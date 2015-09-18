@@ -17,9 +17,14 @@ Drupal.behaviors.cravingBostonTheme = {
     });
             
     // Mobile menu
+    // Add close button
+    $('#mobile-menu > ul').append('<li class="close-menu"><a href="#"><img src="/sites/all/themes/craving_boston/images/banned.png" alt="close" /></a></li>');
+    $('body').on('click', '#mobile-menu > ul > li.close-menu', function () {
+      $('#mobile-menu').animate({ left: 1024});
+     }); 
+      
     $('body').on('click','#mobile-select', function() {
-      $('#mobile-menu').css({display:'block'}).animate({ left: 0 });
-      $('#mobile-select').animate({right: -100});
+      $('#mobile-menu').css({display:'block', width: '100%' }).animate({ left: 0 });
     });
     
   }
