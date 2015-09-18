@@ -15,7 +15,7 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint->api_version = 1;
   $breakpoint->machine_name = 'breakpoints.theme.craving_boston.large';
   $breakpoint->name = 'large';
-  $breakpoint->breakpoint = '(min-width: 768px)';
+  $breakpoint->breakpoint = '(max-width: 1200px)';
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
@@ -28,14 +28,30 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint = new stdClass();
   $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
   $breakpoint->api_version = 1;
+  $breakpoint->machine_name = 'breakpoints.theme.craving_boston.limbo';
+  $breakpoint->name = 'limbo';
+  $breakpoint->breakpoint = '(max-width: 760px)';
+  $breakpoint->source = 'craving_boston';
+  $breakpoint->source_type = 'theme';
+  $breakpoint->status = 1;
+  $breakpoint->weight = 0;
+  $breakpoint->multipliers = array(
+    '1x' => '1x',
+  );
+  $export['breakpoints.theme.craving_boston.limbo'] = $breakpoint;
+
+  $breakpoint = new stdClass();
+  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
+  $breakpoint->api_version = 1;
   $breakpoint->machine_name = 'breakpoints.theme.craving_boston.medium';
   $breakpoint->name = 'medium';
-  $breakpoint->breakpoint = '(min-width: 480px)';
+  $breakpoint->breakpoint = '(max-width: 480px)';
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
   $breakpoint->weight = 1;
   $breakpoint->multipliers = array(
+    '2x' => '2x',
     '1x' => '1x',
   );
   $export['breakpoints.theme.craving_boston.medium'] = $breakpoint;
@@ -45,12 +61,13 @@ function craving_boston_site_default_breakpoints() {
   $breakpoint->api_version = 1;
   $breakpoint->machine_name = 'breakpoints.theme.craving_boston.small';
   $breakpoint->name = 'small';
-  $breakpoint->breakpoint = '(min-width: 0px)';
+  $breakpoint->breakpoint = '(max-width: 320px)';
   $breakpoint->source = 'craving_boston';
   $breakpoint->source_type = 'theme';
   $breakpoint->status = 1;
   $breakpoint->weight = 2;
   $breakpoint->multipliers = array(
+    '2x' => '2x',
     '1x' => '1x',
   );
   $export['breakpoints.theme.craving_boston.small'] = $breakpoint;

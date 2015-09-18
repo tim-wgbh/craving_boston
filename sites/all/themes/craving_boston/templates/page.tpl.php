@@ -120,13 +120,13 @@
     <div id="preface-area">
       <div class="container">
         <div class="row">
-          <?php if($page['preface_first']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+          <?php if($page['preface_first']): ?><div class="preface-block col-xs-<?php print $preface_col; ?>">
             <?php print render ($page['preface_first']); ?>
           </div><?php endif; ?>
-          <?php if($page['preface_middle']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+          <?php if($page['preface_middle']): ?><div class="preface-block col-xs-<?php print $preface_col; ?>">
             <?php print render ($page['preface_middle']); ?>
           </div><?php endif; ?>
-          <?php if($page['preface_last']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+          <?php if($page['preface_last']): ?><div class="preface-block col-xs-<?php print $preface_col; ?>">
             <?php print render ($page['preface_last']); ?>
           </div><?php endif; ?>
         </div>
@@ -137,7 +137,7 @@
   <?php if($page['header']) : ?>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-md-12">
           <div id="support">
             <?php print render($page['header']); ?>
           </div>
@@ -150,7 +150,7 @@
     <div class="container"> 
       <div class="row">
         <?php if($page['sidebar_first'] && !$admin_page) { $primary_col = 8; } else { $primary_col = 12; } ?>
-        <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
+        <div id="primary" class="content-area col-md-<?php print $primary_col; ?>">
           <section id="content" role="main" class="clearfix">
             <?php print $messages; ?>
             <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
@@ -166,7 +166,7 @@
           </section>
         </div>
         <?php if ($page['sidebar_first'] && !$admin_page): ?>
-          <aside id="sidebar" class="col-sm-4" role="complementary">
+          <aside id="sidebar" class="col-md-4 col-xs-12" role="complementary">
            <?php print render($page['sidebar_first']); ?>
           </aside> 
         <?php endif; ?>
@@ -174,23 +174,11 @@
     </div>
   </div>
   
-  <?php if($page['disqus']) : ?>
-    <section class="disqus">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8">
-            <?php print render($page['disqus']); ?>
-          </div>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
-
   <?php if($page['footer']) : ?>
     <div id="footer-block">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-xs-12">
             <?php print render($page['footer']); ?>
           </div>
         </div>
@@ -203,16 +191,16 @@
       <?php $footer_col = ( 12 / ( (bool) $page['footer_first'] + (bool) $page['footer_second'] + (bool) $page['footer_third'] + (bool) $page['footer_fourth'] ) ); ?>
       <div class="container">
         <div class="row">
-          <div class="footer-block col-sm-3">
+          <div class="footer-block col-xs-3">
             <?php if ($page['footer_first']) print render ($page['footer_first']); ?>
           </div>
-          <div class="footer-block col-sm-3">
+          <div class="footer-block col-xs-3">
             <?php if ($page['footer_second']) print render ($page['footer_second']); ?>
           </div>
-          <div class="footer-block col-sm-3">
+          <div class="footer-block col-xs-3">
             <?php if ($page['footer_third']) print render ($page['footer_third']); ?>
           </div>
-          <div class="footer-block col-sm-3">
+          <div class="footer-block col-xs-3">
             <?php if ($page['footer_fourth']) print render ($page['footer_fourth']); ?>
           </div>
         </div>
@@ -223,7 +211,7 @@
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="container">
       <div class="row">
-        <div class="fcred col-sm-12">
+        <div class="fcred col-xs-12">
            <img src="/<?php print drupal_get_path('module', 'wgbh_branding') . '/images/wgbh_micro_logo.png' ?>" /> &copy; <?php echo date("Y"); ?> The WGBH Educational Foundation
         </div>
       </div>

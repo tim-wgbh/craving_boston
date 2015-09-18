@@ -206,13 +206,28 @@ function craving_boston_site_image_default_styles() {
 
   // Exported image style: default_medium.
   $styles['default_medium'] = array(
-    'label' => 'Default Medium',
+    'label' => 'Default Medium 1x',
     'effects' => array(
-      20 => array(
+      26 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 690,
-          'height' => 460,
+          'width' => 480,
+          'height' => 320,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: default_medium_2x.
+  $styles['default_medium_2x'] = array(
+    'label' => 'Default Medium 2x',
+    'effects' => array(
+      27 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 960,
+          'height' => 640,
         ),
         'weight' => 1,
       ),
@@ -221,13 +236,28 @@ function craving_boston_site_image_default_styles() {
 
   // Exported image style: default_small.
   $styles['default_small'] = array(
-    'label' => 'Default Small',
+    'label' => 'Default Small 1x',
     'effects' => array(
       21 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 480,
-          'height' => 320,
+          'width' => 320,
+          'height' => 213,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: default_small_2x.
+  $styles['default_small_2x'] = array(
+    'label' => 'Default Small 2x',
+    'effects' => array(
+      25 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 640,
+          'height' => 427,
         ),
         'weight' => 1,
       ),

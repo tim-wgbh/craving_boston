@@ -497,7 +497,7 @@ admin/*',
         'weight' => 0,
       ),
       'craving_boston' => array(
-        'region' => 'disqus',
+        'region' => 'content',
         'status' => 1,
         'theme' => 'craving_boston',
         'weight' => 0,

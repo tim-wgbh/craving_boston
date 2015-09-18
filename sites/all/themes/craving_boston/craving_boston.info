@@ -15,7 +15,6 @@ regions[preface_middle] = Preface Middle
 regions[preface_last]   = Preface Last
 regions[content_top]    = Content Top
 regions[content]        = Content
-regions[disqus]         = Disqus
 regions[help]           = Help
 regions[footer]         = Footer
 regions[footer_first]   = First Bottom
@@ -28,9 +27,12 @@ settings[slideshow_display]  = 1
 settings[breadcrumbs]  = 1
 
 ; Breakpoints
-breakpoints[large]  = (min-width: 768px)
-breakpoints[medium] = (min-width: 480px)
-breakpoints[small]  = (min-width: 0px)
+breakpoints[large]  = (max-width: 1200px)
+breakpoints[limbo]  = (max-width: 760px)
+breakpoints[medium] = (max-width: 480px)
+breakpoints[small]  = (max-width: 320px)
+multipliers[medium][] = 2x
+multipliers[small][] = 2x
 
 version = "7.x-1.0"
 core = "7.x"

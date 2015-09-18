@@ -1,20 +1,4 @@
 /*  This is the Craving Boston custom style sheet */
-/* 
-breakpoints[mobile] = (min-width: 0px)
-breakpoints[narrow] = (min-width: 740px)
-breakpoints[normal] = (min-width: 980px)
-breakpoints[wide] = (min-width: 1220px)
- */
- 
- /*
- Color notes:
- The following have been changed
- _highlight-background_ options 
- pastel orange that Eric hates: #ECD5D1  
- Hamilton Beach green: #5AC57A
- Maroon: #3D140D
- Greek clay: #7D291A
- */
  
 /* Basic settings */ 
 body {
@@ -59,6 +43,8 @@ strong {
 /* More specific settings */
 .article {
   position: relative;
+}
+.attachment .article {
   margin-left: 5px;
 }
 .article .image {
@@ -75,6 +61,12 @@ strong {
 }
 .bio .bio-text p {
   font-size: 15px;
+}
+.block-dfp iframe {
+  width: 100%;
+}
+.block-dfp iframe img {
+  width: 100%;
 }
 #cb-bottom-links {
   background-color: #ddd;
@@ -354,7 +346,7 @@ h2.recipe {
   color: #888;
   font-size: 1.1em;
   line-height: 1.3;
-  margin-top: 73px;
+  margin-top: 88px;
   padding: 0 0 7px 1%;
   font-weight: bold;
   text-align: right;
@@ -414,18 +406,9 @@ h2.recipe {
 .attachment .view-content .info .article-title {
   font-size: 18px;
 }
-  .view-featured .article {
-    width: 74.5%;
-    float:left;
-  }
-  .view-featured .attachment .article {
-    width: 100%;
-    margin-bottom: 3px;
-  }
-  .view-featured .attachment  {
-    float: left;
-    width:24.5%;
-  }
+.view-featured .attachment .article {
+  margin-bottom: 5px;
+}
 .view-featured .article:first-child .info {
   padding: 10px;
   bottom: 20px;
@@ -452,10 +435,41 @@ h2.recipe {
 .wgbh-related-links ul > li > a {
   color: #b52e18;
 }
+@media (max-width: 770px) {
+  #main-menu {
+    display: block;
+  }
+  #site-slogan {
+    text-align: left;
+    margin-top: 10px;
+  }
+/* 
+  .view-featured .article-title, 
+    font-size: 18px;
+  }
+  .attachment .view-content .info .article-title {
+    font-size: 14px;
+  }
+  #site-slogan {
+    text-align: left;
+    margin-top: 10px;
+  }
+ */
+}
 
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
 /* Anything smaller than tablet */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .page-node .block.info {
+    display: none;
+  }
+  #main-menu {
+    display: none;
+  }
+  #site-slogan {
+    text-align: center;
+    font-size: 12px;
+  }
   #cb-bottom-links #block-block-5 {
     display: none;
   }
@@ -490,17 +504,15 @@ h2.recipe {
   } 
   .view-featured .article, .view-featured .article .info, .attachment .view-content .info,
   .view-the-latest .article, .view-the-latest .article .info {
-    position:static;
     width: 100%;
     float: none;
-  }
-  .view-featured .article-title, .attachment .view-content .article-title {
-    font-size: 18px;
+    font-size: 16px;
   }
   .view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
-    font-size: 18px;
+    font-size: 16px;
     background-color: rgba(230,230,230, 0.8);
     margin-bottom: 0;
+    padding: 5px;
   }
   .view-content .byline {
     display: none;
@@ -509,3 +521,4 @@ h2.recipe {
     margin-bottom: 10px;
   }
 }
+
