@@ -135,22 +135,36 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
        $vars['has_video'] = true;
     }
     if ($fields['type']->raw == 'recipe') {
-      if ($fields['field_part_of_multi_recipe']->content == 'yes') {
+      if (!empty($fields['field_part_of_multi_recipe']) && $fields['field_part_of_multi_recipe']->content == 'yes') {
         $vars['display'] = false;
       }
       $vars['is_recipe'] = true;
-      $vars['deck'] = $fields['recipe_description']->content;
-//       $vars['deck'] = $fields['recipe_description']->content;
+      if (!($vars['deck'] = subhead_deck($fields))) {
+        $vars['deck'] = $fields['recipe_description']->content;
+      }
     } else if ($fields['type']->raw == 'multi_recipe') {
       $vars['is_recipe'] = true;
-      $vars['deck'] = $fields['body']->content;
-//      $vars['deck'] = $fields['body']->content;
+      if (!($vars['deck'] = subhead_deck($fields))) {
+        $vars['deck'] = $fields['body']->content;
+      }
     } else {
       $vars['is_recipe'] = false;
-      $vars['deck'] = $fields['body']->content;
+      if (!($vars['deck'] = subhead_deck($fields))) {
+        $vars['deck'] = $fields['body']->content;
+      }
     }
   }
 }
+
+function subhead_deck($fields) {
+  if (!empty($fields['field_subhead']) && !empty($fields['field_subhead']->content)) {
+    return $fields['field_subhead']->content;
+  } else {
+    return false;
+  }
+}
+
+
 /**
 * hook_form_FORM_ID_alter
 */
