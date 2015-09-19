@@ -26,7 +26,13 @@ Drupal.behaviors.cravingBostonTheme = {
     $('body').on('click','#mobile-select', function() {
       $('#mobile-menu').css({display:'block', width: '100%' }).animate({ left: 0 });
     });
-    
+    $('body').on('click', '.mobile-back-to-top a', function(e) {
+      e.preventDefault();
+      window.scrollTo(0,0);
+    });
+    $(window).scroll(function() {
+      $('.mobile-back-to-top').show().delay(3000).fadeOut();
+    });
   }
 };
 

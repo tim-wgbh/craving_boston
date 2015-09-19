@@ -70,6 +70,9 @@
     print theme('links__menu_topics_menu', array('links' => $topic_menu));
   ?>
 </div>
+<div class="mobile-back-to-top">
+  <a href="#"><img src="/sites/all/themes/craving_boston/images/up-button.png" /></a>
+</div>
 <div id="page">
   <header id="masthead" class="site-header container" role="banner">
     <div class="row">
@@ -191,16 +194,16 @@
       <?php $footer_col = ( 12 / ( (bool) $page['footer_first'] + (bool) $page['footer_second'] + (bool) $page['footer_third'] + (bool) $page['footer_fourth'] ) ); ?>
       <div class="container">
         <div class="row">
-          <div class="footer-block col-xs-3">
+          <div class="footer-block col-sm-3">
             <?php if ($page['footer_first']) print render ($page['footer_first']); ?>
           </div>
-          <div class="footer-block col-xs-3">
+          <div class="footer-block col-sm-3">
             <?php if ($page['footer_second']) print render ($page['footer_second']); ?>
           </div>
-          <div class="footer-block col-xs-3">
+          <div class="footer-block col-sm-3">
             <?php if ($page['footer_third']) print render ($page['footer_third']); ?>
           </div>
-          <div class="footer-block col-xs-3">
+          <div class="footer-block col-sm-3">
             <?php if ($page['footer_fourth']) print render ($page['footer_fourth']); ?>
           </div>
         </div>

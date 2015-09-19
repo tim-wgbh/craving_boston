@@ -198,7 +198,9 @@ h2.has-video {
 }
 h2.recipe {
   padding-left: 37px;
-  background: url(images/spoon-icon.png) left 8px no-repeat;
+  background: url(images/spoon-icon.png) left center no-repeat;
+  margin-top: 0;
+  padding-top: 20px;
 }
 .image-caption {
   color: #666;
@@ -217,7 +219,7 @@ h2.recipe {
   bottom: 7px;
   width: 52px;
   height: 52px;
-  z-index: 5000;
+  z-index: 450;
   display: none;
 }
 #mobile-menu {
@@ -251,7 +253,17 @@ h2.recipe {
 }
 #mobile-menu ul > li.close-menu {
   padding: 3px;
-  background-color: #444
+  background-color: #881122;
+}
+.mobile-back-to-top {
+  display: none;
+  position: fixed;
+  right: 12px;
+  top: 300px;
+  width: 52px;
+  height: 52px;
+  z-index: 1000;
+  opacity: 0.75;
 }
 
 /* Desktop menu */
@@ -372,7 +384,9 @@ h2.recipe {
   font-style: italic;
   margin-top: 10px;
 }
-.view-content .article .info {
+.view-the-latest .article .info,
+.view-topic .article .info,
+.view-featured .article .featured-info {
   position: absolute;
   bottom: 1em;
   padding: 10px 2%;
@@ -383,7 +397,8 @@ h2.recipe {
 .view-content .article .info .deck {
   font-size: 18px;
 }
-.view-content .article-title, .view-content .article h2.title {
+.view-content .article-title, 
+.view-content .article h2.title {
   font-size: 2em;
   font-weight: bold;
   line-height: 1.2;
@@ -397,25 +412,27 @@ h2.recipe {
   margin-top: 20px;
   font-weight: bold;
 }
+/* 
 .view-content .article:first-child h2.title {
   margin-top: 0;
 }
+ */
 .view-featured .article-title {
   margin-top: 0;
 }
-.attachment .view-content .info .article-title {
+.attachment .view-content .featured-info .article-title {
   font-size: 18px;
 }
 .view-featured .attachment .article {
   margin-bottom: 5px;
 }
-.view-featured .article:first-child .info {
+.view-featured .article:first-child .featured-info {
   padding: 10px;
   bottom: 20px;
   font-size: 1.2em;
 }
 
-.attachment .view-featured .article .info {
+.attachment .view-featured .article .featured-info {
   padding: 4px;
   bottom: 12px;
 }
@@ -482,7 +499,7 @@ h2.recipe {
     display: block;
   }
   p {
-    font-size: 14px;
+    font-size: 1.1em;
   }
   input#edit-search-block-form--2 {
     width: 100px;
@@ -498,26 +515,54 @@ h2.recipe {
   #support {
     background-color: #fff;
   }
+  .view-content .article .info {
+    display: none;
+  }
+  .view-featured .article .featured-info,
+  .view-featured .article:first-child .featured-info {
+    position:static;
+    background-color: transparent;
+    padding-left: 0;
+  }
   .view-featured .attachment {
     width: 100%;
     float: none;
-  } 
-  .view-featured .article, .view-featured .article .info, .attachment .view-content .info,
-  .view-the-latest .article, .view-the-latest .article .info {
-    width: 100%;
-    float: none;
-    font-size: 16px;
   }
-  .view-content .article-title, .view-content .article h2.title, .page-node h1.page-title {
-    font-size: 16px;
-    background-color: rgba(230,230,230, 0.8);
-    margin-bottom: 0;
-    padding: 5px;
+  .attachment .view-featured .article .featured-info {
+    padding-left: 0;
+  }
+  .view-featured .attachment .article {
+    margin-left: 0;
+  } 
+  .view-featured .article, 
+  .view-featured .article .info, 
+  .attachment .view-content .info .article-title,
+  .view-the-latest .article, 
+  .view-the-latest .article .info {
+    font-size: 20px;
+  }
+  .view-content .article-title, 
+  .view-content .article h2.title, 
+  .page-node h1.page-title {
+    font-size: 20px;
+    background-color:transparent;
+  }
+  .page-node .field-name-field-subhead, 
+  .page-node .field-name-field-subhead p, 
+  .page-node .subhead, 
+  .page-node .subhead p, 
+  .page-node .field-name-field-author {
+    color: #666;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 20px;
   }
   .view-content .byline {
     display: none;
   }
-  .view-featured .article .image, .attachment .view-content .article .image {
+  .view-featured .article .image, 
+  .attachment .view-content .article .image {
     margin-bottom: 10px;
   }
 }
