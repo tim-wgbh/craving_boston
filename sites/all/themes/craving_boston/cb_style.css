@@ -412,11 +412,6 @@ h2.recipe {
   margin-top: 20px;
   font-weight: bold;
 }
-/* 
-.view-content .article:first-child h2.title {
-  margin-top: 0;
-}
- */
 .view-featured .article-title {
   margin-top: 0;
 }
@@ -426,7 +421,7 @@ h2.recipe {
 .view-featured .attachment .article {
   margin-bottom: 5px;
 }
-.view-featured .article:first-child .featured-info {
+.view-display-id-lead_article .featured-info {
   padding: 10px;
   bottom: 20px;
   font-size: 1.2em;
@@ -518,15 +513,10 @@ h2.recipe {
   .view-content .article .info {
     display: none;
   }
-  .view-featured .article .featured-info,
-  .view-featured .article:first-child .featured-info {
+  .view-featured .article .featured-info {
     position:static;
     background-color: transparent;
     padding-left: 0;
-  }
-  .view-featured .attachment {
-    width: 100%;
-    float: none;
   }
   .attachment .view-featured .article .featured-info {
     padding-left: 0;

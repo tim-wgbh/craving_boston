@@ -31,7 +31,7 @@ Drupal.behaviors.cravingBostonTheme = {
       window.scrollTo(0,0);
     });
     $(window).scroll(function() {
-      $('.mobile-back-to-top').show().delay(3000).fadeOut();
+      $('.mobile-back-to-top').show().delay(4000).fadeOut();
     });
   }
 };
