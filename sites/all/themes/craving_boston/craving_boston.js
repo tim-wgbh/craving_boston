@@ -20,7 +20,9 @@ Drupal.behaviors.cravingBostonTheme = {
     // Add close button
     $('#mobile-menu > ul').append('<li class="close-menu"><a href="#"><img src="/sites/all/themes/craving_boston/images/banned.png" alt="close" /></a></li>');
     $('body').on('click', '#mobile-menu > ul > li.close-menu', function () {
-      $('#mobile-menu').animate({ left: 1024});
+      $('#mobile-menu').animate({ left: 1024, width: 0}, function() {
+        $(this).css({'display': 'none'});
+        });
      }); 
       
     $('body').on('click','#mobile-select', function() {
