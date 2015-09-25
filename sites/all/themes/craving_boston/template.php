@@ -1,6 +1,7 @@
 <?php
 
 drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/craving_boston.js');
+drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/redpoint_pwik.js', array('scope' => 'footer'));
 
 /**
  * Theming the video field makes it possible to move it around as necessary using
