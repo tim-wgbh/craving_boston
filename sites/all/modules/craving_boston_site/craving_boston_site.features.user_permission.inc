@@ -566,6 +566,17 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
+  // Exported permission: 'administer workbench schedules'.
+  $permissions['administer workbench schedules'] = array(
+    'name' => 'administer workbench schedules',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'workbench_scheduler',
+  );
+
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
@@ -714,6 +725,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'shortcut',
   );
 
+  // Exported permission: 'delete any application files'.
+  $permissions['delete any application files'] = array(
+    'name' => 'delete any application files',
+    'roles' => array(),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete any article content'.
   $permissions['delete any article content'] = array(
     'name' => 'delete any article content',
@@ -807,6 +825,13 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'site administrator' => 'site administrator',
     ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete own application files'.
+  $permissions['delete own application files'] = array(
+    'name' => 'delete own application files',
+    'roles' => array(),
     'module' => 'file_entity',
   );
 
@@ -960,6 +985,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'disqus',
   );
 
+  // Exported permission: 'download any application files'.
+  $permissions['download any application files'] = array(
+    'name' => 'download any application files',
+    'roles' => array(),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'download any audio files'.
   $permissions['download any audio files'] = array(
     'name' => 'download any audio files',
@@ -996,6 +1028,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'download own application files'.
+  $permissions['download own application files'] = array(
+    'name' => 'download own application files',
+    'roles' => array(),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'download own audio files'.
   $permissions['download own audio files'] = array(
     'name' => 'download own audio files',
@@ -1029,6 +1068,13 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'site administrator' => 'site administrator',
     ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit any application files'.
+  $permissions['edit any application files'] = array(
+    'name' => 'edit any application files',
+    'roles' => array(),
     'module' => 'file_entity',
   );
 
@@ -1136,6 +1182,13 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'metatag',
+  );
+
+  // Exported permission: 'edit own application files'.
+  $permissions['edit own application files'] = array(
+    'name' => 'edit own application files',
+    'roles' => array(),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'edit own article content'.
@@ -1461,6 +1514,42 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'set any workbench schedule'.
+  $permissions['set any workbench schedule'] = array(
+    'name' => 'set any workbench schedule',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'workbench_scheduler',
+  );
+
+  // Exported permission: 'set workbench schedule'.
+  $permissions['set workbench schedule'] = array(
+    'name' => 'set workbench schedule',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'workbench_scheduler',
+  );
+
+  // Exported permission: 'set workbench schedule for draft_to_published'.
+  $permissions['set workbench schedule for draft_to_published'] = array(
+    'name' => 'set workbench schedule for draft_to_published',
+    'roles' => array(),
+    'module' => 'workbench_scheduler',
+  );
+
+  // Exported permission: 'set workbench schedule for review_to_published'.
+  $permissions['set workbench schedule for review_to_published'] = array(
+    'name' => 'set workbench schedule for review_to_published',
+    'roles' => array(),
+    'module' => 'workbench_scheduler',
   );
 
   // Exported permission: 'switch shortcut sets'.

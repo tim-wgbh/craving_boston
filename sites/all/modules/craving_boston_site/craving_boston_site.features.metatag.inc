@@ -13,7 +13,6 @@ function craving_boston_site_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[current-page:title] | [site:name]',
@@ -54,7 +53,6 @@ function craving_boston_site_metatag_export_default() {
   // Exported Metatag config instance: global:403.
   $config['global:403'] = array(
     'instance' => 'global:403',
-    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -83,7 +81,6 @@ function craving_boston_site_metatag_export_default() {
   // Exported Metatag config instance: global:404.
   $config['global:404'] = array(
     'instance' => 'global:404',
-    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -112,7 +109,6 @@ function craving_boston_site_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [site:slogan]',
@@ -150,7 +146,6 @@ function craving_boston_site_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name]',
