@@ -66,30 +66,21 @@ function craving_boston_site_default_picture_mapping() {
       ),
     ),
     'breakpoints.theme.craving_boston.limbo' => array(
-      '1x' => array(
-        'mapping_type' => 'image_style',
-        'image_style' => 'featured_main_large',
-      ),
+      '1x' => '',
     ),
     'breakpoints.theme.craving_boston.medium' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'default_medium',
+        'image_style' => 'featured_main_large',
       ),
-      '2x' => array(
-        'mapping_type' => 'image_style',
-        'image_style' => 'default_medium_2x',
-      ),
+      '2x' => '',
     ),
     'breakpoints.theme.craving_boston.small' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'default_small',
+        'image_style' => 'featured_main_mobile',
       ),
-      '2x' => array(
-        'mapping_type' => 'image_style',
-        'image_style' => 'default_small_2x',
-      ),
+      '2x' => '',
     ),
   );
   $export['featured_main_mapping'] = $picture_mapping;
@@ -108,30 +99,21 @@ function craving_boston_site_default_picture_mapping() {
       ),
     ),
     'breakpoints.theme.craving_boston.limbo' => array(
-      '1x' => array(
-        'mapping_type' => 'image_style',
-        'image_style' => 'default_large',
-      ),
+      '1x' => '',
     ),
     'breakpoints.theme.craving_boston.medium' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'default_medium',
+        'image_style' => 'featured_sub_medium',
       ),
-      '2x' => array(
-        'mapping_type' => 'image_style',
-        'image_style' => 'default_medium_2x',
-      ),
+      '2x' => '',
     ),
     'breakpoints.theme.craving_boston.small' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'default_small',
+        'image_style' => 'featured_sub_mobile',
       ),
-      '2x' => array(
-        'mapping_type' => 'image_style',
-        'image_style' => 'default_small_2x',
-      ),
+      '2x' => '',
     ),
   );
   $export['featured_sub_mapping'] = $picture_mapping;

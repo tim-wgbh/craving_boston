@@ -655,7 +655,11 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'create files'.
   $permissions['create files'] = array(
     'name' => 'create files',
-    'roles' => array(),
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'file_entity',
   );
 
@@ -1635,14 +1639,22 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'view own files'.
   $permissions['view own files'] = array(
     'name' => 'view own files',
-    'roles' => array(),
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'file_entity',
   );
 
   // Exported permission: 'view own private files'.
   $permissions['view own private files'] = array(
     'name' => 'view own private files',
-    'roles' => array(),
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'file_entity',
   );
 
