@@ -327,25 +327,33 @@ h2.recipe {
 }
 
 /* Recipe styling */
-.page-node.node-type-recipe .field-type-text-with-summary, 
-.page-node.node-type-recipe .field-type-number-integer, 
-.page-node.node-type-recipe .field-type-ingredient-reference, 
-.page-node.node-type-recipe .field-type-taxonomy-term-reference {
+.node-type-recipe .field-type-text-with-summary, 
+.node-type-recipe .field-type-number-integer, 
+.node-type-recipe .field-type-ingredient-reference, 
+.node-type-recipe .field-type-taxonomy-term-reference,
+.node-type-multi-recipe .field-type-text-with-summary, 
+.node-type-multi-recipe .field-type-number-integer, 
+.node-type-multi-recipe .field-type-ingredient-reference, 
+.node-type-multi-recipe .field-type-taxonomy-term-reference {
   color: #333;
   margin: 20px 0;
 }
-.page-node.node-type-recipe .field-type-ingredient-reference .field-items {
+.node-type-recipe .field-type-ingredient-reference .field-items,
+.node-type-multi-recipe .field-type-ingredient-reference .field-items {
   margin-left: 4em;
 }
-.page-node.node-type-recipe .field-name-recipe-ingredient .field-label,
-.page-node.node-type-recipe .field-name-recipe-instructions .field-label
+.node-type-recipe .field-name-recipe-ingredient .field-label,
+.node-type-recipe .field-name-recipe-instructions .field-label,
+.node-type-multi-recipe .field-name-recipe-ingredient .field-label,
+.node-type-multi-recipe .field-name-recipe-instructions .field-label
  {
   font-size: 18px;
   color: #666;
   margin-bottom: 10px;
 }
-.page-node.node-type-recipe .field .quantity-unit {
-  font-weight: bold;
+.node-type-recipe .field .quantity-unit,
+.node-type-multi-recipe .field .quantity-unit {
+ font-weight: bold;
 }
 #masthead {
   margin-top: 24px;
