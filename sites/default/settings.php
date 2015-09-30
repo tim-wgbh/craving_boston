@@ -611,6 +611,12 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   $_SERVER['PANTHEON_ENVIRONMENT'] === 'live') {
   if ($_SERVER['HTTP_HOST'] == 'www.cravingboston.wgbh.org' ||
+      $_SERVER['HTTP_HOST'] == 'www.cravingboston.com' ||
+      $_SERVER['HTTP_HOST'] == 'cravingboston.com' ||
+      $_SERVER['HTTP_HOST'] == 'wwwcravingboston.org' ||
+      $_SERVER['HTTP_HOST'] == 'cravingboston.org' ||
+      $_SERVER['HTTP_HOST'] == 'www.cravingboston.net' ||
+      $_SERVER['HTTP_HOST'] == 'cravingboston.net' ||
       $_SERVER['HTTP_HOST'] == 'live-craving-boston.pantheon.io') {
     header('HTTP/1.0 301 Moved Permanently');
     header('Location: http://cravingboston.wgbh.org'. $_SERVER['REQUEST_URI']);

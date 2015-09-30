@@ -1009,7 +1009,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Food news to keep you hungry and thinking';
+  $handler->display->display_options['header']['area']['content'] = 'Food (news) for thought';
   $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1244,8 +1244,8 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Specially curated local recipes - prepare something wicked fresh tonight';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['content'] = 'Hand-picked local recipes&mdash;prepare something wicked fresh tonight';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1418,7 +1418,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Feature articles and commentaries about the deep connection our region has with its local food, and weekly editorials to keep you updated';
+  $handler->display->display_options['header']['area']['content'] = 'Commentaries about the rich connection our region has with its local food, and weekly editorials to keep you updated';
   $handler->display->display_options['header']['area']['format'] = 'plain_text';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
