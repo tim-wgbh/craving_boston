@@ -613,7 +613,7 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   if ($_SERVER['HTTP_HOST'] == 'www.cravingboston.wgbh.org' ||
       $_SERVER['HTTP_HOST'] == 'www.cravingboston.com' ||
       $_SERVER['HTTP_HOST'] == 'cravingboston.com' ||
-      $_SERVER['HTTP_HOST'] == 'wwwcravingboston.org' ||
+      $_SERVER['HTTP_HOST'] == 'www.cravingboston.org' ||
       $_SERVER['HTTP_HOST'] == 'cravingboston.org' ||
       $_SERVER['HTTP_HOST'] == 'www.cravingboston.net' ||
       $_SERVER['HTTP_HOST'] == 'cravingboston.net' ||
