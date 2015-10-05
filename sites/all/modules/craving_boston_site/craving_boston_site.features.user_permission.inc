@@ -234,6 +234,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer date tools'.
+  $permissions['administer date tools'] = array(
+    'name' => 'administer date tools',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'date_tools',
+  );
+
   // Exported permission: 'administer dependencies'.
   $permissions['administer dependencies'] = array(
     'name' => 'administer dependencies',
