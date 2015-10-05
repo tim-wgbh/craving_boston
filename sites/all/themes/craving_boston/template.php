@@ -122,7 +122,15 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
   if (array_key_exists('field_author', $fields)) {
     $vars['byline'] = $fields['field_author']->content;
   }
+  
+  # Handle title/headline
+  if (!empty($fields['field_headline']->content)) {
+    $vars['headline'] =  $fields['field_headline']->content;
+  } else {
+    $vars['headline'] =  $fields['title']->content;
+  }
 
+  # Handle video
   $vars['display'] = true;
   $vars['has_video'] = false;
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {

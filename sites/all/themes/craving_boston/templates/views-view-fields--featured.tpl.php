@@ -1,6 +1,6 @@
 <div class="featured-info">
   <div class="article-title">
-    <?php print $fields['title']->content; ?>
+    <?php print $headline; ?>
   </div>
   <div class="info">
     <?php if (array_key_exists('field_subhead', $fields) && $fields['field_subhead']->content): ?>
