@@ -109,7 +109,8 @@ function craving_boston_site_default_picture_mapping() {
     ),
     'breakpoints.theme.craving_boston.limbo' => array(
       '1x' => array(
-        'mapping_type' => '_none',
+        'mapping_type' => 'image_style',
+        'image_style' => 'featured_sub_medium',
       ),
     ),
     'breakpoints.theme.craving_boston.medium' => array(
@@ -118,7 +119,8 @@ function craving_boston_site_default_picture_mapping() {
         'image_style' => 'featured_sub_medium',
       ),
       '2x' => array(
-        'mapping_type' => '_none',
+        'mapping_type' => 'image_style',
+        'image_style' => 'featured_sub_large',
       ),
     ),
     'breakpoints.theme.craving_boston.small' => array(
@@ -127,7 +129,8 @@ function craving_boston_site_default_picture_mapping() {
         'image_style' => 'featured_sub_mobile',
       ),
       '2x' => array(
-        'mapping_type' => '_none',
+        'mapping_type' => 'image_style',
+        'image_style' => 'featured_sub_medium',
       ),
     ),
   );

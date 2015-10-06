@@ -35,6 +35,7 @@ dependencies[] = flexslider
 dependencies[] = flexslider_fields
 dependencies[] = flexslider_picture
 dependencies[] = googleanalytics
+dependencies[] = headline
 dependencies[] = help
 dependencies[] = image
 dependencies[] = imce

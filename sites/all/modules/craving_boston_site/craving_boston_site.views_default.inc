@@ -420,15 +420,12 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Zinger Headline */
+  $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
+  $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
+  $handler->display->display_options['fields']['field_headline']['label'] = '';
+  $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   /* Field: Content: By */
   $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
   $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
@@ -483,7 +480,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['description'] = 'Craving Boston - a blog about the Boston food scene by WGBH';
   $handler->display->display_options['row_plugin'] = 'rss_fields';
-  $handler->display->display_options['row_options']['title_field'] = 'title';
+  $handler->display->display_options['row_options']['title_field'] = 'field_headline';
   $handler->display->display_options['row_options']['link_field'] = 'path';
   $handler->display->display_options['row_options']['description_field'] = 'field_subhead';
   $handler->display->display_options['row_options']['creator_field'] = 'field_author';

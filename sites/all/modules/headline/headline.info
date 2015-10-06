@@ -1,0 +1,6 @@
+name = Headline
+description = Adds a headline field to a given node type
+package = Custom
+core = "7.x"
+version = "7.x-1.0"
+project = "headline"

@@ -1,0 +1,39 @@
+<?php
+/**
+ * Implement hook_install()
+ */
+function headline_install() {
+  // Check if the field is not already created.
+  if (!field_info_field('field_headline')) {
+
+    // Create the field base.
+    field_create_field(array(
+      'field_name' => 'field_headline', 
+      'type' => 'text', 
+      )
+    );
+
+    // Create the field instance on the bundle.
+    $instance = array(
+      'field_name' => 'field_headline', 
+      'entity_type' => 'node', 
+      'label' => 'Zinger Headline', 
+      'bundle' => 'node', 
+      // If you don't set the "required" property then the field wont be required by default.
+      'settings' => array(
+        // Here you inform either or not you want this field showing up on the registration form.
+        'user_register_form' => 1,
+      ),
+      'widget' => array(
+        'type' => 'textfield',
+      ), 
+    );
+    field_create_instance($instance);
+  }
+}
+/**
+ * Implement hook_uninstall()
+ */
+function headline_uninstall() {
+  // Do not remove field in case it destroys data
+}

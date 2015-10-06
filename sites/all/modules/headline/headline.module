@@ -1,0 +1,9 @@
+<?php
+# Save title as headline if no headline exists
+function headline_node_presave($node) {
+  if (property_exists($node, 'field_headline')) {
+    if (empty($node->field_headline['und'][0]['value'])) {
+      $node->field_headline['und'][0]['value'] = $node->title;
+    }
+  }
+}
