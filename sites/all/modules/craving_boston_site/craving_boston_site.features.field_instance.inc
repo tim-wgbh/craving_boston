@@ -262,39 +262,6 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_headline'
-  $field_instances['node-article-field_headline'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'If you wish to use a flashier headline in featured, latest, and topic/index views, here\'s the place to put it.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_headline',
-    'label' => 'Zinger Headline',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_image'
   $field_instances['node-article-field_image'] = array(
     'bundle' => 'article',
@@ -918,46 +885,6 @@ function craving_boston_site_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-multi_recipe-field_headline'
-  $field_instances['node-multi_recipe-field_headline'] = array(
-    'bundle' => 'multi_recipe',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_headline',
-    'label' => 'Zinger Headline',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
     ),
   );
 
@@ -1846,7 +1773,6 @@ function craving_boston_site_field_default_field_instances() {
 <li>a poster image <em>my-video.jpg</em>
 </ul>
 ');
-  t('If you wish to use a flashier headline in featured, latest, and topic/index views, here\'s the place to put it.');
   t('Image');
   t('Ingredients');
   t('Internet Video');

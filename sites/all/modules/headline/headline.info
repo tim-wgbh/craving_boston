@@ -4,3 +4,8 @@ package = Custom
 core = "7.x"
 version = "7.x-1.0"
 project = "headline"
+;
+dependencies[] = workbench
+dependencies[] = workbench_moderation
+
+configure = admin/config/content/headline

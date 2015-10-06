@@ -1,9 +1,97 @@
 <?php
-# Save title as headline if no headline exists
+/**
+ * Implement hook_menu
+ */
+function headline_menu () {
+  $items = array();
+  $items['admin/config/content/headline'] = array(
+    'title' => t('Populate Headlines'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('headline_populate_form'),
+    'access arguments' => array('access administration pages'),
+    'description' => t('Populate existing headlines with titles'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+}
+/**
+ * Implement setup form - we need to populate any existing headlines
+ */
+function headline_populate_form($form, &$form_state) {
+  $form = array();
+  
+  $options = array(
+    'only_empty' => t('Fill only empty headlines with titles'),
+    'all' => t('Replace all headlines with titles (careful!)'),
+  );
+  
+  $nodes_with_headlines = count(_node_list());
+    
+  $form['populate'] = array(
+    '#type' => 'radios',
+    '#title' => 'Populate Headline Fields',
+    '#default_value' => 'only_empty',
+    '#options' => $options,
+    '#description' => t('If headline fields alread exist, this will fill them in.'),
+    '#field_prefix' => t("<em>There are $nodes_with_headlines nodes with headline fields</em>"),
+  );
+  $form['submit'] = array('#type' => 'submit', '#value' => t('Populate'));
+  
+  return $form;
+}
+
+function headline_populate_form_submit($form, &$form_state) {
+
+  $nodes_with_headlines = _node_list();
+  $n = count($nodes_with_headlines);
+  $n_changed = 0;
+  foreach ($nodes_with_headlines as $node) {
+    if (($form_state['values']['populate'] == 'only_empty' && empty($node->field_headline['und'][0]['value'])) ||
+         $form_state['values']['populate'] == 'all') {
+      $n_changed += 1;
+      $node->field_headline['und'][0]['value'] = $node->title;
+      $node->field_headline['und'][0]['safe_value'] = $node->title;
+      $node->revision = 1;
+      $node->log = 'State changed to published';
+      node_save($node);
+      workbench_moderation_moderate($node, 'published');
+    } 
+  }
+  drupal_set_message("$n nodes processed, $n_changed headlines modified");
+}
+
+/**
+ * Implementation of hook_node_presave
+ * Save title as headline if no headline exists
+ */
 function headline_node_presave($node) {
   if (property_exists($node, 'field_headline')) {
     if (empty($node->field_headline['und'][0]['value'])) {
       $node->field_headline['und'][0]['value'] = $node->title;
     }
   }
+}
+
+/**
+ * Utility functions
+ */
+function _node_list() {
+  // Loop through any nodes with this field type and copy title info to headline
+  $query = new EntityFieldQuery();
+  
+  $query->entityCondition('entity_type', 'node');
+  $result = $query->execute();
+  
+  $nids = array_keys($result['node']);
+  
+  $nodes = array();
+  foreach ($nids as $nid) {
+    $node = node_load($nid);
+    if (property_exists($node, 'field_headline')) {
+      $nodes[] = $node;
+    }
+  }
+  
+  return $nodes;
 }

@@ -10,26 +10,6 @@
 function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-craving-boston_about:about
-  $menu_links['menu-craving-boston_about:about'] = array(
-    'menu_name' => 'menu-craving-boston',
-    'link_path' => 'about',
-    'router_path' => 'about',
-    'link_title' => 'About',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-craving-boston_about:about',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
   // Exported menu link: menu-craving-boston_contact-us:contact
   $menu_links['menu-craving-boston_contact-us:contact'] = array(
     'menu_name' => 'menu-craving-boston',
@@ -48,26 +28,6 @@ function craving_boston_site_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -49,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-craving-boston_faqs:faqs
-  $menu_links['menu-craving-boston_faqs:faqs'] = array(
-    'menu_name' => 'menu-craving-boston',
-    'link_path' => 'faqs',
-    'router_path' => 'faqs',
-    'link_title' => 'FAQs',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Just the faqs, ma\'am',
-      ),
-      'identifier' => 'menu-craving-boston_faqs:faqs',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
     'customized' => 1,
   );
   // Exported menu link: menu-craving-boston_rss-feed:rss.xml
@@ -554,7 +514,6 @@ function craving_boston_site_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A Moveable Feast >>');
-  t('About');
   t('About WGBH');
   t('America\'s Test Kitchen >>');
   t('Become a Member');
@@ -564,7 +523,6 @@ function craving_boston_site_menu_default_menu_links() {
   t('Cook\'s Country >>');
   t('Corporate Sponsorship');
   t('Donate');
-  t('FAQs');
   t('Home');
   t('I\'ll Have What Phil\'s Having (prime-time) >>');
   t('Lidia\'s Kitchen >>');
