@@ -274,7 +274,9 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_image']['type'] = 'picture';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'picture_mapping' => 'featured_sub_mapping',
-    'fallback_image_style' => 'featured_sub_mobile',
+    'fallback_image_style' => 'featured_sub_medium',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
     'image_link' => 'content',
   );
   /* Field: Content: Part of multi-recipe */
@@ -358,7 +360,9 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_image']['type'] = 'picture';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'picture_mapping' => 'featured_main_mapping',
-    'fallback_image_style' => 'featured_sub_mobile',
+    'fallback_image_style' => 'featured_sub_large',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
     'image_link' => 'content',
   );
   /* Field: Content: Part of multi-recipe */
