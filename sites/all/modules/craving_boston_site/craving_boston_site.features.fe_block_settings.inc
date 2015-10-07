@@ -878,6 +878,7 @@ function craving_boston_site_default_fe_block_settings() {
     'module' => 'recipe',
     'node_types' => array(),
     'pages' => 'recipes
+
 recipes/*',
     'roles' => array(),
     'themes' => array(

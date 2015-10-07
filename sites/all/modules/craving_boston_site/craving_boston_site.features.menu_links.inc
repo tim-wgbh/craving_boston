@@ -470,17 +470,17 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-support-links-menu_donate:http://www.wgbh.org/support/makeagift.cfm
-  $menu_links['wgbh-support-links-menu_donate:http://www.wgbh.org/support/makeagift.cfm'] = array(
+  // Exported menu link: wgbh-support-links-menu_donate:http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm
+  $menu_links['wgbh-support-links-menu_donate:http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm'] = array(
     'menu_name' => 'wgbh-support-links-menu',
-    'link_path' => 'http://www.wgbh.org/support/makeagift.cfm',
+    'link_path' => 'http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm',
     'router_path' => '',
     'link_title' => 'Donate',
     'options' => array(
       'attributes' => array(
         'title' => 'We can\'t do it without you',
       ),
-      'identifier' => 'wgbh-support-links-menu_donate:http://www.wgbh.org/support/makeagift.cfm',
+      'identifier' => 'wgbh-support-links-menu_donate:http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm',
     ),
     'module' => 'menu',
     'hidden' => 0,
