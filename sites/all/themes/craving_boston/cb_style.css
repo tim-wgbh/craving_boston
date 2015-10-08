@@ -2,7 +2,7 @@
  
 /* Basic settings */ 
 body {
-  font-family: "CooperHewitt",Arial,Helvetica,sans-serif;
+  font-family: "CooperHewitt", Helvetica, Arial,sans-serif;
   background-image: url(images/bg_greyzz.png);
   color: #555;
 }
@@ -26,13 +26,6 @@ a:hover {
 ul {
   list-style-type: square;
 }
-/* 
-strong {
-  font-family: "cooper_hewittsemibold",Arial,Helvetica,sans-serif;
-  background-image: url(images/bg_greyzz.png);
-  font-weight: normal;
-}
- */
 
 /* Utility class to remove padding from column */
 .no-padding {
