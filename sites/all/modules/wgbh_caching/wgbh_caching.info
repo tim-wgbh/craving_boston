@@ -1,0 +1,9 @@
+name = WGBH Caching
+description = Adds code to help with nodequeues and views caching
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_caching"
+;
+dependencies[] = views
+dependencies[] = nodequeue

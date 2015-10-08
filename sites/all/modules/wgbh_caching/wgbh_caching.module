@@ -1,0 +1,8 @@
+<?php
+/**
+ * Clear the views cache when a nodequeue is updated
+ */
+ function wgbh_caching_nodequeue_update($qid, $sqid) {
+  cache_clear_all('*', 'cache_views', true);
+  cache_clear_all('*', 'cache_page', true);
+ }
