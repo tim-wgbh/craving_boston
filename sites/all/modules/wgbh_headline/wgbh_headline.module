@@ -2,12 +2,12 @@
 /**
  * Implement hook_menu
  */
-function headline_menu () {
+function wgbh_headline_menu () {
   $items = array();
   $items['admin/config/content/headline'] = array(
     'title' => t('Populate Headlines'),
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('headline_populate_form'),
+    'page arguments' => array('wgbh_headline_populate_form'),
     'access arguments' => array('access administration pages'),
     'description' => t('Populate existing headlines with titles'),
     'type' => MENU_CALLBACK,
@@ -18,7 +18,7 @@ function headline_menu () {
 /**
  * Implement setup form - we need to populate any existing headlines
  */
-function headline_populate_form($form, &$form_state) {
+function wgbh_headline_populate_form($form, &$form_state) {
   $form = array();
   
   $options = array(
@@ -41,7 +41,7 @@ function headline_populate_form($form, &$form_state) {
   return $form;
 }
 
-function headline_populate_form_submit($form, &$form_state) {
+function wgbh_headline_populate_form_submit($form, &$form_state) {
 
   $nodes_with_headlines = _node_list();
   $n = count($nodes_with_headlines);
@@ -65,7 +65,7 @@ function headline_populate_form_submit($form, &$form_state) {
  * Implementation of hook_node_presave
  * Save title as headline if no headline exists
  */
-function headline_node_presave($node) {
+function wgbh_headline_node_presave($node) {
   if (property_exists($node, 'field_headline')) {
     if (empty($node->field_headline['und'][0]['value'])) {
       $node->field_headline['und'][0]['value'] = $node->title;

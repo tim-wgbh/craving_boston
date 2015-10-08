@@ -1,9 +1,9 @@
-name = Headline
+name = WGBH Headline
 description = Adds a headline field to a given node type
-package = Custom
+package = WGBH
 core = "7.x"
 version = "7.x-1.0"
-project = "headline"
+project = "wgbh_headline"
 ;
 dependencies[] = workbench
 dependencies[] = workbench_moderation

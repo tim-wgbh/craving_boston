@@ -1,6 +1,6 @@
 name = WGBH Branding
 description = Adds a WGBH link bar to the top of all web pages, provides WGBH assets
-package = Custom
+package = WGBH
 core = "7.x"
 version = "7.x-1.0"
 project = "wgbh_branding"

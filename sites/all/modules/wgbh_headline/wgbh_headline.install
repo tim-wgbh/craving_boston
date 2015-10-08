@@ -2,7 +2,7 @@
 /**
  * Implement hook_install()
  */
-function headline_install() {
+function wgbh_headline_install() {
   // Check if the field is not already created.
   if (!field_info_field('field_headline')) {
 
@@ -34,6 +34,6 @@ function headline_install() {
 /**
  * Implement hook_uninstall()
  */
-function headline_uninstall() {
+function wgbh_headline_uninstall() {
   // Do not remove field in case it destroys data
 }
