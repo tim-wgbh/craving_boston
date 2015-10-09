@@ -32,8 +32,12 @@ Drupal.behaviors.cravingBostonTheme = {
       e.preventDefault();
       window.scrollTo(0,0);
     });
+    
+    // Do the following only for mobile
     $(window).scroll(function() {
-      $('.mobile-back-to-top').show().delay(4000).fadeOut();
+      if ($(window).width() < 480) {
+        $('.mobile-back-to-top').show().delay(4000).fadeOut();
+      }
     });
   }
 };
