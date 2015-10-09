@@ -464,6 +464,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 's3fs',
   );
 
+  // Exported permission: 'administer scheduler'.
+  $permissions['administer scheduler'] = array(
+    'name' => 'administer scheduler',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'scheduler',
+  );
+
   // Exported permission: 'administer search'.
   $permissions['administer search'] = array(
     'name' => 'administer search',
@@ -564,15 +573,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'views',
   );
 
-  // Exported permission: 'administer workbench moderation'.
-  $permissions['administer workbench moderation'] = array(
-    'name' => 'administer workbench moderation',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
@@ -605,16 +605,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'rules',
-  );
-
-  // Exported permission: 'bypass workbench moderation'.
-  $permissions['bypass workbench moderation'] = array(
-    'name' => 'bypass workbench moderation',
-    'roles' => array(
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'cancel account'.
@@ -1393,34 +1383,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'masquerade',
   );
 
-  // Exported permission: 'moderate content from draft to needs_review'.
-  $permissions['moderate content from draft to needs_review'] = array(
-    'name' => 'moderate content from draft to needs_review',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from needs_review to draft'.
-  $permissions['moderate content from needs_review to draft'] = array(
-    'name' => 'moderate content from needs_review to draft',
-    'roles' => array(
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'moderate content from needs_review to published'.
-  $permissions['moderate content from needs_review to published'] = array(
-    'name' => 'moderate content from needs_review to published',
-    'roles' => array(
-      'editor' => 'editor',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
   // Exported permission: 'notify of path changes'.
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',
@@ -1457,6 +1419,17 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'schedule (un)publishing of nodes'.
+  $permissions['schedule (un)publishing of nodes'] = array(
+    'name' => 'schedule (un)publishing of nodes',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'scheduler',
   );
 
   // Exported permission: 'search content'.
@@ -1563,38 +1536,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'filter',
   );
 
-  // Exported permission: 'use workbench_moderation my drafts tab'.
-  $permissions['use workbench_moderation my drafts tab'] = array(
-    'name' => 'use workbench_moderation my drafts tab',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'use workbench_moderation needs review tab'.
-  $permissions['use workbench_moderation needs review tab'] = array(
-    'name' => 'use workbench_moderation needs review tab',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'view all unpublished content'.
-  $permissions['view all unpublished content'] = array(
-    'name' => 'view all unpublished content',
-    'roles' => array(
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
   // Exported permission: 'view disqus comments'.
   $permissions['view disqus comments'] = array(
     'name' => 'view disqus comments',
@@ -1617,28 +1558,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: 'view moderation history'.
-  $permissions['view moderation history'] = array(
-    'name' => 'view moderation history',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'view moderation messages'.
-  $permissions['view moderation messages'] = array(
-    'name' => 'view moderation messages',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'view own files'.
@@ -1690,6 +1609,17 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view scheduled content'.
+  $permissions['view scheduled content'] = array(
+    'name' => 'view scheduled content',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'scheduler',
   );
 
   // Exported permission: 'view the administration theme'.

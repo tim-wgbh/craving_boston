@@ -13,7 +13,7 @@ function craving_boston_site_default_rules_configuration() {
       "LABEL" : "Clear Page Cache",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "expire", "workbench_moderation" ],
+      "REQUIRES" : [ "rules", "expire" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
       "IF" : [ { "node_is_published" : { "node" : [ "node" ] } } ],
       "DO" : [
