@@ -10,7 +10,7 @@
 function craving_boston_site_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:article:0"] = array(
     'entity' => 'node',
     'bundle' => 'article',
     'dependent' => 'field_video_poster',

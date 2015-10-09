@@ -28,6 +28,49 @@ function craving_boston_site_default_fe_block_boxes() {
 
   $export['block_footer_logo'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Newsletter sign-up';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'block_newsletter_signup';
+  $fe_block_boxes->body = '<p><a>Sign up for our newsletter</a></p>
+
+
+
+<p><input size="10" /><button class="btn sign-up">Feed Me</button></p>
+
+';
+
+  $export['block_newsletter_signup'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Support Banner';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'block_support_banner';
+  $fe_block_boxes->body = '<div id="support-banner"><img alt="Support WGBH. We couldn\'t do it without you." src="/sites/all/modules/wgbh_branding/images/wgbh-support-banner.jpg" /></div>
+
+';
+
+  $export['block_support_banner'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Fake Ad Craft Beer Festival';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'craft_beer_ad';
+  $fe_block_boxes->body = '<p><img alt="" src="/sites/default/files/Craft-Beer-Festival.jpg" style="height:264px; width:309px" /></p>
+
+';
+
+  $export['craft_beer_ad'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Fake Ad Food & Wine';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'food_wine_ad';
+  $fe_block_boxes->body = '<p><img alt="" src="/sites/default/files/Food+Wine-ad.jpg" /></p>
+
+';
+
+  $export['food_wine_ad'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Rail Newsletter Signup';

@@ -342,6 +342,111 @@ function craving_boston_site_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['dfp-leaderboard'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'leaderboard',
+    'module' => 'dfp',
+    'node_types' => array(),
+    'pages' => 'users/*
+admin/*
+faqs
+about
+rss.xml',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -25,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['dfp-medium_rectangle_1'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'medium_rectangle_1',
+    'module' => 'dfp',
+    'node_types' => array(),
+    'pages' => 'users/*
+admin/*',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -27,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['dfp-medium_rectangle_2'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'medium_rectangle_2',
+    'module' => 'dfp',
+    'node_types' => array(),
+    'pages' => 'users/*
+admin/*',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -26,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['disqus-disqus_combination_widget'] = array(
     'cache' => 8,
     'css_class' => '',
@@ -1367,39 +1472,6 @@ recipes/*',
     'visibility' => 0,
   );
 
-  $export['views-9cf22433e0efbd8b206c8e4c2edb177c'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => '9cf22433e0efbd8b206c8e4c2edb177c',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['views-featured-lead_article'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -1559,105 +1631,6 @@ recipes/*',
         'status' => 0,
         'theme' => 'seven',
         'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-workbench_current_user-block_1'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'workbench_current_user-block_1',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-workbench_edited-block_1'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'workbench_edited-block_1',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['workbench-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'block',
-    'module' => 'workbench',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'bartik',
-        'weight' => -99,
-      ),
-      'craving_boston' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'craving_boston',
-        'weight' => -28,
-      ),
-      'seven' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'seven',
-        'weight' => -99,
       ),
     ),
     'title' => '',

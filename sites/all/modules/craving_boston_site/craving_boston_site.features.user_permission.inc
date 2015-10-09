@@ -91,6 +91,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'overlay',
   );
 
+  // Exported permission: 'access rules debug'.
+  $permissions['access rules debug'] = array(
+    'name' => 'access rules debug',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'access site in maintenance mode'.
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
@@ -149,17 +158,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: 'access workbench'.
-  $permissions['access workbench'] = array(
-    'name' => 'access workbench',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench',
   );
 
   // Exported permission: 'administer DFP'.
@@ -448,6 +446,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'qtip',
   );
 
+  // Exported permission: 'administer rules'.
+  $permissions['administer rules'] = array(
+    'name' => 'administer rules',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'administer s3fs'.
   $permissions['administer s3fs'] = array(
     'name' => 'administer s3fs',
@@ -557,15 +564,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'views',
   );
 
-  // Exported permission: 'administer workbench'.
-  $permissions['administer workbench'] = array(
-    'name' => 'administer workbench',
-    'roles' => array(
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench',
-  );
-
   // Exported permission: 'administer workbench moderation'.
   $permissions['administer workbench moderation'] = array(
     'name' => 'administer workbench moderation',
@@ -573,17 +571,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'workbench_moderation',
-  );
-
-  // Exported permission: 'administer workbench schedules'.
-  $permissions['administer workbench schedules'] = array(
-    'name' => 'administer workbench schedules',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_scheduler',
   );
 
   // Exported permission: 'block IP addresses'.
@@ -609,6 +596,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'bypass rules access'.
+  $permissions['bypass rules access'] = array(
+    'name' => 'bypass rules access',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'bypass workbench moderation'.
@@ -1483,42 +1479,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'set any workbench schedule'.
-  $permissions['set any workbench schedule'] = array(
-    'name' => 'set any workbench schedule',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_scheduler',
-  );
-
-  // Exported permission: 'set workbench schedule'.
-  $permissions['set workbench schedule'] = array(
-    'name' => 'set workbench schedule',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_scheduler',
-  );
-
-  // Exported permission: 'set workbench schedule for draft_to_published'.
-  $permissions['set workbench schedule for draft_to_published'] = array(
-    'name' => 'set workbench schedule for draft_to_published',
-    'roles' => array(),
-    'module' => 'workbench_scheduler',
-  );
-
-  // Exported permission: 'set workbench schedule for review_to_published'.
-  $permissions['set workbench schedule for review_to_published'] = array(
-    'name' => 'set workbench schedule for review_to_published',
-    'roles' => array(),
-    'module' => 'workbench_scheduler',
-  );
-
   // Exported permission: 'switch shortcut sets'.
   $permissions['switch shortcut sets'] = array(
     'name' => 'switch shortcut sets',
@@ -1601,17 +1561,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'filter',
-  );
-
-  // Exported permission: 'use workbench_media add form'.
-  $permissions['use workbench_media add form'] = array(
-    'name' => 'use workbench_media add form',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'workbench_media',
   );
 
   // Exported permission: 'use workbench_moderation my drafts tab'.
