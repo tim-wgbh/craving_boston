@@ -370,26 +370,6 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_ill-have-what-phils-having-prime-time-:http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425
-  $menu_links['wgbh-related-links-menu_ill-have-what-phils-having-prime-time-:http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425'] = array(
-    'menu_name' => 'wgbh-related-links-menu',
-    'link_path' => 'http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425',
-    'router_path' => '',
-    'link_title' => 'I\'ll Have What Phil\'s Having (prime-time) >>',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'A new prime-time food show from the creator of Everybody Loves Raymond',
-      ),
-      'identifier' => 'wgbh-related-links-menu_ill-have-what-phils-having-prime-time-:http://www.wgbh.org/programs/Ill-Have-What-Phils-Having-3425',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-  );
   // Exported menu link: wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412
   $menu_links['wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412'] = array(
     'menu_name' => 'wgbh-related-links-menu',
@@ -566,7 +546,6 @@ function craving_boston_site_menu_default_menu_links() {
   t('Donate');
   t('FAQs');
   t('Home');
-  t('I\'ll Have What Phil\'s Having (prime-time) >>');
   t('Lidia\'s Kitchen >>');
   t('Mind of a Chef >>');
   t('Neighborhood Kitchens >>');

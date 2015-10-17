@@ -34,6 +34,9 @@ ul {
 }
 
 /* More specific settings */
+.a2a_kit {
+  margin-right: 12px;
+}
 .article {
   position: relative;
 }
@@ -167,6 +170,9 @@ input#edit-search-block-form--2 {
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 20px;
+}
+.page-node .field-name-field-subhead, .page-node .subhead {
+  margin-top: 10px;
 }
 header {
   margin-top: 20px;

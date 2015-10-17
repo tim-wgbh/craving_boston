@@ -85,6 +85,7 @@
       <h2 class="title<?php $has_video ? ' has-video' : ''; ?>" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
       <?php endif; ?>
       <?php if ($page): ?>
+      <span class="publication_date"><?php print $publication_date; ?></span>
       <div class="pull-right a2a_kit a2a_kit_size_16 a2a_default_style">
         <a class="a2a_button_facebook"></a>
         <a class="a2a_button_twitter"></a>

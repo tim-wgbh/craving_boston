@@ -437,6 +437,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'picture',
   );
 
+  // Exported permission: 'administer publication date'.
+  $permissions['administer publication date'] = array(
+    'name' => 'administer publication date',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
   // Exported permission: 'administer qtip'.
   $permissions['administer qtip'] = array(
     'name' => 'administer qtip',
@@ -1450,6 +1459,73 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'set any published on date'.
+  $permissions['set any published on date'] = array(
+    'name' => 'set any published on date',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set article published on date'.
+  $permissions['set article published on date'] = array(
+    'name' => 'set article published on date',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set bio published on date'.
+  $permissions['set bio published on date'] = array(
+    'name' => 'set bio published on date',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set faq published on date'.
+  $permissions['set faq published on date'] = array(
+    'name' => 'set faq published on date',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set multi_recipe published on date'.
+  $permissions['set multi_recipe published on date'] = array(
+    'name' => 'set multi_recipe published on date',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set page published on date'.
+  $permissions['set page published on date'] = array(
+    'name' => 'set page published on date',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set recipe published on date'.
+  $permissions['set recipe published on date'] = array(
+    'name' => 'set recipe published on date',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
   );
 
   // Exported permission: 'switch shortcut sets'.

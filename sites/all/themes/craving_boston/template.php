@@ -71,6 +71,8 @@ function craving_boston_preprocess_node(&$vars) {
 //    }
   $vars['date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $vars['created'])));
   
+  $vars['publication_date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $node->published_at)));
+  
   # Get byline
   $vars['byline'] = '';
 

@@ -42,7 +42,7 @@ function craving_boston_site_default_dfp_tag() {
         'ad_sizes' => '728x90',
       ),
       2 => array(
-        'browser_size' => '320x480',
+        'browser_size' => '320x300',
         'ad_sizes' => '320x50',
       ),
     ),
@@ -73,7 +73,7 @@ function craving_boston_site_default_dfp_tag() {
     'targeting' => array(),
     'breakpoints' => array(
       0 => array(
-        'browser_size' => '800x600',
+        'browser_size' => '320x300',
         'ad_sizes' => '300x250',
       ),
     ),
@@ -104,7 +104,7 @@ function craving_boston_site_default_dfp_tag() {
     'targeting' => array(),
     'breakpoints' => array(
       0 => array(
-        'browser_size' => '800x600',
+        'browser_size' => '320x300',
         'ad_sizes' => '300x250',
       ),
     ),
