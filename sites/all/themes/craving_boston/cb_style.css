@@ -343,8 +343,10 @@ h2.recipe {
 }
 .node-type-recipe .field-name-recipe-ingredient .field-label,
 .node-type-recipe .field-name-recipe-instructions .field-label,
+.node-type-recipe .field-name-recipe-notes .field-label
 .node-type-multi-recipe .field-name-recipe-ingredient .field-label,
-.node-type-multi-recipe .field-name-recipe-instructions .field-label
+.node-type-multi-recipe .field-name-recipe-instructions .field-label,
+.node-type-multi-recipe .field-name-recipe-notes .field-label
  {
   font-size: 18px;
   color: #666;
