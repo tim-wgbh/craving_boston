@@ -341,12 +341,9 @@ h2.recipe {
 .node-type-multi-recipe .field-type-ingredient-reference .field-items {
   margin-left: 4em;
 }
-.node-type-recipe .field-name-recipe-ingredient .field-label,
-.node-type-recipe .field-name-recipe-instructions .field-label,
-.node-type-recipe .field-name-recipe-notes .field-label
-.node-type-multi-recipe .field-name-recipe-ingredient .field-label,
-.node-type-multi-recipe .field-name-recipe-instructions .field-label,
-.node-type-multi-recipe .field-name-recipe-notes .field-label
+.field-name-recipe-ingredient .field-label,
+.field-name-recipe-instructions .field-label,
+.field-name-recipe-notes .field-label
  {
   font-size: 18px;
   color: #666;
