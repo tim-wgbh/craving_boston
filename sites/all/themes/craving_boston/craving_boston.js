@@ -4,7 +4,8 @@ Drupal.behaviors.cravingBostonTheme = {
   attach: function (context) {
       
     // Create captions for images with titles
-    $('.field-name-field-image picture, .field-name-body img').each(function() {
+//     $('.field-name-field-image picture, .field-name-body img').each(function() {
+    $('.field-item img').each(function() {
       var $element = $(this);
       var caption = $element.attr('title');
       if (typeof caption !== typeof undefined && caption !== false && caption.trim() != '') {
