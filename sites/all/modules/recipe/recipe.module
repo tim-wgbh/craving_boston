@@ -503,6 +503,7 @@ function recipe_field_widget_settings_form($field, $instance) {
 function recipe_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
   // Add recipe.css to style the form elements on a single line.
   drupal_add_css(drupal_get_path('module', 'recipe') . '/recipe.css');
+  drupal_add_js(drupal_get_path('module', 'recipe') . '/recipe.js');
 
   switch ($instance['widget']['type']) {
     case 'recipe_ingredient_autocomplete':
@@ -540,6 +541,12 @@ function recipe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
         '#size' => 40,
         '#maxlength' => 255,
         '#attributes' => array('class' => array('recipe-ingredient-note')),
+      );
+      $element['_delete'] = array(
+        '#type' => 'button',
+        '#value' => t('Remove'),
+        '#prefix' => '<div class="recipe-ingredient-delete">',
+        '#suffix' => '</div>',
       );
       $element['#element_validate'] = array('recipe_ingredient_autocomplete_validate');
       break;
