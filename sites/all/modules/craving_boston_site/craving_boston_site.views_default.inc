@@ -99,6 +99,42 @@ function craving_boston_site_views_default_views() {
     'image_style' => 'half_mobile_square',
     'image_link' => '',
   );
+  /* Field: Content: Facebook */
+  $handler->display->display_options['fields']['field_facebook']['id'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['table'] = 'field_data_field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['label'] = '';
+  $handler->display->display_options['fields']['field_facebook']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_facebook']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facebook']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_facebook']['type'] = 'text_plain';
+  /* Field: Content: Instagram */
+  $handler->display->display_options['fields']['field_instagram']['id'] = 'field_instagram';
+  $handler->display->display_options['fields']['field_instagram']['table'] = 'field_data_field_instagram';
+  $handler->display->display_options['fields']['field_instagram']['field'] = 'field_instagram';
+  $handler->display->display_options['fields']['field_instagram']['label'] = '';
+  $handler->display->display_options['fields']['field_instagram']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_instagram']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_instagram']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_instagram']['type'] = 'text_plain';
+  /* Field: Content: Pinterest */
+  $handler->display->display_options['fields']['field_pinterest']['id'] = 'field_pinterest';
+  $handler->display->display_options['fields']['field_pinterest']['table'] = 'field_data_field_pinterest';
+  $handler->display->display_options['fields']['field_pinterest']['field'] = 'field_pinterest';
+  $handler->display->display_options['fields']['field_pinterest']['label'] = '';
+  $handler->display->display_options['fields']['field_pinterest']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_pinterest']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pinterest']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pinterest']['type'] = 'text_plain';
+  /* Field: Content: Twitter */
+  $handler->display->display_options['fields']['field_twitter']['id'] = 'field_twitter';
+  $handler->display->display_options['fields']['field_twitter']['table'] = 'field_data_field_twitter';
+  $handler->display->display_options['fields']['field_twitter']['field'] = 'field_twitter';
+  $handler->display->display_options['fields']['field_twitter']['label'] = '';
+  $handler->display->display_options['fields']['field_twitter']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_twitter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_twitter']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_twitter']['type'] = 'text_plain';
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
