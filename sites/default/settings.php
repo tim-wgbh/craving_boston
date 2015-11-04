@@ -386,7 +386,13 @@ ini_set('session.cookie_lifetime', 2000000);
   * Disqus account (domain)
   */
   $conf['diqus_domain'] = 'wgbhpilots';
-  
+
+/**
+ * Public Media Platform (PMP) credentials
+ */
+ $conf['pmpapi_user_id'] = 'a81eca6c-b834-47fe-bb60-1382d677cd50';  
+ $conf['pmpapi_auth_client_id'] = '9ab452fe-07d2-47c1-8bdf-0d5e2de7499a';  
+ $conf['pmpapi_auth_client_secret'] = '65a0a07f8087c8720fd6d0f4';  
 
 /**
  * A custom theme can be set for the offline page. This applies when the site
