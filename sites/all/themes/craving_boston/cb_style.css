@@ -100,6 +100,10 @@ ul {
   max-width: 994px;
 }
 
+.content .unpublished {
+  background-color: #fee;
+}
+
 /* faqs */
 .faq .well {
   background-color: #ffeedd;
