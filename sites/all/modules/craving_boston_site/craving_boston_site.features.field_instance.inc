@@ -352,7 +352,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop',
+      'module' => 'image',
       'settings' => array(
         'collapsible' => 2,
         'croparea' => '800x600',
@@ -362,7 +362,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
         'resolution' => '690x460',
       ),
-      'type' => 'imagefield_crop_widget',
+      'type' => 'image_image',
       'weight' => 6,
     ),
     'workbench_access_field' => 0,
@@ -1178,7 +1178,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop',
+      'module' => 'image',
       'settings' => array(
         'collapsible' => 2,
         'croparea' => '800x800',
@@ -1188,7 +1188,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
         'resolution' => '690x460',
       ),
-      'type' => 'imagefield_crop_widget',
+      'type' => 'image_image',
       'weight' => 4,
     ),
   );
@@ -1608,7 +1608,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'imagefield_crop',
+      'module' => 'image',
       'settings' => array(
         'collapsible' => 2,
         'croparea' => '800x800',
@@ -1618,7 +1618,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
         'resolution' => '690x460',
       ),
-      'type' => 'imagefield_crop_widget',
+      'type' => 'image_image',
       'weight' => 5,
     ),
     'workbench_access_field' => 0,
