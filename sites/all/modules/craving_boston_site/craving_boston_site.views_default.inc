@@ -41,23 +41,29 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['label'] = 'About text';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<p>WGBH and award-winning food journalist Catherine Smart have come together to provide you thoughtful content you can use everyday, and to inspire you to explore the deep connection between our region and its cuisine.</p>
-
 <p>Whether you want to learn more about how innovation is affecting our fare culture, read about a local new restaurant, or to look for a locally inspired recipe for dinner tonight, Craving Boston is your daily destination for food in Boston and New England.</p>
 <h3>Catherine Smart, managing editor</h3>
 <div class="bio">
-    <div class="row">
-  <div class="col-md-4 col-sm-12"><div class="field-content"><img typeof="foaf:Image" src="http://craving-boston.s3.amazonaws.com/production/styles/mobile_square/s3/hN-h1h1y.jpg?itok=fPM1NOE_" width="320" height="320" alt="" /></div></div>
-  <div class="col-md-8 col-sm-12">
-    <div class="bio-text"><div><p>Managing editor Catherine Smart spends most of her waking hours thinking, writing about, or eating food.</p>
-<p>A New Hampshire native, she grew up in a family that cooked, gardened, canned and tapped trees to make maple syrup, so you could say New England cuisine is in her blood.</p>
-<p>After graduating from the University of New Hampshire in 2007, she moved to the Boston area to pursue a culinary certificate and MLA in gastronomy at Boston University.  While working toward her degree Catherine fell in love with the Boston food scene, started a personal chef business, <a href="http://smartentertaining.com/hire-me/">The Pocket Garden</a>, and became a regular contributor to The Boston Globe food section. </p>
-<p>When Catherine isn’t cooking for personal chef clients or freelancing for various food publications, she enjoys yoga, travel, gardening, and spending time with her friends and family.  Catherine and her husband Artie are proud Somervillians, living in Union Square with their black lab Scout, and two cats, Lily and Oliver.</p>
-<p>This WGBH gig came at the perfect time, as they will have yet another hungry mouth to feed when they welcome their first child in February of next year.</p>
-</div></div>
+  <div class="row">
+    <div class="col-md-4 col-sm-12">
+      <div class="field-content">
+        <img typeof="foaf:Image" src="http://craving-boston.s3.amazonaws.com/production/styles/mobile_square/s3/hN-h1h1y.jpg?itok=fPM1NOE_" width="320" height="320" alt="" />
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-12">
+      <div class="bio-text">
+        <p>Managing editor Catherine Smart spends most of her waking hours thinking, writing about, or eating food.</p>
+        <p>A New Hampshire native, she grew up in a family that cooked, gardened, canned and tapped trees to make maple syrup, so you could say New England cuisine is in her blood.</p>
+        <p>After graduating from the University of New Hampshire in 2007, she moved to the Boston area to pursue a culinary certificate and MLA in gastronomy at Boston University.  While working toward her degree Catherine fell in love with the Boston food scene, started a personal chef business, <a href="http://smartentertaining.com/hire-me/">The Pocket Garden</a>, and became a regular contributor to The Boston Globe food section. </p>
+        <p>When Catherine isn’t cooking for personal chef clients or freelancing for various food publications, she enjoys yoga, travel, gardening, and spending time with her friends and family.  Catherine and her husband Artie are proud Somervillians, living in Union Square with their black lab Scout, and two cats, Lily and Oliver.</p>
+        <p>This WGBH gig came at the perfect time, as they will have yet another hungry mouth to feed when they welcome their first child in February of next year.</p>
+      </div>
+      <div class="social-media">
+        <a href="https://twitter.com/catherinesmart" target="_blank"><span class="social-media-icon twitter"></span></a> <a href="https://instagram.com/cjsmart" target="_blank"><span class="social-media-icon instagram"></span></a> <a href="https://www.facebook.com/smartentertaining" target="_blank"><span class="social-media-icon facebook"></span></a> <a href="https://www.pinterest.com/catherinesmart" target="_blank"><span class="social-media-icon pinterest"></span></a>
+      </div>
+    </div>
   </div>
-</div>  </div>
-
-<h2>Contributor Bios</h2>
+</div>
 ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Nodequeue: Queue */
@@ -342,11 +348,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['type'] = 'text_plain';
-  /* Sort criterion: Nodequeue: Position */
-  $handler->display->display_options['sorts']['position']['id'] = 'position';
-  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['sorts']['position']['field'] = 'position';
-  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -354,12 +355,23 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Nodequeue: In queue */
-  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['filters']['in_queue']['value'] = '1';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
+    'recipe' => 'recipe',
+  );
+  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Lead Article */
   $handler = $view->new_display('block', 'Lead Article', 'lead_article');
@@ -429,6 +441,44 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Node: Published at */
+  $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
+    'recipe' => 'recipe',
+  );
+  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '0';
   $handler->display->display_options['displays'] = array(
     'lead_article' => 'lead_article',
     'default' => 0,
