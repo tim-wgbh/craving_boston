@@ -270,6 +270,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['title'] = 'Featured';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -348,6 +349,11 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['type'] = 'text_plain';
+  /* Sort criterion: Nodequeue: Position */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -372,6 +378,12 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '1';
 
   /* Display: Lead Article */
   $handler = $view->new_display('block', 'Lead Article', 'lead_article');
@@ -447,38 +459,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
   $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-    'multi_recipe' => 'multi_recipe',
-    'recipe' => 'recipe',
-  );
-  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
-    1 => '1',
-  );
-  /* Filter criterion: Nodequeue: In queue */
-  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['filters']['in_queue']['value'] = '0';
   $handler->display->display_options['displays'] = array(
     'lead_article' => 'lead_article',
     'default' => 0,
@@ -645,17 +625,6 @@ function craving_boston_site_views_default_views() {
     'fallback_image_style' => '',
     'image_link' => 'content',
   );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
   /* Field: Content: By */
   $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
   $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
@@ -723,6 +692,15 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['type'] = 'text_plain';
+  /* Field: Content: Subhead */
+  $handler->display->display_options['fields']['field_subhead']['id'] = 'field_subhead';
+  $handler->display->display_options['fields']['field_subhead']['table'] = 'field_data_field_subhead';
+  $handler->display->display_options['fields']['field_subhead']['field'] = 'field_subhead';
+  $handler->display->display_options['fields']['field_subhead']['label'] = '';
+  $handler->display->display_options['fields']['field_subhead']['element_type'] = 'p';
+  $handler->display->display_options['fields']['field_subhead']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subhead']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_subhead']['type'] = 'text_plain';
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
@@ -949,17 +927,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'j M, Y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -1171,17 +1138,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'j M, Y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -1378,16 +1334,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['recipe_description']['id'] = 'recipe_description';
-  $handler->display->display_options['fields']['recipe_description']['table'] = 'field_data_recipe_description';
-  $handler->display->display_options['fields']['recipe_description']['field'] = 'recipe_description';
-  $handler->display->display_options['fields']['recipe_description']['label'] = '';
-  $handler->display->display_options['fields']['recipe_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['recipe_description']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['recipe_description']['settings'] = array(
-    'trim_length' => '600',
-  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';

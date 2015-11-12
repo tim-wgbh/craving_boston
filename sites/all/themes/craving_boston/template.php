@@ -150,24 +150,18 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
         $vars['display'] = false;
       }
       $vars['is_recipe'] = true;
-      if (!($vars['deck'] = subhead_deck($fields))) {
-        $vars['deck'] = $fields['recipe_description']->content;
-      }
     } else if ($fields['type']->raw == 'multi_recipe') {
       $vars['is_recipe'] = true;
-      if (!($vars['deck'] = subhead_deck($fields))) {
-        $vars['deck'] = $fields['body']->content;
-      }
     } else {
       $vars['is_recipe'] = false;
-      if (!($vars['deck'] = subhead_deck($fields))) {
-        $vars['deck'] = $fields['body']->content;
-      }
     }
+    
+    // Set the deck to the subhead
+    $vars['deck'] = _subhead_deck($fields);
   }
 }
 
-function subhead_deck($fields) {
+function _subhead_deck($fields) {
   if (!empty($fields['field_subhead']) && !empty($fields['field_subhead']->content)) {
     return $fields['field_subhead']->content;
   } else {
