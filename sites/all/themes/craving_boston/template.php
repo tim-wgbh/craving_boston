@@ -10,10 +10,11 @@ drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/redpoint_pwik.js', 
 function craving_boston_field__field_video_file($vars) {
   
   // No label and we must convert the file name to video and post files
-  $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
-  $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
-//   $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
-//   $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
+  // $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
+  // $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
+  $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
+  $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
+  
   $output = <<<EOC
     <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
     <div id="jw-player"></div>
@@ -158,6 +159,8 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
     
     // Set the deck to the subhead
     $vars['deck'] = _subhead_deck($fields);
+  } else if ($vars['view']->name == 'featured') {
+    $vars['image'] = $fields['field_image']->content;
   }
 }
 
@@ -191,7 +194,7 @@ function craving_boston_form_search_block_form_alter(&$form, &$form_state, $form
  */
 function cloudfront_file($filename) {
   global $conf;
-  return 'http://' . $conf['cloudfront_domain'] . '/'  . $conf['wgbh_site'].'/' . $filename;
+  return 'http://' . $conf['cloudfront_domain'] . '/video/' . $filename;
 }
  
 function s3_file($filename) {
