@@ -67,9 +67,7 @@ function craving_boston_preprocess_node(&$vars) {
   $vars['has_video'] = false; 
   
   $node = $vars['node'];
-//   if ($vars['view_mode'] == 'full' && node_is_page($vars['node'])) {
-//      $vars['classes_array'][] = 'node-full';
-//    }
+
   $vars['date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $vars['created'])));
   
   $vars['publication_date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $node->published_at)));
@@ -96,6 +94,12 @@ function craving_boston_preprocess_node(&$vars) {
   $vars['poster'] = '';
   if (!empty($node->field_internet_video) || !empty($node->field_video_file)) {
     $vars['has_video'] = true;
+    
+    // When the full node is displayed, hide the hero image because the video will be displayed
+    if ($vars['page']) {
+      hide($vars['content']['field_image']);
+    }
+    
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
     if (!empty($node->field_internet_video)) {

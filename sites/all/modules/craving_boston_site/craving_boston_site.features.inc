@@ -301,7 +301,7 @@ function craving_boston_site_image_default_styles() {
   $styles['featured_sub_medium'] = array(
     'label' => 'featured_sub_medium',
     'effects' => array(
-      22 => array(
+      1 => array(
         'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 780,
