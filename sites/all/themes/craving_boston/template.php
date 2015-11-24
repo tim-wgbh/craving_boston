@@ -10,10 +10,11 @@ drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/redpoint_pwik.js', 
 function craving_boston_field__field_video_file($vars) {
   
   // No label and we must convert the file name to video and post files
-  $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
-  $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
-//   $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
-//   $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
+  // $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
+  // $poster = s3_file($vars['items'][0]['#markup'] . '.jpg');
+  $video_file = cloudfront_file($vars['items'][0]['#markup'] . '.mp4');
+  $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
+  
   $output = <<<EOC
     <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
     <div id="jw-player"></div>
@@ -66,9 +67,7 @@ function craving_boston_preprocess_node(&$vars) {
   $vars['has_video'] = false; 
   
   $node = $vars['node'];
-//   if ($vars['view_mode'] == 'full' && node_is_page($vars['node'])) {
-//      $vars['classes_array'][] = 'node-full';
-//    }
+
   $vars['date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $vars['created'])));
   
   $vars['publication_date'] = t('!datetime', array('!datetime' =>  date('F j, Y', $node->published_at)));
@@ -86,6 +85,12 @@ function craving_boston_preprocess_node(&$vars) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
       }
   }
+
+  // If the hide hero checkbox is set, hide the hero image for full-page displays
+  if ($vars['page'] && isset($node->field_hide_hero) && $node->field_hide_hero['und'][0]['value'] == '1') {
+    hide($vars['content']['field_image']);
+  }
+  
   
   # Set up video display for articles
   if ($node->type != 'article') return;
@@ -95,6 +100,7 @@ function craving_boston_preprocess_node(&$vars) {
   $vars['poster'] = '';
   if (!empty($node->field_internet_video) || !empty($node->field_video_file)) {
     $vars['has_video'] = true;
+        
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
     if (!empty($node->field_internet_video)) {
@@ -150,24 +156,20 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
         $vars['display'] = false;
       }
       $vars['is_recipe'] = true;
-      if (!($vars['deck'] = subhead_deck($fields))) {
-        $vars['deck'] = $fields['recipe_description']->content;
-      }
     } else if ($fields['type']->raw == 'multi_recipe') {
       $vars['is_recipe'] = true;
-      if (!($vars['deck'] = subhead_deck($fields))) {
-        $vars['deck'] = $fields['body']->content;
-      }
     } else {
       $vars['is_recipe'] = false;
-      if (!($vars['deck'] = subhead_deck($fields))) {
-        $vars['deck'] = $fields['body']->content;
-      }
     }
+    
+    // Set the deck to the subhead
+    $vars['deck'] = _subhead_deck($fields);
+  } else if ($vars['view']->name == 'featured') {
+    $vars['image'] = $fields['field_image']->content;
   }
 }
 
-function subhead_deck($fields) {
+function _subhead_deck($fields) {
   if (!empty($fields['field_subhead']) && !empty($fields['field_subhead']->content)) {
     return $fields['field_subhead']->content;
   } else {
@@ -197,7 +199,7 @@ function craving_boston_form_search_block_form_alter(&$form, &$form_state, $form
  */
 function cloudfront_file($filename) {
   global $conf;
-  return 'http://' . $conf['cloudfront_domain'] . '/'  . $conf['wgbh_site'].'/' . $filename;
+  return 'http://' . $conf['cloudfront_domain'] . '/video/' . $filename;
 }
  
 function s3_file($filename) {

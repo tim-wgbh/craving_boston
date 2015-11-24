@@ -11,5 +11,5 @@
   </div>
 </div>
 <div class="image">
-  <?php print $fields['field_image']->content; ?>
+  <?php print $image; ?>
 </div>

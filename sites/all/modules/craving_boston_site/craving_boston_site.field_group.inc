@@ -25,7 +25,8 @@ function craving_boston_site_field_group_info() {
     'children' => array(
       0 => 'field_image',
       1 => 'field_carousel',
-      2 => 'group_video',
+      2 => 'field_hide_hero',
+      3 => 'group_video',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

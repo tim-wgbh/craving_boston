@@ -74,6 +74,9 @@
  * @see template_process()
  */
 ?>
+<?php if ($node->status == "0"): ?>
+<div class="unpublished">
+<?php endif; ?>
 <?php if (!$page): ?>
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 <?php endif; ?>
@@ -125,4 +128,7 @@
   <?php print render($content['comments']); ?>
 <?php if (!$page): ?>
   </article> <!-- /.node -->
+<?php endif; ?>
+<?php if ($node->status == "0"): ?>
+</div><!-- class="unpublished" -->>
 <?php endif; ?>

@@ -177,13 +177,17 @@ function craving_boston_site_image_default_styles() {
   $styles['default_large'] = array(
     'label' => 'Default Large',
     'effects' => array(
-      19 => array(
-        'name' => 'image_scale_and_crop',
+      28 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 690,
           'height' => 460,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
   );
@@ -193,7 +197,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'Default Medium 1x',
     'effects' => array(
       26 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 480,
           'height' => 320,
@@ -208,7 +212,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'Default Medium 2x',
     'effects' => array(
       27 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 960,
           'height' => 640,
@@ -223,7 +227,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'Default Small 1x',
     'effects' => array(
       21 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 320,
           'height' => 213,
@@ -238,7 +242,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'Default Small 2x',
     'effects' => array(
       25 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 640,
           'height' => 427,
@@ -253,7 +257,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'featured_main_large',
     'effects' => array(
       6 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 915,
           'height' => 610,
@@ -268,7 +272,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'featured_main_mobile',
     'effects' => array(
       8 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 480,
           'height' => 320,
@@ -283,7 +287,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'featured_sub_large',
     'effects' => array(
       7 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 480,
           'height' => 320,
@@ -297,8 +301,8 @@ function craving_boston_site_image_default_styles() {
   $styles['featured_sub_medium'] = array(
     'label' => 'featured_sub_medium',
     'effects' => array(
-      22 => array(
-        'name' => 'image_scale_and_crop',
+      1 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 780,
           'height' => 520,
@@ -313,7 +317,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'featured_sub_mobile',
     'effects' => array(
       9 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 480,
           'height' => 320,
@@ -328,7 +332,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'Half Mobile Square',
     'effects' => array(
       24 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 160,
           'height' => 160,
@@ -343,7 +347,7 @@ function craving_boston_site_image_default_styles() {
     'label' => 'Mobile Square',
     'effects' => array(
       23 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 320,
           'height' => 320,
