@@ -165,7 +165,7 @@ function craving_boston_site_field_default_field_instances() {
     'label' => 'Body',
     'required' => 0,
     'settings' => array(
-      'display_summary' => 0,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -258,7 +258,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -270,7 +270,7 @@ function craving_boston_site_field_default_field_instances() {
     'description' => 'If you wish to use a flashier headline in featured, latest, and topic/index views, here\'s the place to put it.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
@@ -292,6 +292,43 @@ function craving_boston_site_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_hide_hero'
+  $field_instances['node-article-field_hide_hero'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Checking this will hide the hero image in the full node display, but will allow it to be displayed in a view list (i.e. featured or chron list)',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hide_hero',
+    'label' => 'Hide hero',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
     ),
   );
 
@@ -1024,14 +1061,13 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
-      'display_summary' => 0,
+      'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -1844,7 +1880,7 @@ function craving_boston_site_field_default_field_instances() {
     'label' => 'Description',
     'required' => 0,
     'settings' => array(
-      'display_summary' => 0,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2032,6 +2068,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Body');
   t('By');
   t('Carousel');
+  t('Checking this will hide the hero image in the full node display, but will allow it to be displayed in a view list (i.e. featured or chron list)');
   t('Cooking time');
   t('Description');
   t('Directions');
@@ -2040,6 +2077,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Favorite dish to eat');
   t('Favorite dish to make');
   t('Flavor Profile');
+  t('Hide hero');
   t('How long does this recipe take to cook, in <strong>minutes</strong>?');
   t('How long does this recipe take to prepare, in <strong>minutes</strong>?');
   t('If the video name is <em>my-video</em> (no spaces, please), you should create two files:

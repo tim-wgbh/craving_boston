@@ -85,6 +85,12 @@ function craving_boston_preprocess_node(&$vars) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
       }
   }
+
+  // If the hide hero checkbox is set, hide the hero image for full-page displays
+  if ($vars['page'] && isset($node->field_hide_hero) && $node->field_hide_hero['und'][0]['value'] == '1') {
+    hide($vars['content']['field_image']);
+  }
+  
   
   # Set up video display for articles
   if ($node->type != 'article') return;
@@ -94,12 +100,7 @@ function craving_boston_preprocess_node(&$vars) {
   $vars['poster'] = '';
   if (!empty($node->field_internet_video) || !empty($node->field_video_file)) {
     $vars['has_video'] = true;
-    
-    // When the full node is displayed, hide the hero image because the video will be displayed
-    if ($vars['page']) {
-      hide($vars['content']['field_image']);
-    }
-    
+        
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
     if (!empty($node->field_internet_video)) {
