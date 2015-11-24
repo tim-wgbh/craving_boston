@@ -359,6 +359,12 @@ ini_set('session.cookie_lifetime', 2000000);
  $conf['s3fs_region']         = 'us-east-1';
  $conf['s3fs_bucket']         = 'craving-boston';
  
+ /**
+  * Cloudfront domain
+  */
+ $conf['cloudfront_domain']   = 'd1pz597g947ic7.cloudfront.net';
+ 
+ 
  if (defined('PANTHEON_ENVIRONMENT')) {
    if ($_ENV['PANTHEON_ENVIRONMENT'] == 'dev') {
       $conf['s3fs_root_folder'] = 'pantheon-dev';
@@ -390,9 +396,10 @@ ini_set('session.cookie_lifetime', 2000000);
 /**
  * Public Media Platform (PMP) credentials
  */
- $conf['pmpapi_user_id'] = 'a81eca6c-b834-47fe-bb60-1382d677cd50';  
- $conf['pmpapi_auth_client_id'] = '9ab452fe-07d2-47c1-8bdf-0d5e2de7499a';  
- $conf['pmpapi_auth_client_secret'] = '65a0a07f8087c8720fd6d0f4';  
+ $conf['wgbh_pmp_base_url'] = 'https://api.pmp.io';  
+ $conf['wgbh_pmp_user_id'] = 'a81eca6c-b834-47fe-bb60-1382d677cd50';  
+ $conf['wgbh_pmp_auth_client_id'] = '9ab452fe-07d2-47c1-8bdf-0d5e2de7499a';  
+ $conf['wgbh_pmp_auth_client_secret'] = '65a0a07f8087c8720fd6d0f4';  
 
 /**
  * A custom theme can be set for the offline page. This applies when the site

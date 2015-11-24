@@ -1,0 +1,43 @@
+.page-admin-content-pmp button {
+  font-size: 14px;
+  width: 100px;
+  border-radius: 20px;
+  color: #666;
+  border: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #999;
+}
+.page-admin-content-pmp button.preview {
+  background-color: #dfd;
+}
+.page-admin-content-pmp button.pull {
+  background-color: #ffd;
+}
+
+.page-admin-content-pmp .preview-content {
+  display: none;
+}
+.page-admin-content-pmp td {
+  vertical-align: top;
+}
+.page-admin-content-pmp tr.current {
+  background-color: lightblue;
+}
+#pmp-modal {
+  position: fixed;
+  top:0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 5000;
+}
+#pmp-modal .modal-wrapper {
+  width: 80%;
+  height: 80%;
+  padding: 20px;
+  margin: 40px auto;
+  overflow-y: scroll;
+  background-color: white;
+}

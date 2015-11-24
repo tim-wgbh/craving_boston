@@ -1,0 +1,9 @@
+name = WGBH PMP
+description = Customizes information from the PMP API so it can be saved as Craving Boston nodes.
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_pmp"
+;
+
+files[] = classes/pmp_client.php

@@ -1,0 +1,321 @@
+<?php
+function wgbh_pmp_menu() {
+  $items = array();
+  
+  $items['admin/content/pmp/manage'] = array(
+    'title' => 'PMP Articles',
+    'description' => 'View available PMP articles',
+    'access arguments' => array('pull PMP content'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('wgbh_pmp_topic_search_form'),
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['admin/content/pmp/pull/%'] = array(
+    'title' => 'Pull Article',
+    'description' => 'Pull a PMP article and insert into a node/add form',
+    'access arguments' => array('pull PMP content'),
+    'page callback' => 'wgbh_pmp_new_node',
+    'page arguments' => array('wgbh_pmp_new_node', 4),
+    'type' => MENU_LOCAL_TASK,
+  );
+  
+  return $items;
+}
+
+/**
+ * Create a new node from the PMP article
+ */
+function wgbh_pmp_new_node($guid) {
+  $pmp = _get_client();
+
+  $article = $pmp->fetchDoc($guid);
+  
+  $node = new StdClass();
+  $node->type = 'article';
+  $node->title = $article->attributes->title;
+  $node->field_headline =  $node->title;
+  $node->field_subhead = $article->attributes->description;
+  $node->field_author = $article->attributes->byline;
+  $node->body = $article->attributes->contentencoded;
+  
+  $node->uid = 1;
+  $node->promote = 0;
+  $node->status = 0;
+  $node->active = 0;
+}
+
+function wgbh_pmp_topic_search_form($form, &$form_state) {
+
+  require_once DRUPAL_ROOT . '/sites/all/modules/wgbh_pmp/classes/pmp_client.php';
+  
+  drupal_add_css(drupal_get_path('module', 'wgbh_pmp') . '/wgbh_pmp.css');
+  drupal_add_js(drupal_get_path('module', 'wgbh_pmp') . '/wgbh_pmp.js');
+
+  $limit = (!empty($_GET['limit'])) ? $_GET['limit'] : 10;
+  
+  //Query parameters - see https://github.com/publicmediaplatform/pmpdocs/wiki/Querying-the-API
+  $query_params = array('limit' => $limit, 'profile' => 'story');
+  $per_page = 20;
+
+  if (!empty($_GET['collection'])) {
+    $collection = $_GET['collection'];
+    $query_params['collection'] = $collection;
+  }
+    
+  if (!empty($_GET['tag'])) {
+    $tag = $_GET['tag'];
+    $query_params['tag'] = $tag;
+  }
+
+  if (!empty($_GET['page'])) {
+    // doing this drupal-style, wherein pages are 0-indexed
+    // looks like PMP offset is 0-indexed as well
+    $query_params['offset'] = $_GET['page'] * $per_page;
+  }
+
+  // Topic search
+  $form['topics'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Topic Search'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  
+  $form['topics']['collection'] = array(
+    '#title' => 'Topic',
+    '#type' => 'select',
+    '#options' => array(
+      null => t('--- Select a topic ---'),
+      '89944632-fe7c-47df-bc2c-b2036d823f98' => t('Arts'),
+      '9c3c8f9e-f038-4b7e-9719-f5c4b1404c1a' => t('Culture'),
+      '7a1c4403-0bce-4866-a9eb-8066da226985' => t('Education'),
+      '635bb7a1-9e49-4a5d-bab3-048ff945b5fb' => t('Food'),
+      '9bd2ec35-be2f-4eb1-9ef9-54a59405dd85' => t('Health'),
+      '4d0acb4c-7057-4771-987d-97fc21ad0bcc' => t('Money'),
+      '4993cf23-968a-4182-acb2-4d46a96d0ac8' => t('Music'),
+      '5c0f1387-024e-4a84-8804-43048779cc37' => t('News'),
+      '588eb430-d600-4617-ab8f-f601839436a9' => t('Politics'),
+      'b6ef8e81-9ad2-4e34-8fbd-22181fe1b0e0' => t('Science'),
+      '44ed7afc-0dd7-4aa1-8c88-34e74dc0d36b' => t('Sports'),
+      '3f829119-5310-43b9-acc5-0f36a51aae42' => t('Technology'),
+    ),
+    '#default_value' => (!empty($collection) && $collection != '635bb7a1-9e49-4a5d-bab3-048ff945b5fb') ? $collection : '635bb7a1-9e49-4a5d-bab3-048ff945b5fb',
+  );
+
+  // Topic search
+  $form['programs'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Search by Program'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['programs']['program'] = array(
+    '#title' => 'Program',
+    '#type' => 'select',
+    '#options' => array_merge(
+      array(null => t('--- Select a topic ---'),
+      wgbh_pmp_get_programs()
+    ),
+    '#default_value' => (!empty($collection) && $collection != '635bb7a1-9e49-4a5d-bab3-048ff945b5fb') ? $collection : '635bb7a1-9e49-4a5d-bab3-048ff945b5fb',
+  );
+
+  $form['tag_search'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Search by Tag'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['tag_search']['tag'] = array(
+    '#title' => 'Tag(s)',
+    '#type' => 'textfield',
+    '#default_value' => !empty($tag) ? $tag : '',
+    '#description' => t('Limit query to theses space-separated tags.'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+  
+  $pmp = _get_client();
+  
+  $raw_stories = $pmp->queryDocs($query_params);
+  $stories = [];
+  $table_rows = [];
+  foreach ($raw_stories->items() as $raw_story) {
+    $metadata = wgb_pmp_parse_story_metadata($raw_story);
+    $stories[] = $metadata;
+    $content = "<em>" . $metadata['title'] . "</em>";
+    $content .= $metadata['content'];
+    if (isset($metadata['audio'])) {
+      $content .= "<p>Audio: " . $metadata['audio'] . "</p>";
+    }
+    $table_rows[] = array(
+      "<button class='preview' id='preview_" . $metadata['guid'] . "'>Preview</button><br /><button class='pull' id='pull_" . $metadata['guid'] . "'>Pull</button>",
+      "<b>" . $metadata['source'] . "</b>",
+      $content,
+      $metadata['published']
+    );
+  }
+  $form['doc_list'] = array(
+    '#markup' => wgbh_pmp_create_doc_list_markup($table_rows),
+  );
+  
+  $form['pager'] = array (
+    '#markup' => wgbh_pmp_create_pager($raw_stories->links->navigation[0]->totalitems),
+  );
+  return $form;
+}
+
+function wgbh_pmp_topic_search_form_submit($form, &$form_state) {
+  $path = 'admin/content/pmp/manage';
+  
+  $query_params = array('profile' => 'story');
+
+  if (!empty($form_state['values']['tag'])) {
+    $query_params['tag'] = $form_state['values']['tag'];
+  }
+  if (!empty($form_state['values']['collection'])) {
+    $query_params['collection'] = $form_state['values']['collection'];
+  }
+
+  $form_state['redirect'] = array($path, array('query' => $query_params));
+}
+
+function wgbh_pmp_create_pager($total) {
+  $page = (isset($_GET['page'])) ? abs((int)$_GET['page']) : 0;
+  // 'hacking' the pager
+  // See inpiration (D6) at:
+  // http://www.jacobsingh.name/content/how-use-themepager-without-sql-query-and-go-hell
+  global $pager_page_array, $pager_total;
+  $pager_total[0] = ceil($total/10);
+  $pager_page_array[0] = $page;
+  return theme('pager', array('quantity' => 4));
+}
+
+function wgbh_pmp_create_doc_list_markup($rows) {
+
+  $header = array(
+    'actions' => array(
+      'data' => t('Actions'),
+    ),
+    'source' => array(
+      'data' => t('Source'),
+    ),
+    'content' => array(
+      'data' => t('Content'),
+    ),
+    'pub_date' => array(
+      'data' => t('Publish Date'),
+      'sort' => 'desc',
+    ),
+  );
+  
+  return theme('table', array('header' => $header, 'rows' => $rows));
+}
+
+/**
+ * Parses out metadata from PMP docs.
+ *
+ * @param $docs array
+ *   PMP docs to be parsed
+ *
+ * @return array
+ *   All parsed metadata, one element per doc
+ */
+function wgb_pmp_parse_story_metadata($story) {
+  $metadata = array();
+  $metadata['title'] = $story->attributes->title; 
+  if (isset($story->links->collection) && isset($story->links->collection[0]->title)) {
+    $metadata['source'] = $story->links->collection[0]->title;
+  } else {
+    $metadata['source'] = '(unknown)';
+  }
+  $pieces = explode('/', $story->links->profile[0]->href);
+  $metadata['profile'] = array_pop($pieces);
+  $metadata['guid'] = $story->attributes->guid;
+  $api_date =  $story->attributes->published;
+  $timestamp = strtotime($api_date);
+  $metadata['published'] =  format_date($timestamp, 'custom', 'D, M jS Y \a\t g:i a');  
+
+  // Get attached items
+  $metadata['images'] = [];
+  $images = $story->items('image');
+  foreach ($images as $item) {
+    $crops = [];
+    foreach ($item->links->enclosure as $data) {
+      $image_data['href'] = $data->href;
+      $image_data['crop'] = isset($data->meta->crop) ? $data->meta->crop : '';
+      $image_data['width'] = isset($data->meta->width) ? $data->meta->width : '';
+      $image_data['height'] = isset($data->meta->height) ? $data->meta->height : '';
+      $crops[] = $image_data;
+    }
+    $metadata['images'][] = $crops;    
+  }
+  $audio = $story->items('audio');
+  foreach ($audio as $item) {
+    foreach ($item->links->enclosure as $data) {
+      $metadata['audio'] = $data->href;
+    }
+  }
+  $metadata['content'] = '<div class="preview-content" id="' . $story->attributes->guid . '">';
+  if (count($metadata['images'] > 0)) {
+    $images = '<p>';
+    foreach ($metadata['images'] as $crops) {
+      $images .= "<img style='width:150px;padding:5px;' src='" . $crops[0]['href'] . "' />";
+      $number_of_crops = count($crops) - 1;
+      $images .= " + {$number_of_crops} other crops";
+    }
+    $images .= "</p>";
+    $metadata['content'] .= $images;
+  }
+
+  $metadata['content'] .= $story->attributes->contentencoded . '</div>';
+  return $metadata;
+}
+function _get_client() {
+
+  require DRUPAL_ROOT . '/sites/all/libraries/pmpsdk.phar';
+  
+  $cached_client = FALSE;
+//  $cached_client = cache_get('wgbh_pmp_client');
+  
+  if ($cached_client) {
+    $pmp = $cached_client->data;
+  } else {
+    $host = variable_get('wgbh_pmp_base_url');
+    $client_id = variable_get('wgbh_pmp_auth_client_id');
+    $client_secret = variable_get('wgbh_pmp_auth_client_secret');
+
+    try {
+      $pmp = new \Pmp\Sdk($host, $client_id, $client_secret);
+      cache_set('wgbh_pmp_client', $pmp);
+    }
+    catch (\Pmp\Sdk\Exception\HostException $e) {
+      $message = t("Invalid API host specified: @exception", array('@exception' => $e));
+      drupal_set_message($message, 'warning');
+    }
+    catch (\Pmp\Sdk\Exception\AuthException $e) {
+      $message = t("Bad client credentials: @exception", array('@exception' => $e));
+      drupal_set_message($message, 'warning');
+    }    
+  } 
+  return $pmp;
+}
+function _get_programs() {
+  $programs = array();
+  $pmp = _get_client();
+  $programs = $pmp->queryProfiles('property');
+  
+  
+  if (!empty($pmp->query->results->docs)) {
+    foreach($pmp->query->results->docs as $doc){
+      $properties[$doc->attributes->guid] = $doc->attributes->title;
+    }
+  }
+  asort($properties);
+  return $properties;
+}
+
