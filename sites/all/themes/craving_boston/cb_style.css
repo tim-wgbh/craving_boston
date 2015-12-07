@@ -344,6 +344,11 @@ h2.recipe {
 .node-type-recipe .field-type-ingredient-reference .field-items,
 .node-type-multi-recipe .field-type-ingredient-reference .field-items {
   margin-left: 4em;
+  font-size:16px;
+}
+.field-name-recipe-instructions ol li {
+  font-size:17px;
+  line-height: 1.9;
 }
 .field-name-recipe-ingredient .field-label,
 .field-name-recipe-instructions .field-label,
@@ -371,7 +376,7 @@ h2.recipe {
   color: #888;
   font-size: 1.1em;
   line-height: 1.3;
-  margin-top: 88px;
+  margin-top: 53px;
   padding: 0 0 7px 1%;
   font-weight: bold;
   text-align: right;

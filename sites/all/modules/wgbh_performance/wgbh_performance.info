@@ -1,0 +1,11 @@
+name = WGBH Performance
+description = Modifications to improve the performance of the site; also provides picture module fix
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_performance"
+;
+dependencies[] = views
+dependencies[] = nodequeue
+dependencies[] = picture
+dependencies[] = s3fs

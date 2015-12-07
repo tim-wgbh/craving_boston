@@ -85,7 +85,14 @@
       </div>
       <div class="col-md-4 col-sm-12">
         <?php if ($site_slogan): ?>
-        <div id="site-slogan"><?php print $site_slogan; ?></div>
+        <div id="site-slogan">
+          <div class="social-media">
+            <a href="https://twitter.com/cravingboston" target="_blank"><span class="social-media-icon twitter"></span></a>
+            <a href="https://www.facebook.com/cravingboston" target="_blank"><span class="social-media-icon facebook"></span></a>
+            <a href="https://www.pinterest.com/wgbhboston/wgbhs-craving-boston" target="_blank"><span class="social-media-icon pinterest"></span></a>
+          </div>
+          <?php print $site_slogan; ?>
+        </div>
         <?php endif; ?>
       </div>
     </div>
