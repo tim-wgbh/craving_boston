@@ -1,0 +1,516 @@
+<?php
+/**
+ * Implement hook_menu();
+ */
+function wgbh_performance_menu() {
+  $items = array();
+  
+  $items['admin/settings/wgbh_performance'] = array(
+    'title' => 'Setting for WGBH performance module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('wgbh_performance_admin'),
+    'access arguments' => array('administer settings'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+
+  return $items;
+}  
+
+/**
+ * Implement hook_form_alter
+ */
+function wgbh_performance_admin() {  
+  $form = array();
+  
+  $form['wgbh_performance_cdn_domain'] = array(
+    '#type'           => 'textfield',
+    '#title'          => t('CDN domain (if using a CDN)'),
+    '#default_value'  => variable_get('wgbh_performance_cdn_domain', ''),
+    '#maxlength'      => 40,
+    '#size'           => 40,
+    '#description'    => t('e.g. dxxx.cloudfront.net or assets.example.com'),
+    '#disabled'       => true,
+  );
+  
+  return system_settings_form($form);
+}
+
+/**
+ * Validate CDN entry - should look like a domain
+ */
+function wgbh_performance_admin_validate($form, &$form_state) {
+  $cdn_domain = $form_state['values']['wgbh_performance_cdn_domain'];
+  if (!empty($cdn_domain) && !preg_match('/([a-z0-9]([_\-a-z0-9])*\.){2,3}[a-z0-9][_\-a-z0-9]*/', $cdn_domain)) {
+    form_set_error('cdn_domain', t("That doesn't look like a proper domain. It should be of the format (xxxx).xxxx.xxxx.xxx"));
+  }
+} 
+
+/**
+ * Implement hook_file_url_alter()
+ * If Cloudfront is being used, pull files from the there
+ */
+// function wgbh_performance_file_url_alter(&$uri) { 
+//   global $conf;
+//    
+//   $cdn = variable_get('wgbh_performance_cdn_domain');
+//   $file_scheme = file_uri_scheme($uri);
+//   
+//   // Return:
+//   //   - if Cloudfront is not being used
+//   //   - if the file is not originating from the S3 bucket
+//   //   - if the source style does not exist in the S3 bucket (should work with stream wrapper)
+// 
+//   if (empty($cdn) || $file_scheme != 's3' || !is_file($uri)) {
+//     return;
+//   }
+//   
+//   // Check to 
+// 
+//   $wrapper = file_stream_wrapper_get_instance_by_scheme($file_scheme);   
+//   $path = $wrapper->getDirectoryPath() . '/' . file_uri_target($uri);
+//   
+//   // Convert Windows path
+//   $path = str_replace('\\', '/', $path);
+//   
+//   $uri = 'http://' . $cdn  . $path;
+// }
+  
+/**
+ * Clear the views cache when a nodequeue is updated
+ */
+ function wgbh_performance_nodequeue_update($qid, $sqid) {
+  cache_clear_all('*', 'cache_views', true);
+  cache_clear_all('*', 'cache_page', true);
+ }
+ 
+/**
+ * Override of picture theme function
+ * Just modifies the URI if stuff is stored in S3
+ */
+// function wgbh_performance_theme_picture(array $variables) {
+//   dpm('wgbh_performance_theme_picture');
+// 
+//   $image_styles = image_styles();
+//   // Make sure that width and height are proper values.
+//   // If they exists we'll output them.
+//   // @see http://www.w3.org/community/respimg/2012/06/18/florians-compromise/
+//   if (isset($variables['width']) && empty($variables['width'])) {
+//     unset($variables['width']);
+//     unset($variables['height']);
+//   }
+//   elseif (isset($variables['height']) && empty($variables['height'])) {
+//     unset($variables['width']);
+//     unset($variables['height']);
+//   }
+//   if (isset($variables['metadata']['width']) && isset($variables['metadata']['height'])) {
+//     $variables['width'] = $variables['metadata']['width'];
+//     $variables['height'] = $variables['metadata']['height'];
+//   }
+// 
+//   $sources = array();
+//   $output = array();
+//   // If we know width and height we use them, if not we should get image info.
+//   if (!empty($variables['width']) && !empty($variables['height'])) {
+//     $dimensions = array(
+//       'width' => $variables['width'],
+//       'height' => $variables['height'],
+//     );
+//   }
+//   else {
+//     if (($image_info = image_get_info($variables['uri'])) === FALSE) {
+//       watchdog('Picture', 'Unable to load image: %image', array('%image' => $variables['uri']));
+//       // If the image couldn't be loaded return nothing.
+//       return NULL;
+//     }
+//     $dimensions = array(
+//       'width' => $image_info['width'],
+//       'height' => $image_info['height'],
+//     );
+//   }
+// 
+//   // All breakpoints and multipliers.
+//   foreach ($variables['breakpoints'] as $breakpoint_name => $multipliers) {
+//     $breakpoint = breakpoints_breakpoint_load_by_fullkey($breakpoint_name);
+//     if ($breakpoint) {
+//       $sizes = array();
+//       $srcset = array();
+// 
+//       foreach ($multipliers as $multiplier => $mapping_definition) {
+//         switch ($mapping_definition['mapping_type']) {
+//           case 'sizes':
+//             foreach (array_filter($mapping_definition['sizes_image_styles']) as $image_style_name) {
+//               $dimensions_clone = $dimensions;
+//               picture_get_image_dimensions($image_style_name, $dimensions_clone);
+//               // Get mime type.
+//               // $derivative_mime_type = $mime_type;
+//               // $image_style->transformMimeType($derivative_mime_type);
+//               // $derivative_mime_types[] = $derivative_mime_type;
+//               $srcset[$dimensions_clone['width']] = _wgbh_performance_image_style_url($image_style_name, $variables['uri'], $variables['timestamp']) . ' ' . $dimensions_clone['width'] . 'w';
+//               $sizes = array_merge(explode(',', $mapping_definition['sizes']), $sizes);
+//             }
+//             break;
+// 
+//           case 'image_style':
+//             // Get mime type (not implemented in Drupal 7.
+//             // $derivative_mime_type = $mime_type;
+//             // $image_style->transformMimeType($derivative_mime_type);
+//             // $derivative_mime_types[] = $derivative_mime_type;
+//             $srcset[$multiplier] = _wgbh_performance_image_style_url($mapping_definition['image_style'], $variables['uri'], $variables['timestamp']) . ' ' . $multiplier;
+//             break;
+//         }
+//       }
+// 
+//       // Sort srcset.
+//       ksort($srcset);
+// 
+//       $aspect_ratio = '';
+//       if (!empty($variables['lazyload_aspect_ratio']) && !empty($image_styles[$mapping_definition['image_style']])) {
+//         $dimensions = array(
+//           'width' => $variables['width'],
+//           'height' => $variables['height'],
+//         );
+//         $dimensions = picture_get_image_dimensions($mapping_definition['image_style'], $dimensions);
+//         // store as a string, JS plugin will do calculation
+//         $aspect_ratio = $dimensions['width'] . '/' . $dimensions['height'];
+//       }
+// 
+//       $sources[] = array(
+//         '#theme' => 'picture_source',
+//         '#srcset' => implode(', ', array_unique($srcset)),
+//         '#media' => $breakpoint->breakpoint,
+//         '#sizes' => implode(', ', array_unique($sizes)),
+//         '#lazyload' => !empty($variables['lazyload']),
+//         '#lazyload_aspect_ratio' => $aspect_ratio,
+//       );
+//     }
+//   }
+//   $attributes = array();
+//   foreach (array('alt', 'title', 'attributes') as $key) {
+//     $field = sprintf('field_file_image_%s_text', $key);
+//     if (isset($variables[$key]) && !empty($variables[$key])) {
+//       if ($key == 'attributes') {
+//         $attributes += $variables[$key];
+//       }
+//       else {
+//         $attributes[$key] = $variables[$key];
+//       }
+//     }
+//     elseif (isset($variables[$field]) && is_array($variables[$field]) && isset($variables[$field][LANGUAGE_NONE][0]['safe_value'])) {
+//       if ($key == 'attributes') {
+//         $attributes += $variables[$field][LANGUAGE_NONE][0]['safe_value'];
+//       }
+//       else {
+//         $attributes[$key] = $variables[$field][LANGUAGE_NONE][0]['safe_value'];
+//       }
+//     }
+//   }
+//   if (!empty($sources)) {
+//     $output[] = '<picture ' . drupal_attributes(array_diff_key($attributes, array('alt' => ''))) . '>';
+//     $output[] = '<!--[if IE 9]><video style="display: none;"><![endif]-->';
+//     $output = array_merge($output, array_map('drupal_render', $sources));
+//     $output[] = '<!--[if IE 9]></video><![endif]-->';
+//     $src = _picture_image_style_url($variables['style_name'], $variables['uri'], $variables['timestamp']);
+// 
+//     if (!empty($variables['lazyload'])) {
+//       if (!isset($attributes['class'])) {
+//         $attributes['class'] = array();
+//       }
+//       elseif (!is_array($attributes['class'])) {
+//         $attributes['class'] = (array)$attributes['class'];
+//       }
+//       $attributes['class'][] = 'lazyload';
+//     }
+// 
+//     if (!empty($variables['lazyload_aspect_ratio'])) {
+//       // img tag has to have data-aspectratio attribute even if its dummy placeholder
+//       $attributes['data-aspectratio'] = '';
+//     }
+// 
+//     if (variable_get('picture_fallback_method', 'src') === 'src') {
+//       $min_ie9_fallback = array(
+//         '#theme' => 'image_srcset',
+//         '#uri' => $src,
+//         '#alt' => isset($attributes['alt']) ? $attributes['alt'] : '',
+//         '#title' => isset($attributes['title']) ? $attributes['title'] : '',
+//         '#attributes' => array_diff_key($attributes, array('alt' => '', 'title' => '')),
+//       );
+//       $output[] = drupal_render($min_ie9_fallback);
+//     }
+//     else {
+//       // Fallback image for < IE9.
+//       $min_ie9_fallback = array(
+//         '#theme' => 'image_srcset',
+//         '#uri' => $src,
+//         '#alt' => isset($attributes['alt']) ? $attributes['alt'] : '',
+//         '#title' => isset($attributes['title']) ? $attributes['title'] : '',
+//         '#attributes' => array_diff_key($attributes, array('alt' => '', 'title' => '')),
+//       );
+//       $output[] = '<!--[if lt IE 9]>';
+//       $output[] = drupal_render($min_ie9_fallback);
+//       $output[] = '<![endif]-->';
+// 
+//       // Fallback image for > IE8.
+//       $srcset = array(
+//         'uri' => $src,
+//       );
+//       $dimensions_clone = $dimensions;
+//       picture_get_image_dimensions($variables['style_name'], $dimensions_clone);
+//       if (!empty($dimensions_clone['width'])) {
+//         $srcset['width'] = $dimensions_clone['width'] . 'w';
+//       }
+//       $plus_ie8_fallback = array(
+//         '#theme' => 'image_srcset',
+//         '#srcset' => array($srcset),
+//         '#alt' => isset($attributes['alt']) ? $attributes['alt'] : '',
+//         '#title' => isset($attributes['title']) ? $attributes['title'] : '',
+//         '#attributes' => array_diff_key($attributes, array('alt' => '', 'title' => '')),
+//       );
+//       $output[] = '<!--[if !lt IE 9]><!-->';
+//       $output[] = drupal_render($plus_ie8_fallback);
+//       $output[] = '<!-- <![endif]-->';
+//     }
+// 
+//     $output[] = '</picture>';
+// 
+//     return implode("\n", $output);
+//   }
+// }
+// 
+// /**
+//  * The Drupal function file_create_url alters the URL first
+//  * Here, we need to generate the images in S3 first if they don't exist, so we can't alter until that happens
+//  */ 
+// function _wgbh_performance_file_create_url($uri) {
+//   dpm('_wgbh_performance_file_create_url');
+// 
+//   // Drupal function alters the url here
+//   $scheme = file_uri_scheme($uri);
+// 
+//   if (!$scheme) {
+//     // Allow for:
+//     // - root-relative URIs (e.g. /foo.jpg in http://example.com/foo.jpg)
+//     // - protocol-relative URIs (e.g. //bar.jpg, which is expanded to
+//     //   http://example.com/bar.jpg by the browser when viewing a page over
+//     //   HTTP and to https://example.com/bar.jpg when viewing a HTTPS page)
+//     // Both types of relative URIs are characterized by a leading slash, hence
+//     // we can use a single check.
+//     if (drupal_substr($uri, 0, 1) == '/') {
+//       return $uri;
+//     }
+//     else {
+//       // If this is not a properly formatted stream, then it is a shipped file.
+//       // Therefore, return the urlencoded URI with the base URL prepended.
+//       return $GLOBALS['base_url'] . '/' . drupal_encode_path($uri);
+//     }
+//   }
+//   elseif ($scheme == 'http' || $scheme == 'https') {
+//     // Check for HTTP so that we don't have to implement getExternalUrl() for
+//     // the HTTP wrapper.
+//     return $uri;
+//   }
+//   else {
+//     // Attempt to return an external URL using the appropriate wrapper.
+//     if ($wrapper = file_stream_wrapper_get_instance_by_uri($uri)) {
+//       return $wrapper->getExternalUrl();
+//     }
+//     else {
+//       return FALSE;
+//     }
+//   }
+// }
+// 
+// function _wgbh_performance_image_style_url($style_name, $path, $timestamp = NULL) {
+//   dpm('_wgbh_performance_image_style_url');
+//   if ($style_name == PICTURE_EMPTY_IMAGE) {
+//     return 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+//   }
+//   if ($style_name == PICTURE_ORIGINAL_IMAGE) {
+//     $url = file_create_url($path);
+//   }
+//   
+//   $uri = image_style_path($style_name, $path);
+// 
+//   // The passed-in $path variable can be either a relative path or a full URI.
+//   $original_uri = file_uri_scheme($path) ? file_stream_wrapper_uri_normalize($path) : file_build_uri($path);
+// 
+//   // The token query is added even if the 'image_allow_insecure_derivatives'
+//   // variable is TRUE, so that the emitted links remain valid if it is changed
+//   // back to the default FALSE.
+//   // However, sites which need to prevent the token query from being emitted at
+//   // all can additionally set the 'image_suppress_itok_output' variable to TRUE
+//   // to achieve that (if both are set, the security token will neither be
+//   // emitted in the image derivative URL nor checked for in
+//   // image_style_deliver()).
+//   $token_query = array();
+//   if (!variable_get('image_suppress_itok_output', FALSE)) {
+//     $token_query = array(IMAGE_DERIVATIVE_TOKEN => image_style_path_token($style_name, $original_uri));
+//   }
+// 
+//   // If not using clean URLs, the image derivative callback is only available
+//   // with the query string. If the file does not exist, use url() to ensure
+//   // that it is included. Once the file exists it's fine to fall back to the
+//   // actual file path, this avoids bootstrapping PHP once the files are built.
+//   if (!variable_get('clean_url') && file_uri_scheme($uri) == 'public' && !file_exists($uri)) {
+//     $directory_path = file_stream_wrapper_get_instance_by_uri($uri)->getDirectoryPath();
+//     return url($directory_path . '/' . file_uri_target($uri), array('absolute' => TRUE, 'query' => $token_query));
+//   }
+// 
+//   $url = _wgbh_performance_file_create_url($uri);
+//   
+//   if (image_get_info($url) === FALSE) {
+//     _s3fs_image_style_deliver($style_name, 's3', $path);
+//   }
+//   
+//   // Check to see if this derivative exists and generate if necessary
+//   
+// 
+//   // Append the query string with the token, if necessary.
+//   if ($token_query) {
+//     $url .= (strpos($url, '?') !== FALSE ? '&' : '?') . drupal_http_build_query($token_query);
+//   }
+//   
+//   if (!empty($timestamp)) {
+//     $url .= (strpos($url, '?') !== FALSE ? '&' : '?') . drupal_http_build_query(array('timestamp' => $timestamp));
+//   }
+//   
+//   //Finally alter to be served from the CDN
+//   drupal_alter('file_url', $url);
+// 
+//   return $url;
+// }
+// 
+// /**
+//  * Returns HTML for a source tag.
+//  *
+//  * @param array $variables
+//  *   An associative array containing:
+//  *   - media: The media query to use.
+//  *   - src: Either the path of the image file (relative to base_path()) or a
+//  *     full URL.
+//  *   - dimensions: The width and height of the image (if known).
+//  *
+//  * @ingroup themeable
+//  */
+// function wgbh_performance_theme_picture_source(array $variables) {
+//   dpm('wgbh_performance_theme_picture_source');
+// 
+//   if (!empty($variables['lazyload'])) {
+//     $attributes['data-srcset'] = $variables['srcset'];
+//     if (!empty($variables['lazyload_aspect_ratio'])) {
+//       $attributes['data-aspectratio'] = $variables['lazyload_aspect_ratio'];
+//     }
+//   }
+//   else {
+//     $attributes['srcset'] = $variables['srcset'];
+//   }
+//   
+//   if (isset($variables['media']) && !empty($variables['media'])) {
+//     $attributes['media'] = $variables['media'];
+//   }
+// 
+//   if (isset($variables['mime_type']) && !empty($variables['mime_type'])) {
+//     $attributes['type'] = $variables['mime_type'];
+//   }
+//   if (isset($variables['sizes']) && !empty($variables['sizes'])) {
+//     $attributes['sizes'] = $variables['sizes'];
+//   }
+//   return '<source' . drupal_attributes($attributes) . ' />';
+// }
+// 
+// /**
+//  * Returns HTML for an image.
+//  *
+//  * @param array $variables
+//  *   An associative array containing:
+//  *   - path: Either the path of the image file (relative to base_path()) or a
+//  *     full URL.
+//  *   - srcset: Array of multiple URI's and sizes/multipliers.
+//  *   - sizes: The value for the sizes attribute.
+//  *   - width: The width of the image (if known).
+//  *   - height: The height of the image (if known).
+//  *   - alt: The alternative text for text-based browsers. HTML 4 and XHTML 1.0
+//  *     always require an alt attribute. The HTML 5 draft allows the alt
+//  *     attribute to be omitted in some cases. Therefore, this variable defaults
+//  *     to an empty string, but can be set to NULL for the attribute to be
+//  *     omitted. Usually, neither omission nor an empty string satisfies
+//  *     accessibility requirements, so it is strongly encouraged for code
+//  *     calling theme('image') to pass a meaningful value for this variable.
+//  *     - http://www.w3.org/TR/REC-html40/struct/objects.html#h-13.8
+//  *     - http://www.w3.org/TR/xhtml1/dtds.html
+//  *     - http://dev.w3.org/html5/spec/Overview.html#alt
+//  *   - title: The title text is displayed when the image is hovered in some
+//  *     popular browsers.
+//  *   - attributes: Associative array of attributes to be placed in the img tag.
+//  */
+// function wgbh_performance_theme_image_srcset(array $variables) {
+//   // Sizes is mandatory, so make sure the key is set, default is 100vw.
+//   if (!isset($variables['sizes']) || empty($variables['sizes'])) {
+//     $attributes['sizes'] = '100vw';
+//   }
+// 
+//   // Make sure we have an array.
+//   $attributes = isset($variables['attributes']) ? $variables['attributes'] : array();
+// 
+//   if (isset($variables['uri']) && !empty($variables['uri'])) {
+//     // TODO: remove when https://www.drupal.org/node/1342504 is fixed.
+//     if (strpos($variables['uri'], 'data:') === 0) {
+//       $attributes['src'] = $variables['uri'];
+//     }
+//     else {
+//       $attributes['src'] = file_create_url($variables['uri']);
+//     }
+//   }
+//   if (isset($variables['srcset']) && !empty($variables['srcset'])) {
+//     $srcsets = array();
+//     foreach ($variables['srcset'] as $src) {
+//       // URI is mandatory.
+//       if (isset($src['uri']) && !empty($src['uri'])) {
+//         $key = '';
+//         // TODO: remove when https://www.drupal.org/node/1342504 is fixed.
+//         if (strpos($src['uri'], 'data:') === 0) {
+//           $source = $src['uri'];
+//         }
+//         else {
+//           $source = _wgbh_performance_file_create_url($src['uri']);
+//         }
+//         if (isset($src['width']) && !empty($src['width'])) {
+//           $source .= ' ' . $src['width'];
+//           $key = $src['width'];
+//         }
+//         elseif (isset($src['multiplier']) && !empty($src['multiplier'])) {
+//           $source .= ' ' . $src['multiplier'];
+//           $key = $src['multiplier'];
+//         }
+//         $srcsets[$key] = $source;
+//       }
+//     }
+//     ksort($srcsets);
+//     $attributes['srcset'] = implode(', ', $srcsets);
+//   }
+//   foreach (array('width', 'height', 'alt', 'title', 'sizes') as $key) {
+//     if (isset($variables[$key])) {
+//       $attributes[$key] = $variables[$key];
+//     }
+//   }
+//   if (isset($variables['path']) && !empty($variables['path'])) {
+//     return l('<img ' . drupal_attributes($attributes) . ' />', $variables['path']['path'], array('html' => TRUE) + $variables['path']['options']);
+//   }
+//   return '<img ' . drupal_attributes($attributes) . ' />';
+// }
+ 
+
+/**
+ * The picture module doesn't correctly handle the situation when s3fs is installed
+ * Fix that.
+ */
+// function wgbh_performance_theme_registry_alter(&$theme_registry) {
+//   if (module_exists('s3fs') && !empty($theme_registry['picture'])) {
+//     $theme_registry['picture']['function']                    = 'wgbh_performance_theme_picture';
+//     $theme_registry['picture']['theme path']                  = 'sites/all/modules/wgbh_performance';
+//     $theme_registry['picture_source']['function']    = 'wgbh_performance_theme_picture_source';
+//     $theme_registry['picture_source']['theme path']  = 'sites/all/modules/wgbh_performance';
+//     $theme_registry['image_srcset']['function']    = 'wgbh_performance_theme_image_srcset';
+//     $theme_registry['image_srcset']['theme path']  = 'sites/all/modules/wgbh_performance';
+//   }
+// }
+
