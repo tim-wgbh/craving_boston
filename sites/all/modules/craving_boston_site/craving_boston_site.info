@@ -90,7 +90,6 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = wgbh_branding
-dependencies[] = wgbh_caching
 dependencies[] = wysiwyg
 features[breakpoint_group][] = craving_boston
 features[breakpoints][] = breakpoints.theme.craving_boston.large

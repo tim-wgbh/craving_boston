@@ -294,6 +294,10 @@ function craving_boston_site_field_default_field_bases() {
     'settings' => array(
       'amazons3_bucket' => '',
       'default_image' => 0,
+      'storage_class' => array(
+        'class_id' => 1,
+        'current_class_id' => 1,
+      ),
       'uri_scheme' => 's3',
     ),
     'translatable' => 0,
