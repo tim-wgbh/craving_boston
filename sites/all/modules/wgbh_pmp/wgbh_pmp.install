@@ -1,0 +1,91 @@
+<?php
+function wgbh_pmp_schema() {
+  $schema = array(
+    'wgbh_pmp_track_articles' => array(
+      'description' => t('Tracks articles that have been pulled from the PMP'),
+      'fields' => array(
+        'guid' => array(
+          'description' => 'The primary identifier for the PMP story',
+          'type' => 'varchar',
+          'length' => 36,  // e.g. 99f63e64-5c09-46c2-88e4-402d5284cddd
+          'not null' => TRUE,  
+        ),
+        'nid' => array(
+          'description' => 'The node ID of an article created from this story',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+          'default' => 0,
+        ),
+        'created'  => array(
+          'description' => 'Timestamp when the story was created', //Unix timestamp
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+      ),
+      'primary key' => array('guid'),
+    ),
+  );
+  
+  return $schema;
+}
+
+/**
+ * Steps to take on install
+ */
+function wgbh_pmp_install() {
+  // Add guid and source fields to article content type
+  if (!field_info_field('field_pmp_guid')) {
+    $field = array(
+      'field_name' => 'field_pmp_guid',
+      'type' => 'text',
+    );
+    field_create_field($field);
+    
+    $instance = array(
+      'field_name' => 'field_pmp_guid',
+      'entity_type' => 'node',
+      'label' => 'PMP guid',
+      'bundle' => 'article',  //NOTE: this is customized for Craving Boston
+      'widget' => array(
+        'type' => 'textfield',
+      ),
+    );
+    field_create_instance($instance);
+  }
+
+  if (!field_info_field('field_pmp_source')) {  
+    $field = array(
+      'field_name' => 'field_pmp_source',
+      'type' => 'text',
+    );    
+    field_create_field($field);
+    
+    $instance = array(
+      'field_name' => 'field_pmp_source',
+      'entity_type' => 'node',
+      'label' => 'PMP story source',
+      'bundle' => 'article',  //NOTE: this is customized for Craving Boston
+      'widget' => array(
+        'type' => 'textfield',
+      ),
+    );
+    field_create_instance($instance);
+  }
+}
+
+/**
+ * Steps to take on uninstall
+ * Remove fields in the article content;
+ */
+function wgbh_pmp_uninstall() {
+
+  // Delete the fields
+  if (field_info_field('field_pmp_guid')) {
+    field_delete_field('field_pmp_guid');
+  }
+  if (field_info_field('field_pmp_source')) {
+    field_delete_field('field_pmp_source');
+  }
+}

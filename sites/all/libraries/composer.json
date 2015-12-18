@@ -1,0 +1,5 @@
+{
+    "require": {
+        "publicmediaplatform/pmpsdk": "~1.0"
+    }
+}

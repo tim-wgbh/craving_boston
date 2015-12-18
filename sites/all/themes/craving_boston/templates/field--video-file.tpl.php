@@ -1,4 +1,4 @@
-<script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
+<script src="http://jwpsrv.com/library/<?php print $conf['jwplayer_script']; ?>"></script>
 <div id="jw-player"></div>
 <script type='text/javascript'>
   jwplayer('jw-player').setup({

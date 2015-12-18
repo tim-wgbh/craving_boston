@@ -382,19 +382,16 @@ ini_set('session.cookie_lifetime', 2000000);
  $conf['favicon_path']  = 'sites/all/themes/craving_boston/favicon.ico';
  $conf['anonymous']     = 'Visitor';
 
-/**
- * DFP account (network)
- */
+ // DFP account (network)
  $conf['dfp_network_id'] = '/7934';
  
- /**
-  * Disqus account (domain)
-  */
+  //Disqus account (domain)
   $conf['diqus_domain'] = 'wgbhpilots';
+  
+ // JW Player
+ $conf['jwplayer_script'] = 'jYGMQmQVEeOdAyIACmOLpg.js';
 
-/**
- * Public Media Platform (PMP) credentials
- */
+ //Public Media Platform (PMP) credentials
  $conf['wgbh_pmp_base_url'] = 'https://api.pmp.io';  
  $conf['wgbh_pmp_user_id'] = 'a81eca6c-b834-47fe-bb60-1382d677cd50';  
  $conf['wgbh_pmp_auth_client_id'] = '9ab452fe-07d2-47c1-8bdf-0d5e2de7499a';  

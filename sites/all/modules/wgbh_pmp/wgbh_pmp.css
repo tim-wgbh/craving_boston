@@ -41,3 +41,6 @@
   overflow-y: scroll;
   background-color: white;
 }
+tr.pulled-story {
+  background: #ffdddd;
+}

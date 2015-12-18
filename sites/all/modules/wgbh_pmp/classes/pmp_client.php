@@ -71,7 +71,6 @@ class PmpClient {
     
     if ($result) {
       $items = $result->items;
-      dpm($items);
     }     
   }
   

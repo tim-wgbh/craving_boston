@@ -79,6 +79,8 @@
 <?php endif; ?>
 <?php if (!$page): ?>
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<?php else: ?>
+  <div class="<?php print $classes; ?>">
 <?php endif; ?>
   <?php if (!$page): ?>
       <header>
@@ -128,6 +130,8 @@
   <?php print render($content['comments']); ?>
 <?php if (!$page): ?>
   </article> <!-- /.node -->
+<?php else: ?>
+  </div><!-- multiple classes -->
 <?php endif; ?>
 <?php if ($node->status == "0"): ?>
 </div><!-- class="unpublished" -->>

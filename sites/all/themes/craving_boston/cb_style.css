@@ -27,6 +27,16 @@ ul {
   list-style-type: square;
 }
 
+blockquote {
+  font-weight: normal;
+  color: #444;
+}
+blockquote::before {
+  content: none;
+}
+.pmp-article blockquote {
+  padding-left: 0;
+}
 /* Utility class to remove padding from column */
 .no-padding {
   padding-left: 0 !important;
@@ -215,6 +225,13 @@ h2.recipe {
   margin-bottom: 20px;
 }
 
+label.audio {
+  display: inline-block;
+  margin-right:10px
+}
+#masthead {
+  margin-top: 24px;
+}
 /* Mobile menu */
 #mobile-select {
   position: absolute;
@@ -362,8 +379,13 @@ h2.recipe {
 .node-type-multi-recipe .field .quantity-unit {
  font-weight: bold;
 }
-#masthead {
-  margin-top: 24px;
+.player-wrapper {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  background-color: #9E1D20;
+  border-radius: 7px;
+  padding: 0 10px 10px 10px;
 } 
 .region-header .block {
   margin-bottom: 20px;

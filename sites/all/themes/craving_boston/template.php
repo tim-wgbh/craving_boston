@@ -8,6 +8,8 @@ drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/redpoint_pwik.js', 
  * the admin interface
  */
 function craving_boston_field__field_video_file($vars) {
+
+  global $conf;
   
   // No label and we must convert the file name to video and post files
   // $video_file = s3_file($vars['items'][0]['#markup'] . '.mp4');
@@ -16,7 +18,7 @@ function craving_boston_field__field_video_file($vars) {
   $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
   
   $output = <<<EOC
-    <script src="http://jwpsrv.com/library/jYGMQmQVEeOdAyIACmOLpg.js"></script>
+    <script src="http://jwpsrv.com/library/$conf[jwplayer_script]"></script>
     <div id="jw-player"></div>
     <script type='text/javascript'>
       jwplayer('jw-player').setup({
@@ -30,6 +32,46 @@ function craving_boston_field__field_video_file($vars) {
 EOC;
   return $output;
 }
+
+/**
+ * Theme audio output
+ */
+function craving_boston_field__field_audio($vars) {
+  global $conf;
+  $output = '';
+  if (isset($vars['items'][0]['#markup'])) {
+      $audio = $vars['items'][0]['#markup'];
+      $output = "<label class='audio'>Audio:</label>";
+      $output .= '<div class="player-wrapper">';
+      $output .= <<<EOD
+        <script src="http://jwpsrv.com/library/$conf[jwplayer_script]"></script>
+        <div id="jw-player"></div>
+        <script type='text/javascript'>
+          jwplayer('jw-player').setup({
+            file: "$audio",
+            width:  300,
+            height: 40,
+            primary: 'flash'
+          });
+        </script>
+        </div>
+        <div class="clearfix"></div>
+EOD;
+  }
+  return $output;
+}
+
+/**
+ * Theme story source output
+ */
+function craving_boston_field__field_story_source($vars) {
+  $output = '';
+  if (isset($vars['items'][0]['#markup'])) {
+    $output = '<p><span class="label">From:</span> <em>' .  $vars['items'][0]['#markup']. '</em></p>';
+  }
+  return $output;
+}
+  
 /**
  * Theme an img tag for displaying the image.
  */
@@ -87,14 +129,39 @@ function craving_boston_preprocess_node(&$vars) {
   }
 
   // If the hide hero checkbox is set, hide the hero image for full-page displays
-  if ($vars['page'] && isset($node->field_hide_hero) && $node->field_hide_hero['und'][0]['value'] == '1') {
+  if ($vars['page'] && isset($node->field_hide_hero['und']) && $node->field_hide_hero['und'][0]['value'] == '1') {
     hide($vars['content']['field_image']);
   }
   
   
   # Set up video display for articles
   if ($node->type != 'article') return;
+  
       
+  // If this is a PMP article, add that to the classes
+  if (isset($node->field_pmp_guid['und'])) {
+    hide($vars['content']['field_pmp_guid']);
+    $vars['classes_array'][] = 'pmp-article';
+  }
+    
+  // If there is audio, set the audio variable
+  if (isset($node->field_audio['und'])) {
+    $vars['audio'] =  $node->field_audio['und'][0]['value'];
+  } else {
+    hide($vars['content']['field_audio']);
+  }
+  
+  // If there is audio, set the audio variable
+  if (isset($node->field_story_source['und'])) {
+    $vars['story_source'] =  $node->field_story_source['und'][0]['value'];
+  } else {
+    hide($vars['content']['story_source']);
+  }
+  
+  if (isset($node->field_pmp_source['und'])) {
+    $vars['content']['field_source'] = theme('story_source', $node->field_pmp_source['und'][0]['value']);
+  }
+
   // Video processing for HLS streaming S3 videos
   $vars['video'] = '';
   $vars['poster'] = '';
@@ -193,7 +260,8 @@ function craving_boston_form_search_block_form_alter(&$form, &$form_state, $form
   
   // Alternative (HTML5) placeholder attribute instead of using the javascript
   $form['search_block_form']['#attributes']['placeholder'] = t('Search...');
-} 
+}
+
 /**********
  * Utility functions to handle S3 and streaming files
  */

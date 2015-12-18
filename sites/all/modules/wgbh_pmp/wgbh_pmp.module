@@ -9,40 +9,143 @@ function wgbh_pmp_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('wgbh_pmp_topic_search_form'),
     'type' => MENU_LOCAL_TASK,
+    'query' => array('profile' => 'story', 'tag' => 'food'),
   );
 
   $items['admin/content/pmp/pull/%'] = array(
     'title' => 'Pull Article',
     'description' => 'Pull a PMP article and insert into a node/add form',
     'access arguments' => array('pull PMP content'),
-    'page callback' => 'wgbh_pmp_new_node',
-    'page arguments' => array('wgbh_pmp_new_node', 4),
-    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'wgbh_pmp_pull_story',
+    'page arguments' => array(4),
+    'delivery callback' => 'drupal_json_output',
+    'type' => MENU_CALLBACK,
   );
   
   return $items;
 }
 
 /**
- * Create a new node from the PMP article
+ * Theme functions for admin interface
  */
-function wgbh_pmp_new_node($guid) {
+function wgbh_pmp_theme() {
+  return array(
+    'story_row' => array(
+      'variables' => array( 
+        'title' => '(untitled)',
+        'html_content' => NULL,
+        'audio' => NULL,
+        'guid' => NULL,
+      ),
+    ),
+  );
+}
+/**
+ * Theme functions: 
+ */
+// Story row
+function theme_story_row(array $variables) {
+  $already_pulled = in_array($variables['guid'], $variables['pulled_guids']);
+  
+  $content_cell = "<p><b>" . $variables['title'] . "</b></br>\n";
+  if (isset($variables['author'])) {
+    $content_cell .= 'By: ' . $variables['author'] . "<p>\n";
+  }
+  if (isset($variables['audio'])) {
+    $content_cell .= "<p>Audio: " . $variables['audio'] . "</p>\n";
+  }
+  if (!empty($variables['images'])) {
+    foreach ($variables['images'] as $image) {
+      $content_cell .= '<img src="' . $image[0]['href'] . '" style="width:200px;"/>';
+    } 
+  }
+  $content_cell .= '<div class="preview-content" id="' . $variables['guid'] . '">';
+  $content_cell .= $variables['html_content'] . '</div>';
+  
+  if ($already_pulled) {
+    $actions = "<button class='disabled' disabled>Already Pulled</button>";
+  } else {
+    $actions = "<button class='preview' id='preview_" . $variables['guid'] . "'>Preview Text</button><br />" .
+              "<button class='pull' id='pull_" . $variables['guid'] . "'>Pull Article</button><br />";
+  }
+  $output = array(
+    'data' => array(
+      $actions,
+      "<em>" . $variables['source'] . "</em>",
+      $content_cell,
+      $variables['published']
+    )
+  );
+  if ($already_pulled) {
+    $output['class'] = array('pulled-story');
+    $output['no_striping'] = TRUE;
+  }
+  return $output;
+}
+
+/**
+ * Form for pulling a story
+ */
+/**
+ * Create a new node from the PMP article - ajax function
+ */
+function wgbh_pmp_pull_story($guid) {
+
   $pmp = _get_client();
 
-  $article = $pmp->fetchDoc($guid);
+  //First fetch to story
+  $raw_story = $pmp->fetchDoc($guid);
+  $metadata = wgb_pmp_parse_story_metadata($raw_story);
   
-  $node = new StdClass();
-  $node->type = 'article';
-  $node->title = $article->attributes->title;
-  $node->field_headline =  $node->title;
-  $node->field_subhead = $article->attributes->description;
-  $node->field_author = $article->attributes->byline;
-  $node->body = $article->attributes->contentencoded;
+  $node_values = array(
+    'type' => 'article',
+    'uid'     => 1,
+    'status'  => 0,
+    'comment' => 0,
+    'promote' => 0,
+  );
   
-  $node->uid = 1;
-  $node->promote = 0;
-  $node->status = 0;
-  $node->active = 0;
+  $node = entity_create('node', $node_values);
+  $wrapper = entity_metadata_wrapper('node', $node);
+  
+  $wrapper->title->set( $metadata['title']);
+  $wrapper->body->set(array('value' => $metadata['html_content'], 'format' => 'full_html'));
+  
+  $wrapper->field_pmp_guid->set($metadata['guid']);
+  $wrapper->field_pmp_source->set($metadata['source']);
+  
+  $wrapper->field_headline->set($metadata['title']);
+  if (isset($metadata['subhead'])) {
+    $wrapper->field_subhead->set(array('value' => $metadata['subhead']));
+  }
+  if (isset($metadata['author'])) {
+    $wrapper->field_author->set($metadata['author']);
+  }
+  
+  if (isset($metadata['audio'])) {
+    $wrapper->field_audio->set($metadata['audio']);
+  }
+  
+  //Fetch the image - just take the first available for now
+  //                                   image index ===+v  v+=== crop index
+  if (isset($metadata['images'])) {
+    $filename = $guid . '.jpg';
+    $image = file_get_contents($metadata['images'][0][0]['href']);
+    $file = file_save_data($image, file_default_scheme() . "://article_images/" . $filename, FILE_EXISTS_RENAME);
+    $wrapper->field_image->file = $file;
+    if (isset($metadata['images'][0][0]['alt'])) {
+      $wrapper->field_image->alt = $metadata['images'][0][0]['alt'];
+    }
+    if (isset($metadata['images'][0][0]['title'])) {
+      $wrapper->field_image->title = $metadata['images'][0][0]['title'];
+    }
+  }
+  
+  if ($wrapper->save()) {    
+    return array('status' => 'ok','nid' => $wrapper->nid->value());
+  } else {
+    return array('status' => 'error');
+  }
 }
 
 function wgbh_pmp_topic_search_form($form, &$form_state) {
@@ -52,7 +155,11 @@ function wgbh_pmp_topic_search_form($form, &$form_state) {
   drupal_add_css(drupal_get_path('module', 'wgbh_pmp') . '/wgbh_pmp.css');
   drupal_add_js(drupal_get_path('module', 'wgbh_pmp') . '/wgbh_pmp.js');
 
+  $now = new DateTime();
+  $default_start_date = $now->sub(new DateInterval('P14D'))->format('Y-m-d');
+
   $limit = (!empty($_GET['limit'])) ? $_GET['limit'] : 10;
+  $start_date = (!empty($_GET['start_date'])) ? $_GET['start_date'] : $default_start_date;
   
   //Query parameters - see https://github.com/publicmediaplatform/pmpdocs/wiki/Querying-the-API
   $query_params = array('limit' => $limit, 'profile' => 'story');
@@ -67,58 +174,42 @@ function wgbh_pmp_topic_search_form($form, &$form_state) {
     $tag = $_GET['tag'];
     $query_params['tag'] = $tag;
   }
-
+  
   if (!empty($_GET['page'])) {
     // doing this drupal-style, wherein pages are 0-indexed
     // looks like PMP offset is 0-indexed as well
     $query_params['offset'] = $_GET['page'] * $per_page;
   }
-
-  // Topic search
-  $form['topics'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Topic Search'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
   
-  $form['topics']['collection'] = array(
-    '#title' => 'Topic',
-    '#type' => 'select',
-    '#options' => array(
-      null => t('--- Select a topic ---'),
-      '89944632-fe7c-47df-bc2c-b2036d823f98' => t('Arts'),
-      '9c3c8f9e-f038-4b7e-9719-f5c4b1404c1a' => t('Culture'),
-      '7a1c4403-0bce-4866-a9eb-8066da226985' => t('Education'),
-      '635bb7a1-9e49-4a5d-bab3-048ff945b5fb' => t('Food'),
-      '9bd2ec35-be2f-4eb1-9ef9-54a59405dd85' => t('Health'),
-      '4d0acb4c-7057-4771-987d-97fc21ad0bcc' => t('Money'),
-      '4993cf23-968a-4182-acb2-4d46a96d0ac8' => t('Music'),
-      '5c0f1387-024e-4a84-8804-43048779cc37' => t('News'),
-      '588eb430-d600-4617-ab8f-f601839436a9' => t('Politics'),
-      'b6ef8e81-9ad2-4e34-8fbd-22181fe1b0e0' => t('Science'),
-      '44ed7afc-0dd7-4aa1-8c88-34e74dc0d36b' => t('Sports'),
-      '3f829119-5310-43b9-acc5-0f36a51aae42' => t('Technology'),
-    ),
-    '#default_value' => (!empty($collection) && $collection != '635bb7a1-9e49-4a5d-bab3-048ff945b5fb') ? $collection : '635bb7a1-9e49-4a5d-bab3-048ff945b5fb',
-  );
 
   // Topic search
-  $form['programs'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Search by Program'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-  $form['programs']['program'] = array(
-    '#title' => 'Program',
-    '#type' => 'select',
-    '#options' => array_merge(
-      array(null => t('--- Select a topic ---'),
-      wgbh_pmp_get_programs()
-    ),
-    '#default_value' => (!empty($collection) && $collection != '635bb7a1-9e49-4a5d-bab3-048ff945b5fb') ? $collection : '635bb7a1-9e49-4a5d-bab3-048ff945b5fb',
-  );
+//   $form['topics'] = array(
+//     '#type' => 'fieldset',
+//     '#title' => t('Topic Search'),
+//     '#collapsible' => TRUE,
+//     '#collapsed' => FALSE,
+//   );
+//   
+//   $form['topics']['collection'] = array(
+//     '#title' => 'Topic',
+//     '#type' => 'select',
+//     '#options' => array(
+//       null => t('--- Select a topic ---'),
+//       '89944632-fe7c-47df-bc2c-b2036d823f98' => t('Arts'),
+//       '9c3c8f9e-f038-4b7e-9719-f5c4b1404c1a' => t('Culture'),
+//       '7a1c4403-0bce-4866-a9eb-8066da226985' => t('Education'),
+//       '635bb7a1-9e49-4a5d-bab3-048ff945b5fb' => t('Food'),
+//       '9bd2ec35-be2f-4eb1-9ef9-54a59405dd85' => t('Health'),
+//       '4d0acb4c-7057-4771-987d-97fc21ad0bcc' => t('Money'),
+//       '4993cf23-968a-4182-acb2-4d46a96d0ac8' => t('Music'),
+//       '5c0f1387-024e-4a84-8804-43048779cc37' => t('News'),
+//       '588eb430-d600-4617-ab8f-f601839436a9' => t('Politics'),
+//       'b6ef8e81-9ad2-4e34-8fbd-22181fe1b0e0' => t('Science'),
+//       '44ed7afc-0dd7-4aa1-8c88-34e74dc0d36b' => t('Sports'),
+//       '3f829119-5310-43b9-acc5-0f36a51aae42' => t('Technology'),
+//     ),
+//     '#default_value' => (!empty($collection) && $collection != '635bb7a1-9e49-4a5d-bab3-048ff945b5fb') ? $collection : '635bb7a1-9e49-4a5d-bab3-048ff945b5fb',
+//   );
 
   $form['tag_search'] = array(
     '#type' => 'fieldset',
@@ -130,8 +221,31 @@ function wgbh_pmp_topic_search_form($form, &$form_state) {
   $form['tag_search']['tag'] = array(
     '#title' => 'Tag(s)',
     '#type' => 'textfield',
-    '#default_value' => !empty($tag) ? $tag : '',
+    '#default_value' => !empty($tag) ? $tag : 'food',
     '#description' => t('Limit query to theses space-separated tags.'),
+  );
+  
+  $form['date_range'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Date range of stories (PMP publish date)'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  
+  // format('c') => ISO 8601 which is what PMP looks for
+  $date_options = array(
+    $now->sub(new DateInterval('P7D'))->format('Y-m-d') => t('Last week'),
+    $default_start_date => t('Last 2 weeks'),
+    $now->sub(new DateInterval('P21D'))->format('Y-m-d') => t('Last 3 weeks'),
+    $now->sub(new DateInterval('P1M'))->format('Y-m-d') => t('Last month'),
+    $now->sub(new DateInterval('P3M'))->format('Y-m-d') => t('Last 3 months'),
+    $now->sub(new DateInterval('P6M'))->format('Y-m-d') => t('Last 6 months'),
+  );
+  
+  $form['date_range']['start_date'] = array(
+    '#type' => 'select',
+    '#options' => $date_options,
+    '#default_value' => $default_start_date,
   );
 
   $form['submit'] = array(
@@ -139,25 +253,23 @@ function wgbh_pmp_topic_search_form($form, &$form_state) {
     '#value' => t('Search'),
   );
   
+  // Get array of PMP story guids that have been posted
+  $variables = array();
+  $pulled_guids = db_select('wgbh_pmp_track_articles', 'w')
+    ->fields('w',array('guid'))
+    ->execute()
+    ->fetchCol();
+    
   $pmp = _get_client();
   
   $raw_stories = $pmp->queryDocs($query_params);
-  $stories = [];
-  $table_rows = [];
+  $table_rows = array();
   foreach ($raw_stories->items() as $raw_story) {
     $metadata = wgb_pmp_parse_story_metadata($raw_story);
-    $stories[] = $metadata;
-    $content = "<em>" . $metadata['title'] . "</em>";
-    $content .= $metadata['content'];
-    if (isset($metadata['audio'])) {
-      $content .= "<p>Audio: " . $metadata['audio'] . "</p>";
-    }
-    $table_rows[] = array(
-      "<button class='preview' id='preview_" . $metadata['guid'] . "'>Preview</button><br /><button class='pull' id='pull_" . $metadata['guid'] . "'>Pull</button>",
-      "<b>" . $metadata['source'] . "</b>",
-      $content,
-      $metadata['published']
-    );
+    $variables = $metadata;
+    $variables['pulled_guids'] = $pulled_guids;
+    $row = theme('story_row', $variables);
+    $table_rows[] = $row;
   }
   $form['doc_list'] = array(
     '#markup' => wgbh_pmp_create_doc_list_markup($table_rows),
@@ -177,9 +289,9 @@ function wgbh_pmp_topic_search_form_submit($form, &$form_state) {
   if (!empty($form_state['values']['tag'])) {
     $query_params['tag'] = $form_state['values']['tag'];
   }
-  if (!empty($form_state['values']['collection'])) {
-    $query_params['collection'] = $form_state['values']['collection'];
-  }
+//   if (!empty($form_state['values']['collection'])) {
+//     $query_params['collection'] = $form_state['values']['collection'];
+//   }
 
   $form_state['redirect'] = array($path, array('query' => $query_params));
 }
@@ -227,12 +339,24 @@ function wgbh_pmp_create_doc_list_markup($rows) {
  */
 function wgb_pmp_parse_story_metadata($story) {
   $metadata = array();
-  $metadata['title'] = $story->attributes->title; 
+  $metadata['title'] = $story->attributes->title;
+  if (isset($story->attributes->byline)) {
+    $metadata['author'] = $story->attributes->byline;
+  }
   if (isset($story->links->collection) && isset($story->links->collection[0]->title)) {
     $metadata['source'] = $story->links->collection[0]->title;
   } else {
     $metadata['source'] = '(unknown)';
   }
+  if (isset($story->attributes->teaser)) {
+    $metadata['subhead'] = $story->attributes->teaser;
+  } elseif (isset($story->attributes->description)) {
+    $metadata['subhead'] = $story->attributes->description;
+  } else {
+    $metadata['subhead'] = '(none set)';
+  }
+    
+  $metadata['html_content'] = $story->attributes->contentencoded; 
   $pieces = explode('/', $story->links->profile[0]->href);
   $metadata['profile'] = array_pop($pieces);
   $metadata['guid'] = $story->attributes->guid;
@@ -247,6 +371,8 @@ function wgb_pmp_parse_story_metadata($story) {
     $crops = [];
     foreach ($item->links->enclosure as $data) {
       $image_data['href'] = $data->href;
+      $image_data['alt'] = isset($data->meta->description) ? $data->meta->description : '';
+      $image_data['title'] = isset($data->meta->caption) ? $data->meta->caption : '';
       $image_data['crop'] = isset($data->meta->crop) ? $data->meta->crop : '';
       $image_data['width'] = isset($data->meta->width) ? $data->meta->width : '';
       $image_data['height'] = isset($data->meta->height) ? $data->meta->height : '';
@@ -260,62 +386,72 @@ function wgb_pmp_parse_story_metadata($story) {
       $metadata['audio'] = $data->href;
     }
   }
-  $metadata['content'] = '<div class="preview-content" id="' . $story->attributes->guid . '">';
-  if (count($metadata['images'] > 0)) {
-    $images = '<p>';
-    foreach ($metadata['images'] as $crops) {
-      $images .= "<img style='width:150px;padding:5px;' src='" . $crops[0]['href'] . "' />";
-      $number_of_crops = count($crops) - 1;
-      $images .= " + {$number_of_crops} other crops";
-    }
-    $images .= "</p>";
-    $metadata['content'] .= $images;
+  if (isset($story->attributes->tags)) {
+    $metadata['tags'] = $story->attributes->tags;
   }
-
-  $metadata['content'] .= $story->attributes->contentencoded . '</div>';
+  
+  // Track retrieved stories
+  $sql = "SELECT guid FROM wgbh_pmp_track_articles WHERE guid=':guid'";
+  $guid = db_query($sql, array(':guid' => $metadata['guid']));
+  if (!$guid) {
+    $inserted = db_insert('wgbh_pmp_track_articles')
+      ->fields(array(
+        'guid' => $metadata['guid'],
+        'created' => $timestamp
+      ))
+      ->execute();
+  }
   return $metadata;
 }
 function _get_client() {
 
-  require DRUPAL_ROOT . '/sites/all/libraries/pmpsdk.phar';
+  require_once DRUPAL_ROOT . '/sites/all/libraries/vendor/autoload.php';
   
-  $cached_client = FALSE;
-//  $cached_client = cache_get('wgbh_pmp_client');
-  
-  if ($cached_client) {
-    $pmp = $cached_client->data;
-  } else {
-    $host = variable_get('wgbh_pmp_base_url');
-    $client_id = variable_get('wgbh_pmp_auth_client_id');
-    $client_secret = variable_get('wgbh_pmp_auth_client_secret');
+  $host = variable_get('wgbh_pmp_base_url');
+  $client_id = variable_get('wgbh_pmp_auth_client_id');
+  $client_secret = variable_get('wgbh_pmp_auth_client_secret');
 
-    try {
-      $pmp = new \Pmp\Sdk($host, $client_id, $client_secret);
-      cache_set('wgbh_pmp_client', $pmp);
-    }
-    catch (\Pmp\Sdk\Exception\HostException $e) {
-      $message = t("Invalid API host specified: @exception", array('@exception' => $e));
-      drupal_set_message($message, 'warning');
-    }
-    catch (\Pmp\Sdk\Exception\AuthException $e) {
-      $message = t("Bad client credentials: @exception", array('@exception' => $e));
-      drupal_set_message($message, 'warning');
-    }    
-  } 
+  try {
+    $pmp = new \Pmp\Sdk($host, $client_id, $client_secret);
+    cache_set('wgbh_pmp_client', $pmp);
+  }
+  catch (\Pmp\Sdk\Exception\HostException $e) {
+    $message = t("Invalid API host specified: @exception", array('@exception' => $e));
+    drupal_set_message($message, 'warning');
+  }
+  catch (\Pmp\Sdk\Exception\AuthException $e) {
+    $message = t("Bad client credentials: @exception", array('@exception' => $e));
+    drupal_set_message($message, 'warning');
+  }    
   return $pmp;
 }
-function _get_programs() {
-  $programs = array();
-  $pmp = _get_client();
-  $programs = $pmp->queryProfiles('property');
-  
-  
-  if (!empty($pmp->query->results->docs)) {
-    foreach($pmp->query->results->docs as $doc){
-      $properties[$doc->attributes->guid] = $doc->attributes->title;
-    }
+
+/**
+ * Make sure the user can't change the PMP guid and source fields
+ */
+function wgbh_pmp_form_article_node_form(&$form, &$form_state) {
+  $form['#after_build'][] = 'wgbh_pmp_after_build';
+}
+
+function wgbh_pmp_after_build($form, &$form_state) {
+  foreach (array('field_pmp_guid', 'field_pmp_source') as $field) {
+    $form[$field]['und'][0]['#attributes']['readonly'] = 'readonly';
+    $form_state['values'][$field]['und'][0]['value'] = $form[$field]['und'][0]['value']['#default_value'];
   }
-  asort($properties);
-  return $properties;
+  return $form;
+  
+}
+
+/**
+ * Implementation of hook_node_delete
+ */
+function wgbh_pmp_node_delete($node) {
+  // If this is a PMP story, reset the nid to 0 in the tracking table
+  if (isset($node->field_pmp_guid)) {
+    $num_updated = db_update('wgbh_pmp_track_articles')
+      ->fields(array('nid' => 0))
+      ->condition('guid', $node->field_pmp_guid['und'][0])
+      ->execute();
+  }
 }
 
