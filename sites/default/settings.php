@@ -355,7 +355,6 @@ ini_set('session.cookie_lifetime', 2000000);
   */
  $conf['awssdk2_access_key']  = 'AKIAJJL2XED7XVMNZ2QQ';
  $conf['awssdk2_secret_key']  = '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';
- $conf['s3fs_bucket']         = 'craving-boston-dev';
  $conf['s3fs_region']         = 'us-east-1';
  
  /**
