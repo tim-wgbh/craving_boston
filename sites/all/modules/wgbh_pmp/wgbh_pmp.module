@@ -156,7 +156,15 @@ function wgbh_pmp_topic_search_form($form, &$form_state) {
   drupal_add_js(drupal_get_path('module', 'wgbh_pmp') . '/wgbh_pmp.js');
 
   $now = new DateTime();
-  $default_start_date = $now->sub(new DateInterval('P14D'))->format('Y-m-d');
+  $last = array(
+    'week' => $now->sub(new DateInterval('P7D'))->format('Y-m-d'),
+    'two_weeks' => $now->sub(new DateInterval('P14D'))->format('Y-m-d'),
+    'three_weeks' => $now->sub(new DateInterval('P21D'))->format('Y-m-d'),
+    'month' => $now->sub(new DateInterval('P1M'))->format('Y-m-d'),
+    'two_months' => $now->sub(new DateInterval('P2M'))->format('Y-m-d'),
+    'three_months' => $now->sub(new DateInterval('P3M'))->format('Y-m-d'),
+  );
+  $default_start_date = $last['week'];
 
   $limit = (!empty($_GET['limit'])) ? $_GET['limit'] : 10;
   $start_date = (!empty($_GET['start_date'])) ? $_GET['start_date'] : $default_start_date;
@@ -232,14 +240,13 @@ function wgbh_pmp_topic_search_form($form, &$form_state) {
     '#collapsed' => FALSE,
   );
   
-  // format('c') => ISO 8601 which is what PMP looks for
   $date_options = array(
-    $now->sub(new DateInterval('P7D'))->format('Y-m-d') => t('Last week'),
-    $default_start_date => t('Last 2 weeks'),
-    $now->sub(new DateInterval('P21D'))->format('Y-m-d') => t('Last 3 weeks'),
-    $now->sub(new DateInterval('P1M'))->format('Y-m-d') => t('Last month'),
-    $now->sub(new DateInterval('P3M'))->format('Y-m-d') => t('Last 3 months'),
-    $now->sub(new DateInterval('P6M'))->format('Y-m-d') => t('Last 6 months'),
+    $default_start_date => t('Last week'),
+    $last['two_weeks'] => t('Last 2 weeks'),
+    $last['three_weeks'] => t('Last 3 weeks'),
+    $last['month'] => t('Last month'),
+    $last['two_months'] => t('Last 2 months'),
+    $last['three_months'] => t('Last 3 months'),
   );
   
   $form['date_range']['start_date'] = array(
