@@ -202,7 +202,12 @@
       <div class="container">
         <div class="row">
           <div class="footer-block col-sm-3">
-            <?php if ($page['footer_first']) print render ($page['footer_first']); ?>
+            <div class="region region-footer-first">
+              <p>
+                <img alt="WGBH" src="/sites/all/modules/wgbh_branding/images/wgbh-white-shadow-w150.png">
+              </p>
+            </div>
+            <?php # if ($page['footer_first']) print render ($page['footer_first']); ?>
           </div>
           <div class="footer-block col-sm-3">
             <?php if ($page['footer_second']) print render ($page['footer_second']); ?>
@@ -222,7 +227,7 @@
     <div class="container">
       <div class="row">
         <div class="fcred col-xs-12">
-           <img src="/<?php print drupal_get_path('module', 'wgbh_branding') . '/images/wgbh_micro_logo.png' ?>" /> &copy; <?php echo date("Y"); ?> The WGBH Educational Foundation
+          &copy; <?php echo date("Y"); ?> The WGBH Educational Foundation
         </div>
       </div>
     </div>
