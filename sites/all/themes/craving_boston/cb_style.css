@@ -645,7 +645,9 @@ label.audio {
 }
 @media print {
   .wgbh-links,
-  #masthead,
+  .mobile-back-to-top,
+  #toolbar,
+  #site-slogan,
   .mainmenu,
   #dfp-leaderboard-wrapper,
   .a2a_kit,
@@ -660,6 +662,16 @@ label.audio {
   ul.meta,
   a:after {
     display: none;
+  }
+  body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  #masthead {
+    margin-top: 0;
+  }
+  #site-banner {
+    width: 40%;
   }
   .field-name-field-image {
     width: 33%; 
