@@ -379,6 +379,10 @@ label.audio {
 .node-type-multi-recipe .field .quantity-unit {
  font-weight: bold;
 }
+.node-type-recipe .quantity-unit, .node-type-recipe .ingredient-name {
+  display: table-cell;
+  padding-bottom: 10px;
+}
 .player-wrapper {
   display: inline-block;
   position: relative;
@@ -536,7 +540,7 @@ label.audio {
 
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
 /* Anything smaller than tablet */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .page-node .block.info {
     display: none;
   }
@@ -621,4 +625,29 @@ label.audio {
     margin-bottom: 10px;
   }
 }
+@media print {
+  .wgbh-links,
+  #masthead,
+  .mainmenu,
+  #dfp-leaderboard-wrapper,
+  .a2a_kit,
+  .field-name-body .image-with-caption,
+  #block-disqus-disqus-comments,
+  #sidebar,
+  .region-footer-second,
+  .region-footer-third,
+  .region-footer-fourth,
+  ul.meta,
+  a:after {
+    display: none;
+  }
+  .field-name-field-image {
+    width: 33%; 
+  }
+  .fcred {
+    text-align: right;
+  }
+}
+
+
 
