@@ -180,16 +180,24 @@ blockquote::before {
   margin-top: 0;
   margin-bottom: 0;
 }
-#search-form {
+#search-block-form {
   text-align: right;
 }  
-#search-form .form-item {
+#search-block-form .form-item {
   vertical-align: 15px;
 }
 input#edit-search-block-form--2 {
   margin-right: 0;
   width: 125px;
 }
+/* Search results */
+#block-system-main .search-advanced {
+  margin-top: 10px;
+}
+.logged-in #block-system-main form#search-form {
+  margin-bottom: 45px;
+}
+
 .field-name-body {
   margin-top: 30px;
 }
