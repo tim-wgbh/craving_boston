@@ -657,6 +657,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create event_calendar content'.
+  $permissions['create event_calendar content'] = array(
+    'name' => 'create event_calendar content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create faq content'.
   $permissions['create faq content'] = array(
     'name' => 'create faq content',
@@ -767,6 +774,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'delete any event_calendar content'.
+  $permissions['delete any event_calendar content'] = array(
+    'name' => 'delete any event_calendar content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any faq content'.
   $permissions['delete any faq content'] = array(
     'name' => 'delete any faq content',
@@ -862,6 +876,13 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete own event_calendar content'.
+  $permissions['delete own event_calendar content'] = array(
+    'name' => 'delete own event_calendar content',
+    'roles' => array(),
+    'module' => 'node',
   );
 
   // Exported permission: 'delete own faq content'.
@@ -1085,6 +1106,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'edit any event_calendar content'.
+  $permissions['edit any event_calendar content'] = array(
+    'name' => 'edit any event_calendar content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any faq content'.
   $permissions['edit any faq content'] = array(
     'name' => 'edit any faq content',
@@ -1190,6 +1218,13 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit own event_calendar content'.
+  $permissions['edit own event_calendar content'] = array(
+    'name' => 'edit own event_calendar content',
+    'roles' => array(),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit own faq content'.
@@ -1410,6 +1445,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'googleanalytics',
   );
 
+  // Exported permission: 'preview focal point'.
+  $permissions['preview focal point'] = array(
+    'name' => 'preview focal point',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'focal_point',
+  );
+
   // Exported permission: 'rename features'.
   $permissions['rename features'] = array(
     'name' => 'rename features',
@@ -1487,6 +1531,13 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'site administrator' => 'site administrator',
     ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set event_calendar published on date'.
+  $permissions['set event_calendar published on date'] = array(
+    'name' => 'set event_calendar published on date',
+    'roles' => array(),
     'module' => 'publication_date',
   );
 

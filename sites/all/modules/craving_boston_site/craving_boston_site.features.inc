@@ -252,6 +252,22 @@ function craving_boston_site_image_default_styles() {
     ),
   );
 
+  // Exported image style: event_image.
+  $styles['event_image'] = array(
+    'label' => 'Event Image',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 240,
+          'height' => 240,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: featured_main_large.
   $styles['featured_main_large'] = array(
     'label' => 'featured_main_large',
@@ -379,6 +395,14 @@ function craving_boston_site_node_info() {
       'description' => t('Site contributor biographies'),
       'has_title' => '1',
       'title_label' => t('Name'),
+      'help' => '',
+    ),
+    'event_calendar' => array(
+      'name' => t('Event Listing'),
+      'base' => 'node_content',
+      'description' => t('A content type to create events for calendar.'),
+      'has_title' => '1',
+      'title_label' => t('Event Title'),
       'help' => '',
     ),
     'faq' => array(
