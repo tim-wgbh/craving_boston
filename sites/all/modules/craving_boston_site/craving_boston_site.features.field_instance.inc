@@ -1215,11 +1215,12 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'event_calendar_status',
     'label' => 'Status',
-    'required' => TRUE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
