@@ -142,7 +142,7 @@ function craving_boston_site_fe_nodequeue_export_fields() {
     'title' => 'Latest Articles',
     'subqueue_title' => '',
     'size' => 0,
-    'link' => 'add to lastest articles',
+    'link' => 'add to latest articles',
     'link_remove' => 'remove from latest articles',
     'owner' => 'nodequeue',
     'show_in_ui' => 1,

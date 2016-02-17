@@ -148,7 +148,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -180,6 +180,40 @@ function craving_boston_site_field_default_field_instances() {
       'weight' => 8,
     ),
     'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-article-field_audio'
+  $field_instances['node-article-field_audio'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Must be a URL to an audio file',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_audio',
+    'label' => 'Audio',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 80,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
   );
 
   // Exported field_instance: 'node-article-field_author'
@@ -273,7 +307,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -308,10 +342,9 @@ function craving_boston_site_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_key',
-        'weight' => 12,
+        'type' => 'hidden',
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -411,7 +444,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'node',
@@ -433,6 +466,72 @@ function craving_boston_site_field_default_field_instances() {
       'settings' => array(),
       'type' => 'video_embed_field_video',
       'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_pmp_guid'
+  $field_instances['node-article-field_pmp_guid'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pmp_guid',
+    'label' => 'PMP guid',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_pmp_source'
+  $field_instances['node-article-field_pmp_source'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pmp_source',
+    'label' => 'PMP story source',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
     ),
   );
 
@@ -482,7 +581,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -522,7 +621,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -592,7 +691,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'node',
@@ -2065,6 +2164,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Alt Text');
   t('Alternative text is used by screen readers, search engines, and when the image cannot be loaded. By adding alt text you improve accessibility and search engine optimization.');
   t('Answer');
+  t('Audio');
   t('Body');
   t('By');
   t('Carousel');
@@ -2093,8 +2193,11 @@ function craving_boston_site_field_default_field_instances() {
   t('Internet Video');
   t('Least favorite food');
   t('Multiple tags should be separated by commas, e.g. red, green, blue (limit of 10)');
+  t('Must be a URL to an audio file');
   t('Notes');
   t('Optional. Describe a great dining experience relating to this recipe, or note which wine or other dishes complement this recipe.');
+  t('PMP guid');
+  t('PMP story source');
   t('Part of multi-recipe');
   t('Pinterest');
   t('Preparation time');

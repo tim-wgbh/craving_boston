@@ -173,6 +173,26 @@ blockquote::before {
   background-image: url(images/cb-flexslider-nav.png);
 }
 
+/* Events */
+.view-event-list h2 {
+  font-size: 22px;
+  color: #999;
+}
+.view-event-list .calendar-date {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.view-event-list .date-display-range {
+  display: inline-block;
+}
+.view-event-list p {
+  font-size: 16px;
+}
+.view-event-list .event {
+  padding-bottom: 20px;
+  border-bottom: solid 1px #ccc;
+}
 
 /* Search block */
 .row.mainmenu {
