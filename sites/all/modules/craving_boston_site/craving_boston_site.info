@@ -555,6 +555,7 @@ features[user_role][] = contributor
 features[user_role][] = editor
 features[user_role][] = site administrator
 features[views_view][] = about
+features[views_view][] = dashboard
 features[views_view][] = event_list
 features[views_view][] = faqs
 features[views_view][] = featured

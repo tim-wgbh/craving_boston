@@ -173,6 +173,112 @@ function craving_boston_site_views_default_views() {
   $export['about'] = $view;
 
   $view = new view();
+  $view->name = 'dashboard';
+  $view->description = '';
+  $view->tag = 'Dashboard';
+  $view->base_table = 'node';
+  $view->human_name = 'Dashboard: Posts';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Dashboard';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'create article content';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'status' => 'status',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-center',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: By */
+  $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
+  $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
+  $handler->display->display_options['fields']['field_author']['field'] = 'field_author';
+  $handler->display->display_options['fields']['field_author']['label'] = 'Author';
+  /* Field: Scheduler: Publish on */
+  $handler->display->display_options['fields']['publish_on']['id'] = 'publish_on';
+  $handler->display->display_options['fields']['publish_on']['table'] = 'scheduler';
+  $handler->display->display_options['fields']['publish_on']['field'] = 'publish_on';
+  $handler->display->display_options['fields']['publish_on']['date_format'] = 'short';
+  $handler->display->display_options['fields']['publish_on']['second_date_format'] = 'long';
+  /* Field: Node: Published at */
+  $handler->display->display_options['fields']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['fields']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['fields']['published_at']['empty'] = '(unpublished)';
+  $handler->display->display_options['fields']['published_at']['date_format'] = 'short';
+  $handler->display->display_options['fields']['published_at']['second_date_format'] = 'long';
+  /* Field: Nodequeue: Add/remove links */
+  $handler->display->display_options['fields']['nodequeue_links']['id'] = 'nodequeue_links';
+  $handler->display->display_options['fields']['nodequeue_links']['table'] = 'node';
+  $handler->display->display_options['fields']['nodequeue_links']['field'] = 'nodequeue_links';
+  $handler->display->display_options['fields']['nodequeue_links']['label'] = 'Feature';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
+    'recipe' => 'recipe',
+  );
+
+  /* Display: Dashboard:Posts */
+  $handler = $view->new_display('block', 'Dashboard:Posts', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Posts';
+  $handler->display->display_options['display_description'] = 'Articles, recipes, and multi-recipes';
+  $export['dashboard'] = $view;
+
+  $view = new view();
   $view->name = 'event_list';
   $view->description = 'A listing of events';
   $view->tag = 'default';
