@@ -16,6 +16,18 @@ function craving_boston_site_menu_default_menu_custom() {
     'title' => 'Craving Boston',
     'description' => 'Footer menu for Craving Boston business',
   );
+  // Exported menu: menu-dashboard.
+  $menus['menu-dashboard'] = array(
+    'menu_name' => 'menu-dashboard',
+    'title' => 'Editorial Tasks',
+    'description' => 'Convenient links for site managers',
+  );
+  // Exported menu: menu-site-management-tasks.
+  $menus['menu-site-management-tasks'] = array(
+    'menu_name' => 'menu-site-management-tasks',
+    'title' => 'Site Management Tasks',
+    'description' => '',
+  );
   // Exported menu: menu-topics.
   $menus['menu-topics'] = array(
     'menu_name' => 'menu-topics',
@@ -42,8 +54,11 @@ function craving_boston_site_menu_default_menu_custom() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Convenient links for site managers');
   t('Craving Boston');
+  t('Editorial Tasks');
   t('Footer menu for Craving Boston business');
+  t('Site Management Tasks');
   t('The main topic menu');
   t('Topics');
   t('WGBH Identity Links');

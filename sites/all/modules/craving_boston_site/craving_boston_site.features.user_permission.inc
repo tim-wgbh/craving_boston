@@ -63,6 +63,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access dashboard'] = array(
     'name' => 'access dashboard',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'dashboard',
@@ -127,17 +129,6 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'contact',
-  );
-
-  // Exported permission: 'access toolbar'.
-  $permissions['access toolbar'] = array(
-    'name' => 'access toolbar',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'toolbar',
   );
 
   // Exported permission: 'access user contact forms'.

@@ -196,6 +196,14 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No-events text';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'We don\'t know of any upcoming food-related events at this time.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -938,72 +946,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
   $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
   $handler->display->display_options['filters']['in_queue']['value'] = '1';
-
-  /* Display: Curated */
-  $handler = $view->new_display('page', 'Curated', 'page');
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['label'] = 'Latest Queue';
-  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'featured_articles' => 'featured_articles',
-    'latest_articles' => 'latest_articles',
-  );
-  /* Relationship: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['id'] = 'nodequeue_rel_1';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['label'] = 'Featured Queue';
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel_1']['names'] = array(
-    'featured_articles' => 'featured_articles',
-    'latest_articles' => 0,
-  );
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-    'multi_recipe' => 'multi_recipe',
-    'recipe' => 'recipe',
-  );
-  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
-    1 => '1',
-  );
-  /* Filter criterion: Nodequeue: In queue */
-  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['filters']['in_queue']['value'] = '1';
-  /* Filter criterion: Nodequeue: In queue */
-  $handler->display->display_options['filters']['in_queue_1']['id'] = 'in_queue_1';
-  $handler->display->display_options['filters']['in_queue_1']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['filters']['in_queue_1']['field'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue_1']['relationship'] = 'nodequeue_rel_1';
-  $handler->display->display_options['filters']['in_queue_1']['value'] = '0';
-  $handler->display->display_options['path'] = 'curated-articles';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Home';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
 
   /* Display: By Date */
   $handler = $view->new_display('page', 'By Date', 'page_1');

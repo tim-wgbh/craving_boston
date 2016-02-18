@@ -90,6 +90,146 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
+  // Exported menu link: menu-dashboard_create-new-article:node/add/article
+  $menu_links['menu-dashboard_create-new-article:node/add/article'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'node/add/article',
+    'router_path' => 'node/add/article',
+    'link_title' => 'Create New Article',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_create-new-article:node/add/article',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-dashboard_create-new-multi-recipe:node/add/multi-recipe
+  $menu_links['menu-dashboard_create-new-multi-recipe:node/add/multi-recipe'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'node/add/multi-recipe',
+    'router_path' => 'node/add/multi-recipe',
+    'link_title' => 'Create New Multi-recipe',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_create-new-multi-recipe:node/add/multi-recipe',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-dashboard_create-new-recipe:node/add/recipe
+  $menu_links['menu-dashboard_create-new-recipe:node/add/recipe'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'node/add/recipe',
+    'router_path' => 'node/add/recipe',
+    'link_title' => 'Create New Recipe',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_create-new-recipe:node/add/recipe',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-dashboard_order-featured-articles:admin/structure/nodequeue/1/view/1
+  $menu_links['menu-dashboard_order-featured-articles:admin/structure/nodequeue/1/view/1'] = array(
+    'menu_name' => 'menu-dashboard',
+    'link_path' => 'admin/structure/nodequeue/1/view/1',
+    'router_path' => 'admin/structure/nodequeue/%/view/%',
+    'link_title' => 'Order featured articles',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-dashboard_order-featured-articles:admin/structure/nodequeue/1/view/1',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-site-management-tasks_clear-cache:admin/config/development/performance
+  $menu_links['menu-site-management-tasks_clear-cache:admin/config/development/performance'] = array(
+    'menu_name' => 'menu-site-management-tasks',
+    'link_path' => 'admin/config/development/performance',
+    'router_path' => 'admin/config/development/performance',
+    'link_title' => 'Clear Cache',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-site-management-tasks_clear-cache:admin/config/development/performance',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-site-management-tasks_go-to-features:admin/structure/features
+  $menu_links['menu-site-management-tasks_go-to-features:admin/structure/features'] = array(
+    'menu_name' => 'menu-site-management-tasks',
+    'link_path' => 'admin/structure/features',
+    'router_path' => 'admin/structure/features',
+    'link_title' => 'Go to Features',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-site-management-tasks_go-to-features:admin/structure/features',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
+  // Exported menu link: menu-site-management-tasks_go-to-modules:admin/modules
+  $menu_links['menu-site-management-tasks_go-to-modules:admin/modules'] = array(
+    'menu_name' => 'menu-site-management-tasks',
+    'link_path' => 'admin/modules',
+    'router_path' => 'admin/modules',
+    'link_title' => 'Go to Modules',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-site-management-tasks_go-to-modules:admin/modules',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: menu-topics_chew-on-this:food
   $menu_links['menu-topics_chew-on-this:food'] = array(
     'menu_name' => 'menu-topics',
@@ -539,17 +679,24 @@ function craving_boston_site_menu_default_menu_links() {
   t('America\'s Test Kitchen >>');
   t('Become a Member');
   t('Chew On This');
+  t('Clear Cache');
   t('Contact Us');
   t('Contact WGBH');
   t('Cook\'s Country >>');
   t('Corporate Sponsorship');
+  t('Create New Article');
+  t('Create New Multi-recipe');
+  t('Create New Recipe');
   t('Donate');
   t('FAQs');
+  t('Go to Features');
+  t('Go to Modules');
   t('Home');
   t('Lidia\'s Kitchen >>');
   t('Mind of a Chef >>');
   t('Neighborhood Kitchens >>');
   t('Neighborhood Nosh');
+  t('Order featured articles');
   t('Privacy Policy');
   t('RSS Feed');
   t('Recipes');

@@ -114,36 +114,8 @@ function craving_boston_site_fe_nodequeue_export_fields() {
     'title' => 'Featured Articles',
     'subqueue_title' => '',
     'size' => 4,
-    'link' => 'add to featured articles',
-    'link_remove' => 'remove from featured articles',
-    'owner' => 'nodequeue',
-    'show_in_ui' => 1,
-    'show_in_tab' => 1,
-    'show_in_links' => 1,
-    'reference' => 0,
-    'reverse' => 0,
-    'insert_at_front' => 0,
-    'i18n' => 0,
-    'subqueues' => 1,
-    'types' => array(
-      0 => 'article',
-      1 => 'multi_recipe',
-      2 => 'recipe',
-    ),
-    'roles' => array(
-      0 => 'editor',
-    ),
-    'count' => 0,
-  );
-
-  // Exported nodequeues: latest_articles
-  $nodequeues['latest_articles'] = array(
-    'name' => 'latest_articles',
-    'title' => 'Latest Articles',
-    'subqueue_title' => '',
-    'size' => 0,
-    'link' => 'add to latest articles',
-    'link_remove' => 'remove from latest articles',
+    'link' => 'Add to Featured',
+    'link_remove' => 'Remove from Featured',
     'owner' => 'nodequeue',
     'show_in_ui' => 1,
     'show_in_tab' => 1,
