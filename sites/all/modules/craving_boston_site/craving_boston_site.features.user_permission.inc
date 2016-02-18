@@ -14,6 +14,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'system',
@@ -1744,6 +1746,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'system',

@@ -1000,7 +1000,7 @@ admin/*',
     'delta' => 'menu-dashboard',
     'module' => 'menu',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'admin/dashboard',
     'roles' => array(
       'editor' => 5,
       'site administrator' => 3,
@@ -1032,7 +1032,7 @@ admin/*',
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['menu-menu-site-management-tasks'] = array(
@@ -1042,7 +1042,7 @@ admin/*',
     'delta' => 'menu-site-management-tasks',
     'module' => 'menu',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'admin/dashboard',
     'roles' => array(
       'site administrator' => 3,
     ),
@@ -1073,7 +1073,7 @@ admin/*',
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['menu-menu-topics'] = array(
@@ -1982,7 +1982,7 @@ recipes/*',
     'delta' => 'dashboard-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'admin/dashboard',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -2011,7 +2011,7 @@ recipes/*',
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-featured-lead_article'] = array(
