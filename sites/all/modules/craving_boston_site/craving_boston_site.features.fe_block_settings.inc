@@ -845,7 +845,9 @@ admin/*',
     'module' => 'masquerade',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'site administrator' => 3,
+    ),
     'themes' => array(
       'bartik' => array(
         'region' => '',
@@ -1002,6 +1004,7 @@ admin/*',
     'node_types' => array(),
     'pages' => 'admin/dashboard',
     'roles' => array(
+      'contributor' => 4,
       'editor' => 5,
       'site administrator' => 3,
     ),

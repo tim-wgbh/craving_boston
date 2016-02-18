@@ -88,6 +88,17 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'media',
   );
 
+  // Exported permission: 'access navbar'.
+  $permissions['access navbar'] = array(
+    'name' => 'access navbar',
+    'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'navbar',
+  );
+
   // Exported permission: 'access overlay'.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
@@ -250,6 +261,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'disqus',
+  );
+
+  // Exported permission: 'administer event status'.
+  $permissions['administer event status'] = array(
+    'name' => 'administer event status',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'event_calendar',
   );
 
   // Exported permission: 'administer features'.
