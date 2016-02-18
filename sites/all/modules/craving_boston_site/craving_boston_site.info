@@ -320,6 +320,7 @@ features[menu_links][] = menu-site-management-tasks_go-to-blocks:admin/structure
 features[menu_links][] = menu-site-management-tasks_go-to-features:admin/structure/features
 features[menu_links][] = menu-site-management-tasks_go-to-modules:admin/modules
 features[menu_links][] = menu-site-management-tasks_go-to-permissions:admin/people/permissions
+features[menu_links][] = menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate
 features[menu_links][] = menu-topics_chew-on-this:food
 features[menu_links][] = menu-topics_home:<front>
 features[menu_links][] = menu-topics_neighborhood-nosh:neighborhoods

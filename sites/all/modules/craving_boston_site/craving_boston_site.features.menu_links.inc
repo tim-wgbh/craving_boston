@@ -270,6 +270,26 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+  // Exported menu link: menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate
+  $menu_links['menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate'] = array(
+    'menu_name' => 'menu-site-management-tasks',
+    'link_path' => 'admin/structure/features/craving_boston_site/recreate',
+    'router_path' => 'admin/structure/features/%/recreate',
+    'link_title' => 'Recreate CB Feature',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: menu-topics_chew-on-this:food
   $menu_links['menu-topics_chew-on-this:food'] = array(
     'menu_name' => 'menu-topics',
@@ -742,6 +762,7 @@ function craving_boston_site_menu_default_menu_links() {
   t('Privacy Policy');
   t('RSS Feed');
   t('Recipes');
+  t('Recreate CB Feature');
   t('Reviews');
   t('Simply Ming >>');
   t('Table Talk');

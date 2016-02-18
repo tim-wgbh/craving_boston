@@ -673,7 +673,10 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'create event_calendar content'.
   $permissions['create event_calendar content'] = array(
     'name' => 'create event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'node',
   );
 
@@ -713,7 +716,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['create page content'] = array(
     'name' => 'create page content',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -790,7 +792,10 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'delete any event_calendar content'.
   $permissions['delete any event_calendar content'] = array(
     'name' => 'delete any event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'node',
   );
 
@@ -827,7 +832,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -856,7 +860,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
     'roles' => array(
-      'contributor' => 'contributor',
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
@@ -894,7 +897,10 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'delete own event_calendar content'.
   $permissions['delete own event_calendar content'] = array(
     'name' => 'delete own event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'node',
   );
 
@@ -921,7 +927,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete own multi_recipe content'] = array(
     'name' => 'delete own multi_recipe content',
     'roles' => array(
-      'contributor' => 'contributor',
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
@@ -932,7 +937,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -942,7 +946,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete own recipe content'] = array(
     'name' => 'delete own recipe content',
     'roles' => array(
-      'contributor' => 'contributor',
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
@@ -1122,7 +1125,10 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'edit any event_calendar content'.
   $permissions['edit any event_calendar content'] = array(
     'name' => 'edit any event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'node',
   );
 
@@ -1159,7 +1165,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1236,7 +1241,10 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'edit own event_calendar content'.
   $permissions['edit own event_calendar content'] = array(
     'name' => 'edit own event_calendar content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'node',
   );
 
@@ -1274,7 +1282,6 @@ function craving_boston_site_user_default_permissions() {
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
     'roles' => array(
-      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
