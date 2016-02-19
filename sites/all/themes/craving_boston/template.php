@@ -94,6 +94,7 @@ function craving_boston_preprocess_html(&$vars) {
 function craving_boston_preprocess_page(&$vars) {
   if (preg_match('/admin/', current_path()) || preg_match('/node\/add/', current_path())) {
     $vars['admin_page'] = true;
+    drupal_add_css('sites/all/themes/craving_boston/admin_theme.css');
   } else {
     $vars['admin_page'] = false;
   }

@@ -5,7 +5,7 @@ Drupal.behaviors.wgbhBrandingModule = {
     
     if (!(window.location.pathname.match(/^\/admin/) ||
           window.location.pathname.match(/^\/node\/add/) ||
-          window.location.pathane.match(/^\/node\/\d+\/edit/)) {
+          window.location.pathane.match(/^\/node\/\d+\/edit/))) {
       $('body').css({'margin-top': '0'});
       // Create WGBH links
       var links =
@@ -19,6 +19,11 @@ Drupal.behaviors.wgbhBrandingModule = {
       $('body').prepend(links);
       $('body').animate({ 'margin-top' : '47px' });
       $('body .wgbh-links').animate({ 'top' : '0' });
+    } else if (window.location.pathname.match(/^\/admin\/dashboard/)) {
+
+      // This is a _terrible_ way to solve this problem but I can't bring myself to subtheme
+      $('#dashboard div#dashboard_main').css({width: '65%'});
+      $('#dashboard div#dashboard_sidebar').css({width: '33%'});
     }
   }
 };

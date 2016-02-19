@@ -270,6 +270,26 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+  // Exported menu link: menu-site-management-tasks_go-to-views:admin/structure/views
+  $menu_links['menu-site-management-tasks_go-to-views:admin/structure/views'] = array(
+    'menu_name' => 'menu-site-management-tasks',
+    'link_path' => 'admin/structure/views',
+    'router_path' => 'admin/structure/views',
+    'link_title' => 'Go to Views',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-site-management-tasks_go-to-views:admin/structure/views',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate
   $menu_links['menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate'] = array(
     'menu_name' => 'menu-site-management-tasks',
@@ -753,6 +773,7 @@ function craving_boston_site_menu_default_menu_links() {
   t('Go to Features');
   t('Go to Modules');
   t('Go to Permissions');
+  t('Go to Views');
   t('Home');
   t('Lidia\'s Kitchen >>');
   t('Mind of a Chef >>');
