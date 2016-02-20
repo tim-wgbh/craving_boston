@@ -129,7 +129,21 @@ blockquote::before {
   margin-bottom: 5px;
   margin-right: 5px;
   padding: 2px 6px;
-}  
+}
+/* Link to all posts page */
+.view-footer {
+  text-align: center;
+}
+a.cb-button {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  background-color: #b52e18;
+  border: solid 1px #8C1418;
+  border-radius: 3px;
+  margin: 20px;
+  padding: 4px;
+}
 
 .block.info, .block.signup {
   padding: 20px;

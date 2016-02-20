@@ -1004,7 +1004,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['label'] = 'Link to all articles';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<p><a href="/archive">View all articles</a></p>';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<p><a href="/all-posts" class="cb-button">View all posts</a></p>';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
