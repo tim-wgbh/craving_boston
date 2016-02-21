@@ -125,7 +125,6 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
   $node_list = array();
   $query_params = array();
   
-  fwrite($log, print_r($form_state['values'], true));
   $input = fopen($form_state['values']['csv_file']->destination, 'r');
 
   try {
@@ -171,7 +170,6 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
     'non-existent'  => array(),
   );
 
-  fwrite($log, print_r($form_state['values'], true));
   foreach ($node_list as $nid => $csv_node_info) {
     if (isset($form_state['values']['single_node']) && preg_match("/^\d+$/", $form_state['values']['single_node'])) {
       if ($nid != $form_state['values']['single_node']) {
@@ -197,8 +195,7 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
             wgbh_change_topics_remove_term($node, $csv_node_info['old_topic']);
             break;
           case 'reset':
-            wgbh_change_topics_remove_term($node, $csv_node_info['new_vertical']);
-            wgbh_change_topics_add_term($node, $csv_node_info['old_topic']);
+            wgbh_change_topics_reset_terms($node, $csv_node_info['old_topic']);
             break;
           case 'commit':
             wgbh_change_topics_add_term($node, $csv_node_info['new_vertical']);
@@ -270,26 +267,53 @@ function wgbh_change_topics_add_term(&$node, $term_name, $v_machine_name = 'sect
   global $log;
   fwrite($log, "-- Adding $term_name\n");
   $term_set = array_values(taxonomy_get_term_by_name($term_name, $v_machine_name));
-  
-  # If the term doesn't exist, create it
+    
+  # Set $term - if the term doesn't exist, create it
   if (empty($term_set)) {
     $vocabulary = taxonomy_vocabulary_machine_name_load($v_machine_name);
-    $term = array(
-      'name'  => $term_name,
-      'vid'   => $vocabulary->vid,
-      'vocabulary_machine_name' => $v_machine_name,
-    );
+    $term = new stdClass();
+    $term->name = $term_name;
+    $term->vid = $vocabulary->vid;
+    $term->vocabulary_machine_name = $v_machine_name;
     taxonomy_term_save($term);
     fwrite($log, "New term:\n");
     fwrite($log, print_r($term, true));
-    $tid = $term->tid;
   } else {
     fwrite($log, "Term already set\n");
-    $tid = $term_set[0]->tid;
+    $term = $term_set[0];
   }
-  $node->field_topic['und'][]['tid'] = $tid;
+  
+  # Add it if it does not exist for the node
+  $node->field_topic['und'][$term->tid]['tid'] = $term->tid;
   node_save($node);
-} 
+}
+
+# Reset function
+function wgbh_change_topics_reset_terms($node, $term_name, $v_machine_name = 'sections') {
+  global $log;
+  fwrite($log, "-- Resetting terms\n");
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load($v_machine_name);
+  $vid = $vocabulary->vid;
+  
+  # First clear all the terms
+  if (isset($node->field_topic)) {
+    foreach ($node->field_topic['und'] as $key => $item) {
+      $term = taxonomy_term_load($item['tid']);
+      fwrite($log, print_r($term, true));
+      if ($term->vid == $vid)  {
+        unset($node->field_topic['und'][$key]);
+      }
+    }
+  }
+  
+  # Then add the old term back in
+  $term_set = array_values(taxonomy_get_term_by_name($term_name, $v_machine_name));
+  $term = $term_set[0];
+  $node->field_topic['und'][]['tid'] = $term->tid;
+  node_save($node);  
+}
+
   
   
   
