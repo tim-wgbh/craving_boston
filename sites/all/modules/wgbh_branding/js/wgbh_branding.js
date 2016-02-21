@@ -5,7 +5,7 @@ Drupal.behaviors.wgbhBrandingModule = {
     
     if (!(window.location.pathname.match(/^\/admin/) ||
           window.location.pathname.match(/^\/node\/add/) ||
-          window.location.pathane.match(/^\/node\/\d+\/edit/))) {
+          window.location.pathname.match(/^\/node\/\d+\/edit/))) {
       $('body').css({'margin-top': '0'});
       // Create WGBH links
       var links =

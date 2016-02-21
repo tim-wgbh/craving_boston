@@ -1228,7 +1228,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -1334,11 +1334,22 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['type'] = 'text_plain';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Field: Content: Part of multi-recipe */
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
+  /* Sort criterion: Node: Published at */
+  $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['published_at']['granularity'] = 'minute';
+  /* Contextual filter: Content: Topic (field_topic) */
+  $handler->display->display_options['arguments']['field_topic_tid']['id'] = 'field_topic_tid';
+  $handler->display->display_options['arguments']['field_topic_tid']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['arguments']['field_topic_tid']['field'] = 'field_topic_tid';
+  $handler->display->display_options['arguments']['field_topic_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_topic_tid']['summary']['format'] = 'default_summary';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1855,6 +1866,48 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'menu-topics';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Topic/% */
+  $handler = $view->new_display('page', 'Topic/%', 'page_7');
+  $handler->display->display_options['display_description'] = 'One view to cover multiple sections';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'sections' => 'sections',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
+    'recipe' => 'recipe',
+  );
+  $handler->display->display_options['path'] = 'topics/%';
   $export['topic'] = $view;
 
   return $export;

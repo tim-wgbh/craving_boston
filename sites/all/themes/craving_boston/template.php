@@ -82,7 +82,7 @@ function craving_boston_image_display($node, $label, $url, $attributes) {
 
 
 function craving_boston_preprocess_html(&$vars) {
-  $topics = ["food","drink","reviews","recipes","neighborhoods","table-talk"];
+  $topics = ["food","drink","reviews","recipes","neighborhoods","table-talk","topic"];
   $path = explode('/',preg_replace("/#.*/", '',drupal_get_path_alias()));
   if (in_array($path[0], $topics)) {
     $vars['classes_array'][] = 'topic-page';
@@ -94,7 +94,6 @@ function craving_boston_preprocess_html(&$vars) {
 function craving_boston_preprocess_page(&$vars) {
   if (preg_match('/admin/', current_path()) || preg_match('/node\/add/', current_path())) {
     $vars['admin_page'] = true;
-    drupal_add_css('sites/all/themes/craving_boston/admin_theme.css');
   } else {
     $vars['admin_page'] = false;
   }
