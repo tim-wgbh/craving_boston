@@ -1,0 +1,7 @@
+name = WGBH Change Topics
+description = Assigns new topics to nodes based on a CSV input file
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_change_topics"
+;

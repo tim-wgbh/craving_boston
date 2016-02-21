@@ -1,0 +1,296 @@
+<?php
+
+global $log;
+
+/**
+ * Implement hook_menu
+ */
+function wgbh_change_topics_menu () {
+  $items = array();
+  $items['admin/content/change_topics'] = array(
+    'title' => t('Change Topics'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('wgbh_change_topics_change_form'),
+    'access arguments' => array('access administration pages'),
+    'description' => t('Change topics for nodes from an uploaded CSV file'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  
+  return $items;
+}
+/**
+ *  Form for changing topics
+ */
+function wgbh_change_topics_change_form($form, &$form_state) {
+  global $log;
+  $log = fopen('/tmp/topic_change.log', 'w');
+  
+  $instructions = <<<INSTRUCT
+<p>To do bulk node topic changes, upload a csv file with the following columns:
+<em>Node id, Title, Old topic, New topic</em>
+</p>
+<p>If it does not pass validation, the most likely issue is punctuation. Double quoting all fields is advised.</p>
+INSTRUCT;
+
+  $form['instructions'] = array(
+    '#markup' => $instructions,
+  );
+  
+  # Body of the form
+  # Get the file
+  $form['csv_file'] = array(
+    '#type' => 'file',
+    '#title' => t('Select a CSV file'),
+  );
+  
+  
+  if (isset($form_state['storage']['node_list'])) {    
+    # Action
+    $options = array(
+      'add_new' => t('Add new topic'),
+      'remove_new' => t('Remove new topic'),
+      'remove_old' => t('Remove old topic'),
+      'reset' => t('Reset topics'),
+      'commit' => t('Commit to new topic'),
+    );
+    $form['action'] = array(
+      '#title' => t('What action would you like to take on the database?'),
+      '#type' => 'select',
+      '#options' => $options,
+      '#empty_option' => t('-- Select --'), 
+      '#default_value' => 1,
+    );
+    $form['single_node'] = array(
+      '#title' => t('Enter the node number here to have the action be taken on only one node.'),
+      '#type' => 'textfield',
+      '#size' => 5
+    );
+  }
+  
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Begin'),
+  );
+  
+  if (isset($form_state['storage']['node_list']['table'])) {
+    $form['topic_change_data'] = array(
+      '#markup' => $form_state['storage']['node_list']['table'],
+    );
+  }
+  if (isset($form_state['storage']['node_tracker'])) {
+    $non_existent_nodes = join(', ', $form_state['storage']['node_tracker']['non-existent']);
+    $form['non_existent_nodes'] = array(
+      '#markup' => "<p><b>Non-existent nodes:</b> $non_existent_nodes</p>",
+    );
+  }
+  
+  return $form;
+}
+
+/**
+ * Form validation function
+ */
+function wgbh_change_topics_change_form_validate($form, &$form_state) {
+  global $base_url;
+    
+  # Handle the file
+  if (empty($form_state['values']['csv_file'])) {
+    $file = file_save_upload('csv_file', array('file_validate_extensions' => array('csv')), false, FILE_EXISTS_REPLACE);
+    if ($file) {
+      $form_state['values']['csv_file'] = $file;
+    } else {
+      form_set_error('csv_file', t('You need to select the file (even if you selected in the first round).'));
+    }
+  }
+  
+  # Check the nid if one node is getting processed
+  if (!empty($form_state['values']['single_node'])) {
+    if (!in_array($form_state['values']['single_node'], $form_state['storage']['node_tracker']['processible'])) {
+      form_set_error('single_node', t('That node ID is not one of the processible IDs'));
+    }
+  }
+}
+
+function wgbh_change_topics_change_form_submit($form, &$form_state) {
+  global $log;
+  if (is_null($log)) {
+    $log = fopen('/tmp/topic_change.log', 'w');
+  }
+  
+  $path = 'admin/content/change_topics';
+  $query_params = array();
+
+  # Read in the data
+  $node_ids = array();
+  $node_list = array();
+  $query_params = array();
+  
+  fwrite($log, print_r($form_state['values'], true));
+  $input = fopen($form_state['values']['csv_file']->destination, 'r');
+
+  try {
+    while (($data = fgetcsv($input, 1000, ",")) !== FALSE) {
+    
+      # Check for header
+      if (is_int($data[0]) || preg_match("/\d+/", $data[0])) {
+        $nid = intval($data[0]);
+        $node_ids[] = $nid;
+        $node_list[$nid] = array(
+          'title' => $data[1],
+          'old_topic' => $data[2],
+          'new_vertical' => $data[3],
+        );  
+      }
+    }
+  } catch (Exception $e) {
+    $error = "There was a problem reading your file:\n";
+    $error .= $e->getMessage();
+    $query_params['error'] = $error;
+  }
+  
+  $no_dupes = array_unique($node_ids);
+  
+  if (count($no_dupes) != count($node_ids)) {
+    $dupes = array_diff($node_ids, $no_dupes);
+    $message = "You have duplicate nodes in your list:\n";
+    $message .= join(', ', $dupes);
+    $query_params['dupes'] = $dupes;
+  }
+  
+  $variables = array(
+    'attributes'  => array(),
+    'caption'     => '',
+    'colgroups'   => array(),
+    'sticky'      => false,
+    'empty'       => '(no data)', 
+  );
+  $variables['header'] = array('Nid', 'Title', 'DB Topics', 'Old topic', 'New topic');
+  $variables['rows'] = array();
+  $node_tracker = array(
+    'processible'   => array(),
+    'non-existent'  => array(),
+  );
+
+  fwrite($log, print_r($form_state['values'], true));
+  foreach ($node_list as $nid => $csv_node_info) {
+    if (isset($form_state['values']['single_node']) && preg_match("/^\d+$/", $form_state['values']['single_node'])) {
+      if ($nid != $form_state['values']['single_node']) {
+        continue;
+      }
+    }
+//    fwrite($log, "Processing: $nid\n");
+    $status = array();
+    $node = node_load($nid);    
+    $status['node'] = ($node != null);
+    
+    if ($node) {
+      # Take action
+      if (isset($form_state['values']['action'])) {
+        switch ($form_state['values']['action']) {
+          case 'add_new':
+            wgbh_change_topics_add_term($node, $csv_node_info['new_vertical']);
+            break;
+          case 'remove_new':
+            wgbh_change_topics_remove_term($node, $csv_node_info['new_vertical']);
+            break;
+          case 'remove_old':
+            wgbh_change_topics_remove_term($node, $csv_node_info['old_topic']);
+            break;
+          case 'reset':
+            wgbh_change_topics_remove_term($node, $csv_node_info['new_vertical']);
+            wgbh_change_topics_add_term($node, $csv_node_info['old_topic']);
+            break;
+          case 'commit':
+            wgbh_change_topics_add_term($node, $csv_node_info['new_vertical']);
+            wgbh_change_topics_remove_term($node, $csv_node_info['old_topic']);
+            break;
+        }
+      }
+      
+      # Create the table information    
+      $status['node'] = true;
+      $status['title'] = ($node->title == $csv_node_info['title']);
+      $title = $node->title;
+      if (!$status['title']) {
+        $title .= "<br />" . $csv_node_info['title'];
+      }
+      if (isset($node->field_topic['und'])) {
+        $topics = array_map('wgbh_change_topics_map_terms', $node->field_topic['und']);
+      }
+      $variables['rows'][] = array(
+        $nid,
+        $title,
+        join(', ', $topics),
+        $csv_node_info['old_topic'],
+        $csv_node_info['new_vertical'],
+      );
+      $node_tracker['processible'][] = $nid;
+    } else {
+      $node_tracker['non-existent'][] = $nid;
+    }
+  }
+  $form_state['storage']['node_list'] = array(
+    'array' => $node_list,
+    'table' => theme_table($variables),
+  );
+  $form_state['storage']['node_tracker'] =  $node_tracker;
+  $form_state['rebuild'] = true;
+  fclose($log);
+}
+function wgbh_change_topics_map_terms($item) {
+  $term = taxonomy_term_load($item['tid']);
+  return $term->name;
+}
+
+##
+# WARNING
+# This code depends on the machine name for the 'topics' vocabulary to be 'sections'
+# If it is changed, this will break
+#
+# Remove a term from a node
+function wgbh_change_topics_remove_term(&$node, $term_name, $v_machine_name = 'sections') {
+  global $log;
+  fwrite($log, "-- Removing $term_name\n");
+  $term_set = array_values(taxonomy_get_term_by_name($term_name, $v_machine_name));
+  $tid = $term_set[0]->tid;
+  
+  # Remove the topic by unsetting the array key
+  if (isset($node->field_topic)) {
+    foreach (array_keys($node->field_topic['und']) as $key) {
+      if ($node->field_topic['und'][$key]['tid'] == $tid) {
+        unset($node->field_topic['und'][$key]);
+      }
+    }
+    node_save($node);
+  }
+}
+
+# Add a term to a node
+function wgbh_change_topics_add_term(&$node, $term_name, $v_machine_name = 'sections') { 
+  global $log;
+  fwrite($log, "-- Adding $term_name\n");
+  $term_set = array_values(taxonomy_get_term_by_name($term_name, $v_machine_name));
+  
+  # If the term doesn't exist, create it
+  if (empty($term_set)) {
+    $vocabulary = taxonomy_vocabulary_machine_name_load($v_machine_name);
+    $term = array(
+      'name'  => $term_name,
+      'vid'   => $vocabulary->vid,
+      'vocabulary_machine_name' => $v_machine_name,
+    );
+    taxonomy_term_save($term);
+    fwrite($log, "New term:\n");
+    fwrite($log, print_r($term, true));
+    $tid = $term->tid;
+  } else {
+    fwrite($log, "Term already set\n");
+    $tid = $term_set[0]->tid;
+  }
+  $node->field_topic['und'][]['tid'] = $tid;
+  node_save($node);
+} 
+  
+  
+  
+  
