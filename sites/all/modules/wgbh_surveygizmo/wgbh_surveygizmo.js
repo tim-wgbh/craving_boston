@@ -2,8 +2,8 @@
 
 Drupal.behaviors.wgbhSurveyGizmoModule = {
   attach: function (context) {
-    $('#sg_popup').wrap('<div id="sg_popup-wrapper"></div>');
-    $('#sg_popup').show();
+    $('#sg-popup').wrap('<div id="sg-popup-wrapper"></div>');
+    $('#sg-popup').show();
   }
 };
 })(jQuery);

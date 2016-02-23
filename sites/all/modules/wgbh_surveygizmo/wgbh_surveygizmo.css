@@ -1,9 +1,9 @@
-#sg_popup-wrapper {
+#sg-popup-wrapper {
   position: absolute;
   left: 50%;
   top: 100px;
 }
-#sg_popup {
+#sg-popup {
   display: none;
   position: relative;
   left: -150px;
