@@ -87,10 +87,10 @@ function wgbh_surveygizmo_page_build(&$page) {
     if ($path_array[0] != 'admin') {
       switch ($pages) {
         case 'all':
-          $show = true;
+          $show_survey = true;
           break;
         case 'home_and_topic_pages':
-          if (count($path_array) <= 2 && !in_array(['node', 'user'], $path_array[0])) {
+          if (count($path_array) <= 2 && !in_array($path_array[0], ['node', 'user'])) {
             $show_survey = true;
           }
           break;
