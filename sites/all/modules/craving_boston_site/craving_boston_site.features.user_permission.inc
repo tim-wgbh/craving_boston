@@ -531,6 +531,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'administer surveygizmo surveys'.
+  $permissions['administer surveygizmo surveys'] = array(
+    'name' => 'administer surveygizmo surveys',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'wgbh_surveygizmo',
+  );
+
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
