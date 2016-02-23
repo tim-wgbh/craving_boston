@@ -118,8 +118,8 @@ function wgbh_surveygizmo_page_build(&$page) {
         $page['page_top']['survey_gizmo'] = array(
           '#markup' => $embed,
         );
-        drupal_add_js(drupal_get_path('module', 'wgbh_surveygizmo') . '/wgbh_surveygizmo.js');
-        drupal_add_css(drupal_get_path('module', 'wgbh_surveygizmo') . '/wgbh_surveygizmo.css', 'module', 'screen', false);
+        drupal_add_js(drupal_get_path('module', 'wgbh_surveygizmo') . '/wgbh_surveygizmo.js', array('preprocess' => false, 'group' => JS_THEME, 'scope' => 'footer'));
+        drupal_add_css(drupal_get_path('module', 'wgbh_surveygizmo') . '/wgbh_surveygizmo.css', array('preprocess' => false, 'group' => CSS_THEME, 'media' => 'screen'));
       }
     }
   }
