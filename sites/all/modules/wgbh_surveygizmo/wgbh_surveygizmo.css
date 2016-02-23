@@ -1,0 +1,17 @@
+#sg_popup-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+}
+#sg_popup {
+  display: none;
+  position: relative;
+  left: -150px;
+  width: 300px;
+  background-color: #efefef;
+  border: solid 2px white;
+  padding: 20px;
+  font-size: 16px;
+  z-index: 2000;
+  box-shadow: 3px 3px 5px rgba(0,0,0,.3);
+}

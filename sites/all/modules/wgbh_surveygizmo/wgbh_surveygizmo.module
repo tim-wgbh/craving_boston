@@ -8,12 +8,24 @@ function wgbh_surveygizmo_menu () {
     'title' => t('Embed Survey Gizmo'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('wgbh_surveygizmo_settings'),
-    'access arguments' => array('administer site configuration'),
+    'access arguments' => array('administer surveygizmo surveys'),
     'description' => t('Provide the embed code and settings below for a survey'),
     'type' => MENU_LOCAL_TASK,
   );
   
   return $items;
+}
+
+/**
+ * Implement hook_permissions
+ */
+function wgbh_surveygizmo_permission() {
+  return array(
+    'administer surveygizmo surveys' => array(
+      'title' => t('Administer Surveygizmo Surveys'),
+      'description' => t('Provide embed code for surveys and adjust display settings'),
+    ),
+  );
 }
 
 /**
@@ -106,6 +118,8 @@ function wgbh_surveygizmo_page_build(&$page) {
         $page['page_top']['survey_gizmo'] = array(
           '#markup' => $embed,
         );
+        drupal_add_js(drupal_get_path('module', 'wgbh_surveygizmo') . '/wgbh_surveygizmo.js');
+        drupal_add_css(drupal_get_path('module', 'wgbh_surveygizmo') . '/wgbh_surveygizmo.css', 'module', 'screen', false);
       }
     }
   }
