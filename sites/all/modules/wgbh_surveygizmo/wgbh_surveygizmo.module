@@ -1,0 +1,112 @@
+<?php
+/**
+ * Implement hook_menu
+ */
+function wgbh_surveygizmo_menu () {
+  $items = array();
+  $items['admin/config/services/surveygizmo'] = array(
+    'title' => t('Embed Survey Gizmo'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('wgbh_surveygizmo_settings'),
+    'access arguments' => array('administer site configuration'),
+    'description' => t('Provide the embed code and settings below for a survey'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  
+  return $items;
+}
+
+/**
+ * Admin form for Survey Gizmo
+ */
+function wgbh_surveygizmo_settings($form, &$form_state) {
+
+  $form['embed_code'] = array(
+    '#title'        => t('Embed code'),
+    '#type'         => 'textarea',
+    '#description'  => t("Enter your embed code from Survey Gizmo. No validation is done, so it's up to you to get it right!"),
+    '#required'     => true,
+    '#default_value'  => variable_get('wgbh_surveygizmo_code', ''),
+  );
+  
+  $options = array(
+    'all'                   => t('All pages'),
+    'home_and_topic_pages'  => t('The home and topic pages'),
+    'home_page_only'        => t('Only on the home page'),
+  );
+
+  $form['pages'] = array(
+    '#title'        => t('Pages to embed on'),
+    '#description'  => t('Surveys will not be embedded on admin pages'),
+    '#type'         => 'radios',
+    '#options'      => $options,
+    '#required'     => true,
+    '#default_value'  => variable_get('wgbh_surveygizmo_pages','all'),
+  );
+  
+  $options = array(
+    'yes' => t('Yes'),
+    'no'  => t('No'),
+  );
+  
+  $form['enabled'] = array(
+    '#title'          => t('Enable the survey'),
+    '#type'           => 'radios',
+    '#options'        => $options,
+    '#default_value'  => variable_get('wgbh_surveygizmo_enabled', 'no'),
+  );
+  
+  $form['#submit'][] = 'wgbh_surveygizmo_settings_submit';
+  return system_settings_form($form);
+}
+
+/**
+ * Handle the form
+ */
+function wgbh_surveygizmo_settings_submit($form, &$form_state) {
+
+  variable_set('wgbh_surveygizmo_code', $form_state['values']['embed_code']);
+  variable_set('wgbh_surveygizmo_pages', $form_state['values']['pages']);
+  variable_set('wgbh_surveygizmo_enabled', $form_state['values']['enabled']);
+
+}
+
+/**
+ * Add survey to the page build
+ */
+function wgbh_surveygizmo_page_build(&$page) {
+
+  if (variable_get('wgbh_surveygizmo_enabled', 'no') == 'yes') {
+  
+    $pages = variable_get('wgbh_surveygizmo_pages', 'home_page_only');
+    
+    $path = $_GET['q'];
+    $path_array = explode('/', $path);
+        
+    $show_survey = false;
+    if ($path_array[0] != 'admin') {
+      switch ($pages) {
+        case 'all':
+          $show = true;
+          break;
+        case 'home_and_topic_pages':
+          if (count($path_array) <= 2 && !in_array(['node', 'user'], $path_array[0])) {
+            $show_survey = true;
+          }
+          break;
+        case 'home_page_only':
+          if (drupal_is_front_page()) {
+            $show_survey = true;
+          }
+          break;
+      }
+      
+      if ($show_survey) {
+        $embed = variable_get('wgbh_surveygizmo_code' , '');
+        $page['page_top']['survey_gizmo'] = array(
+          '#markup' => $embed,
+        );
+      }
+    }
+  }
+}

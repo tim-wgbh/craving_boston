@@ -1,0 +1,7 @@
+name = WGBH Survey Gizmo
+description = Allows embedding popup Survey Gizmo surveys to pages
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_survey_gizmo"
+;

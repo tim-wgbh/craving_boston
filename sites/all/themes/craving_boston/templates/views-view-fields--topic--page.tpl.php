@@ -1,4 +1,3 @@
-<?php dpm($node); ?>
 <?php if ($display): ?>
   <h2 class="title<?php print $has_video ? ' has-video' : ''; ?><?php print $is_recipe ? ' recipe' : ''; ?>"><?php print $headline; ?></h2>
   <div class="info">

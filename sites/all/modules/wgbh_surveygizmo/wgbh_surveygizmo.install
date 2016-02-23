@@ -1,0 +1,9 @@
+<?php
+/**
+ * Implementation of hook_uninstall
+ */
+function wgbh_surveygizmo_uninstall() {
+  variable_del('wgbh_surveygizmo_code');
+  variable_del('wgbh_surveygizmo_pages');
+  variable_del('wgbh_surveygizmo_enabled');
+}
