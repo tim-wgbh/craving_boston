@@ -157,8 +157,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
@@ -633,8 +632,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
@@ -644,6 +642,8 @@ function craving_boston_site_user_default_permissions() {
   $permissions['change own username'] = array(
     'name' => 'change own username',
     'roles' => array(
+      'contributor' => 'contributor',
+      'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
