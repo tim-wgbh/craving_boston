@@ -96,7 +96,7 @@ function wgbh_surveygizmo_page_build(&$page) {
     $path_array = explode('/', $path);
         
     $show_survey = false;
-    if ($path_array[0] != 'admin') {
+    if ($path_array[0] != 'admin' && $path_array[0] != 'user') {
       switch ($pages) {
         case 'all':
           $show_survey = true;
@@ -113,7 +113,8 @@ function wgbh_surveygizmo_page_build(&$page) {
           break;
       }
       
-      if ($show_survey) {
+      if ($show_survey) {        
+        //Set the embed
         $embed = variable_get('wgbh_surveygizmo_code' , '');
         $page['page_top']['survey_gizmo'] = array(
           '#markup' => $embed,
