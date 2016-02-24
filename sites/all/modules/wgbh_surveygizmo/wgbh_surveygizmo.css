@@ -6,12 +6,19 @@
 #sg-popup {
   display: none;
   position: relative;
-  left: -150px;
-  width: 300px;
+  left: -40%;
+  width: 80%;
+  min-width: 300px;
   background-color: #efefef;
   border: solid 2px white;
   padding: 20px;
   font-size: 16px;
   z-index: 2000;
   box-shadow: 3px 3px 5px rgba(0,0,0,.3);
+}
+@media (max-width: 600px) {
+  #sg-popup {
+    width: 300px;
+    left: -150px;
+  }
 }
