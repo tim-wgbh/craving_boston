@@ -119,6 +119,9 @@
     </ul>
   <?php endif; ?>
 
+  <div class="related-content container">
+    <?php print views_embed_view('related_content', 'lead_article'); ?>
+  </div>
   
 
   <?php if (!empty($content['links'])): ?>
