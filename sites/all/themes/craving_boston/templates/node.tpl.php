@@ -120,7 +120,7 @@
   <?php endif; ?>
 
   <div class="related-content container">
-    <?php print views_embed_view('related_content', 'lead_article'); ?>
+    <?php print views_embed_view('related_content', 'block'); ?>
   </div>
   
 
