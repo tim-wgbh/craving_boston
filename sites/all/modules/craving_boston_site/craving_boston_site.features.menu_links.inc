@@ -443,7 +443,7 @@ function craving_boston_site_menu_default_menu_links() {
       'identifier' => 'menu-topics_home:<front>',
     ),
     'module' => 'menu',
-    'hidden' => 1,
+    'hidden' => 0,
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
