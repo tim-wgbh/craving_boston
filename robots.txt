@@ -41,10 +41,21 @@ Disallow: /comment/reply/
 Disallow: /filter/tips/
 Disallow: /node/add/
 Disallow: /search/
-Disallow: /user/register/
-Disallow: /user/password/
-Disallow: /user/login/
-Disallow: /user/logout/
+
+# Custom - no user pages, no faq or bio individual pages
+# Disallow: /user/register/
+# Disallow: /user/password/
+# Disallow: /user/login/
+# Disallow: /user/logout/
+Disallow: /user
+Disallow: /user/
+Disallow: /about/bio/
+Disallow: /faq/
+Disallow: /topics/
+Disallow: /tags/
+Disallow: /taxonomy/
+Disallow: /file/
+
 # Paths (no clean URLs)
 Disallow: /?q=admin/
 Disallow: /?q=comment/reply/
@@ -55,3 +66,5 @@ Disallow: /?q=user/password/
 Disallow: /?q=user/register/
 Disallow: /?q=user/login/
 Disallow: /?q=user/logout/
+
+
