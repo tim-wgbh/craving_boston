@@ -275,6 +275,29 @@ input#edit-search-block-form--2 {
 .page-node .field-name-field-subhead, .page-node .subhead {
   margin-top: 10px;
 }
+div#related-content {
+  margin: 20px 0;
+  border-radius: 10px;
+  padding: 10px 20px 20px 20px;
+  background-color: #ffeedd;
+}
+
+.view-related-content .related-image, 
+.view-related-content .text
+ {
+  float: left;
+}
+.view-related-content .related-image { 
+  width: 20%;
+  padding-right: 8px;
+}
+.view-related-content .text { 
+  width: 75%;
+}
+.view-related-content h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}
 header {
   margin-top: 20px;
 }

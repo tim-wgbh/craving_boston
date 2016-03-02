@@ -134,6 +134,15 @@ function craving_boston_preprocess_node(&$vars) {
   }
   
   
+  // Handle related content
+  if (in_array($node->type, array('article', 'recipe', 'multi-recipe'))) { 
+    $view = views_get_view('related_content');
+    if (count($view->result) > 0) {
+      $preview = $view->preview('block');
+      $vars['related_content'] = "<h3>" . $view->get_title() . "</h3>\n" . $preview;
+    }
+  }
+
   # Set up video display for articles
   if ($node->type != 'article') return;
   
@@ -184,7 +193,7 @@ function craving_boston_preprocess_node(&$vars) {
 //       }      
 //       $vars['poster'] = s3_file($node->field_video_poster['und'][0]['value']);
     }
-  }
+  }  
 }
 
 function craving_boston_preprocess_views_view_fields(&$vars) {

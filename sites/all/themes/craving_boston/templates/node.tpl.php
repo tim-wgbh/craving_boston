@@ -119,17 +119,19 @@
     </ul>
   <?php endif; ?>
 
-  <div class="related-content container">
-    <?php print views_embed_view('related_content', 'block'); ?>
-  </div>
-  
-
   <?php if (!empty($content['links'])): ?>
     <footer>
       <?php print render($content['links']); ?>
     </footer>
   <?php endif; ?>
 
+  <?php if (isset($related_content)): ?>
+    <div id="related-content">
+      <?php print $related_content; ?>
+      <div class="clearfix"></div>
+    </div>
+  <?php endif; ?>
+  
   <?php print render($content['comments']); ?>
 <?php if (!$page): ?>
   </article> <!-- /.node -->
