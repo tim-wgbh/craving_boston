@@ -469,72 +469,6 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_pmp_guid'
-  $field_instances['node-article-field_pmp_guid'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_pmp_guid',
-    'label' => 'PMP guid',
-    'required' => FALSE,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-article-field_pmp_source'
-  $field_instances['node-article-field_pmp_source'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_pmp_source',
-    'label' => 'PMP story source',
-    'required' => FALSE,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_subhead'
   $field_instances['node-article-field_subhead'] = array(
     'bundle' => 'article',
@@ -1286,63 +1220,6 @@ function craving_boston_site_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-event_calendar-field_link'
-  $field_instances['node-event_calendar-field_link'] = array(
-    'bundle' => 'event_calendar',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Enter a URL here if there is a place to go to get more information',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_link',
-    'label' => 'Link to more info',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => 'nofollow',
-        'target' => '_blank',
-        'title' => '[node:field-link:url]',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 0,
-      'rel_remove' => 'rel_remove_internal',
-      'title' => 'value',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 128,
-      'title_value' => 'More info>>',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 3,
     ),
   );
 
@@ -2432,7 +2309,6 @@ function craving_boston_site_field_default_field_instances() {
   t('Describe Event status');
   t('Description');
   t('Directions');
-  t('Enter a URL here if there is a place to go to get more information');
   t('Enter a comma-separated list of words to describe your content.');
   t('Event Description');
   t('Facebook');
@@ -2454,13 +2330,10 @@ function craving_boston_site_field_default_field_instances() {
   t('Instagram');
   t('Internet Video');
   t('Least favorite food');
-  t('Link to more info');
   t('Multiple tags should be separated by commas, e.g. red, green, blue (limit of 10)');
   t('Must be a URL to an audio file');
   t('Notes');
   t('Optional. Describe a great dining experience relating to this recipe, or note which wine or other dishes complement this recipe.');
-  t('PMP guid');
-  t('PMP story source');
   t('Part of multi-recipe');
   t('Pinterest');
   t('Preparation time');

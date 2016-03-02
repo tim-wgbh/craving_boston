@@ -101,12 +101,14 @@ function craving_boston_site_default_picture_mapping() {
   $picture_mapping->machine_name = 'featured_sub_mapping';
   $picture_mapping->breakpoint_group = 'craving_boston';
   $picture_mapping->mapping = array(
-    'breakpoints.theme.craving_boston.small' => array(
+    'breakpoints.theme.craving_boston.large' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'featured_sub_mobile',
+        'image_style' => 'featured_sub_large',
       ),
-      '2x' => array(
+    ),
+    'breakpoints.theme.craving_boston.limbo' => array(
+      '1x' => array(
         'mapping_type' => 'image_style',
         'image_style' => 'featured_sub_medium',
       ),
@@ -118,19 +120,17 @@ function craving_boston_site_default_picture_mapping() {
       ),
       '2x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'featured_sub_large',
-      ),
-    ),
-    'breakpoints.theme.craving_boston.limbo' => array(
-      '1x' => array(
-        'mapping_type' => 'image_style',
         'image_style' => 'featured_sub_medium',
       ),
     ),
-    'breakpoints.theme.craving_boston.large' => array(
+    'breakpoints.theme.craving_boston.small' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'featured_sub_large',
+        'image_style' => 'featured_sub_mobile',
+      ),
+      '2x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'featured_sub_medium',
       ),
     ),
   );
