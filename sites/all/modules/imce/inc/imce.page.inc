@@ -966,6 +966,9 @@ function imce_perm_exists(&$imce, $perm) {
 function imce_scan_directory($dirname, $imce) {
 
   $directory = array('dirsize' => 0, 'files' => array(), 'subdirectories' => array(), 'error' => FALSE);
+
+  return $directory;
+
   $diruri = imce_dir_uri($imce, $dirname);
 
   if (!is_string($dirname) || $dirname == '' || !$handle = opendir($diruri)) {
