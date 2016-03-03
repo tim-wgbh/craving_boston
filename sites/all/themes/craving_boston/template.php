@@ -137,8 +137,8 @@ function craving_boston_preprocess_node(&$vars) {
   // Handle related content
   if (in_array($node->type, array('article', 'recipe', 'multi-recipe'))) { 
     $view = views_get_view('related_content');
+    $preview = $view->preview('block');
     if (count($view->result) > 0) {
-      $preview = $view->preview('block');
       $vars['related_content'] = "<h3>" . $view->get_title() . "</h3>\n" . $preview;
     }
   }
