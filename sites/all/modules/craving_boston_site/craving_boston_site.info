@@ -90,6 +90,7 @@ dependencies[] = system
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = token
+dependencies[] = transliteration
 dependencies[] = update
 dependencies[] = user
 dependencies[] = uuid
