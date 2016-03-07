@@ -1,0 +1,40 @@
+<?php
+/**
+ * Implement hook_enable()
+ */
+function wgbh_imce_s3fs_install() {
+  $custom_scan = variable_get('imce_custom_scan', '');
+
+  if ($custom_scan == '') {
+    variable_set('imce_custom_scan', 'wgbh_imce_s3fs_scandir');
+    drupal_set_message(
+      $message = t("The IMCE S3FS module was successfully installed."), 
+      $type = 'status'
+    );
+  } else {
+    drupal_set_message(
+      $message = t("The imce scan function variable has already been set to $custom_scan. This module will be disabled."), 
+      $type = 'status'
+    );
+    module_disable(array('wgbh_imce_s3fs'));
+  }
+}
+
+/**
+ * Implement hook_uninstall()
+ */
+function wgbh_imce_s3fs_uninstall() {
+  $custom_scan = variable_get('imce_custom_scan');
+  if ($custom_scan == 'wgbh_imce_s3fs_scandir') {
+    variable_del('imce_custom_scan');
+    drupal_set_message(
+      $message = t("The IMCE S3FS module was successfully uninstalled and the scan function variable was removed."), 
+      $type = 'status'
+    );
+  } else {
+    drupal_set_message(
+      $message = t("The IMCE S3FS module was successfully uninstalled. The imce scan function variable is $custom_scan, which was not set by this module and has not been touched."), 
+      $type = 'warning'
+    );
+  }
+}

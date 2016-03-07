@@ -1,0 +1,9 @@
+name = WGBH IMCE for S3FS Fix
+description = Creates a custom directory scan function for S3 (scandir is way too slow)
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_imce_s3fs"
+
+dependencies[] = 'imce'
+dependencies[] = 's3fs'
