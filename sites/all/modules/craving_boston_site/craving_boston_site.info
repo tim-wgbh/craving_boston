@@ -100,6 +100,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = wgbh_branding
 dependencies[] = wgbh_change_topics
+dependencies[] = wgbh_imce_s3fs
 dependencies[] = wgbh_surveygizmo
 dependencies[] = wysiwyg
 dependencies[] = xmlsitemap
