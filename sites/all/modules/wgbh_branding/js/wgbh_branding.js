@@ -4,6 +4,7 @@ Drupal.behaviors.wgbhBrandingModule = {
   attach: function (context) {
     
     if (!(window.location.pathname.match(/^\/admin/) ||
+          window.location.pathname.match(/^\/imce/) ||
           window.location.pathname.match(/^\/node\/add/) ||
           window.location.pathname.match(/^\/node\/\d+\/edit/))) {
       $('body').css({'margin-top': '0'});

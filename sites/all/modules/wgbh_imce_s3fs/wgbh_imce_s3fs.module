@@ -1,0 +1,87 @@
+<?php
+/**
+ * S3-specific IMCE scandir function
+ */
+
+
+
+function wgbh_imce_s3fs_scandir($dirname, $imce) {
+
+  $_SESSION['imce_directory'] = '.';
+
+  $directory = array('dirsize' => 0, 'files' => array(), 'subdirectories' => array(), 'error' => FALSE);
+  $diruri = imce_dir_uri($imce, $dirname);
+
+  //Make sure files are configured to be stored in S3
+  if (substr($diruri, 0, 5) != 's3://') {
+    drupal_set_message('error', t('Files are not currently configured to be stored in S3. Please notify an admin.'));
+    $directory['error'] = TRUE;
+    return $directory;
+  }
+  
+  if (!is_string($dirname) || $dirname == '') {
+    imce_inaccessible_directory($dirname, $imce);
+    $directory['error'] = TRUE;
+    return $directory;
+  }
+
+  $query = "SELECT * FROM {s3fs_file} ";
+  
+  if ($dirname != '.') {
+    $query .= " WHERE uri LIKE '%/:dirname%/';";
+    $args = array(':dirname' => $dirname);
+    $result = db_query($query, $args);
+  } else {
+    $result = db_query($query);
+  }
+  
+    
+  foreach ($result as $file_obj) {
+    
+    // Do not include dot files and folders or s3
+    if (substr($file_obj->uri, 0, 1) === '.' || $file_obj->uri === 's3:') {
+      continue;
+    }
+    
+    // Get the directory level path
+    $file_path = str_replace('s3://', '', $file_obj->uri);
+    $file_path_array = explode('/', $file_path);
+    
+    
+    if ($dirname != '.') {
+      while ($file_path_array[0] != $dirname) {
+        array_shift($file_path_array);
+      }
+    }
+
+    //If there's only 1 element left, it's file, otherwise it's in a subdirectory
+    if (count($file_path_array) != 1) {
+      continue;
+    }
+    $file_name = $file_path_array[0];
+    
+    // Is this file a directory? Then add to the list of subdirectories
+    if ($file_obj->dir != 0) { 
+      $directory['subdirectories'][] = $file_name;
+      continue;
+    }
+
+
+    $width = $height = 0;
+    // s3fs doesn't currently implement width and height metadata
+    $size = $file_obj->filesize;
+    $date = $file_obj->timestamp;
+    $directory['files'][$file_name] = array(
+      'name' => $file_name,
+      'size' => $size,
+      'width' => $width,
+      'height' => $height,
+      'date' => $date
+    );
+    $directory['dirsize'] += $size;
+  }
+
+  sort($directory['subdirectories']);
+  return $directory;
+
+}
