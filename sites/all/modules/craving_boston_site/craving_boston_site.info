@@ -303,6 +303,7 @@ features[image][] = featured_sub_medium
 features[image][] = featured_sub_mobile
 features[image][] = half_mobile_square
 features[image][] = mobile_square
+features[image][] = related_content
 features[menu_custom][] = menu-craving-boston
 features[menu_custom][] = menu-dashboard
 features[menu_custom][] = menu-site-management-tasks

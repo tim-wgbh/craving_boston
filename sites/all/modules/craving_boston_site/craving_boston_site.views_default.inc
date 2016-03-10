@@ -909,7 +909,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'media_thumbnail',
+    'image_style' => 'related_content',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -921,14 +921,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Subhead */
-  $handler->display->display_options['fields']['field_subhead']['id'] = 'field_subhead';
-  $handler->display->display_options['fields']['field_subhead']['table'] = 'field_data_field_subhead';
-  $handler->display->display_options['fields']['field_subhead']['field'] = 'field_subhead';
-  $handler->display->display_options['fields']['field_subhead']['label'] = '';
-  $handler->display->display_options['fields']['field_subhead']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_subhead']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_subhead']['type'] = 'text_plain';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

@@ -345,6 +345,25 @@ function craving_boston_site_image_default_styles() {
     ),
   );
 
+  // Exported image style: related_content.
+  $styles['related_content'] = array(
+    'label' => 'Related Content',
+    'effects' => array(
+      17 => array(
+        'name' => 'focal_point_scale_and_crop',
+        'data' => array(
+          'width' => 200,
+          'height' => 112,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
