@@ -282,21 +282,19 @@ div#related-content {
   background-color: #ffeedd;
 }
 
-.view-related-content .related-image, 
-.view-related-content .text
- {
+.view-related-content .related-row {
   float: left;
+  width: 31%;
+  margin: 0 1%;
 }
-.view-related-content .related-image { 
-  width: 20%;
-  padding-right: 8px;
-}
-.view-related-content .text { 
-  width: 75%;
+.page-node #content-wrap .view-related-content .related-row img {
+  display: block;
+  width: 100%;
+  margin: 0;
 }
 .view-related-content h3 {
-  font-size: 20px;
-  margin-top: 5px;
+  font-size: 14px;
+  margin-top: 12px;
 }
 header {
   margin-top: 20px;
@@ -677,6 +675,12 @@ label.audio {
   }
   input#edit-search-block-form--2 {
     width: 100px;
+  }
+  #related-content h3 {
+    font-size: 16px;
+  }
+  #related-content .related-row h3 {
+    font-size: 12px;
   }
   #search-form {
     text-align: left;
