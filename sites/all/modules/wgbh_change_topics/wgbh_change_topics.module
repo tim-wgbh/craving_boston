@@ -47,11 +47,11 @@ INSTRUCT;
   if (isset($form_state['storage']['node_list'])) {    
     # Action
     $options = array(
-      'add_new' => t('Add new topic'),
-      'remove_new' => t('Remove new topic'),
-      'remove_old' => t('Remove old topic'),
+      'add_new' => t('Add new new topic'),
+      'remove_new' => t('Remove new new topic'),
+      'remove_old' => t('Remove old old topic'),
       'reset' => t('Reset topics'),
-      'commit' => t('Commit to new topic'),
+      'commit' => t('Commit to new new topic'),
     );
     $form['action'] = array(
       '#title' => t('What action would you like to take on the database?'),
@@ -134,10 +134,12 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
       if (is_int($data[0]) || preg_match("/\d+/", $data[0])) {
         $nid = intval($data[0]);
         $node_ids[] = $nid;
-        $node_list[$nid] = array(
-          'title' => $data[1],
-          'old_topic' => $data[2],
-          'new_vertical' => $data[3],
+        $node_list[] = array(
+          'nid'           => $nid,
+          'title'         => $data[1],
+          'old_old_topic' => $data[2],
+          'old_new_topic' => $data[3],
+          'new_new_topic' => $data[4]
         );  
       }
     }
@@ -163,14 +165,15 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
     'sticky'      => false,
     'empty'       => '(no data)', 
   );
-  $variables['header'] = array('Nid', 'Title', 'DB Topics', 'Old topic', 'New topic');
+  $variables['header'] = array('Nid', 'Title', 'DB Topics', 'Old topic', 'Old new topic', 'New new topic');
   $variables['rows'] = array();
   $node_tracker = array(
     'processible'   => array(),
     'non-existent'  => array(),
   );
 
-  foreach ($node_list as $nid => $csv_node_info) {
+  foreach ($node_list as $csv_node_info) {
+    $nid = $csv_node_info['nid'];
     if (isset($form_state['values']['single_node']) && preg_match("/^\d+$/", $form_state['values']['single_node'])) {
       if ($nid != $form_state['values']['single_node']) {
         continue;
@@ -186,20 +189,20 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
       if (isset($form_state['values']['action'])) {
         switch ($form_state['values']['action']) {
           case 'add_new':
-            wgbh_change_topics_add_term($node, $csv_node_info['new_vertical']);
+            wgbh_change_topics_add_term($node, $csv_node_info['new_new_topic']);
             break;
           case 'remove_new':
-            wgbh_change_topics_remove_term($node, $csv_node_info['new_vertical']);
+            wgbh_change_topics_remove_term($node, $csv_node_info['new_new_topic']);
             break;
           case 'remove_old':
-            wgbh_change_topics_remove_term($node, $csv_node_info['old_topic']);
+            wgbh_change_topics_remove_term($node, $csv_node_info['old_old_topic']);
             break;
           case 'reset':
-            wgbh_change_topics_reset_terms($node, $csv_node_info['old_topic']);
+            wgbh_change_topics_reset_terms($node, $csv_node_info['old_old_topic']);
             break;
           case 'commit':
-            wgbh_change_topics_add_term($node, $csv_node_info['new_vertical']);
-            wgbh_change_topics_remove_term($node, $csv_node_info['old_topic']);
+            wgbh_change_topics_add_term($node, $csv_node_info['new_new_topic']);
+            wgbh_change_topics_remove_term($node, $csv_node_info['old_old_topic']);
             break;
         }
       }
@@ -218,8 +221,9 @@ function wgbh_change_topics_change_form_submit($form, &$form_state) {
         $nid,
         $title,
         join(', ', $topics),
-        $csv_node_info['old_topic'],
-        $csv_node_info['new_vertical'],
+        $csv_node_info['old_old_topic'],
+        $csv_node_info['old_new_topic'],
+        $csv_node_info['new_new_topic'],
       );
       $node_tracker['processible'][] = $nid;
     } else {

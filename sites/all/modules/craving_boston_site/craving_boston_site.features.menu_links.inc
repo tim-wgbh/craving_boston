@@ -347,47 +347,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_drink:topics/drink
-  $menu_links['menu-topics_drink:topics/drink'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'topics/drink',
-    'router_path' => 'topics/%',
-    'link_title' => 'Drink',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-topics_drink:topics/drink',
-    ),
-    'module' => 'menu',
-    'hidden' => 1,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-topics_eat:topics/eat
-  $menu_links['menu-topics_eat:topics/eat'] = array(
-    'menu_name' => 'menu-topics',
-    'link_path' => 'topics/eat',
-    'router_path' => 'topics/%',
-    'link_title' => 'Eat',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-topics_eat:topics/eat',
-    ),
-    'module' => 'menu',
-    'hidden' => 1,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
+    'weight' => -43,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_events:events
@@ -447,7 +407,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -39,
+    'weight' => -37,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_neighborhood-nosh:neighborhoods
@@ -467,7 +427,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -41,
+    'weight' => -39,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_recipes:recipes
@@ -487,7 +447,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => -41,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_reviews:reviews
@@ -507,7 +467,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -42,
+    'weight' => -40,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_table-talk:table-talk
@@ -527,7 +487,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -40,
+    'weight' => -38,
     'customized' => 1,
   );
   // Exported menu link: menu-topics_thats-the-spirit:drink
@@ -547,7 +507,7 @@ function craving_boston_site_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -42,
     'customized' => 1,
   );
   // Exported menu link: wgbh-links-menu_about-wgbh:http://www.wgbh.org/about
@@ -868,8 +828,6 @@ function craving_boston_site_menu_default_menu_links() {
   t('Create New Multi-recipe');
   t('Create New Recipe');
   t('Donate');
-  t('Drink');
-  t('Eat');
   t('Events');
   t('FAQs');
   t('Features');
