@@ -134,15 +134,16 @@ blockquote::before {
 .view-footer {
   text-align: center;
 }
-a.cb-button {
+a.cb-button {    
   display: inline-block;
-  font-weight: bold;
-  color: white;
-  background-color: #b52e18;
-  border: solid 1px #8C1418;
-  border-radius: 3px;
-  margin: 20px;
-  padding: 4px;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+.item-list .pager {
+  margin-top: 20px;
 }
 
 .block.info, .block.signup {
