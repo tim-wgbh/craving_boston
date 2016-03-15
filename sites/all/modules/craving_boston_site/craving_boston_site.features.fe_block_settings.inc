@@ -1678,6 +1678,39 @@ recipes/*',
     'visibility' => 0,
   );
 
+  $export['views-cb_similar_by_terms-block'] = array(
+    'cache' => 4,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'cb_similar_by_terms-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ember' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ember',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-dashboard-block'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -1815,39 +1848,6 @@ recipes/*',
     'css_class' => '',
     'custom' => 0,
     'delta' => 'nodequeue_4-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'ember' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'ember',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['views-related_content-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'related_content-block',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',

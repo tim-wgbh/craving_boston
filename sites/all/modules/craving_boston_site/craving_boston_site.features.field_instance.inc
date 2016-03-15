@@ -548,7 +548,7 @@ function craving_boston_site_field_default_field_instances() {
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'You should select at least 1 topic - you may select up to 3.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -561,7 +561,7 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topic',
     'label' => 'Topic',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1077,12 +1077,12 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'event_time',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1580,11 +1580,7 @@ function craving_boston_site_field_default_field_instances() {
   // Exported field_instance: 'node-multi_recipe-field_topic'
   $field_instances['node-multi_recipe-field_topic'] = array(
     'bundle' => 'multi_recipe',
-    'default_value' => array(
-      0 => array(
-        'tid' => 8,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1604,7 +1600,7 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topic',
     'label' => 'Topic',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2006,13 +2002,9 @@ function craving_boston_site_field_default_field_instances() {
   // Exported field_instance: 'node-recipe-field_topic'
   $field_instances['node-recipe-field_topic'] = array(
     'bundle' => 'recipe',
-    'default_value' => array(
-      0 => array(
-        'tid' => 8,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The topic Recipes is selected for you. You may select up to 2 other topics.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2030,7 +2022,7 @@ function craving_boston_site_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_topic',
     'label' => 'Topic',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2344,7 +2336,6 @@ function craving_boston_site_field_default_field_instances() {
   t('Subhead');
   t('Tags');
   t('Test Field');
-  t('The topic Recipes is selected for you. You may select up to 2 other topics.');
   t('This category is just for fun');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');
@@ -2353,7 +2344,6 @@ function craving_boston_site_field_default_field_instances() {
   t('Upload an image to go with this article.');
   t('Video name');
   t('Video poster');
-  t('You should select at least 1 topic - you may select up to 3.');
   t('Zinger Headline');
 
   return $field_instances;

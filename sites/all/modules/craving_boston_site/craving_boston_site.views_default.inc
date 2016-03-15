@@ -12,7 +12,7 @@ function craving_boston_site_views_default_views() {
 
   $view = new view();
   $view->name = 'about';
-  $view->description = '';
+  $view->description = 'About section plus contributors';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'About';
@@ -174,7 +174,7 @@ function craving_boston_site_views_default_views() {
 
   $view = new view();
   $view->name = 'article_archive';
-  $view->description = '';
+  $view->description = 'Archived list of all articles';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Article Archive';
@@ -265,8 +265,111 @@ function craving_boston_site_views_default_views() {
   $export['article_archive'] = $view;
 
   $view = new view();
+  $view->name = 'cb_similar_by_terms';
+  $view->description = 'Similar By Terms';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'CB Similar By Terms';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'You might also like:';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'related_content',
+    'image_link' => 'content',
+  );
+  /* Sort criterion: Similar By Terms: Similarity */
+  $handler->display->display_options['sorts']['similarterms']['id'] = 'similarterms';
+  $handler->display->display_options['sorts']['similarterms']['table'] = 'node';
+  $handler->display->display_options['sorts']['similarterms']['field'] = 'similarterms';
+  /* Sort criterion: Node: Published at */
+  $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
+  $handler->display->display_options['sorts']['published_at']['field'] = 'published_at';
+  $handler->display->display_options['sorts']['published_at']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['published_at']['granularity'] = 'minute';
+  /* Contextual filter: Similar By Terms: Nid */
+  $handler->display->display_options['arguments']['similar_nid']['id'] = 'similar_nid';
+  $handler->display->display_options['arguments']['similar_nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['similar_nid']['field'] = 'similar_nid';
+  $handler->display->display_options['arguments']['similar_nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['similar_nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['similar_nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['similar_nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['similar_nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['similar_nid']['vocabularies'] = array(
+    1 => '1',
+    4 => 0,
+    2 => 0,
+    3 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['arguments']['similar_nid']['include_args'] = 0;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
+    'recipe' => 'recipe',
+  );
+  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_caching'] = '4';
+  $export['cb_similar_by_terms'] = $view;
+
+  $view = new view();
   $view->name = 'dashboard';
-  $view->description = '';
+  $view->description = 'Administrative post listing';
   $view->tag = 'Dashboard';
   $view->base_table = 'node';
   $view->human_name = 'Dashboard: Posts';
@@ -431,15 +534,6 @@ function craving_boston_site_views_default_views() {
     'image_style' => 'event_image',
     'image_link' => '',
   );
-  /* Field: : field_link */
-  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
-  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
-  $handler->display->display_options['fields']['field_link']['label'] = '';
-  $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   /* Field: Content: Date */
   $handler->display->display_options['fields']['event_calendar_date']['id'] = 'event_calendar_date';
   $handler->display->display_options['fields']['event_calendar_date']['table'] = 'field_data_event_calendar_date';
@@ -447,7 +541,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['event_calendar_date']['label'] = '';
   $handler->display->display_options['fields']['event_calendar_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['event_calendar_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'event_time',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -500,7 +594,7 @@ function craving_boston_site_views_default_views() {
 
   $view = new view();
   $view->name = 'faqs';
-  $view->description = '';
+  $view->description = 'List of FAQs';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'FAQs';
@@ -1078,7 +1172,7 @@ function craving_boston_site_views_default_views() {
 
   $view = new view();
   $view->name = 'the_latest';
-  $view->description = '';
+  $view->description = 'Most recent content for front page';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'The Latest';
@@ -1314,7 +1408,7 @@ function craving_boston_site_views_default_views() {
 
   $view = new view();
   $view->name = 'topic';
-  $view->description = '';
+  $view->description = 'Topic listings corresponding to the main menu';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Topic';
@@ -1504,6 +1598,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Chew on This', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Chew on This';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -1552,6 +1647,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'That\'s the Spirit', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'That\'s the Spirit';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Articles about beverages';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -1695,6 +1791,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Reviews', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Reviews';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -1742,6 +1839,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Recipes', 'page_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recipes';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Recipes';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -1875,6 +1973,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Neighborhood Nosh', 'page_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Neighborhood Nosh';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Stories from Boston\'s neighborhoods';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -1922,6 +2021,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('page', 'Table Talk', 'page_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Table Talk';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Editorials and weekly wrap-ups';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -1946,16 +2046,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
   );
-  /* Filter criterion: Content: Has taxonomy term */
-  $handler->display->display_options['filters']['tid']['id'] = 'tid';
-  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['operator'] = 'and';
-  $handler->display->display_options['filters']['tid']['value'] = array(
-    12 => '12',
-  );
-  $handler->display->display_options['filters']['tid']['type'] = 'select';
-  $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';
   $handler->display->display_options['path'] = 'table-talk';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Table Talk';
