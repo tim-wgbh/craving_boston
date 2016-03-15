@@ -249,7 +249,11 @@ a.cb-button {
 }
 input#edit-search-block-form--2 {
   margin-right: 0;
-  width: 125px;
+  width: 197px;
+}
+#search-block-form #edit-actions input {
+  margin-right: 0;
+  padding-right: 0;
 }
 /* Search results */
 #block-system-main .search-advanced {
