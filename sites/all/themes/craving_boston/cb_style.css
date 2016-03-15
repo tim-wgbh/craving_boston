@@ -275,24 +275,23 @@ input#edit-search-block-form--2 {
 .page-node .field-name-field-subhead, .page-node .subhead {
   margin-top: 10px;
 }
-div#related-content {
+#related-content {
   margin: 20px 0;
-  border-radius: 10px;
   padding: 10px 20px 20px 20px;
   background-color: #ffeedd;
 }
 
-.view-related-content .related-row {
+.view-cb-similar-by-terms .related-row {
   float: left;
   width: 31%;
   margin: 0 1%;
 }
-.page-node #content-wrap .view-related-content .related-row img {
+.page-node #content-wrap .view-cb-similar-by-terms .related-row img {
   display: block;
   width: 100%;
   margin: 0;
 }
-.view-related-content h3 {
+.view-cb-similar-by-terms h3 {
   font-size: 14px;
   margin-top: 12px;
 }
