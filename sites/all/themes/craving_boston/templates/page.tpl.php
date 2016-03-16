@@ -160,7 +160,7 @@
     <div class="container"> 
       <div class="row">
         <?php if($page['sidebar_first'] && !$admin_page) { $primary_col = 8; } else { $primary_col = 12; } ?>
-        <div id="primary" class="content-area col-md-<?php print $primary_col; ?>">
+        <div id="primary" class="content-area col-md-<?php print $primary_col; ?> col-print-offset-1 col-print-10">
           <section id="content" role="main" class="clearfix">
             <?php print $messages; ?>
             <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>

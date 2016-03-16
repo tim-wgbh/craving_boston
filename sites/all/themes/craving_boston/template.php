@@ -122,7 +122,13 @@ function craving_boston_preprocess_node(&$vars) {
       if (!empty($node->field_source)) {
         $vars['byline'] = strip_tags($node->field_source['und'][0]['safe_value']);
       }
-    default:
+      $vars['print_button'] = '<a href="javascript:window.print()"><i class="glyphicon glyphicon-print"></i></a>';
+    case 'multi-recipe':
+      if (!empty($node->field_author)) {
+        $vars['byline'] = $node->field_author['und'][0]['safe_value'];
+      }
+      $vars['print_button'] = '<a href="javascript:window.print()" class="print-button"><i class="glyphicon glyphicon-print"></i></a>';
+    case 'article':
       if (!empty($node->field_author)) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
       }
