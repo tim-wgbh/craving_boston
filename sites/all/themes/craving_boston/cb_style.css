@@ -288,10 +288,22 @@ input#edit-search-block-form--2 {
 .page-node .field-name-field-subhead, .page-node .subhead {
   margin-top: 10px;
 }
-#related-content {
+#related-content,
+#block-views-most-popular-now-block,
+#block-views-most-popular-now-block-1 {
   margin: 20px 0;
   padding: 10px 20px 20px 20px;
   background-color: #ffeedd;
+}
+#related-content h2,
+#sidebar #block-views-most-popular-now-block h2,
+#sidebar #block-views-most-popular-now-block-1 h2 {
+  color: #555;
+}
+.view-most-popular-now .views-field-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 .view-cb-similar-by-terms .related-row {
