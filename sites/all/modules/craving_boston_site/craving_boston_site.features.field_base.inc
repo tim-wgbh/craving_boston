@@ -557,6 +557,63 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_popularity_all_time'
+  $field_bases['field_popularity_all_time'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_popularity_all_time',
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
+  );
+
+  // Exported field_base: 'field_popularity_now'
+  $field_bases['field_popularity_now'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_popularity_now',
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
+  );
+
+  // Exported field_base: 'field_recent_popularity'
+  $field_bases['field_recent_popularity'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_recent_popularity',
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
+  );
+
   // Exported field_base: 'field_recipe'
   $field_bases['field_recipe'] = array(
     'active' => 1,

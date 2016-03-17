@@ -38,6 +38,9 @@ function craving_boston_site_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "qtip" && $api == "qtip_default") {
     return array("version" => "1.0");
   }
+  if ($module == "radioactivity" && $api == "radioactivity_decay_profile") {
+    return array("version" => "1");
+  }
   if ($module == "video_embed_field" && $api == "default_video_embed_styles") {
     return array("version" => "1");
   }
@@ -339,6 +342,25 @@ function craving_boston_site_image_default_styles() {
         'data' => array(
           'width' => 320,
           'height' => 320,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: most_popular.
+  $styles['most_popular'] = array(
+    'label' => 'Most Popular',
+    'effects' => array(
+      18 => array(
+        'name' => 'focal_point_scale_and_crop',
+        'data' => array(
+          'width' => 280,
+          'height' => 158,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
         'weight' => 1,
       ),

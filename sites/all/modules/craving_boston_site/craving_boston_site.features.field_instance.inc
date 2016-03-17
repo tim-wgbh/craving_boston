@@ -469,6 +469,135 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_popularity_all_time'
+  $field_instances['node-article-field_popularity_all_time'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155441,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 17,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_all_time',
+    'label' => 'Popularity all time',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_all_time',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_popularity_now'
+  $field_instances['node-article-field_popularity_now'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155383,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_now',
+    'label' => 'Popularity now',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_now',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 41,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_recent_popularity'
+  $field_instances['node-article-field_recent_popularity'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458237815,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 18,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_recent_popularity',
+    'label' => 'Recent popularity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_recently',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 43,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_subhead'
   $field_instances['node-article-field_subhead'] = array(
     'bundle' => 'article',
@@ -1454,6 +1583,153 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-multi_recipe-field_popularity_all_time'
+  $field_instances['node-multi_recipe-field_popularity_all_time'] = array(
+    'bundle' => 'multi_recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155597,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_all_time',
+    'label' => 'Popularity all time',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_all_time',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-multi_recipe-field_popularity_now'
+  $field_instances['node-multi_recipe-field_popularity_now'] = array(
+    'bundle' => 'multi_recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155558,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_now',
+    'label' => 'Popularity now',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_now',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance: 'node-multi_recipe-field_recent_popularity'
+  $field_instances['node-multi_recipe-field_recent_popularity'] = array(
+    'bundle' => 'multi_recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458237927,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_recent_popularity',
+    'label' => 'Recent popularity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_recently',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 46,
+    ),
+  );
+
   // Exported field_instance: 'node-multi_recipe-field_recipe'
   $field_instances['node-multi_recipe-field_recipe'] = array(
     'bundle' => 'multi_recipe',
@@ -1918,6 +2194,153 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-recipe-field_popularity_all_time'
+  $field_instances['node-recipe-field_popularity_all_time'] = array(
+    'bundle' => 'recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155521,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_all_time',
+    'label' => 'Popularity all time',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_all_time',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-recipe-field_popularity_now'
+  $field_instances['node-recipe-field_popularity_now'] = array(
+    'bundle' => 'recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155497,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_now',
+    'label' => 'Popularity now',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_now',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance: 'node-recipe-field_recent_popularity'
+  $field_instances['node-recipe-field_recent_popularity'] = array(
+    'bundle' => 'recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458237887,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_recent_popularity',
+    'label' => 'Recent popularity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_recently',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 46,
+    ),
+  );
+
   // Exported field_instance: 'node-recipe-field_subhead'
   $field_instances['node-recipe-field_subhead'] = array(
     'bundle' => 'recipe',
@@ -2133,7 +2556,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'above',
         'module' => 'recipe',
         'settings' => array(
-          'fraction_format' => '{%d }%d&frasl;%d',
+          'fraction_format' => '{%d }<sup>%d</sup>/<sub>%d</sub>',
           'unit_abbreviation' => 1,
         ),
         'type' => 'recipe_ingredient_default',
@@ -2328,7 +2751,10 @@ function craving_boston_site_field_default_field_instances() {
   t('Optional. Describe a great dining experience relating to this recipe, or note which wine or other dishes complement this recipe.');
   t('Part of multi-recipe');
   t('Pinterest');
+  t('Popularity all time');
+  t('Popularity now');
   t('Preparation time');
+  t('Recent popularity');
   t('Recipe');
   t('Select the start and end dates for this event.');
   t('Status');

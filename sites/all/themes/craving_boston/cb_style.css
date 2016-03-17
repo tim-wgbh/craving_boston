@@ -212,6 +212,9 @@ a.cb-button {
   text-align: left;
   width: 90%;
 }
+.flex-control-thumbs li {
+  width: 20%;
+}
 .flex-direction-nav .flex-prev {
   left: 12px;
 }
@@ -219,7 +222,7 @@ a.cb-button {
   right: 27px;
 }
 .flex-direction-nav a {
-  top: 54%;
+  top: 30%;
   background-image: url(images/cb-flexslider-nav.png);
 }
 
@@ -300,10 +303,13 @@ input#edit-search-block-form--2 {
 #sidebar #block-views-most-popular-now-block-1 h2 {
   color: #555;
 }
+.view-most-popular-now .views-row {
+  margin-bottom: 20px;
+}
 .view-most-popular-now .views-field-title {
   font-weight: bold;
   font-size: 14px;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .view-cb-similar-by-terms .related-row {

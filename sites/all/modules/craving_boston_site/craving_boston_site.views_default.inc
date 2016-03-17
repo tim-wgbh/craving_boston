@@ -969,6 +969,117 @@ function craving_boston_site_views_default_views() {
   $export['featured'] = $view;
 
   $view = new view();
+  $view->name = 'most_popular_now';
+  $view->description = 'What\'s hot and what\'s popular ';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Most Popular';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'What\'s Hot';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'most_popular',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Subhead */
+  $handler->display->display_options['fields']['field_subhead']['id'] = 'field_subhead';
+  $handler->display->display_options['fields']['field_subhead']['table'] = 'field_data_field_subhead';
+  $handler->display->display_options['fields']['field_subhead']['field'] = 'field_subhead';
+  $handler->display->display_options['fields']['field_subhead']['label'] = '';
+  $handler->display->display_options['fields']['field_subhead']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_subhead']['type'] = 'text_plain';
+  /* Sort criterion: Content: Popularity now (field_popularity_now:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_energy']['id'] = 'field_popularity_now_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_energy']['table'] = 'field_data_field_popularity_now';
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_energy']['field'] = 'field_popularity_now_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_energy']['order'] = 'DESC';
+  /* Sort criterion: Content: Popularity now (field_popularity_now:radioactivity_timestamp) */
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_timestamp']['id'] = 'field_popularity_now_radioactivity_timestamp';
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_timestamp']['table'] = 'field_data_field_popularity_now';
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_timestamp']['field'] = 'field_popularity_now_radioactivity_timestamp';
+  $handler->display->display_options['sorts']['field_popularity_now_radioactivity_timestamp']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'article' => 'article',
+    'multi_recipe' => 'multi_recipe',
+    'recipe' => 'recipe',
+  );
+
+  /* Display: Most Popular Now Block */
+  $handler = $view->new_display('block', 'Most Popular Now Block', 'block');
+
+  /* Display: Recently Popular Block */
+  $handler = $view->new_display('block', 'Recently Popular Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Popular';
+  $handler->display->display_options['display_description'] = 'Popular Recently';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Recent popularity (field_recent_popularity:radioactivity_energy) */
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_energy']['id'] = 'field_recent_popularity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_energy']['table'] = 'field_data_field_recent_popularity';
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_energy']['field'] = 'field_recent_popularity_radioactivity_energy';
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_energy']['order'] = 'DESC';
+  /* Sort criterion: Content: Recent popularity (field_recent_popularity:radioactivity_timestamp) */
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_timestamp']['id'] = 'field_recent_popularity_radioactivity_timestamp';
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_timestamp']['table'] = 'field_data_field_recent_popularity';
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_timestamp']['field'] = 'field_recent_popularity_radioactivity_timestamp';
+  $handler->display->display_options['sorts']['field_recent_popularity_radioactivity_timestamp']['order'] = 'DESC';
+  $export['most_popular_now'] = $view;
+
+  $view = new view();
   $view->name = 'related_content';
   $view->description = '';
   $view->tag = 'default';

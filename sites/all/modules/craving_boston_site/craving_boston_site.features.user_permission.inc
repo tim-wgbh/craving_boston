@@ -467,6 +467,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'qtip',
   );
 
+  // Exported permission: 'administer radioactivity'.
+  $permissions['administer radioactivity'] = array(
+    'name' => 'administer radioactivity',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'radioactivity',
+  );
+
   // Exported permission: 'administer rules'.
   $permissions['administer rules'] = array(
     'name' => 'administer rules',
@@ -1324,6 +1333,16 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit radioactivity'.
+  $permissions['edit radioactivity'] = array(
+    'name' => 'edit radioactivity',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'radioactivity',
   );
 
   // Exported permission: 'edit terms in dfp_ad_categories'.
