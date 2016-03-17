@@ -31,7 +31,7 @@ function craving_boston_site_default_radioactivity_decay_profile() {
   $radioactivity_decay_profile->description = 'What people are looking at now';
   $radioactivity_decay_profile->enable_decay = 1;
   $radioactivity_decay_profile->granularity = '60';
-  $radioactivity_decay_profile->half_life = 17280;
+  $radioactivity_decay_profile->half_life = 2160;
   $radioactivity_decay_profile->cut_off = '10';
   $radioactivity_decay_profile->storage = 'Live';
   $export['most_popular_now'] = $radioactivity_decay_profile;
