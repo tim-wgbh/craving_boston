@@ -1513,6 +1513,39 @@ recipes/*',
     'visibility' => 0,
   );
 
+  $export['twitter_block-1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 1,
+    'module' => 'twitter_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'ember' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ember',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Twitter Food',
+    'visibility' => 0,
+  );
+
   $export['user-login'] = array(
     'cache' => -1,
     'css_class' => '',

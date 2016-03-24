@@ -81,7 +81,12 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Rail Newsletter Signup';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'rail_newsletter_signup';
-  $fe_block_boxes->body = '<p>Sign-up for updates from <em>Craving Boston</em>, and explore New England\'s food, one spoonful at a time!</p><p><iframe align="left" frameborder="0" height="80" marginheight="0" marginwidth="0" scrolling="no" src="http://be.wgbh.org/subscription/cravingboston.htm" width="250"></iframe></p><div class="clearfix">&nbsp;</div>';
+  $fe_block_boxes->body = '<p>Sign-up for updates from <em>Craving Boston</em>, and explore New England&#39;s food, one spoonful at a time!</p>
+
+<p><iframe align="left" frameborder="0" height="90" marginheight="0" marginwidth="0" scrolling="no" src="http://be.wgbh.org/subscription/cravingboston.htm" width="250"></iframe></p>
+
+<div class="clearfix">&nbsp;</div>
+';
 
   $export['rail_newsletter_signup'] = $fe_block_boxes;
 

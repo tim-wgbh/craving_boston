@@ -540,16 +540,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'system',
   );
 
-  // Exported permission: 'administer surveygizmo surveys'.
-  $permissions['administer surveygizmo surveys'] = array(
-    'name' => 'administer surveygizmo surveys',
-    'roles' => array(
-      'editor' => 'editor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'wgbh_surveygizmo',
-  );
-
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
@@ -566,6 +556,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer twitter block'.
+  $permissions['administer twitter block'] = array(
+    'name' => 'administer twitter block',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'twitter_block',
   );
 
   // Exported permission: 'administer url aliases'.

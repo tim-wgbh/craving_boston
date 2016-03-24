@@ -469,6 +469,72 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-field_pmp_guid'
+  $field_instances['node-article-field_pmp_guid'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pmp_guid',
+    'label' => 'PMP guid',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_pmp_source'
+  $field_instances['node-article-field_pmp_source'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pmp_source',
+    'label' => 'PMP story source',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_popularity_all_time'
   $field_instances['node-article-field_popularity_all_time'] = array(
     'bundle' => 'article',
@@ -1352,6 +1418,63 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event_calendar-field_link'
+  $field_instances['node-event_calendar-field_link'] = array(
+    'bundle' => 'event_calendar',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a URL here if there is a place to go to get more information',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_label',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'Get more info >>',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => '_blank',
+        'title' => '[node:field-link:url]',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'rel_remove_internal',
+      'title' => 'value',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => 'More info>>',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-faq-body'
   $field_instances['node-faq-body'] = array(
     'bundle' => 'faq',
@@ -2194,153 +2317,6 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-field_popularity_all_time'
-  $field_instances['node-recipe-field_popularity_all_time'] = array(
-    'bundle' => 'recipe',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 0,
-        'radioactivity_timestamp' => 1458155521,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_popularity_all_time',
-    'label' => 'Popularity all time',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'most_popular_all_time',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 44,
-    ),
-  );
-
-  // Exported field_instance: 'node-recipe-field_popularity_now'
-  $field_instances['node-recipe-field_popularity_now'] = array(
-    'bundle' => 'recipe',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 0,
-        'radioactivity_timestamp' => 1458155497,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 16,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_popularity_now',
-    'label' => 'Popularity now',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'most_popular_now',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 42,
-    ),
-  );
-
-  // Exported field_instance: 'node-recipe-field_recent_popularity'
-  $field_instances['node-recipe-field_recent_popularity'] = array(
-    'bundle' => 'recipe',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 0,
-        'radioactivity_timestamp' => 1458237887,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 18,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_recent_popularity',
-    'label' => 'Recent popularity',
-    'required' => FALSE,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'most_popular_recently',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 46,
-    ),
-  );
-
   // Exported field_instance: 'node-recipe-field_subhead'
   $field_instances['node-recipe-field_subhead'] = array(
     'bundle' => 'recipe',
@@ -2724,12 +2700,14 @@ function craving_boston_site_field_default_field_instances() {
   t('Describe Event status');
   t('Description');
   t('Directions');
+  t('Enter a URL here if there is a place to go to get more information');
   t('Enter a comma-separated list of words to describe your content.');
   t('Event Description');
   t('Facebook');
   t('Favorite dish to eat');
   t('Favorite dish to make');
   t('Flavor Profile');
+  t('Get more info >>');
   t('Hide hero');
   t('How long does this recipe take to cook, in <strong>minutes</strong>?');
   t('How long does this recipe take to prepare, in <strong>minutes</strong>?');
@@ -2749,6 +2727,8 @@ function craving_boston_site_field_default_field_instances() {
   t('Must be a URL to an audio file');
   t('Notes');
   t('Optional. Describe a great dining experience relating to this recipe, or note which wine or other dishes complement this recipe.');
+  t('PMP guid');
+  t('PMP story source');
   t('Part of multi-recipe');
   t('Pinterest');
   t('Popularity all time');

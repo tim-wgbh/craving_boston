@@ -298,9 +298,7 @@ input#edit-search-block-form--2 {
   padding: 10px 20px 20px 20px;
   background-color: #ffeedd;
 }
-#related-content h2,
-#sidebar #block-views-most-popular-now-block h2,
-#sidebar #block-views-most-popular-now-block-1 h2 {
+#sidebar .block > h2 {
   color: #555;
 }
 .view-most-popular-now .views-row {

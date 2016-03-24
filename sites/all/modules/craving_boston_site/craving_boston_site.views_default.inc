@@ -514,6 +514,20 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['event_calendar_date']['id'] = 'event_calendar_date';
+  $handler->display->display_options['fields']['event_calendar_date']['table'] = 'field_data_event_calendar_date';
+  $handler->display->display_options['fields']['event_calendar_date']['field'] = 'event_calendar_date';
+  $handler->display->display_options['fields']['event_calendar_date']['label'] = '';
+  $handler->display->display_options['fields']['event_calendar_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['event_calendar_date']['settings'] = array(
+    'format_type' => 'event_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -534,20 +548,14 @@ function craving_boston_site_views_default_views() {
     'image_style' => 'event_image',
     'image_link' => '',
   );
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['event_calendar_date']['id'] = 'event_calendar_date';
-  $handler->display->display_options['fields']['event_calendar_date']['table'] = 'field_data_event_calendar_date';
-  $handler->display->display_options['fields']['event_calendar_date']['field'] = 'event_calendar_date';
-  $handler->display->display_options['fields']['event_calendar_date']['label'] = '';
-  $handler->display->display_options['fields']['event_calendar_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['event_calendar_date']['settings'] = array(
-    'format_type' => 'event_time',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
+  /* Field: Content: Get more info >> */
+  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
+  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['label'] = '';
+  $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link']['type'] = 'link_label';
   /* Sort criterion: Content: Date -  start date (event_calendar_date) */
   $handler->display->display_options['sorts']['event_calendar_date_value']['id'] = 'event_calendar_date_value';
   $handler->display->display_options['sorts']['event_calendar_date_value']['table'] = 'field_data_event_calendar_date';
