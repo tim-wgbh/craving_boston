@@ -84,7 +84,9 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'access media browser'.
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
-    'roles' => array(),
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'media',
   );
 
@@ -364,7 +366,9 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'administer media browser'.
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',
-    'roles' => array(),
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'media',
   );
 

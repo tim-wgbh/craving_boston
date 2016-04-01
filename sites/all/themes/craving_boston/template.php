@@ -116,13 +116,14 @@ function craving_boston_preprocess_node(&$vars) {
   
   # Get byline
   $vars['byline'] = '';
-
+  $part_of_multi_recipe = false;
   switch ($node->type) {
     case 'recipe':
       if (!empty($node->field_source)) {
         $vars['byline'] = strip_tags($node->field_source['und'][0]['safe_value']);
       }
       $vars['print_button'] = '<a href="javascript:window.print()"><i class="glyphicon glyphicon-print"></i></a>';
+      $part_of_multi_recipe = ($node->field_part_of_multi_recipe['und'][0]['value'] == "1");
     case 'multi-recipe':
       if (!empty($node->field_author)) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
@@ -139,11 +140,10 @@ function craving_boston_preprocess_node(&$vars) {
     hide($vars['content']['field_image']);
   }
   
-  
   // Handle related content
-  if (in_array($node->type, array('article', 'recipe', 'multi-recipe'))) { 
+  if (in_array($node->type, array('article', 'recipe', 'multi-recipe')) && !$part_of_multi_recipe) { 
+    dpm('Getting related view');
     $view = views_get_view('cb_similar_by_terms');
-//    $view = views_get_view('related_content');
     $preview = $view->preview('block');
     if (count($view->result) > 0) {
       $vars['related_content'] = "<h3>" . $view->get_title() . "</h3>\n" . $preview;

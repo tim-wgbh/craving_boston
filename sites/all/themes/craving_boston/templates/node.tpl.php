@@ -98,7 +98,7 @@
           <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
         </div>
         <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-        <?php if ($print_button): ?>
+        <?php if (isset($print_button)): ?>
           <div class="pull-right">
             <?php print $print_button; ?>
           </div>
@@ -129,7 +129,7 @@
       <?php print render($content['links']); ?>
     </footer>
   <?php endif; ?>
-
+    
   <?php if (isset($related_content)): ?>
     <div id="related-content">
       <?php print $related_content; ?>
