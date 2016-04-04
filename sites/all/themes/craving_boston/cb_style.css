@@ -520,13 +520,9 @@ label.audio {
   padding-bottom: 10px;
 }
 .player-wrapper {
-  display: inline-block;
-  position: relative;
-  top: 10px;
-  background-color: #9E1D20;
-  border-radius: 7px;
-  padding: 0 10px 10px 10px;
-} 
+  margin: 20px 0;
+  max-width: 615px;
+}
 .region-header .block {
   margin-bottom: 20px;
 }

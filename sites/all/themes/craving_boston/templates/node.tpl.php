@@ -75,74 +75,75 @@
  */
 ?>
 <?php if ($node->status == "0"): ?>
-<div class="unpublished">
+  <div class="unpublished">
 <?php endif; ?>
 <?php if (!$page): ?>
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 <?php else: ?>
   <div class="<?php print $classes; ?>">
 <?php endif; ?>
-  <?php if (!$page): ?>
-      <header>
-  <?php endif; ?>
-      <?php print render($title_prefix); ?>
-      <?php if (!$page): ?>
-      <h2 class="title<?php $has_video ? ' has-video' : ''; ?>" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <?php endif; ?>
-      <?php if ($page): ?>
-        <span class="publication_date"><?php print $publication_date; ?></span>
-        <div class="pull-right a2a_kit a2a_kit_size_16 a2a_default_style">
-          <a class="a2a_button_facebook"></a>
-          <a class="a2a_button_twitter"></a>
-          <a class="a2a_button_pinterest"></a>
-          <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
-        </div>
-        <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-        <?php if ($print_button): ?>
-          <div class="pull-right">
-            <?php print $print_button; ?>
-          </div>
-        <?php endif; ?>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-  
-    <?php if (!$page): ?>
-      </header>
-  <?php endif; ?>
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // Hide comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-    ?>
-    <?php print render($content); ?>
+<?php if (!$page): ?>
+  <header>
+<?php endif; ?>
+<?php print render($title_prefix); ?>
+<?php if (!$page): ?>
+  <h2 class="title" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title_icon; ?><?php print $title; ?></a></h2>
+<?php endif; ?>
+<?php if ($page): ?>
+  <span class="publication_date"><?php print $publication_date; ?></span>
+  <div class="pull-right a2a_kit a2a_kit_size_16 a2a_default_style">
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share_save"></a>
   </div>
-  
-  <?php if ($display_submitted): ?>
-    <ul class="meta clearfix">
-      <li><?php print $date; ?></li> 
-    </ul>
-  <?php endif; ?>
-
-  <?php if (!empty($content['links'])): ?>
-    <footer>
-      <?php print render($content['links']); ?>
-    </footer>
-  <?php endif; ?>
-
-  <?php if (isset($related_content)): ?>
-    <div id="related-content">
-      <?php print $related_content; ?>
-      <div class="clearfix"></div>
+  <script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+  <?php if (isset($print_button)): ?>
+    <div class="pull-right">
+      <?php print $print_button; ?>
     </div>
   <?php endif; ?>
+<?php endif; ?>
+<?php print render($title_suffix); ?>
   
-  <?php print render($content['comments']); ?>
+<?php if (!$page): ?>
+  </header>
+<?php endif; ?>
+
+<div class="content"<?php print $content_attributes; ?>>
+  <?php
+    // Hide comments and links now so that we can render them later.
+    hide($content['comments']);
+    hide($content['links']);
+  ?>
+  <?php print render($content); ?>
+</div>
+  
+<?php if ($display_submitted): ?>
+  <ul class="meta clearfix">
+    <li><?php print $date; ?></li> 
+  </ul>
+<?php endif; ?>
+
+<?php if (!empty($content['links'])): ?>
+  <footer>
+    <?php print render($content['links']); ?>
+  </footer>
+<?php endif; ?>
+
+<?php if (isset($related_content)): ?>
+  <div id="related-content">
+    <?php print $related_content; ?>
+    <div class="clearfix"></div>
+  </div>
+<?php endif; ?>
+  
+<?php print render($content['comments']); ?>
 <?php if (!$page): ?>
   </article> <!-- /.node -->
 <?php else: ?>
   </div><!-- multiple classes -->
 <?php endif; ?>
 <?php if ($node->status == "0"): ?>
-</div><!-- class="unpublished" -->>
+  </div><!-- class="unpublished" -->>
 <?php endif; ?>

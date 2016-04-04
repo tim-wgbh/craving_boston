@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-9 info">
     <div class="title">
-      <h2><?php print $fields['title']->content; ?></h2>
+      <h2><?php print $title_icon; ?><?php print $fields['title']->content; ?></h2>
     </div>
     <div class="subhead">
       <?php print $fields['field_subhead']->content; ?>
