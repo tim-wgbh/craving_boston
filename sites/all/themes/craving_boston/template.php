@@ -3,6 +3,10 @@
 drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/craving_boston.js');
 drupal_add_js(drupal_get_path('theme', 'craving_boston') . '/redpoint_pwik.js', array('scope' => 'footer'));
 
+define('AUDIO_ICON','<i class="fo fo-audio"></i>');
+define('VIDEO_ICON','<i class="fo fo-video"></i>');
+define('RECIPE_ICON','<i class="fo fo-recipe"></i>');
+
 /**
  * Theming the video field makes it possible to move it around as necessary using
  * the admin interface
@@ -18,17 +22,12 @@ function craving_boston_field__field_video_file($vars) {
   $poster = cloudfront_file($vars['items'][0]['#markup'] . '.jpg');
   
   $output = <<<EOC
-    <script src="http://jwpsrv.com/library/$conf[jwplayer_script]"></script>
-    <div id="jw-player"></div>
-    <script type='text/javascript'>
-      jwplayer('jw-player').setup({
-        file: "$video_file",
-        image: "$poster",
-        width:  640,
-        height: 360,
-        primary: 'flash'
-      });
-    </script>
+    <div class="player-wrapper">
+      <video class="mejs-ted" style="width:100%; height: 100%" width="100%" height="100%" type="video/mp4" poster="$poster">
+        <source src="$video_file" type="video/mp4" >
+        Your browser does not support the video tag.
+      </video>
+    </div>
 EOC;
   return $output;
 }
@@ -41,21 +40,14 @@ function craving_boston_field__field_audio($vars) {
   $output = '';
   if (isset($vars['items'][0]['#markup'])) {
       $audio = $vars['items'][0]['#markup'];
-      $output = "<label class='audio'>Audio:</label>";
       $output .= '<div class="player-wrapper">';
       $output .= <<<EOD
-        <script src="http://jwpsrv.com/library/$conf[jwplayer_script]"></script>
-        <div id="jw-player"></div>
-        <script type='text/javascript'>
-          jwplayer('jw-player').setup({
-            file: "$audio",
-            width:  300,
-            height: 40,
-            primary: 'flash'
-          });
-        </script>
-        </div>
-        <div class="clearfix"></div>
+        <audio controls width="100%">
+          <source src="" type="audio/mp3">
+          Your browser doesn't support the audio tag.
+        </audio>
+      </div>
+      <div class="clearfix"></div>
 EOD;
   }
   return $output;
@@ -102,11 +94,23 @@ function craving_boston_preprocess_page(&$vars) {
   if (preg_match('/(about|faqs|contact)/', current_path())) {
     $vars['page']['sidebar_first'] = null;
   }
+  
+  //Set title icon
+  $vars['title_icon'] = '';
+  if (isset($vars['node'])) {
+    if (strpos($vars['node']->type, 'recipe') !== false) {
+      $vars['title_icon'] = RECIPE_ICON;
+    } else if (isset($vars['node']->field_video_file['und']) || isset($vars['node']->field_internet_video['und'])) {
+      $vars['title_icon'] = VIDEO_ICON;
+    } else if (isset($vars['node']->field_audio['und']) || isset($vars['node']->field_soundcloud['und'])) {
+      $vars['title_icon'] = AUDIO_ICON;
+    }
+  }
 }
     
 function craving_boston_preprocess_node(&$vars) {
 
-  $vars['has_video'] = false; 
+  $vars['title_icon'] = ''; 
   
   $node = $vars['node'];
 
@@ -119,11 +123,13 @@ function craving_boston_preprocess_node(&$vars) {
 
   switch ($node->type) {
     case 'recipe':
+      $vars['title_icon'] = RECIPE_ICON;
       if (!empty($node->field_source)) {
         $vars['byline'] = strip_tags($node->field_source['und'][0]['safe_value']);
       }
       $vars['print_button'] = '<a href="javascript:window.print()"><i class="glyphicon glyphicon-print"></i></a>';
-    case 'multi-recipe':
+    case 'multi_recipe':
+      $vars['title_icon'] = RECIPE_ICON;
       if (!empty($node->field_author)) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
       }
@@ -133,7 +139,7 @@ function craving_boston_preprocess_node(&$vars) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
       }
   }
-
+  
   // If the hide hero checkbox is set, hide the hero image for full-page displays
   if ($vars['page'] && isset($node->field_hide_hero['und']) && $node->field_hide_hero['und'][0]['value'] == '1') {
     hide($vars['content']['field_image']);
@@ -154,20 +160,26 @@ function craving_boston_preprocess_node(&$vars) {
   if ($node->type != 'article') return;
   
       
-  // If this is a PMP article, add that to the classes
+  // If there is audio, set the audio variable
+  if (isset($node->field_audio['und'])) {
+    $vars['audio'] =  $node->field_audio['und'][0]['value'];
+    $vars['title_icon'] = AUDIO_ICON;
+    hide($vars['content']['field_soundcloud']);
+  } else if (isset($node->field_soundcloud['und'])) {
+    $vars['audio'] =  $node->field_soundcloud['und'][0]['content'];
+    $vars['title_icon'] = AUDIO_ICON;
+    hide($vars['content']['field_audio']);
+  } else {
+    hide($vars['content']['field_audio']);
+    hide($vars['content']['field_soundcloud']);
+  }
+
   if (isset($node->field_pmp_guid['und'])) {
     hide($vars['content']['field_pmp_guid']);
     $vars['classes_array'][] = 'pmp-article';
   }
-    
-  // If there is audio, set the audio variable
-  if (isset($node->field_audio['und'])) {
-    $vars['audio'] =  $node->field_audio['und'][0]['value'];
-  } else {
-    hide($vars['content']['field_audio']);
-  }
-  
-  // If there is audio, set the audio variable
+      
+  // If there is a story source, set it
   if (isset($node->field_story_source['und'])) {
     $vars['story_source'] =  $node->field_story_source['und'][0]['value'];
   } else {
@@ -182,7 +194,7 @@ function craving_boston_preprocess_node(&$vars) {
   $vars['video'] = '';
   $vars['poster'] = '';
   if (!empty($node->field_internet_video) || !empty($node->field_video_file)) {
-    $vars['has_video'] = true;
+    $vars['title_icon'] = VIDEO_ICON;
         
     $key = array_search('node-article', $vars['classes_array']);
     $vars['classes_array'][$key] = 'node-video';
@@ -223,7 +235,7 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 
   # Handle video
   $vars['display'] = true;
-  $vars['has_video'] = false;
+  $vars['title_icon'] = '';
   if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
     if (!empty($fields['field_carousel']->content)) {
       $vars['image'] = render($vars['row']->field_field_carousel[0]['rendered']);
@@ -232,7 +244,7 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
     }
     if (!empty($fields['field_video_file']->content) && !empty($fields['field_internet_video']->content)) {
       $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
-       $vars['has_video'] = true;
+       $vars['title_icon'] = VIDEO_ICON;
     }
     if ($fields['type']->raw == 'recipe') {
       if (!empty($fields['field_part_of_multi_recipe']) && $fields['field_part_of_multi_recipe']->content == 'yes') {
@@ -259,7 +271,6 @@ function _subhead_deck($fields) {
     return false;
   }
 }
-
 
 /**
 * hook_form_FORM_ID_alter
