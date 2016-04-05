@@ -175,7 +175,7 @@ function craving_boston_site_views_default_views() {
   $view = new view();
   $view->name = 'article_archive';
   $view->description = 'Archived list of all articles';
-  $view->tag = 'default';
+  $view->tag = 'Article Content';
   $view->base_table = 'node';
   $view->human_name = 'Article Archive';
   $view->core = 7;
@@ -237,6 +237,36 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['published_at']['label'] = 'Date';
   $handler->display->display_options['fields']['published_at']['date_format'] = 'short';
   $handler->display->display_options['fields']['published_at']['second_date_format'] = 'long';
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Internet Video */
+  $handler->display->display_options['fields']['field_internet_video']['id'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['table'] = 'field_data_field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['field'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_internet_video']['type'] = 'video_embed_field_url';
+  $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: Video name */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -267,7 +297,7 @@ function craving_boston_site_views_default_views() {
   $view = new view();
   $view->name = 'cb_similar_by_terms';
   $view->description = 'Similar By Terms';
-  $view->tag = 'default';
+  $view->tag = 'Article Content';
   $view->base_table = 'node';
   $view->human_name = 'CB Similar By Terms';
   $view->core = 7;
@@ -310,6 +340,36 @@ function craving_boston_site_views_default_views() {
     'image_style' => 'related_content',
     'image_link' => 'content',
   );
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Internet Video */
+  $handler->display->display_options['fields']['field_internet_video']['id'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['table'] = 'field_data_field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['field'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_internet_video']['type'] = 'video_embed_field_url';
+  $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: Video name */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   /* Sort criterion: Similar By Terms: Similarity */
   $handler->display->display_options['sorts']['similarterms']['id'] = 'similarterms';
   $handler->display->display_options['sorts']['similarterms']['table'] = 'node';
@@ -686,7 +746,7 @@ function craving_boston_site_views_default_views() {
   $view = new view();
   $view->name = 'featured';
   $view->description = 'Featured content for the front page image block';
-  $view->tag = 'default';
+  $view->tag = 'Article Content';
   $view->base_table = 'node';
   $view->human_name = 'Featured';
   $view->core = 7;
@@ -777,6 +837,44 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['type'] = 'text_plain';
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['label'] = '';
+  $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Internet Video */
+  $handler->display->display_options['fields']['field_internet_video']['id'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['table'] = 'field_data_field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['field'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['label'] = '';
+  $handler->display->display_options['fields']['field_internet_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_internet_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_internet_video']['type'] = 'video_embed_field_url';
+  $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['label'] = '';
+  $handler->display->display_options['fields']['field_soundcloud']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: Video name */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['label'] = '';
+  $handler->display->display_options['fields']['field_video_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
@@ -879,6 +977,38 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['type'] = 'text_plain';
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['label'] = '';
+  $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Internet Video */
+  $handler->display->display_options['fields']['field_internet_video']['id'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['table'] = 'field_data_field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['field'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_internet_video']['type'] = 'video_embed_field_url';
+  $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: Video name */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -979,7 +1109,7 @@ function craving_boston_site_views_default_views() {
   $view = new view();
   $view->name = 'most_popular_now';
   $view->description = 'What\'s hot and what\'s popular ';
-  $view->tag = 'default';
+  $view->tag = 'Article Content';
   $view->base_table = 'node';
   $view->human_name = 'Most Popular';
   $view->core = 7;
@@ -1026,6 +1156,34 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_subhead']['label'] = '';
   $handler->display->display_options['fields']['field_subhead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subhead']['type'] = 'text_plain';
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Internet Video */
+  $handler->display->display_options['fields']['field_internet_video']['id'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['table'] = 'field_data_field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['field'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_internet_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: Video name */
+  $handler->display->display_options['fields']['field_video_file']['id'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['table'] = 'field_data_field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['field'] = 'field_video_file';
+  $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
   /* Sort criterion: Content: Popularity now (field_popularity_now:radioactivity_energy) */
   $handler->display->display_options['sorts']['field_popularity_now_radioactivity_energy']['id'] = 'field_popularity_now_radioactivity_energy';
   $handler->display->display_options['sorts']['field_popularity_now_radioactivity_energy']['table'] = 'field_data_field_popularity_now';
@@ -1292,7 +1450,7 @@ function craving_boston_site_views_default_views() {
   $view = new view();
   $view->name = 'the_latest';
   $view->description = 'Most recent content for front page';
-  $view->tag = 'default';
+  $view->tag = 'Article Content';
   $view->base_table = 'node';
   $view->human_name = 'The Latest';
   $view->core = 7;
@@ -1431,6 +1589,27 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_subhead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subhead']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_subhead']['type'] = 'text_plain';
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['label'] = '';
+  $handler->display->display_options['fields']['field_soundcloud']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: Internet Video */
+  $handler->display->display_options['fields']['field_internet_video']['id'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['table'] = 'field_data_field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['field'] = 'field_internet_video';
+  $handler->display->display_options['fields']['field_internet_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_internet_video']['type'] = 'video_embed_field_url';
+  $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
@@ -1655,6 +1834,20 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['id'] = 'field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['table'] = 'field_data_field_part_of_multi_recipe';
   $handler->display->display_options['fields']['field_part_of_multi_recipe']['field'] = 'field_part_of_multi_recipe';
+  /* Field: Content: Audio */
+  $handler->display->display_options['fields']['field_audio']['id'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['table'] = 'field_data_field_audio';
+  $handler->display->display_options['fields']['field_audio']['field'] = 'field_audio';
+  $handler->display->display_options['fields']['field_audio']['label'] = '';
+  $handler->display->display_options['fields']['field_audio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_audio']['type'] = 'text_plain';
+  /* Field: Content: Soundcloud */
+  $handler->display->display_options['fields']['field_soundcloud']['id'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['table'] = 'field_data_field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['field'] = 'field_soundcloud';
+  $handler->display->display_options['fields']['field_soundcloud']['label'] = '';
+  $handler->display->display_options['fields']['field_soundcloud']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
   /* Sort criterion: Node: Published at */
   $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
@@ -1707,7 +1900,9 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    6 => '6',
+    814 => '814',
+    816 => '816',
+    815 => '815',
   );
   $handler->display->display_options['filters']['tid']['type'] = 'select';
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'sections';

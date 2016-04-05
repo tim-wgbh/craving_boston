@@ -645,6 +645,21 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
+  // Exported field_base: 'field_soundcloud'
+  $field_bases['field_soundcloud'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_soundcloud',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'soundcloudfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'soundcloud',
+  );
+
   // Exported field_base: 'field_subhead'
   $field_bases['field_subhead'] = array(
     'active' => 1,
