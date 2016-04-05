@@ -217,9 +217,13 @@ function craving_boston_preprocess_node(&$vars) {
 
 function craving_boston_preprocess_views_view_fields(&$vars) {
 
+  $content_views = ['featured', 'topic', 'the_latest', 'article_archive', 'cb_similar_by_terms', 'most_popular_now'];
+
   # Get byline
   $fields = $vars['fields'];
   
+  if (!isset($fields['type'])) return;
+    
   $vars['byline'] = '';
   
   if (array_key_exists('field_author', $fields)) {
@@ -235,33 +239,42 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 
   # Handle video
   $vars['display'] = true;
-  $vars['title_icon'] = '';
-  if (in_array($vars['view']->name, ['topic', 'the_latest'])) {
+  $title_icon = '';
+
+  if (in_array($vars['view']->name, $content_views)) {
     if (!empty($fields['field_carousel']->content)) {
       $vars['image'] = render($vars['row']->field_field_carousel[0]['rendered']);
     } else {
       $vars['image'] = $fields['field_image']->content;
     }
-    if (!empty($fields['field_video_file']->content) && !empty($fields['field_internet_video']->content)) {
-      $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
-       $vars['title_icon'] = VIDEO_ICON;
+    if (!empty($fields['field_video_file']->content) || !empty($fields['field_internet_video']->content)) {
+      $vars['image'] = $fields['field_image']->content;
+//       $vars['image'] = '<img typeof="foaf:Image" src="' . s3_file($fields['field_video_poster']->content) . '" />' ;
+       $title_icon = VIDEO_ICON;
     }
+    
+    $vars['is_recipe'] = false;
     if ($fields['type']->raw == 'recipe') {
+       $title_icon = RECIPE_ICON;
       if (!empty($fields['field_part_of_multi_recipe']) && $fields['field_part_of_multi_recipe']->content == 'yes') {
         $vars['display'] = false;
       }
       $vars['is_recipe'] = true;
     } else if ($fields['type']->raw == 'multi_recipe') {
+      $title_icon = RECIPE_ICON;
       $vars['is_recipe'] = true;
-    } else {
-      $vars['is_recipe'] = false;
     }
-    
+    if (!empty($fields['field_audio']->content) || !empty($fields['field_soundcloud']->content)) {
+      $title_icon = AUDIO_ICON;
+    }
+      
     // Set the deck to the subhead
     $vars['deck'] = _subhead_deck($fields);
   } else if ($vars['view']->name == 'featured') {
     $vars['image'] = $fields['field_image']->content;
   }
+  
+  $vars['headline'] = $title_icon . $vars['headline'];
 }
 
 function _subhead_deck($fields) {

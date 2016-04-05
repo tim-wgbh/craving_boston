@@ -1,4 +1,4 @@
-<h2 class="title"><?php print $title_icon; ?><?php print $headline; ?></h2>
+<h2 class="title"><?php print $headline; ?></h2>
 <div class="info">
   <div class="deck">
     <?php print $deck; ?>

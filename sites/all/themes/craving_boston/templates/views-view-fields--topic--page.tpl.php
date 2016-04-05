@@ -1,5 +1,5 @@
 <?php if ($display): ?>
-  <h2><?php print $title_icon; ?><?php print $headline; ?></h2>
+  <h2><?php print $headline; ?></h2>
   <div class="info">
     <?php if ($deck): ?>
       <div class="deck"><?php print $deck; ?></div>
