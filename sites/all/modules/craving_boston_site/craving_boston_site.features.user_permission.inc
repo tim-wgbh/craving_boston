@@ -36,6 +36,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -47,6 +48,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -706,6 +708,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'create event_calendar content',
     'roles' => array(
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -930,6 +933,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete own event_calendar content',
     'roles' => array(
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1274,6 +1278,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit own event_calendar content',
     'roles' => array(
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1776,6 +1781,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1794,6 +1800,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
