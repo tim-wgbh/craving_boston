@@ -9,7 +9,15 @@
       </div>
       <?php print $fields['body']->content; ?>
       <?php if (isset($fields['field_link'])): ?>
-        <?php print $fields['field_link']->content; ?>
+        <a href="<?php print $fields['field_link']->content; ?>" rel="nofollow" target="_blank" title="More about <?php print $fields['title']->content; ?>">Get more info >></a>
+        <div class="share-wrapper">
+          <span class="share fb">
+            <div class="fb-share-button" data-href="<?php print $fields['field_link']->content; ?>" data-layout="button"></div>      
+          </span>
+          <span class="share twitter">    
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20event%3A%20&url=<?php print urlencode($fields['field_link']->content); ?>&via=CravingBoston">Tweet</a>
+          </span>
+        </div>
       <?php endif; ?>
     </div>
     <div class="col-md-5 col-xs-12">
@@ -22,7 +30,15 @@
       </div>
       <?php print $fields['body']->content; ?>
       <?php if (isset($fields['field_link'])): ?>
-        <?php print $fields['field_link']->content; ?>
+        <a href="<?php print $fields['field_link']->content; ?>" rel="nofollow" target="_blank" title="More about <?php print $fields['title']->content; ?>">Get more info >></a>
+        <div class="share-wrapper">
+          <span class="share fb">
+            <div class="fb-share-button" data-href="<?php print $fields['field_link']->content; ?>" data-layout="button"></div>      
+          </span>
+          <span class="share twitter">    
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20event%3A%20&url=<?php print urlencode($fields['field_link']->content); ?>&via=CravingBoston">Tweet</a>
+          </span>
+        </div>
       <?php endif; ?>
     </div>
   <?php endif; ?>

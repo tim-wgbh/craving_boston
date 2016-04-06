@@ -246,6 +246,14 @@ a.cb-button {
   padding-bottom: 20px;
   border-bottom: solid 1px #ccc;
 }
+.event .share-wrapper {
+  margin: 5px 0;
+}
+.event .share-wrapper .share {
+  display: table-cell;
+  padding-right: 4px;
+  vertical-align: top;
+}
 
 /* Search block */
 .row.mainmenu {
@@ -688,7 +696,9 @@ label.audio {
   speak: none;
   
   display: inline-block;
-  width: 1em;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.2em;
   margin-left: 0.2em;
   margin-right: 0.2em;
   text-align: center;
@@ -699,6 +709,10 @@ label.audio {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #9fcea8;
+  color: white;
+  background-image: url(images/green-circle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .fo.fo-audio:before {
   content: '\e801';
