@@ -76,11 +76,16 @@ blockquote::before {
 .bio .bio-text p {
   font-size: 15px;
 }
+/* 
 .block-dfp iframe {
   width: 100%;
 }
 .block-dfp iframe img {
   width: 100%;
+}
+ */
+.dfp-tag-wrapper {
+  text-align: center;
 }
 #cb-bottom-links {
   background-color: #9E1D21;
@@ -656,27 +661,6 @@ label.audio {
 .wgbh-related-links ul > li > a {
   color: #b52e18;
 }
-@media (max-width: 770px) {
-  #main-menu {
-    display: block;
-  }
-  #site-slogan {
-    text-align: left;
-    margin-top: 10px;
-  }
-/* 
-  .view-featured .article-title, 
-    font-size: 18px;
-  }
-  .attachment .view-content .info .article-title {
-    font-size: 14px;
-  }
-  #site-slogan {
-    text-align: left;
-    margin-top: 10px;
-  }
- */
-}
 
 /* Fontello icons */
 @font-face {
@@ -731,6 +715,30 @@ label.audio {
 
 /* Bootstrap defaults to mobile-first, but we designed for desktop first so we'll flip max and min width*/
 /* Anything smaller than tablet */
+@media screen and ( max-width: 760px) {
+  .view-featured .article .featured-info {
+    position: static;
+    background: none;
+  }
+  .view-content .article-title, 
+  .view-content .article h2.title,
+  .attachment .view-content .featured-info .article-title,
+  .article h2 {
+    font-size: 20px;
+  }
+  .article .info {
+    display: none;
+  }
+  #main-menu {
+    display: block;
+  }
+  #site-slogan {
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+  
+}
 @media screen and (max-width: 480px) {
   .page-node .block.info {
     display: none;
@@ -794,10 +802,11 @@ label.audio {
   .view-featured .article .info, 
   .attachment .view-content .info .article-title,
   .view-the-latest .article, 
+  .article h2,
+  .view-content .article h2.title,
   .view-the-latest .article .info {
     font-size: 20px;
   }
-  .view-content .article-title, 
   .view-content .article h2.title, 
   .page-node h1.page-title {
     font-size: 20px;

@@ -34,15 +34,15 @@ function craving_boston_site_default_dfp_tag() {
     'targeting' => array(),
     'breakpoints' => array(
       0 => array(
-        'browser_size' => '970x300',
+        'browser_size' => '980x600',
         'ad_sizes' => '970x90',
       ),
       1 => array(
-        'browser_size' => '728x300',
+        'browser_size' => '730x500',
         'ad_sizes' => '728x90',
       ),
       2 => array(
-        'browser_size' => '320x300',
+        'browser_size' => '0x0',
         'ad_sizes' => '320x50',
       ),
     ),

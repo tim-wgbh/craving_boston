@@ -16,6 +16,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'system',
@@ -36,7 +37,6 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -69,6 +69,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'dashboard',
@@ -98,6 +99,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'navbar',
@@ -306,6 +308,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -677,6 +680,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'user',
@@ -707,6 +711,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['create event_calendar content'] = array(
     'name' => 'create event_calendar content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -730,6 +735,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -932,6 +938,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete own event_calendar content'] = array(
     'name' => 'delete own event_calendar content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -1002,6 +1009,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1277,6 +1285,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['edit own event_calendar content'] = array(
     'name' => 'edit own event_calendar content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -1535,6 +1544,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1546,6 +1556,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'scheduler',
@@ -1724,6 +1735,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'filter',
@@ -1748,6 +1760,7 @@ function craving_boston_site_user_default_permissions() {
       'authenticated user' => 'authenticated user',
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -1759,6 +1772,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -1770,6 +1784,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -1812,6 +1827,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'scheduler',
@@ -1823,6 +1839,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'contributor' => 'contributor',
       'editor' => 'editor',
+      'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
     ),
     'module' => 'system',
