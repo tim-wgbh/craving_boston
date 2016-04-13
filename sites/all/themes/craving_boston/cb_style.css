@@ -532,6 +532,29 @@ label.audio {
   display: table-cell;
   padding-bottom: 10px;
 }
+/* Taxonomy page styling */
+.page-taxonomy-term .title-prefix {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.page-taxonomy-term h1.page-title {
+  font-size: 18px;
+}
+.page-taxonomy-term h1.page-title .tag-heading {
+  background: #ed564b;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  color: #fff;
+  padding: 2px 6px;'
+}
+.page-taxonomy-term h2.title a {
+  font-size: 20px;
+}
+.page-taxonomy-term p {
+  font-size: 16px;
+}
 .player-wrapper {
   margin: 20px 0;
   max-width: 615px;

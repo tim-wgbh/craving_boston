@@ -90,6 +90,13 @@ function craving_boston_preprocess_page(&$vars) {
     $vars['admin_page'] = false;
   }
   
+  if  (preg_match('/^taxonomy/', current_path())) {
+    $vars['title_prefix'] = "<div class='title-prefix'>Tag:</div>\n";
+    $vars['tag_page'] = true;
+  } else {
+    $vars['tag_page'] = false;
+  }
+  
   // No sidebar for about page, faqs, contact
   if (preg_match('/(about|faqs|contact)/', current_path())) {
     $vars['page']['sidebar_first'] = null;

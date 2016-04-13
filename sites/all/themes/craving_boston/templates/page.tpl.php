@@ -174,7 +174,11 @@
             <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
             <div id="content-wrap">
               <?php print render($title_prefix); ?>
-              <?php if ($title): ?><h1 class="page-title"><?php print $title_icon; ?><?php print $title; ?></h1><?php endif; ?>
+              <?php if ($tag_page) { ?>
+                <h1 class="page-title"><span class="tag-heading"><?php print $title; ?></span></h1>
+              <?php } else if ($title) { ?>
+                <h1 class="page-title"><?php print $title_icon; ?><?php print $title; ?></h1>
+              <?php } ?>
               <?php print render($title_suffix); ?>
               <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
               <?php print render($page['help']); ?>
