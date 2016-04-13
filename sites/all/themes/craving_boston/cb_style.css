@@ -549,7 +549,7 @@ label.audio {
   color: #fff;
   padding: 2px 6px;
 }
-.page-taxonomy-term h2.title a.
+.page-taxonomy-term h2.title a,
 .page-taxonomy-term .node h2.title a, 
 .page-taxonomy-term .node h2.title a:visited  {
   font-size: 20px;

@@ -521,6 +521,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'search',
   );
 
+  // Exported permission: 'administer shortcut per role'.
+  $permissions['administer shortcut per role'] = array(
+    'name' => 'administer shortcut per role',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'shortcutperrole',
+  );
+
   // Exported permission: 'administer shortcuts'.
   $permissions['administer shortcuts'] = array(
     'name' => 'administer shortcuts',
