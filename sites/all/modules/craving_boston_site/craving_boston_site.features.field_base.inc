@@ -10,7 +10,7 @@
 function craving_boston_site_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'event_calendar_date'
+  // Exported field_base: 'event_calendar_date'.
   $field_bases['event_calendar_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -62,7 +62,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'event_calendar_status'
+  // Exported field_base: 'event_calendar_status'.
   $field_bases['event_calendar_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -89,7 +89,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_audio'
+  // Exported field_base: 'field_audio'.
   $field_bases['field_audio'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -110,7 +110,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_author'
+  // Exported field_base: 'field_author'.
   $field_bases['field_author'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -131,7 +131,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_carousel'
+  // Exported field_base: 'field_carousel'.
   $field_bases['field_carousel'] = array(
     'active' => 1,
     'cardinality' => 10,
@@ -153,7 +153,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_dfp_ad_categories'
+  // Exported field_base: 'field_dfp_ad_categories'.
   $field_bases['field_dfp_ad_categories'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -179,7 +179,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_facebook'
+  // Exported field_base: 'field_facebook'.
   $field_bases['field_facebook'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -200,7 +200,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_favorite_dish_to_eat'
+  // Exported field_base: 'field_favorite_dish_to_eat'.
   $field_bases['field_favorite_dish_to_eat'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -221,7 +221,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_favorite_dish_to_make'
+  // Exported field_base: 'field_favorite_dish_to_make'.
   $field_bases['field_favorite_dish_to_make'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -242,7 +242,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_file_image_alt_text'
+  // Exported field_base: 'field_file_image_alt_text'.
   $field_bases['field_file_image_alt_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -263,7 +263,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_file_image_title_text'
+  // Exported field_base: 'field_file_image_title_text'.
   $field_bases['field_file_image_title_text'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -284,7 +284,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_flavor_profile'
+  // Exported field_base: 'field_flavor_profile'.
   $field_bases['field_flavor_profile'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -310,7 +310,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_headline'
+  // Exported field_base: 'field_headline'.
   $field_bases['field_headline'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -331,7 +331,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_hide_hero'
+  // Exported field_base: 'field_hide_hero'.
   $field_bases['field_hide_hero'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -356,7 +356,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -383,7 +383,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_instagram'
+  // Exported field_base: 'field_instagram'.
   $field_bases['field_instagram'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -404,7 +404,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_internet_video'
+  // Exported field_base: 'field_internet_video'.
   $field_bases['field_internet_video'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -419,7 +419,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'video_embed_field',
   );
 
-  // Exported field_base: 'field_least_favorite_food'
+  // Exported field_base: 'field_least_favorite_food'.
   $field_bases['field_least_favorite_food'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -440,7 +440,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_link'
+  // Exported field_base: 'field_link'.
   $field_bases['field_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -469,7 +469,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_part_of_multi_recipe'
+  // Exported field_base: 'field_part_of_multi_recipe'.
   $field_bases['field_part_of_multi_recipe'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -494,7 +494,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_pinterest'
+  // Exported field_base: 'field_pinterest'.
   $field_bases['field_pinterest'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -515,7 +515,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pmp_guid'
+  // Exported field_base: 'field_pmp_guid'.
   $field_bases['field_pmp_guid'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -536,7 +536,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pmp_source'
+  // Exported field_base: 'field_pmp_source'.
   $field_bases['field_pmp_source'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -557,7 +557,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_popularity_all_time'
+  // Exported field_base: 'field_popularity_all_time'.
   $field_bases['field_popularity_all_time'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -576,7 +576,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'radioactivity',
   );
 
-  // Exported field_base: 'field_popularity_now'
+  // Exported field_base: 'field_popularity_now'.
   $field_bases['field_popularity_now'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -595,7 +595,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'radioactivity',
   );
 
-  // Exported field_base: 'field_recent_popularity'
+  // Exported field_base: 'field_recent_popularity'.
   $field_bases['field_recent_popularity'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -614,7 +614,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'radioactivity',
   );
 
-  // Exported field_base: 'field_recipe'
+  // Exported field_base: 'field_recipe'.
   $field_bases['field_recipe'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -645,7 +645,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_soundcloud'
+  // Exported field_base: 'field_soundcloud'.
   $field_bases['field_soundcloud'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -660,7 +660,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'soundcloud',
   );
 
-  // Exported field_base: 'field_subhead'
+  // Exported field_base: 'field_subhead'.
   $field_bases['field_subhead'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -679,7 +679,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_tags'
+  // Exported field_base: 'field_tags'.
   $field_bases['field_tags'] = array(
     'active' => 1,
     'cardinality' => 10,
@@ -705,7 +705,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_test_field'
+  // Exported field_base: 'field_test_field'.
   $field_bases['field_test_field'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -726,7 +726,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_topic'
+  // Exported field_base: 'field_topic'.
   $field_bases['field_topic'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -752,7 +752,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_twitter'
+  // Exported field_base: 'field_twitter'.
   $field_bases['field_twitter'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -773,7 +773,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_video_file'
+  // Exported field_base: 'field_video_file'.
   $field_bases['field_video_file'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -794,7 +794,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_video_poster'
+  // Exported field_base: 'field_video_poster'.
   $field_bases['field_video_poster'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -815,7 +815,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'recipe_cook_time'
+  // Exported field_base: 'recipe_cook_time'.
   $field_bases['recipe_cook_time'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -830,7 +830,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'recipe_description'
+  // Exported field_base: 'recipe_description'.
   $field_bases['recipe_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -849,7 +849,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'recipe_ingredient'
+  // Exported field_base: 'recipe_ingredient'.
   $field_bases['recipe_ingredient'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -870,7 +870,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'ingredient_reference',
   );
 
-  // Exported field_base: 'recipe_instructions'
+  // Exported field_base: 'recipe_instructions'.
   $field_bases['recipe_instructions'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -889,7 +889,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'recipe_notes'
+  // Exported field_base: 'recipe_notes'.
   $field_bases['recipe_notes'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -908,7 +908,7 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'recipe_prep_time'
+  // Exported field_base: 'recipe_prep_time'.
   $field_bases['recipe_prep_time'] = array(
     'active' => 1,
     'cardinality' => 1,

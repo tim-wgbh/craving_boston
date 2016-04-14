@@ -1559,18 +1559,6 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'schedule (un)publishing of nodes'.
-  $permissions['schedule (un)publishing of nodes'] = array(
-    'name' => 'schedule (un)publishing of nodes',
-    'roles' => array(
-      'contributor' => 'contributor',
-      'editor' => 'editor',
-      'event contributor' => 'event contributor',
-      'site administrator' => 'site administrator',
-    ),
-    'module' => 'scheduler',
-  );
-
   // Exported permission: 'search content'.
   $permissions['search content'] = array(
     'name' => 'search content',

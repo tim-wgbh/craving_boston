@@ -65,6 +65,5 @@ function craving_boston_site_menu_default_menu_custom() {
   t('WGBH Related Links');
   t('WGBH Support Links');
 
-
   return $menus;
 }

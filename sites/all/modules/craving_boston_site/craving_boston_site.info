@@ -559,7 +559,6 @@ features[user_permission][] = opt-in or out of tracking
 features[user_permission][] = preview focal point
 features[user_permission][] = rename features
 features[user_permission][] = revert revisions
-features[user_permission][] = schedule (un)publishing of nodes
 features[user_permission][] = search content
 features[user_permission][] = select account cancellation method
 features[user_permission][] = set any published on date

@@ -10,7 +10,7 @@
 function craving_boston_site_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'file-image-field_file_image_alt_text'
+  // Exported field_instance: 'file-image-field_file_image_alt_text'.
   $field_instances['file-image-field_file_image_alt_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -73,7 +73,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_title_text'
+  // Exported field_instance: 'file-image-field_file_image_title_text'.
   $field_instances['file-image-field_file_image_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -136,7 +136,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-body'
+  // Exported field_instance: 'node-article-body'.
   $field_instances['node-article-body'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -182,7 +182,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-article-field_audio'
+  // Exported field_instance: 'node-article-field_audio'.
   $field_instances['node-article-field_audio'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -222,7 +222,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_author'
+  // Exported field_instance: 'node-article-field_author'.
   $field_instances['node-article-field_author'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -263,7 +263,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-article-field_carousel'
+  // Exported field_instance: 'node-article-field_carousel'.
   $field_instances['node-article-field_carousel'] = array(
     'bundle' => 'article',
     'deleted' => 0,
@@ -314,7 +314,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_headline'
+  // Exported field_instance: 'node-article-field_headline'.
   $field_instances['node-article-field_headline'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -353,7 +353,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_hide_hero'
+  // Exported field_instance: 'node-article-field_hide_hero'.
   $field_instances['node-article-field_hide_hero'] = array(
     'bundle' => 'article',
     'default_value' => array(
@@ -395,7 +395,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_image'
+  // Exported field_instance: 'node-article-field_image'.
   $field_instances['node-article-field_image'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -462,7 +462,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-article-field_internet_video'
+  // Exported field_instance: 'node-article-field_internet_video'.
   $field_instances['node-article-field_internet_video'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -504,7 +504,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_pmp_guid'
+  // Exported field_instance: 'node-article-field_pmp_guid'.
   $field_instances['node-article-field_pmp_guid'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -543,7 +543,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_pmp_source'
+  // Exported field_instance: 'node-article-field_pmp_source'.
   $field_instances['node-article-field_pmp_source'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -582,7 +582,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_popularity_all_time'
+  // Exported field_instance: 'node-article-field_popularity_all_time'.
   $field_instances['node-article-field_popularity_all_time'] = array(
     'bundle' => 'article',
     'default_value' => array(
@@ -631,7 +631,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_popularity_now'
+  // Exported field_instance: 'node-article-field_popularity_now'.
   $field_instances['node-article-field_popularity_now'] = array(
     'bundle' => 'article',
     'default_value' => array(
@@ -680,7 +680,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_recent_popularity'
+  // Exported field_instance: 'node-article-field_recent_popularity'.
   $field_instances['node-article-field_recent_popularity'] = array(
     'bundle' => 'article',
     'default_value' => array(
@@ -729,7 +729,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_soundcloud'
+  // Exported field_instance: 'node-article-field_soundcloud'.
   $field_instances['node-article-field_soundcloud'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -798,7 +798,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_subhead'
+  // Exported field_instance: 'node-article-field_subhead'.
   $field_instances['node-article-field_subhead'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -839,7 +839,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_tags'
+  // Exported field_instance: 'node-article-field_tags'.
   $field_instances['node-article-field_tags'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -878,7 +878,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_topic'
+  // Exported field_instance: 'node-article-field_topic'.
   $field_instances['node-article-field_topic'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -915,7 +915,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_video_file'
+  // Exported field_instance: 'node-article-field_video_file'.
   $field_instances['node-article-field_video_file'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -961,7 +961,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-article-field_video_poster'
+  // Exported field_instance: 'node-article-field_video_poster'.
   $field_instances['node-article-field_video_poster'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -1001,7 +1001,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-bio-body'
+  // Exported field_instance: 'node-bio-body'.
   $field_instances['node-bio-body'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1045,7 +1045,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_facebook'
+  // Exported field_instance: 'node-bio-field_facebook'.
   $field_instances['node-bio-field_facebook'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1085,7 +1085,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_favorite_dish_to_eat'
+  // Exported field_instance: 'node-bio-field_favorite_dish_to_eat'.
   $field_instances['node-bio-field_favorite_dish_to_eat'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1125,7 +1125,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_favorite_dish_to_make'
+  // Exported field_instance: 'node-bio-field_favorite_dish_to_make'.
   $field_instances['node-bio-field_favorite_dish_to_make'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1165,7 +1165,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_image'
+  // Exported field_instance: 'node-bio-field_image'.
   $field_instances['node-bio-field_image'] = array(
     'bundle' => 'bio',
     'deleted' => 0,
@@ -1215,7 +1215,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_instagram'
+  // Exported field_instance: 'node-bio-field_instagram'.
   $field_instances['node-bio-field_instagram'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1255,7 +1255,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_least_favorite_food'
+  // Exported field_instance: 'node-bio-field_least_favorite_food'.
   $field_instances['node-bio-field_least_favorite_food'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1295,7 +1295,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_pinterest'
+  // Exported field_instance: 'node-bio-field_pinterest'.
   $field_instances['node-bio-field_pinterest'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1335,7 +1335,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bio-field_twitter'
+  // Exported field_instance: 'node-bio-field_twitter'.
   $field_instances['node-bio-field_twitter'] = array(
     'bundle' => 'bio',
     'default_value' => NULL,
@@ -1375,7 +1375,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-body'
+  // Exported field_instance: 'node-event_calendar-body'.
   $field_instances['node-event_calendar-body'] = array(
     'bundle' => 'event_calendar',
     'default_value' => NULL,
@@ -1420,7 +1420,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-event_calendar_date'
+  // Exported field_instance: 'node-event_calendar-event_calendar_date'.
   $field_instances['node-event_calendar-event_calendar_date'] = array(
     'bundle' => 'event_calendar',
     'deleted' => 0,
@@ -1475,7 +1475,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-event_calendar_status'
+  // Exported field_instance: 'node-event_calendar-event_calendar_status'.
   $field_instances['node-event_calendar-event_calendar_status'] = array(
     'bundle' => 'event_calendar',
     'default_value' => array(
@@ -1515,7 +1515,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-field_image'
+  // Exported field_instance: 'node-event_calendar-field_image'.
   $field_instances['node-event_calendar-field_image'] = array(
     'bundle' => 'event_calendar',
     'deleted' => 0,
@@ -1576,7 +1576,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event_calendar-field_link'
+  // Exported field_instance: 'node-event_calendar-field_link'.
   $field_instances['node-event_calendar-field_link'] = array(
     'bundle' => 'event_calendar',
     'default_value' => NULL,
@@ -1633,7 +1633,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-faq-body'
+  // Exported field_instance: 'node-faq-body'.
   $field_instances['node-faq-body'] = array(
     'bundle' => 'faq',
     'default_value' => NULL,
@@ -1678,7 +1678,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-body'
+  // Exported field_instance: 'node-multi_recipe-body'.
   $field_instances['node-multi_recipe-body'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -1722,7 +1722,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_author'
+  // Exported field_instance: 'node-multi_recipe-field_author'.
   $field_instances['node-multi_recipe-field_author'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -1762,7 +1762,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_headline'
+  // Exported field_instance: 'node-multi_recipe-field_headline'.
   $field_instances['node-multi_recipe-field_headline'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -1802,7 +1802,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_image'
+  // Exported field_instance: 'node-multi_recipe-field_image'.
   $field_instances['node-multi_recipe-field_image'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -1864,7 +1864,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_popularity_all_time'
+  // Exported field_instance: 'node-multi_recipe-field_popularity_all_time'.
   $field_instances['node-multi_recipe-field_popularity_all_time'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => array(
@@ -1913,7 +1913,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_popularity_now'
+  // Exported field_instance: 'node-multi_recipe-field_popularity_now'.
   $field_instances['node-multi_recipe-field_popularity_now'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => array(
@@ -1962,7 +1962,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_recent_popularity'
+  // Exported field_instance: 'node-multi_recipe-field_recent_popularity'.
   $field_instances['node-multi_recipe-field_recent_popularity'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => array(
@@ -2011,7 +2011,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_recipe'
+  // Exported field_instance: 'node-multi_recipe-field_recipe'.
   $field_instances['node-multi_recipe-field_recipe'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -2054,7 +2054,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_subhead'
+  // Exported field_instance: 'node-multi_recipe-field_subhead'.
   $field_instances['node-multi_recipe-field_subhead'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -2094,7 +2094,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_tags'
+  // Exported field_instance: 'node-multi_recipe-field_tags'.
   $field_instances['node-multi_recipe-field_tags'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -2134,7 +2134,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-multi_recipe-field_topic'
+  // Exported field_instance: 'node-multi_recipe-field_topic'.
   $field_instances['node-multi_recipe-field_topic'] = array(
     'bundle' => 'multi_recipe',
     'default_value' => NULL,
@@ -2170,7 +2170,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -2214,7 +2214,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_test_field'
+  // Exported field_instance: 'node-page-field_test_field'.
   $field_instances['node-page-field_test_field'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -2254,7 +2254,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-field_author'
+  // Exported field_instance: 'node-recipe-field_author'.
   $field_instances['node-recipe-field_author'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2294,7 +2294,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-field_flavor_profile'
+  // Exported field_instance: 'node-recipe-field_flavor_profile'.
   $field_instances['node-recipe-field_flavor_profile'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2331,7 +2331,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-recipe-field_headline'
+  // Exported field_instance: 'node-recipe-field_headline'.
   $field_instances['node-recipe-field_headline'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2370,7 +2370,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-field_image'
+  // Exported field_instance: 'node-recipe-field_image'.
   $field_instances['node-recipe-field_image'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2433,7 +2433,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-recipe-field_part_of_multi_recipe'
+  // Exported field_instance: 'node-recipe-field_part_of_multi_recipe'.
   $field_instances['node-recipe-field_part_of_multi_recipe'] = array(
     'bundle' => 'recipe',
     'default_value' => array(
@@ -2475,7 +2475,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-field_subhead'
+  // Exported field_instance: 'node-recipe-field_subhead'.
   $field_instances['node-recipe-field_subhead'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2515,7 +2515,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-field_tags'
+  // Exported field_instance: 'node-recipe-field_tags'.
   $field_instances['node-recipe-field_tags'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2556,7 +2556,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-recipe-field_topic'
+  // Exported field_instance: 'node-recipe-field_topic'.
   $field_instances['node-recipe-field_topic'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2593,7 +2593,7 @@ function craving_boston_site_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-recipe-recipe_cook_time'
+  // Exported field_instance: 'node-recipe-recipe_cook_time'.
   $field_instances['node-recipe-recipe_cook_time'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2634,7 +2634,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-recipe_description'
+  // Exported field_instance: 'node-recipe-recipe_description'.
   $field_instances['node-recipe-recipe_description'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2679,7 +2679,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-recipe_ingredient'
+  // Exported field_instance: 'node-recipe-recipe_ingredient'.
   $field_instances['node-recipe-recipe_ingredient'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2721,7 +2721,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-recipe_instructions'
+  // Exported field_instance: 'node-recipe-recipe_instructions'.
   $field_instances['node-recipe-recipe_instructions'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2761,7 +2761,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-recipe_notes'
+  // Exported field_instance: 'node-recipe-recipe_notes'.
   $field_instances['node-recipe-recipe_notes'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,
@@ -2801,7 +2801,7 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recipe-recipe_prep_time'
+  // Exported field_instance: 'node-recipe-recipe_prep_time'.
   $field_instances['node-recipe-recipe_prep_time'] = array(
     'bundle' => 'recipe',
     'default_value' => NULL,

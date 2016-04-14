@@ -152,14 +152,14 @@ function craving_boston_site_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[site:slogan]',
       ),
-      'twitter:image:src' => array(
-        'value' => '[site:url]/sites/all/themes/craving_boston/images/craving-boston-stacked-og.gif',
-      ),
       'twitter:image:width' => array(
         'value' => 600,
       ),
       'twitter:image:height' => array(
         'value' => 600,
+      ),
+      'twitter:image' => array(
+        'value' => '[site:url]/sites/all/themes/craving_boston/images/craving-boston-stacked-og.gif',
       ),
     ),
   );
@@ -220,7 +220,7 @@ function craving_boston_site_metatag_export_default() {
       'twitter:title' => array(
         'value' => '[node:field_headline]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[node:field_image]',
       ),
     ),
@@ -248,7 +248,7 @@ function craving_boston_site_metatag_export_default() {
       'twitter:title' => array(
         'value' => '[node:field_headline]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[node:field_image]',
       ),
     ),
@@ -276,7 +276,7 @@ function craving_boston_site_metatag_export_default() {
       'twitter:title' => array(
         'value' => '[node:field_headline]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[node:field_image]',
       ),
     ),

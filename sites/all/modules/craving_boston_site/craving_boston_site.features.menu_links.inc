@@ -10,7 +10,7 @@
 function craving_boston_site_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-craving-boston_contact-us:contact
+  // Exported menu link: menu-craving-boston_contact-us:contact.
   $menu_links['menu-craving-boston_contact-us:contact'] = array(
     'menu_name' => 'menu-craving-boston',
     'link_path' => 'contact',
@@ -30,7 +30,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-craving-boston_faqs:faqs
+  // Exported menu link: menu-craving-boston_faqs:faqs.
   $menu_links['menu-craving-boston_faqs:faqs'] = array(
     'menu_name' => 'menu-craving-boston',
     'link_path' => 'faqs',
@@ -50,7 +50,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-craving-boston_rss-feed:rss.xml
+  // Exported menu link: menu-craving-boston_rss-feed:rss.xml.
   $menu_links['menu-craving-boston_rss-feed:rss.xml'] = array(
     'menu_name' => 'menu-craving-boston',
     'link_path' => 'rss.xml',
@@ -70,7 +70,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-dashboard_create-new-article:node/add/article
+  // Exported menu link: menu-dashboard_create-new-article:node/add/article.
   $menu_links['menu-dashboard_create-new-article:node/add/article'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'node/add/article',
@@ -90,7 +90,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-dashboard_create-new-event:node/add/event-calendar
+  // Exported menu link: menu-dashboard_create-new-event:node/add/event-calendar.
   $menu_links['menu-dashboard_create-new-event:node/add/event-calendar'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'node/add/event-calendar',
@@ -110,7 +110,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-dashboard_create-new-multi-recipe:node/add/multi-recipe
+  // Exported menu link: menu-dashboard_create-new-multi-recipe:node/add/multi-recipe.
   $menu_links['menu-dashboard_create-new-multi-recipe:node/add/multi-recipe'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'node/add/multi-recipe',
@@ -130,7 +130,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-dashboard_create-new-recipe:node/add/recipe
+  // Exported menu link: menu-dashboard_create-new-recipe:node/add/recipe.
   $menu_links['menu-dashboard_create-new-recipe:node/add/recipe'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'node/add/recipe',
@@ -150,7 +150,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-dashboard_order-featured-articles:admin/structure/nodequeue/1/view/1
+  // Exported menu link: menu-dashboard_order-featured-articles:admin/structure/nodequeue/1/view/1.
   $menu_links['menu-dashboard_order-featured-articles:admin/structure/nodequeue/1/view/1'] = array(
     'menu_name' => 'menu-dashboard',
     'link_path' => 'admin/structure/nodequeue/1/view/1',
@@ -170,7 +170,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_clear-cache:admin/config/development/performance
+  // Exported menu link: menu-site-management-tasks_clear-cache:admin/config/development/performance.
   $menu_links['menu-site-management-tasks_clear-cache:admin/config/development/performance'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/config/development/performance',
@@ -190,7 +190,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_go-to-blocks:admin/structure/block
+  // Exported menu link: menu-site-management-tasks_go-to-blocks:admin/structure/block.
   $menu_links['menu-site-management-tasks_go-to-blocks:admin/structure/block'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/structure/block',
@@ -210,7 +210,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_go-to-features:admin/structure/features
+  // Exported menu link: menu-site-management-tasks_go-to-features:admin/structure/features.
   $menu_links['menu-site-management-tasks_go-to-features:admin/structure/features'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/structure/features',
@@ -230,7 +230,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_go-to-modules:admin/modules
+  // Exported menu link: menu-site-management-tasks_go-to-modules:admin/modules.
   $menu_links['menu-site-management-tasks_go-to-modules:admin/modules'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/modules',
@@ -250,7 +250,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_go-to-permissions:admin/people/permissions
+  // Exported menu link: menu-site-management-tasks_go-to-permissions:admin/people/permissions.
   $menu_links['menu-site-management-tasks_go-to-permissions:admin/people/permissions'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/people/permissions',
@@ -270,7 +270,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_go-to-views:admin/structure/views
+  // Exported menu link: menu-site-management-tasks_go-to-views:admin/structure/views.
   $menu_links['menu-site-management-tasks_go-to-views:admin/structure/views'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/structure/views',
@@ -290,7 +290,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate
+  // Exported menu link: menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate.
   $menu_links['menu-site-management-tasks_recreate-cb-feature:admin/structure/features/craving_boston_site/recreate'] = array(
     'menu_name' => 'menu-site-management-tasks',
     'link_path' => 'admin/structure/features/craving_boston_site/recreate',
@@ -310,7 +310,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-topics_about:about
+  // Exported menu link: menu-topics_about:about.
   $menu_links['menu-topics_about:about'] = array(
     'menu_name' => 'menu-topics',
     'link_path' => 'about',
@@ -330,7 +330,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-topics_events:events
+  // Exported menu link: menu-topics_events:events.
   $menu_links['menu-topics_events:events'] = array(
     'menu_name' => 'menu-topics',
     'link_path' => 'events',
@@ -350,7 +350,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-topics_features:topics/features
+  // Exported menu link: menu-topics_features:topics/features.
   $menu_links['menu-topics_features:topics/features'] = array(
     'menu_name' => 'menu-topics',
     'link_path' => 'topics/features',
@@ -370,7 +370,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-topics_home:<front>
+  // Exported menu link: menu-topics_home:<front>.
   $menu_links['menu-topics_home:<front>'] = array(
     'menu_name' => 'menu-topics',
     'link_path' => '<front>',
@@ -390,7 +390,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -37,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-links-menu_about-wgbh:http://www.wgbh.org/about
+  // Exported menu link: wgbh-links-menu_about-wgbh:http://www.wgbh.org/about.
   $menu_links['wgbh-links-menu_about-wgbh:http://www.wgbh.org/about'] = array(
     'menu_name' => 'wgbh-links-menu',
     'link_path' => 'http://www.wgbh.org/about',
@@ -410,7 +410,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-links-menu_contact-wgbh:http://www.wgbh.org/about/contact.cfm
+  // Exported menu link: wgbh-links-menu_contact-wgbh:http://www.wgbh.org/about/contact.cfm.
   $menu_links['wgbh-links-menu_contact-wgbh:http://www.wgbh.org/about/contact.cfm'] = array(
     'menu_name' => 'wgbh-links-menu',
     'link_path' => 'http://www.wgbh.org/about/contact.cfm',
@@ -430,7 +430,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-links-menu_privacy-policy:http://www.wgbh.org/info/privacy.cfm
+  // Exported menu link: wgbh-links-menu_privacy-policy:http://www.wgbh.org/info/privacy.cfm.
   $menu_links['wgbh-links-menu_privacy-policy:http://www.wgbh.org/info/privacy.cfm'] = array(
     'menu_name' => 'wgbh-links-menu',
     'link_path' => 'http://www.wgbh.org/info/privacy.cfm',
@@ -450,7 +450,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-links-menu_terms-of-use:http://www.wgbh.org/info/terms.cfm
+  // Exported menu link: wgbh-links-menu_terms-of-use:http://www.wgbh.org/info/terms.cfm.
   $menu_links['wgbh-links-menu_terms-of-use:http://www.wgbh.org/info/terms.cfm'] = array(
     'menu_name' => 'wgbh-links-menu',
     'link_path' => 'http://www.wgbh.org/info/terms.cfm',
@@ -470,7 +470,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_a-moveable-feast-:http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392
+  // Exported menu link: wgbh-related-links-menu_a-moveable-feast-:http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392.
   $menu_links['wgbh-related-links-menu_a-moveable-feast-:http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/A-Moveable-Feast-With-Fine-Cooking-2392',
@@ -490,7 +490,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87
+  // Exported menu link: wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87.
   $menu_links['wgbh-related-links-menu_americas-test-kitchen-:http://www.wgbh.org/programs/Americas-Test-Kitchen-87'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/Americas-Test-Kitchen-87',
@@ -510,7 +510,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_cooks-country-:http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88
+  // Exported menu link: wgbh-related-links-menu_cooks-country-:http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88.
   $menu_links['wgbh-related-links-menu_cooks-country-:http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/Cooks-Country-from-Americas-Test-Kitchen-88',
@@ -530,7 +530,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412
+  // Exported menu link: wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412.
   $menu_links['wgbh-related-links-menu_lidias-kitchen-:http://www.wgbh.org/programs/Lidias-Kitchen-2412'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/Lidias-Kitchen-2412',
@@ -550,7 +550,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_mind-of-a-chef-:http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065
+  // Exported menu link: wgbh-related-links-menu_mind-of-a-chef-:http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065.
   $menu_links['wgbh-related-links-menu_mind-of-a-chef-:http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/The-Mind-of-a-Chef-2065',
@@ -570,7 +570,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859
+  // Exported menu link: wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859.
   $menu_links['wgbh-related-links-menu_neighborhood-kitchens-:http://www.wgbh.org/programs/Neighborhood-Kitchens-1859'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/Neighborhood-Kitchens-1859',
@@ -590,7 +590,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -44,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86
+  // Exported menu link: wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86.
   $menu_links['wgbh-related-links-menu_simply-ming-:http://www.wgbh.org/programs/Simply-Ming-86'] = array(
     'menu_name' => 'wgbh-related-links-menu',
     'link_path' => 'http://www.wgbh.org/programs/Simply-Ming-86',
@@ -610,7 +610,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -43,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-support-links-menu_become-a-member:http://www.wghb.org/support
+  // Exported menu link: wgbh-support-links-menu_become-a-member:http://www.wghb.org/support.
   $menu_links['wgbh-support-links-menu_become-a-member:http://www.wghb.org/support'] = array(
     'menu_name' => 'wgbh-support-links-menu',
     'link_path' => 'http://www.wghb.org/support',
@@ -630,7 +630,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-support-links-menu_corporate-sponsorship:http://www.wgbh.org/support/corporateSponsorship.cfm
+  // Exported menu link: wgbh-support-links-menu_corporate-sponsorship:http://www.wgbh.org/support/corporateSponsorship.cfm.
   $menu_links['wgbh-support-links-menu_corporate-sponsorship:http://www.wgbh.org/support/corporateSponsorship.cfm'] = array(
     'menu_name' => 'wgbh-support-links-menu',
     'link_path' => 'http://www.wgbh.org/support/corporateSponsorship.cfm',
@@ -650,7 +650,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-support-links-menu_donate:http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm
+  // Exported menu link: wgbh-support-links-menu_donate:http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm.
   $menu_links['wgbh-support-links-menu_donate:http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm'] = array(
     'menu_name' => 'wgbh-support-links-menu',
     'link_path' => 'http://www.wgbh.org/support/cravingbostonweb_makeagift.cfm',
@@ -670,7 +670,7 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: wgbh-support-links-menu_volunteering:http://www.wgbh.org/support/volunteer.cfm
+  // Exported menu link: wgbh-support-links-menu_volunteering:http://www.wgbh.org/support/volunteer.cfm.
   $menu_links['wgbh-support-links-menu_volunteering:http://www.wgbh.org/support/volunteer.cfm'] = array(
     'menu_name' => 'wgbh-support-links-menu',
     'link_path' => 'http://www.wgbh.org/support/volunteer.cfm',
