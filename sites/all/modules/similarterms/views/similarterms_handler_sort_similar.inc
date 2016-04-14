@@ -14,7 +14,8 @@ class similarterms_handler_sort_similar extends views_handler_sort {
 
   function query() {
     $this->ensure_my_table();
-    $this->query->add_orderby($this->table_alias, 'nid', $this->options['order'], NULL, array('function' => 'count'));
+   // $this->query->add_orderby($this->table_alias, 'nid', $this->options['order'], NULL, array('function' => 'count'));
+      $this->query->add_orderby('similarterms_taxonomy_index', 'nid', $this->options['order'], 'nid', array('function' => 'count'));
   }
 
 }

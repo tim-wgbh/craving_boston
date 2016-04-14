@@ -37,7 +37,7 @@ class similarterms_handler_field_similar extends views_handler_field {
     $params = array(
       'function' => 'count',
     );
-    $this->field_alias = $this->query->add_field('node', 'nid', NULL, $params);
+    $this->field_alias = $this->query->add_field('similarterms_taxonomy_index', 'nid', NULL, $params);
   }
 
   function render($values) {

@@ -41,9 +41,9 @@ class similarterms_handler_argument_node_nid extends views_handler_argument_nume
     unset($form['not']);
 
     $vocabularies = array();
-    $result = db_query('SELECT vid, name FROM {taxonomy_vocabulary} ORDER BY weight');
+    $result = db_query('SELECT vid, machine_name,name FROM {taxonomy_vocabulary} ORDER BY weight');
     foreach ($result as $vocabulary) {
-      $vocabularies[$vocabulary->vid] = $vocabulary->name;
+      $vocabularies[$vocabulary->machine_name] = $vocabulary->name;
     }
 
     $form['similarterms'] = array(
@@ -76,9 +76,6 @@ class similarterms_handler_argument_node_nid extends views_handler_argument_nume
       return FALSE;
     }
 
-    // hmmm... @todo: wildcard validation?
-    // see views_handler_argument.inc for possible code
-
     if (!empty($this->options['break_phrase'])) {
       views_break_phrase($this->argument, $this);
     }
@@ -88,22 +85,23 @@ class similarterms_handler_argument_node_nid extends views_handler_argument_nume
 
     // $vocabulary_vids is array of vocabulary ids (a.k.a. vids, confusing right?)
     $vocabulary_vids = empty($this->options['vocabularies']) ? array() : $this->options['vocabularies'];
+    
     foreach ($vocabulary_vids as $key => $val) {
-      if ($val == 0) {
+      if ($val === 0) {
         unset($vocabulary_vids[$key]);
       }
     }
-
+    
     $select = db_select('taxonomy_index', 'ti');
     $select->addField('ti', 'tid');
 
     if (count($vocabulary_vids)) {
       $select->join('taxonomy_term_data', 'td', 'ti.tid = td.tid');
-      $select->condition('td.vid', $vocabulary_vids, 'IN');
+      $select->join('taxonomy_vocabulary', 'tv', 'tv.vid = td.vid');
+      $select->condition('tv.machine_name', $vocabulary_vids, 'IN');
     }
     $select->condition('ti.nid', $this->value, 'IN');
     $result = $select->execute();
-
     $this->tids = array();
     foreach ($result as $row) {
       $this->tids[$row->tid] = $row->tid;
