@@ -40,6 +40,30 @@ Drupal.behaviors.cravingBostonTheme = {
         $('.mobile-back-to-top').show().delay(4000).fadeOut();
       }
     });
+    
+    // qtips for icons
+    $('i').qtip({
+      content: {
+        text: function() {
+          if ($(this).hasClass('fo-recipe'))  {
+            return 'Recipe!';
+          } else if ($(this).hasClass('fo-video')) {
+            return 'Video!';
+          } else if ($(this).hasClass('fo-audio')) {
+            return 'Audio!';
+          } else if ($(this).hasClass('glyphicon-print')) {
+            return 'Print it!';
+          }
+        }
+      },
+      position: {
+        my: 'bottom right',
+        at: 'top left'
+      },
+      style: {
+        classes: 'qtip-light qtip-bootstrap'
+      }
+    });
   }
 };
 
