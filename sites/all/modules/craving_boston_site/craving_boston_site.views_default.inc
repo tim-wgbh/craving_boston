@@ -390,11 +390,11 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['arguments']['similar_nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['similar_nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['similar_nid']['vocabularies'] = array(
-    1 => '1',
-    4 => 0,
-    2 => 0,
-    3 => 0,
-    5 => 0,
+    'tags' => 'tags',
+    'sections' => 'sections',
+    'flavor_profile' => 0,
+    'dfp_ad_categories' => 0,
+    'event_calendar_status' => 0,
   );
   $handler->display->display_options['arguments']['similar_nid']['include_args'] = 0;
   /* Filter criterion: Content: Published */
