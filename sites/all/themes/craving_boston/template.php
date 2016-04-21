@@ -231,11 +231,12 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 
   $vars['byline'] = '';
   
-  if (array_key_exists('field_author', $fields)) {
+  if (array_key_exists('field_author', $fields) && $fields['field_author']->content) {
     $vars['byline'] = $fields['field_author']->content;
-  } else if (array_key_exists('field_npr_byline', $fields)) {
+  } else if (array_key_exists('field_npr_byline', $fields) && $fields['field_npr_byline']->content) {
     $vars['byline'] = $fields['field_npr_byline']->content;
   }
+  
   
   # Handle title/headline
   if (!empty($fields['field_headline']->content)) {
@@ -288,10 +289,13 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 
 function _subhead_deck($fields) {
   if (!empty($fields['field_subhead']) && !empty($fields['field_subhead']->content)) {
-    return $fields['field_subhead']->content;
+    $deck = $fields['field_subhead']->content;
+  } else if (!empty($fields['body']) && !empty($fields['body']->content)) {
+    $deck = $fields['body']->content;
   } else {
-    return false;
+    $deck = false;
   }
+  return $deck;
 }
 
 /**

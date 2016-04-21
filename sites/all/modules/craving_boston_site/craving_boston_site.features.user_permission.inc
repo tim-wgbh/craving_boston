@@ -341,6 +341,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'googleanalytics',
   );
 
+  // Exported permission: 'administer google tag manager'.
+  $permissions['administer google tag manager'] = array(
+    'name' => 'administer google tag manager',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'google_tag',
+  );
+
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
@@ -1685,6 +1694,13 @@ function craving_boston_site_user_default_permissions() {
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set npr_story published on date'.
+  $permissions['set npr_story published on date'] = array(
+    'name' => 'set npr_story published on date',
+    'roles' => array(),
     'module' => 'publication_date',
   );
 

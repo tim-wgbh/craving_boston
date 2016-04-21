@@ -1945,6 +1945,38 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_soundcloud']['label'] = '';
   $handler->display->display_options['fields']['field_soundcloud']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_soundcloud']['type'] = 'soundcloud_link';
+  /* Field: Content: NPR Image */
+  $handler->display->display_options['fields']['field_npr_image']['id'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['table'] = 'field_data_field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['field'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['label'] = '';
+  $handler->display->display_options['fields']['field_npr_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_npr_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_npr_image']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_npr_image']['settings'] = array(
+    'picture_mapping' => 'article_mapping',
+    'fallback_image_style' => '',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
+    'image_link' => '',
+  );
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: By */
+  $handler->display->display_options['fields']['field_npr_byline']['id'] = 'field_npr_byline';
+  $handler->display->display_options['fields']['field_npr_byline']['table'] = 'field_data_field_npr_byline';
+  $handler->display->display_options['fields']['field_npr_byline']['field'] = 'field_npr_byline';
+  $handler->display->display_options['fields']['field_npr_byline']['label'] = '';
+  $handler->display->display_options['fields']['field_npr_byline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_npr_byline']['type'] = 'text_plain';
   /* Sort criterion: Node: Published at */
   $handler->display->display_options['sorts']['published_at']['id'] = 'published_at';
   $handler->display->display_options['sorts']['published_at']['table'] = 'publication_date';
