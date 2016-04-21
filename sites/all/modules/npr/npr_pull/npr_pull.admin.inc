@@ -26,6 +26,8 @@ function npr_pull_cron_config() {
     '#default_value' => variable_get('npr_pull_cron_query_ids', array()),
     '#options' => array(
       '1053'      => t('Food - topic'),
+      '1139'      => t('Recipes - topic'),
+      '139941248' => t('The Salt - blog'),
       '15709577'  => t('All Songs Considered'),
       '102920358' => t('All Tech Considered'),
       '7282089'   => t('Blog of the Nation'),
