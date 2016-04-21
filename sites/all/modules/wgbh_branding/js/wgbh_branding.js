@@ -26,6 +26,9 @@ Drupal.behaviors.wgbhBrandingModule = {
       $('#dashboard div#dashboard_main').css({width: '65%'});
       $('#dashboard div#dashboard_sidebar').css({width: '33%'});
     }
+    
+    // Make sure NPR links go into a new tab/window
+    $('a[href*="npr.org"]').prop('target','_blank');
   }
 };
 

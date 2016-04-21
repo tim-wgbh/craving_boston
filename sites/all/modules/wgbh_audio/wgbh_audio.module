@@ -1,0 +1,75 @@
+<?php
+/**
+ * Implement hook_theme
+ */
+function wgbh_audio_theme() {
+  return array(
+    'wgbh_audio_formatter' => array(
+      'variables' => array('url' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_info(). 
+ */
+function wgbh_audio_field_formatter_info() {
+  return array(
+    'html5_audio_player' => array(
+      'label' => t('Local HTML5 Audio Player'),
+      'field types' => array(
+        'text',
+        'npr_audio'
+      ),      
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function wgbh_audio_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+//   kpr($entity);
+//   kpr($field);
+//   kpr($instance);
+//   kpr($items);
+//   kpr($display);
+  $element = array();
+  switch ($display['type']) {
+    case 'html5_audio_player':
+      $element = array();
+      foreach ($items as $delta => $item) {
+        if ($field['type'] == 'npr_audio') {
+          if ($item['mp3']) {
+            $url = $item['mp3'];
+          }
+        } else if ($instance['field_name'] == 'field_audio') {
+          if ($item['value']) {
+            $url = $item['value'];
+          }
+        }
+        $element[$delta] = array(
+          '#theme' => 'wgbh_audio_formatter',
+          '#url' => $url,
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+/**
+ * Audio theme function
+ */
+function theme_wgbh_audio_formatter($variables)  {
+  $output = '<div class="player-wrapper">';
+  $output .= <<<EOD
+    <audio controls width="100%">
+      <source src="$variables[url]" type="audio/mp3">
+      Your browser doesn't support the audio tag.
+    </audio>
+  </div>
+  <div class="clearfix"></div>
+EOD;
+  return $output;
+}

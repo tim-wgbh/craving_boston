@@ -274,7 +274,7 @@ a.cb-button {
 }
 input#edit-search-block-form--2 {
   margin-right: 0;
-  width: 197px;
+  width: 195px;
 }
 #search-block-form #edit-actions input {
   margin-right: 0;
@@ -377,6 +377,9 @@ h2.recipe {
 label.audio {
   display: inline-block;
   margin-right:10px
+}
+.field-name-field-npr-byline .field-label {
+  font-weight: normal;
 }
 #masthead {
   margin-top: 24px;

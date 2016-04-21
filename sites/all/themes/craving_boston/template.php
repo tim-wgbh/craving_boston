@@ -35,23 +35,23 @@ EOC;
 /**
  * Theme audio output
  */
-function craving_boston_field__field_audio($vars) {
-  global $conf;
-  $output = '';
-  if (isset($vars['items'][0]['#markup'])) {
-      $audio = $vars['items'][0]['#markup'];
-      $output .= '<div class="player-wrapper">';
-      $output .= <<<EOD
-        <audio controls width="100%">
-          <source src="" type="audio/mp3">
-          Your browser doesn't support the audio tag.
-        </audio>
-      </div>
-      <div class="clearfix"></div>
-EOD;
-  }
-  return $output;
-}
+// function craving_boston_field__field_audio($vars) {
+//   global $conf;
+//   $output = '';
+//   if (isset($vars['items'][0]['#markup'])) {
+//       $audio = $vars['items'][0]['#markup'];
+//       $output .= '<div class="player-wrapper">';
+//       $output .= <<<EOD
+//         <audio controls width="100%">
+//           <source src="" type="audio/mp3">
+//           Your browser doesn't support the audio tag.
+//         </audio>
+//       </div>
+//       <div class="clearfix"></div>
+// EOD;
+//   }
+//   return $output;
+// }
 
 /**
  * Theme story source output
@@ -109,7 +109,9 @@ function craving_boston_preprocess_page(&$vars) {
       $vars['title_icon'] = RECIPE_ICON;
     } else if (isset($vars['node']->field_video_file['und']) || isset($vars['node']->field_internet_video['und'])) {
       $vars['title_icon'] = VIDEO_ICON;
-    } else if (isset($vars['node']->field_audio['und']) || isset($vars['node']->field_soundcloud['und'])) {
+    } else if ( isset($vars['node']->field_audio['und']) || 
+                isset($vars['node']->field_soundcloud['und']) ||
+                isset($vars['node']->npr_audio['und'])) {
       $vars['title_icon'] = AUDIO_ICON;
     }
   }
@@ -146,6 +148,10 @@ function craving_boston_preprocess_node(&$vars) {
     case 'article':
       if (!empty($node->field_author)) {
         $vars['byline'] = $node->field_author['und'][0]['safe_value'];
+      }
+    case 'npr_story':
+      if (!empty($node->field_npr_byline)) {
+        $vars['byline'] = $node->field_npr_byline['und'][0]['safe_value'];
       }
   }
   
@@ -222,11 +228,13 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
   $fields = $vars['fields'];
   
   if (!isset($fields['type'])) return;
-    
+
   $vars['byline'] = '';
   
   if (array_key_exists('field_author', $fields)) {
     $vars['byline'] = $fields['field_author']->content;
+  } else if (array_key_exists('field_npr_byline', $fields)) {
+    $vars['byline'] = $fields['field_npr_byline']->content;
   }
   
   # Handle title/headline
@@ -243,6 +251,8 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
   if (in_array($vars['view']->name, $content_views)) {
     if (!empty($fields['field_carousel']->content)) {
       $vars['image'] = render($vars['row']->field_field_carousel[0]['rendered']);
+    } else if (!empty($fields['field_npr_image']->content)) {
+      $vars['image'] = $fields['field_npr_image']->content;
     } else {
       $vars['image'] = $fields['field_image']->content;
     }

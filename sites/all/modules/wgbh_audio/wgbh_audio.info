@@ -1,0 +1,7 @@
+name = WGBH Audio
+description = Create audio player display for articles and NPR stories
+package = WGBH
+core = "7.x"
+version = "7.x-1.0"
+project = "wgbh_audio"
+;
