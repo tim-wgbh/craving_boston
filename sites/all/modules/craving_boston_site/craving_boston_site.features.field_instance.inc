@@ -191,9 +191,9 @@ function craving_boston_site_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'wgbh_audio',
         'settings' => array(),
-        'type' => 'text_plain',
+        'type' => 'html5_audio_player',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -2170,6 +2170,457 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-npr_story-body'.
+  $field_instances['node-npr_story-body'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_headline'.
+  $field_instances['node-npr_story-field_headline'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_headline',
+    'label' => 'Zinger Headline',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_npr_byline'.
+  $field_instances['node-npr_story-field_npr_byline'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'NPR author name',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -9,
+      ),
+      'teaser' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_npr_byline',
+    'label' => 'By',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_npr_id'.
+  $field_instances['node-npr_story-field_npr_id'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'NPR ID',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -4,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_npr_id',
+    'label' => 'NPR ID',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_npr_image'.
+  $field_instances['node-npr_story-field_npr_image'] = array(
+    'bundle' => 'npr_story',
+    'deleted' => 0,
+    'description' => 'NPR retrieved image',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => -5,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => -5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_npr_image',
+    'label' => 'NPR Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => 'npr_images',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'medium',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_npr_org_id'.
+  $field_instances['node-npr_story-field_npr_org_id'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'NPR ORG ID',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -2,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_npr_org_id',
+    'label' => 'NPR ORG ID',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_npr_url'.
+  $field_instances['node-npr_story-field_npr_url'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'NPR URL',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -3,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_npr_url',
+    'label' => 'NPR URL',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_subhead'.
+  $field_instances['node-npr_story-field_subhead'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subhead',
+    'label' => 'Subhead',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-field_topic'.
+  $field_instances['node-npr_story-field_topic'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => array(
+      0 => array(
+        'tid' => 815,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_topic',
+    'label' => 'Topic',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-npr_story-npr_audio'.
+  $field_instances['node-npr_story-npr_audio'] = array(
+    'bundle' => 'npr_story',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'wgbh_audio',
+        'settings' => array(),
+        'type' => 'html5_audio_player',
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'npr_fields',
+        'settings' => array(),
+        'type' => 'npr_audio_basic',
+        'weight' => -7,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'npr_fields',
+        'settings' => array(),
+        'type' => 'npr_audio_basic',
+        'weight' => -7,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'npr_audio',
+    'label' => 'NPR audio',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'npr_fields',
+      'settings' => array(),
+      'type' => 'npr_audio',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
@@ -2472,6 +2923,153 @@ function craving_boston_site_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-recipe-field_popularity_all_time'.
+  $field_instances['node-recipe-field_popularity_all_time'] = array(
+    'bundle' => 'recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155521,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_all_time',
+    'label' => 'Popularity all time',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_all_time',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-recipe-field_popularity_now'.
+  $field_instances['node-recipe-field_popularity_now'] = array(
+    'bundle' => 'recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458155497,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_popularity_now',
+    'label' => 'Popularity now',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_now',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 42,
+    ),
+  );
+
+  // Exported field_instance: 'node-recipe-field_recent_popularity'.
+  $field_instances['node-recipe-field_recent_popularity'] = array(
+    'bundle' => 'recipe',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 0,
+        'radioactivity_timestamp' => 1458237887,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_recent_popularity',
+    'label' => 'Recent popularity',
+    'required' => FALSE,
+    'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
+      'profile' => 'most_popular_recently',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 46,
     ),
   );
 
@@ -2883,6 +3481,13 @@ function craving_boston_site_field_default_field_instances() {
   t('Least favorite food');
   t('Multiple tags should be separated by commas, e.g. red, green, blue (limit of 10)');
   t('Must be a URL to an audio file');
+  t('NPR ID');
+  t('NPR Image');
+  t('NPR ORG ID');
+  t('NPR URL');
+  t('NPR audio');
+  t('NPR author name');
+  t('NPR retrieved image');
   t('Notes');
   t('Optional. Describe a great dining experience relating to this recipe, or note which wine or other dishes complement this recipe.');
   t('PMP guid');

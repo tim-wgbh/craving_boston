@@ -131,7 +131,8 @@ function craving_boston_site_fe_nodequeue_export_fields() {
     'types' => array(
       0 => 'article',
       1 => 'multi_recipe',
-      2 => 'recipe',
+      2 => 'npr_story',
+      3 => 'recipe',
     ),
     'roles' => array(
       0 => 'editor',

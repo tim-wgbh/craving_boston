@@ -875,6 +875,19 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_video_file']['label'] = '';
   $handler->display->display_options['fields']['field_video_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_video_file']['type'] = 'text_plain';
+  /* Field: Content: NPR Image */
+  $handler->display->display_options['fields']['field_npr_image']['id'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['table'] = 'field_data_field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['field'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_npr_image']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_npr_image']['settings'] = array(
+    'picture_mapping' => 'featured_sub_mapping',
+    'fallback_image_style' => '',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
+    'image_link' => 'content',
+  );
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
@@ -1009,6 +1022,21 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: Content: NPR Image */
+  $handler->display->display_options['fields']['field_npr_image']['id'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['table'] = 'field_data_field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['field'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['label'] = '';
+  $handler->display->display_options['fields']['field_npr_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_npr_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_npr_image']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_npr_image']['settings'] = array(
+    'picture_mapping' => 'featured_main_mapping',
+    'fallback_image_style' => '',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
+    'image_link' => 'content',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1025,6 +1053,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
     'multi_recipe' => 'multi_recipe',
+    'npr_story' => 'npr_story',
     'recipe' => 'recipe',
   );
   /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
@@ -1749,6 +1778,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
     'multi_recipe' => 'multi_recipe',
+    'npr_story' => 'npr_story',
     'recipe' => 'recipe',
   );
   /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
@@ -1961,6 +1991,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+    'npr_story' => 'npr_story',
   );
   /* Filter criterion: Content: Has taxonomy term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
@@ -2489,6 +2520,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
     'multi_recipe' => 'multi_recipe',
+    'npr_story' => 'npr_story',
     'recipe' => 'recipe',
   );
   /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */

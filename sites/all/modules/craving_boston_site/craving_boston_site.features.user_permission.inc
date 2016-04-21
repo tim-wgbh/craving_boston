@@ -431,6 +431,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer npr api'.
+  $permissions['administer npr api'] = array(
+    'name' => 'administer npr api',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'npr_api',
+  );
+
   // Exported permission: 'administer pathauto'.
   $permissions['administer pathauto'] = array(
     'name' => 'administer pathauto',
@@ -761,6 +770,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create npr_story content'.
+  $permissions['create npr_story content'] = array(
+    'name' => 'create npr_story content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
@@ -877,6 +893,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any npr_story content'.
+  $permissions['delete any npr_story content'] = array(
+    'name' => 'delete any npr_story content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
@@ -981,6 +1004,13 @@ function craving_boston_site_user_default_permissions() {
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own npr_story content'.
+  $permissions['delete own npr_story content'] = array(
+    'name' => 'delete own npr_story content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1213,6 +1243,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any npr_story content'.
+  $permissions['edit any npr_story content'] = array(
+    'name' => 'edit any npr_story content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
@@ -1329,6 +1366,13 @@ function craving_boston_site_user_default_permissions() {
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own npr_story content'.
+  $permissions['edit own npr_story content'] = array(
+    'name' => 'edit own npr_story content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1536,6 +1580,16 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'focal_point',
+  );
+
+  // Exported permission: 'pull NPR content'.
+  $permissions['pull NPR content'] = array(
+    'name' => 'pull NPR content',
+    'roles' => array(
+      'editor' => 'editor',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'npr_pull',
   );
 
   // Exported permission: 'rename features'.
