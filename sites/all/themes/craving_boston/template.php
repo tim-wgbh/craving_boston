@@ -289,9 +289,9 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 
 function _subhead_deck($fields) {
   if (!empty($fields['field_subhead']) && !empty($fields['field_subhead']->content)) {
-    $deck = $fields['field_subhead']->content;
+    $deck = '<p>' . $fields['field_subhead']->content . '</p>';
   } else if (!empty($fields['body']) && !empty($fields['body']->content)) {
-    $deck = $fields['body']->content;
+    $deck = '<p>' . $fields['body']->content . '</p>';
   } else {
     $deck = false;
   }

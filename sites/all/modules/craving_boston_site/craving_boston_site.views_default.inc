@@ -1681,7 +1681,6 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_subhead']['table'] = 'field_data_field_subhead';
   $handler->display->display_options['fields']['field_subhead']['field'] = 'field_subhead';
   $handler->display->display_options['fields']['field_subhead']['label'] = '';
-  $handler->display->display_options['fields']['field_subhead']['element_type'] = 'p';
   $handler->display->display_options['fields']['field_subhead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_subhead']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_subhead']['type'] = 'text_plain';
@@ -1705,6 +1704,40 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['field_internet_video']['type'] = 'video_embed_field_url';
   $handler->display->display_options['fields']['field_internet_video']['settings'] = array(
     'video_style' => 'normal',
+  );
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: By */
+  $handler->display->display_options['fields']['field_npr_byline']['id'] = 'field_npr_byline';
+  $handler->display->display_options['fields']['field_npr_byline']['table'] = 'field_data_field_npr_byline';
+  $handler->display->display_options['fields']['field_npr_byline']['field'] = 'field_npr_byline';
+  $handler->display->display_options['fields']['field_npr_byline']['label'] = '';
+  $handler->display->display_options['fields']['field_npr_byline']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_npr_byline']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_npr_byline']['type'] = 'text_plain';
+  /* Field: Content: NPR Image */
+  $handler->display->display_options['fields']['field_npr_image']['id'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['table'] = 'field_data_field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['field'] = 'field_npr_image';
+  $handler->display->display_options['fields']['field_npr_image']['label'] = '';
+  $handler->display->display_options['fields']['field_npr_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_npr_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_npr_image']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_npr_image']['settings'] = array(
+    'picture_mapping' => 'article_mapping',
+    'fallback_image_style' => '',
+    'lazyload' => 0,
+    'lazyload_aspect_ratio' => 0,
+    'image_link' => 'content',
   );
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';

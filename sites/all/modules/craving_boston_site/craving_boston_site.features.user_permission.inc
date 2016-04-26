@@ -37,6 +37,7 @@ function craving_boston_site_user_default_permissions() {
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -47,6 +48,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'contributor' => 'contributor',
+      'designer' => 'designer',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -68,6 +70,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'access dashboard',
     'roles' => array(
       'contributor' => 'contributor',
+      'designer' => 'designer',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -98,6 +101,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'access navbar',
     'roles' => array(
       'contributor' => 'contributor',
+      'designer' => 'designer',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -200,6 +204,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer block classes'] = array(
     'name' => 'administer block classes',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'block_class',
@@ -209,6 +214,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'block',
@@ -281,6 +287,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer features'] = array(
     'name' => 'administer features',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'features',
@@ -695,6 +702,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
     'roles' => array(
+      'designer' => 'designer',
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
@@ -706,6 +714,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'change own username',
     'roles' => array(
       'contributor' => 'contributor',
+      'designer' => 'designer',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -810,6 +819,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'path',
@@ -1495,6 +1505,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['generate features'] = array(
     'name' => 'generate features',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'features',
@@ -1513,6 +1524,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['manage features'] = array(
     'name' => 'manage features',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'features',
@@ -1605,6 +1617,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['rename features'] = array(
     'name' => 'rename features',
     'roles' => array(
+      'designer' => 'designer',
       'site administrator' => 'site administrator',
     ),
     'module' => 'features',
@@ -1862,6 +1875,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'view own unpublished content',
     'roles' => array(
       'contributor' => 'contributor',
+      'designer' => 'designer',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
@@ -1881,6 +1895,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'view revisions',
     'roles' => array(
       'contributor' => 'contributor',
+      'designer' => 'designer',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
       'site administrator' => 'site administrator',
