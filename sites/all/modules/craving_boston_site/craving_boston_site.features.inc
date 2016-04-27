@@ -427,6 +427,14 @@ function craving_boston_site_node_info() {
       'title_label' => t('Question'),
       'help' => '',
     ),
+    'landing_page' => array(
+      'name' => t('Landing page'),
+      'base' => 'node_content',
+      'description' => t('The content type to create landing pages.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'multi_recipe' => array(
       'name' => t('Multi-Recipe'),
       'base' => 'node_content',

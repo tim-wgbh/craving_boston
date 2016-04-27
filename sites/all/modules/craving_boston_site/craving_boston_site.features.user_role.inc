@@ -16,10 +16,22 @@ function craving_boston_site_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: designer.
+  $roles['designer'] = array(
+    'name' => 'designer',
+    'weight' => 6,
+  );
+
   // Exported role: editor.
   $roles['editor'] = array(
     'name' => 'editor',
     'weight' => 4,
+  );
+
+  // Exported role: event contributor.
+  $roles['event contributor'] = array(
+    'name' => 'event contributor',
+    'weight' => 5,
   );
 
   // Exported role: site administrator.

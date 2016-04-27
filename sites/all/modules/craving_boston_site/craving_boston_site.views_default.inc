@@ -1082,7 +1082,7 @@ function craving_boston_site_views_default_views() {
   $handler = $view->new_display('attachment', 'Attachment', 'lead_article_attachment');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
@@ -1126,7 +1126,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['filters']['position']['field'] = 'position';
   $handler->display->display_options['filters']['position']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['filters']['position']['operator'] = '>=';
+  $handler->display->display_options['filters']['position']['operator'] = '>';
   $handler->display->display_options['filters']['position']['value']['value'] = '1';
   $handler->display->display_options['displays'] = array(
     'lead_article' => 'lead_article',
@@ -1252,6 +1252,14 @@ function craving_boston_site_views_default_views() {
     'article' => 'article',
     'multi_recipe' => 'multi_recipe',
     'recipe' => 'recipe',
+  );
+  /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['id'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['table'] = 'field_data_field_part_of_multi_recipe';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['field'] = 'field_part_of_multi_recipe_value';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_part_of_multi_recipe_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Most Popular Now Block */
