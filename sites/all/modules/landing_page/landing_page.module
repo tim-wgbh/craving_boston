@@ -161,7 +161,6 @@ function landing_page_form_alter(&$form, &$form_state, $form_id) {
  * Unset the default CSS.
  */
 function landing_page_css_alter(&$css) {
-  kpr($css);
   if ((arg(0) == 'node') && (is_numeric(arg(1))) && (arg(2) == '')) {
     $node = node_load(arg(1));
     if ($node->type == 'landing_page') {

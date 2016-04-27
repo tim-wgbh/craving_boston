@@ -25,7 +25,6 @@
   <div id="main-content" class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <?php kpr($node); ?>
         <?php print $node->body['und'][0]['value']; ?>
       </div>
     </div>
