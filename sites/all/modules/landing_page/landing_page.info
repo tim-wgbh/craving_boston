@@ -1,0 +1,11 @@
+name = Landing page
+description = A module that allows to create customized landing pages via configuration.
+version = 7.x-1.0
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2015-09-16
+version = "7.x-1.0"
+core = "7.x"
+project = "landing_page"
+datestamp = "1442408940"
+
