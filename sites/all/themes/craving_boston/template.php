@@ -161,7 +161,7 @@ function craving_boston_preprocess_node(&$vars) {
   }
   
   // Handle related content
-  if (in_array($node->type, array('article', 'recipe', 'multi_recipe')) && !$part_of_multi_recipe) { 
+  if (in_array($node->type, array('article', 'recipe', 'multi_recipe', 'npr_story')) && !$part_of_multi_recipe) { 
     $view = views_get_view('cb_similar_by_terms');
     $preview = $view->preview('block');
     if (count($view->result) > 0) {

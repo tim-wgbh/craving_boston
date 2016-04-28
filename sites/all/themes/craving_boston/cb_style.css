@@ -294,7 +294,10 @@ input#edit-search-block-form--2 {
 .field-type-node-reference h2 {
   font-size: 0.7em;
 }
-.page-node .field-name-field-subhead, .page-node .subhead, .page-node .field-name-field-author {
+.page-node .field-name-field-subhead, 
+.page-node .subhead, 
+.page-node .field-name-field-author, 
+.page-node .field-name-field-npr-byline {
   color: #666;
   font-style: italic;
   font-weight: bold;
@@ -377,9 +380,6 @@ h2.recipe {
 label.audio {
   display: inline-block;
   margin-right:10px
-}
-.field-name-field-npr-byline .field-label {
-  font-weight: normal;
 }
 #masthead {
   margin-top: 24px;

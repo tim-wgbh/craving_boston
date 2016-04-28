@@ -1105,6 +1105,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
     'multi_recipe' => 'multi_recipe',
+    'npr_story' => 'npr_story',
     'recipe' => 'recipe',
   );
   /* Filter criterion: Content: Part of multi-recipe (field_part_of_multi_recipe) */
