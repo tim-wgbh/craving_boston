@@ -214,9 +214,9 @@ function landing_page_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     $node = $variables['node'];
     $field_template_language = field_language('node', $node, 'field_template_list');
-    $field_template_list = $node->field_template_list[$field_template_language][0]['value'];
-    $template_path = variable_get('landing_page_templates_custom_path');
     if (($node->type == 'landing_page') && $field_template_list != 'default' && arg(2) != 'edit') {
+      $field_template_list = $node->field_template_list[$field_template_language][0]['value'];
+      $template_path = variable_get('landing_page_templates_custom_path');
       $variables['theme_hook_suggestions'][] = 'landing_page_' . $field_template_list;
     }
   }
