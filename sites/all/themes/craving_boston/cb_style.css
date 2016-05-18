@@ -682,7 +682,7 @@ label.audio {
 
 /* Landing pages */
 .node-type-landing-page #main-menu {
-  margin-top: 35px;
+  margin: 35px 0 0;
 }
 .node-type-landing-page .wgbh-links {
   display: none;
