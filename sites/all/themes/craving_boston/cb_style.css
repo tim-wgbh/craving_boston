@@ -680,7 +680,10 @@ label.audio {
   margin: 10px 0 40px;
 }
 
-/* Landing pages - remove WGBH links */
+/* Landing pages */
+.node-type-landing-page #main-menu {
+  margin-top: 35px;
+}
 .node-type-landing-page .wgbh-links {
   display: none;
 }
