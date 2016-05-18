@@ -1,5 +1,5 @@
 <div id="page" class="landing-page">
-  <header id="masthead" class="site-header container-fluid" role="banner">
+  <header id="masthead" class="site-header container" role="banner">
     <div class="row">
       <div class="col-md-3 col-xs-12">
         <div id="site-banner">
@@ -22,7 +22,7 @@
       </div>
     </div>
   </header>
-  <div id="main-content" class="container-fluid">
+  <div id="main-content" class="container">
     <div class="row">
       <div class="col-md-12">
         <?php print $node->body['und'][0]['value']; ?>

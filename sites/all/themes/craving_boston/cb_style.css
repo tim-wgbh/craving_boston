@@ -680,6 +680,11 @@ label.audio {
   margin: 10px 0 40px;
 }
 
+/* Landing pages - remove WGBH links */
+.node-type-landing-page .wgbh-links {
+  display: none;
+}
+
 /* Override related links colors from wgbh_branding module */    
 .wgbh-related-links {
   color: #b52e18;
