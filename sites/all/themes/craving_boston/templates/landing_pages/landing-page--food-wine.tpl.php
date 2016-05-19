@@ -1,27 +1,4 @@
 <div id="page" class="landing-page">
-  <header id="masthead" class="site-header container" role="banner">
-    <div class="row">
-      <div class="col-md-3 col-xs-12">
-        <div id="site-banner">
-          <a href="/" title="Home">
-            <img src="/sites/all/themes/craving_boston/images/craving-boston-banner-logo-landing.png" />
-          </a>
-        </div>
-      </div>
-      <div class="col-md-9 col-xs-12">
-        <div class="row mainmenu">
-          <nav id="navigation" role="navigation">
-            <div id="main-menu">
-              <?php 
-                $topic_menu = menu_navigation_links('menu-topics');
-                print theme('links__menu_topics_menu', array('links' => $topic_menu));
-              ?>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
   <div id="main-content" class="container">
     <div class="row">
       <div class="col-md-12">
@@ -56,13 +33,3 @@
     </div>
   <?php endif; ?>
 </div>
-
-<footer id="colophon" class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="row">
-      <div class="fcred col-xs-12">
-        &copy; <?php echo date("Y"); ?> The WGBH Educational Foundation
-      </div>
-    </div>
-  </div>
-</footer>
