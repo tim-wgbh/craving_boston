@@ -1,21 +1,11 @@
 <?php
 
 /**
- * Implements hook_init().
- */
-function qtip_filter_init() {
-  // Only load qtip.admin.js file if currently viewing qTip settings page
-  if (request_uri() == base_path() . 'admin/config/user-interface/qtip/settings/filter') {
-    drupal_add_js(drupal_get_path('module', 'qtip_filter') . '/js/qtip_filter.admin.js');
-  }
-}
-
-/**
  * Implements hook_filter_info().
  */
 function qtip_filter_filter_info() {
   $filters['qtip'] = array(
-    'title'             => t('qTip: Add stylish jQuery tooltips to text'),
+    'title'             => t('qTip tooltips'),
     'process callback'  => '_qtip_filter_process',
     'settings callback' => '_qtip_filter_settings',
     'tips callback'     => '_qtip_filter_tips',
@@ -28,25 +18,27 @@ function qtip_filter_filter_info() {
  * Private callback function for qtip_filter_filter_info().
  */
 function _qtip_filter_process($text, $filter) {
-  if (preg_match_all("/\[qtip\-?([a-z0-9_]*)?:([^\|\\]]+)\|([^\|\\]]+)?\|?([^\|\\]]*)?\]/i", $text, $match)) {
+  if (preg_match_all("/\[qtip\-?([a-z0-9_]*)?:([^\|\\]]+)\|([^\\]]*)?\]/i", $text, $match)) {
     foreach ($match[0] as $key => $value) {
       $search[] = $match[0][$key];
 
-      // Check to see if $match[1] is a qTip instance so we know which one to load
-      if (!qtip_load($match[1][$key])) {
+      $instance = $match[1][$key];
+      if (empty($instance) || !qtip_load($instance)) {
         // Load the default instance
         $instance = $filter->settings['instance'];
       }
-      else {
-        // Use the overridden instance
-        $instance = $match[1][$key];
+
+      $title = '';
+      $tooltip = $match[3][$key];
+      if (strpos($tooltip, '|') !== FALSE) {
+        list($title, $tooltip) = explode('|', $match[3][$key]);
       }
 
       $theme_variables = array(
         'instance' => $instance,
         'content'  => $match[2][$key],
-        'tooltip'  => $match[3][$key],
-        'title'    => $match[4][$key],
+        'title'    => $title,
+        'tooltip'  => $tooltip,
       );
 
       $replace[] = theme('qtip', $theme_variables);
@@ -79,5 +71,5 @@ function _qtip_filter_settings($form, $form_state, $filter, $format, $defaults, 
  * Private callback function for qtip_filter_filter_info().
  */
 function _qtip_filter_tips($delta, $format, $long = FALSE) {
-  return "Generate stylish tooltips. Format: [qtip:Text to display on page|Text to appear in tooltip]";
+  return "Generate stylish tooltips. Format: [qtip:Text to display on page|Tooltip title (optional)|Text to appear in tooltip]";
 }

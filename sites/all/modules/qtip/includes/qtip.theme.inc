@@ -4,7 +4,13 @@
  * Theme function for a qtip.
  */
 function theme_qtip($vars) {
-  $output  = '<span class="qtip-link">';
+  if (is_array($vars['attributes'])) {
+    $vars['attributes']['class'][] = 'qtip-link';
+    $output = '<span' . drupal_attributes($vars['attributes']) . '>';
+  }
+  else {
+      $output = '<span class="qtip-link">';
+  }
   $output .=    filter_xss_admin($vars['content']);
   $output .= '</span>';
   $output .= '<span class="qtip-tooltip"' . (isset($vars['title']) ? ' data-qtip-title="' . filter_xss_admin($vars['title']) . '"' : '') . (isset($vars['instance']) ? ' data-qtip-instance="'. $vars['instance'] . '"' : '') . '>' .

@@ -69,7 +69,7 @@ function qtip_webform_form_webform_component_edit_form_alter(&$form, &$form_stat
       '#default_value' => (isset($component['text']) ? $component['text'] : ''),
     );
     $form['display']['qtip_webform']['custom_text'] = array(
-      '#type'          => 'textfield',
+      '#type'          => 'textarea',
       '#title'         => t('Custom text'),
       '#description'   => t('Enter the text that will show in the tooltip. Use this option if you would like to have the description field display normally, but still have text display in a qTip.'),
       '#default_value' => (isset($component['custom_text']) ? $component['custom_text'] : ''),

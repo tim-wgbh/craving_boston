@@ -12,7 +12,12 @@ define('QTIP_MINIMUM_JQUERY_VERSION', '1.6.4');
  */
 function qtip_help($path, $arg) {
   if ($path == 'admin/config/user-interface/qtip' && module_exists('block')) {
-    return '<p>' . t('Each qTip instance can be used throughout the site to style a set of tooltips.') . '</p>';
+    $text = '<p>' . t('Each qTip instance can be used throughout the site to style a set of tooltips.');
+    if (qtip_fetch_default_instance()) {
+      $text .= ' ' . t('The bolded instance is currently set as default on the !settings_page.', array('!settings_page' => l('settings page', 'admin/config/user-interface/qtip/settings')));
+    }
+
+    return $text . '</p>';
   }
 }
 
@@ -86,7 +91,8 @@ function qtip_init() {
       }
     }
 
-    drupal_add_js(drupal_get_path('module', 'qtip') . '/js/qtip.js', 'file');
+    // Give qtip.js an explicit weight so submodules can precede it.
+    drupal_add_js(drupal_get_path('module', 'qtip') . '/js/qtip.js', array('weight' => 1));
     drupal_add_css(drupal_get_path('module', 'qtip') . '/css/qtip.css');
 
     $instances = qtip_load_multiple();
@@ -246,10 +252,11 @@ function qtip_theme() {
   return array(
     'qtip' => array(
       'variables' => array(
-        'content'  => NULL,
-        'title'    => NULL,
-        'tooltip'  => NULL,
-        'instance' => NULL,
+        'content'    => NULL,
+        'title'      => NULL,
+        'tooltip'    => NULL,
+        'instance'   => NULL,
+        'attributes' => NULL,
       ),
       'file' => 'includes/qtip.theme.inc',
     ),
@@ -307,9 +314,93 @@ function qtip_libraries_info() {
         ),
       ),
     ),
+    'variant order' => array('minified', 'source'),
   );
 
   return $libraries;
+}
+
+/**
+ * Implements hook_library().
+ */
+function qtip_library() {
+  $libraries['qtip'] = _qtip_convert_libraries_to_library(libraries_detect('qtip'),
+    array(
+      'css' => array(
+        'type'  => 'file',
+        'media' => 'screen',
+        ),
+      'js' => array(
+        'group' => JS_LIBRARY,
+        ),
+      )
+    );
+
+  if (!empty($libraries['qtip'])) {
+    $libraries['library']['dependencies'][] = array('dnd', 'qtip');
+  }
+  return $libraries;
+}
+
+/**
+ * Converts a libraries module array to a hook_library array.
+ *
+ * @todo Libraries API should automatically register all libraries in
+ *   hook_library(). See https://drupal.org/node/1386368
+ *
+ * @return Array
+ *  Returns a standard Drupal library definition structure.
+ */
+function _qtip_convert_libraries_to_library($library, $options = array()) {
+  // If the library wasn't installed, don't bother converting it.
+  if (!$library['installed']) {
+    return array();
+  }
+  $converted = array();
+  $files = array();
+
+  // Get the library files from one of the installed variants.
+  if ($name = _qtip_libraries_get_preferred_variant_name($library)) {
+    $files = $library['variants'][$name]['files'];
+  }
+
+  // Define the library if files exist for it.
+  if (!empty($files)) {
+    // This is the basic structure expected by hook_library().
+    $converted = array(
+      'title' => $library['name'],
+      'website' => $library['vendor url'],
+      'version' => $library['version'],
+    );
+    foreach ($files as $type => $paths) {
+      foreach($paths as $filename => $data) {
+        $converted[$type][$library['library path'] . '/' . $filename] = (!empty($options[$type]) ? $options[$type] : array());
+      }
+    }
+  }
+
+  return $converted;
+}
+
+/**
+ * Returns the variant that should be loaded based on order preference.
+ *
+ * @param array $library
+ *   A libraries module library definition array.
+ * @return string
+ *   The name of the variant that should be loaded.
+ */
+function _qtip_libraries_get_preferred_variant_name($library) {
+  if (!empty($library['variant order'])) {
+    foreach ($library['variant order'] as $name) {
+      if ($variant = $library['variants'][$name]) {
+        if ($variant['installed']) {
+          return $name;
+        }
+      }
+    }
+  }
+  return NULL;
 }
 
 /**

@@ -12,9 +12,9 @@ files[] = views/handlers/qtip_views_handler_field_tooltip.inc
 ; Views display extenders
 files[] = views/qtip_views_plugin_display_extender.inc
 
-; Information added by Drupal.org packaging script on 2015-03-14
-version = "7.x-2.0-rc3"
+; Information added by Drupal.org packaging script on 2016-05-31
+version = "7.x-2.0-rc4"
 core = "7.x"
 project = "qtip"
-datestamp = "1426346891"
+datestamp = "1464705856"
 

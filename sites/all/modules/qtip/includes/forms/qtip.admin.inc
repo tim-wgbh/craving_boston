@@ -242,7 +242,7 @@ function qtip_configure_instance_form($form, &$form_state, $qt = NULL) {
   /* Position */
   $form['position']['image'] = array(
     '#type'   => 'item',
-    '#markup' => '<img src="/' . drupal_get_path('module', 'qtip') .'/images/corners.jpg"><br><div class="credit">' . t('Based on image by Craig Thompson, creator of the !link.', array('!link' => l('qTip library', 'http://qtip2.com/demos', array('#attributes' => array('target' => '_blank'))))) . '</div>',
+    '#markup' => '<img src="' . base_path() . drupal_get_path('module', 'qtip') .'/images/corners.jpg"><br><div class="credit">' . t('Based on image by Craig Thompson, creator of the !link.', array('!link' => l('qTip library', 'http://qtip2.com/demos', array('#attributes' => array('target' => '_blank'))))) . '</div>',
     '#prefix' => '<div class="corners-images">',
     '#suffix' => '</div>',
     '#weight' => -1000,

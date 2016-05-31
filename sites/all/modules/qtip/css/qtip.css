@@ -8,6 +8,10 @@
   display: none;
 }
 
+tr.qtip-default-instance {
+  font-weight: bold;
+}
+
 form#qtip-configure-instance-form .corners-images {
   float: right;
 }

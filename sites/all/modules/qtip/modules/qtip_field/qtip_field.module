@@ -20,10 +20,38 @@ function qtip_field_form_field_ui_field_edit_form_alter(&$form, &$form_state) {
       '#options'     => array(
         'none'        => t('Do not display'),
         'description' => t('Use text from help text field above'),
+        'filter'      => t('Use qTip filter in Help text'),
         'custom'      => t('Custom text'),
       ),
       '#default_value' => isset($settings['text']) ? $settings['text'] : 'none',
       '#weight'        => 0,
+  );
+  // I had to use {} instead of [] like qtip_filter because if the token module is enabled
+  // the admin gets errors about [qtip:...] not being a valid token.
+  $form['instance']['qtip']['filter_help'] = array(
+    '#type' => 'item',
+    '#title' => t('Filter format'),
+    '#markup' => '<strong>' . t('With title') . ':</strong> {qtip:Text to display on page|Tooltip title|Text to appear in tooltip}<br>
+                  <strong>' . t('Without title') . ':</strong> {qtip:Text to display on page|Text to appear in tooltip}',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="instance[qtip][text]"]' => array('value' => 'filter'),
+      )
+    )
+  );
+
+  $form['instance']['qtip']['title'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Title'),
+    '#description'   => t('Enter the title, if any, that will show with the tooltip.'),
+    '#default_value' => isset($settings['title']) ? $settings['title'] : '',
+    '#states'        => array(
+      'invisible' => array(
+        array(':input[name="instance[qtip][text]"]' => array('value' => 'none')),
+        array(':input[name="instance[qtip][text]"]' => array('value' => 'filter')),
+      ),
+    ),
+    '#weight' => 10,
   );
 
   $form['instance']['qtip']['custom_text'] = array(
@@ -39,10 +67,16 @@ function qtip_field_form_field_ui_field_edit_form_alter(&$form, &$form_state) {
         ':input[name="instance[qtip][text]"]' => array('value' => 'custom'),
       ),
     ),
-    '#weight' => 10,
+    '#weight' => 20,
+  );
+  $form['instance']['qtip']['qtip_label'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add qTip to field label.'),
+    '#description' => t('If checked qTip will be shown after the label in the rendered field.'),
+    '#default_value' => isset($settings['qtip_label']) ? $settings['qtip_label'] : 0,
   );
 
-  $form['instance']['qtip']['instance'] = qtip_fetch_instances_field($settings['instance'], array('weight' => 20));
+  $form['instance']['qtip']['instance'] = qtip_fetch_instances_field($settings['instance'], array('weight' => 30));
   $form['instance']['qtip']['instance'] += array(
     '#states' => array(
       'invisible' => array(
@@ -57,16 +91,56 @@ function qtip_field_form_field_ui_field_edit_form_alter(&$form, &$form_state) {
  */
 function qtip_field_field_widget_form_alter(&$element, &$form_state, $context) {
   if (isset($context['instance']['qtip']) && $context['instance']['qtip']['text'] != 'none') {
-    $element['value']['#attributes']['class'][] = 'qtip-link';
+    // Get type of field
+    $field_type = $context['field']['type'];
+    switch ($field_type) {
+      case 'text':
+        $local_element =& $element['value'];
+        break;
+      case 'image':
+        $local_element =& $element[0];
+        break;
+      default:
+        $local_element =& $element;
+        break;
+    }
+
+    $local_element['#attributes']['class'][] = 'qtip-link';
+
+    $tooltip_title = isset($context['instance']['qtip']['title']) ? $context['instance']['qtip']['title'] : '';
 
     $tooltip_text = '';
     // Get the Help text for the tooltip if that is what is supposed to be used
     switch ($context['instance']['qtip']['text']) {
       case 'description':
-        if (isset($element['value']['#description'])) {
-          $tooltip_text = $element['value']['#description'];
+        if (isset($local_element['#description'])) {
+          $tooltip_text = $local_element['#description'];
           // Remove the description since it will be displaying in the tooltip
-          unset($element['value']['#description']);
+          unset($local_element['#description']);
+        }
+        break;
+      case 'filter':
+        if (preg_match_all("/{qtip:\s?([^\|\}]+)\|([^\}]*)?}/i", $local_element['#description'], $match)) {
+          foreach ($match[0] as $key => $value) {
+            $search[] = $match[0][$key];
+
+            $title = '';
+            $tooltip = $match[2][$key];
+            if (strpos($tooltip, '|') !== FALSE) {
+              list($title, $tooltip) = explode('|', $match[2][$key]);
+            }
+
+            $theme_variables = array(
+              'instance' => $context['instance']['qtip']['instance'],
+              'content'  => $match[1][$key],
+              'title'    => $title,
+              'tooltip'  => $tooltip,
+            );
+
+            $replace[] = theme('qtip', $theme_variables);
+          }
+
+          $local_element['#description'] = str_replace($search, $replace, $local_element['#description']);
         }
         break;
       case 'custom':
@@ -74,6 +148,36 @@ function qtip_field_field_widget_form_alter(&$element, &$form_state, $context) {
         break;
     }
 
-    $element['value']['#suffix'] = theme('qtip_form', array('instance' => $context['instance']['qtip']['instance'], 'tooltip' => $tooltip_text));
+    $local_element['#suffix'] = theme('qtip_form', array('instance' => $context['instance']['qtip']['instance'], 'title' => $tooltip_title, 'tooltip' => $tooltip_text));
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function qtip_field_preprocess_field(&$variables) {
+  $settings = field_info_instance($variables['element']['#entity_type'], $variables['element']['#field_name'], $variables['element']['#bundle']);
+  if ($variables['label_hidden'] == FALSE && isset($settings['qtip']) && $settings['qtip']['qtip_label'] === 1 && $settings['qtip']['text'] != 'none') {
+    $qtip_help_image = theme('image', array(
+      'path' => base_path() . 'misc/help.png',
+    ));
+    $tooltip_text = '';
+    switch ($settings['qtip']['text']) {
+      case 'description':
+        if (isset($settings['description'])) {
+          $tooltip_text = $settings['description'];
+        }
+        break;
+
+      case 'custom':
+        $tooltip_text = isset($settings['qtip']['custom_text']) ? $settings['qtip']['custom_text'] : '';
+        break;
+    }
+    $qtip = theme('qtip', array(
+      'content' => $qtip_help_image,
+      'instance' => $settings['qtip']['instance'],
+      'tooltip' => $tooltip_text,
+    ));
+    $variables['label'] = $variables['label'] . $qtip;
   }
 }

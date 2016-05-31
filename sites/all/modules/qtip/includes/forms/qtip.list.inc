@@ -35,24 +35,30 @@ function qtip_list() {
     }
 
     $row = array(
-      array('data' => check_plain($qt->name)),
-      array('data' => check_plain($qt->machine_name)),
-      array('data' => theme('qtip', array('content' => t('Sample text'), 'instance' => $qt->machine_name, 'tooltip' => t('This is an example of how this qTip instance will look and function throughout the website.')))),
+      'data' => array(
+        array('data' => check_plain($qt->name)),
+        array('data' => check_plain($qt->machine_name)),
+        array('data' => theme('qtip', array('content' => t('Sample text'), 'instance' => $qt->machine_name, 'tooltip' => t('This is an example of how this qTip instance will look and function throughout the website.')))),
+      ),
     );
 
     if ($ctools_exists) {
-      $row[] = array('data' => $storage);
+      $row['data'][] = array('data' => $storage);
     }
 
-    $row[] = array('data' => l(t('Edit'), 'admin/config/user-interface/qtip/manage/' . $qt->machine_name . '/edit'));
+    $row['data'][] = array('data' => l(t('Edit'), 'admin/config/user-interface/qtip/manage/' . $qt->machine_name . '/edit'));
 
     if ($ctools_exists) {
-      $row[] = array('data' => l(t('Export'), 'admin/config/user-interface/qtip/actions/' . $qt->machine_name . '/export'));
-      $row[] = array('data' => l(t('Clone'), 'admin/config/user-interface/qtip/actions/' . $qt->machine_name . '/clone'));
+      $row['data'][] = array('data' => l(t('Export'), 'admin/config/user-interface/qtip/actions/' . $qt->machine_name . '/export'));
+      $row['data'][] = array('data' => l(t('Clone'), 'admin/config/user-interface/qtip/actions/' . $qt->machine_name . '/clone'));
 
     }
 
-    $row[] = array('data' => $delete);
+    if (qtip_fetch_default_instance() == $qt->machine_name) {
+      $row['class'][] = 'qtip-default-instance';
+    }
+
+    $row['data'][] = array('data' => $delete);
 
     $rows[] = $row;
   }

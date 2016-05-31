@@ -8,7 +8,7 @@
               $('.view-id-' + view + '.view-display-id-' + display + ' .qtip-views-field-' + field + '-label')
                 .once('qtip-views-element-label')
                 .append(tooltip)
-                .children(':first-child')
+                .children('[class^="qtip-views-"]')
                 .wrap('<span class="qtip-link qtip-views-link"></span>');
             });
           });

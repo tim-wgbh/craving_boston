@@ -137,7 +137,8 @@ function qtip_views_preprocess_views_view(&$vars) {
 
     // Bail early if nothing to do.
     if (!empty($themed)) {
-      drupal_add_js(drupal_get_path('module', 'qtip_views') . '/js/qtip_views.js');
+      // Set qtip_views.js' weight to make it run before qtip.js.
+      drupal_add_js(drupal_get_path('module', 'qtip_views') . '/js/qtip_views.js', array('weight' => 0));
       drupal_add_js(array(
         'qtipViewsTooltip' => array(
           $view->name => array(
@@ -243,7 +244,7 @@ function qtip_views_theme() {
  */
 function theme_qtip_views_label_tooltip(&$variables) {
   $element = theme('image', array(
-    'path'       => drupal_get_path('module', 'qtip_views') . '/images/help.png',
+    'path'       => base_path() . 'misc/help.png',
     'attributes' => array(
       'class' => array(
         'qtip-views-' . $variables['view']->name . '-' . $variables['view']->current_display,
