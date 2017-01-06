@@ -1,6 +1,6 @@
 /*  This is the Craving Boston custom style sheet */
- 
-/* Basic settings */ 
+
+/* Basic settings */
 body {
   font-family: "CooperHewitt", Helvetica, Arial,sans-serif;
   background-image: url(images/bg_greyzz.png);
@@ -76,7 +76,7 @@ blockquote::before {
 .bio .bio-text p {
   font-size: 15px;
 }
-/* 
+/*
 .block-dfp iframe {
   width: 100%;
 }
@@ -147,7 +147,7 @@ blockquote::before {
 .view-footer {
   text-align: center;
 }
-a.cb-button {    
+a.cb-button {
   display: inline-block;
   padding: 5px 14px;
   background-color: #fff;
@@ -268,7 +268,7 @@ a.cb-button {
 }
 #search-block-form {
   text-align: right;
-}  
+}
 #search-block-form .form-item {
   vertical-align: 15px;
 }
@@ -294,9 +294,9 @@ input#edit-search-block-form--2 {
 .field-type-node-reference h2 {
   font-size: 0.7em;
 }
-.page-node .field-name-field-subhead, 
-.page-node .subhead, 
-.page-node .field-name-field-author, 
+.page-node .field-name-field-subhead,
+.page-node .subhead,
+.page-node .field-name-field-author,
 .page-node .field-name-field-npr-byline {
   color: #666;
   font-style: italic;
@@ -356,7 +356,7 @@ h1.page-title {
 /* Multi-recipe */
 .topic-page h1.page-title {
   margin-bottom: 0;
-} 
+}
 h2.has-video {
   padding-left: 30px;
   background: url(images/video-icon.png) left 8px no-repeat;
@@ -456,7 +456,7 @@ label.audio {
 }
 #main-menu ul li.last {
   display: none;
-}  
+}
 #main-menu > ul > li > a {
   padding: 0 30px;
 }
@@ -473,8 +473,8 @@ label.audio {
 #main-menu ul li a:hover {
   font-style: italic;
   color: #5B9E4B;
-} 
-/* 
+}
+/*
 #main-menu #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
     background-image: url("/sites/all/themes/craving_boston/images/indicator-dot.png");
     background-position: right 0 top 18px;
@@ -499,13 +499,13 @@ label.audio {
 }
 
 /* Recipe styling */
-.node-type-recipe .field-type-text-with-summary, 
-.node-type-recipe .field-type-number-integer, 
-.node-type-recipe .field-type-ingredient-reference, 
+.node-type-recipe .field-type-text-with-summary,
+.node-type-recipe .field-type-number-integer,
+.node-type-recipe .field-type-ingredient-reference,
 .node-type-recipe .field-type-taxonomy-term-reference,
-.node-type-multi-recipe .field-type-text-with-summary, 
-.node-type-multi-recipe .field-type-number-integer, 
-.node-type-multi-recipe .field-type-ingredient-reference, 
+.node-type-multi-recipe .field-type-text-with-summary,
+.node-type-multi-recipe .field-type-number-integer,
+.node-type-multi-recipe .field-type-ingredient-reference,
 .node-type-multi-recipe .field-type-taxonomy-term-reference {
   color: #333;
   margin: 20px 0;
@@ -553,7 +553,7 @@ label.audio {
   padding: 2px 6px;
 }
 .page-taxonomy-term h2.title a,
-.page-taxonomy-term .node h2.title a, 
+.page-taxonomy-term .node h2.title a,
 .page-taxonomy-term .node h2.title a:visited  {
   font-size: 20px;
 }
@@ -639,7 +639,7 @@ label.audio {
 .view-content .article .info .deck {
   font-size: 18px;
 }
-.view-content .article-title, 
+.view-content .article-title,
 .view-content .article h2.title {
   font-size: 2em;
   font-weight: bold;
@@ -688,7 +688,7 @@ label.audio {
   display: none;
 }
 
-/* Override related links colors from wgbh_branding module */    
+/* Override related links colors from wgbh_branding module */
 .wgbh-related-links {
   color: #b52e18;
   border-top: solid 4px #b52e18;
@@ -696,6 +696,11 @@ label.audio {
 }
 .wgbh-related-links ul > li > a {
   color: #b52e18;
+}
+
+/* Contact page */
+fieldset.captcha legend {
+  display: none;
 }
 
 /* Fontello icons */
@@ -714,7 +719,7 @@ label.audio {
   font-style: normal;
   font-weight: normal;
   speak: none;
-  
+
   display: inline-block;
   width: 1.3em;
   height: 1.3em;
@@ -722,7 +727,7 @@ label.audio {
   margin-left: 0.2em;
   margin-right: 0.2em;
   text-align: center;
-  
+
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
@@ -756,7 +761,7 @@ label.audio {
     position: static;
     background: none;
   }
-  .view-content .article-title, 
+  .view-content .article-title,
   .view-content .article h2.title,
   .attachment .view-content .featured-info .article-title,
   .article h2 {
@@ -773,7 +778,7 @@ label.audio {
     margin-top: 10px;
   }
 }
-  
+
 }
 @media screen and (max-width: 480px) {
   .page-node .block.info {
@@ -811,7 +816,7 @@ label.audio {
   }
   #search-form {
     text-align: left;
-  }  
+  }
   #site-slogan {
     text-align: center;
     margin-top: 10px;
@@ -833,25 +838,25 @@ label.audio {
   }
   .view-featured .attachment .article {
     margin-left: 0;
-  } 
-  .view-featured .article, 
-  .view-featured .article .info, 
+  }
+  .view-featured .article,
+  .view-featured .article .info,
   .attachment .view-content .info .article-title,
-  .view-the-latest .article, 
+  .view-the-latest .article,
   .article h2,
   .view-content .article h2.title,
   .view-the-latest .article .info {
     font-size: 20px;
   }
-  .view-content .article h2.title, 
+  .view-content .article h2.title,
   .page-node h1.page-title {
     font-size: 20px;
     background-color:transparent;
   }
-  .page-node .field-name-field-subhead, 
-  .page-node .field-name-field-subhead p, 
-  .page-node .subhead, 
-  .page-node .subhead p, 
+  .page-node .field-name-field-subhead,
+  .page-node .field-name-field-subhead p,
+  .page-node .subhead,
+  .page-node .subhead p,
   .page-node .field-name-field-author {
     color: #666;
     font-size: 15px;
@@ -862,7 +867,7 @@ label.audio {
   .view-content .byline {
     display: none;
   }
-  .view-featured .article .image, 
+  .view-featured .article .image,
   .attachment .view-content .article .image {
     margin-bottom: 10px;
   }
