@@ -244,21 +244,25 @@
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
+// Local development configuration.
+if (!defined('PANTHEON_ENVIRONMENT')) {
+
+  $databases = array (
+    'default' =>
     array (
-      'database' => 'craving_boston',
-      'username' => 'crav_bos_user',
-      'password' => 'tim123',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
+      'default' =>
+      array (
+        'database' => 'craving_boston',
+        'username' => 'crav_bos_user',
+        'password' => 'tim123',
+        'host' => 'localhost',
+        'port' => '',
+        'driver' => 'mysql',
+        'prefix' => '',
+      ),
     ),
-  ),
-);
+  );
+}
 
 /**
  * Access control for update.php script.
@@ -388,13 +392,13 @@ ini_set('session.cookie_lifetime', 2000000);
  $conf['awssdk2_access_key']  = 'AKIAJJL2XED7XVMNZ2QQ';
  $conf['awssdk2_secret_key']  = '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';
  $conf['s3fs_region']         = 'us-east-1';
- 
+
  /**
   * Cloudfront domain
   */
  $conf['cloudfront_domain']   = 'd1pz597g947ic7.cloudfront.net';
- 
- 
+
+
  if (defined('PANTHEON_ENVIRONMENT')) {
    if ($_ENV['PANTHEON_ENVIRONMENT'] == 'dev') {
       $conf['s3fs_root_folder'] = 'pantheon-dev';
@@ -405,9 +409,9 @@ ini_set('session.cookie_lifetime', 2000000);
    $conf['s3fs_root_folder'] = '';
  }
 
-  
+
  $conf['composer_manager_file_dir']       = '../craving_boston_support';
- 
+
  $conf['site_name']     = 'Craving Boston';
  $conf['theme_default'] = 'craving_boston';
  $conf['favicon_path']  = 'sites/all/themes/craving_boston/favicon.ico';
@@ -415,18 +419,18 @@ ini_set('session.cookie_lifetime', 2000000);
 
  // DFP account (network)
  $conf['dfp_network_id'] = '/7934';
- 
+
   //Disqus account (domain)
   $conf['diqus_domain'] = 'wgbhpilots';
-  
+
  // JW Player
  $conf['jwplayer_script'] = 'jYGMQmQVEeOdAyIACmOLpg.js';
 
  //Public Media Platform (PMP) credentials
- $conf['wgbh_pmp_base_url'] = 'https://api.pmp.io';  
- $conf['wgbh_pmp_user_id'] = 'a81eca6c-b834-47fe-bb60-1382d677cd50';  
- $conf['wgbh_pmp_auth_client_id'] = '9ab452fe-07d2-47c1-8bdf-0d5e2de7499a';  
- $conf['wgbh_pmp_auth_client_secret'] = '65a0a07f8087c8720fd6d0f4';  
+ $conf['wgbh_pmp_base_url'] = 'https://api.pmp.io';
+ $conf['wgbh_pmp_user_id'] = 'a81eca6c-b834-47fe-bb60-1382d677cd50';
+ $conf['wgbh_pmp_auth_client_id'] = '9ab452fe-07d2-47c1-8bdf-0d5e2de7499a';
+ $conf['wgbh_pmp_auth_client_secret'] = '65a0a07f8087c8720fd6d0f4';
 
 /**
  * A custom theme can be set for the offline page. This applies when the site
