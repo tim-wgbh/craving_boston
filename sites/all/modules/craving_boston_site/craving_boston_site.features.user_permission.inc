@@ -173,6 +173,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer CAPTCHA settings'.
+  $permissions['administer CAPTCHA settings'] = array(
+    'name' => 'administer CAPTCHA settings',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'captcha',
+  );
+
   // Exported permission: 'administer DFP'.
   $permissions['administer DFP'] = array(
     'name' => 'administer DFP',
@@ -499,6 +508,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'radioactivity',
+  );
+
+  // Exported permission: 'administer recaptcha'.
+  $permissions['administer recaptcha'] = array(
+    'name' => 'administer recaptcha',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'recaptcha',
   );
 
   // Exported permission: 'administer rules'.
@@ -1716,6 +1734,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'publication_date',
+  );
+
+  // Exported permission: 'skip CAPTCHA'.
+  $permissions['skip CAPTCHA'] = array(
+    'name' => 'skip CAPTCHA',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'captcha',
   );
 
   // Exported permission: 'switch shortcut sets'.

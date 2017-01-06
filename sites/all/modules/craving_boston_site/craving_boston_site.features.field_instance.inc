@@ -148,7 +148,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -194,7 +194,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'wgbh_audio',
         'settings' => array(),
         'type' => 'html5_audio_player',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -310,7 +310,7 @@ function craving_boston_site_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -325,7 +325,7 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -391,7 +391,7 @@ function craving_boston_site_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -471,9 +471,14 @@ function craving_boston_site_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -500,7 +505,7 @@ function craving_boston_site_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 23,
+      'weight' => 8,
     ),
   );
 
@@ -516,7 +521,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -555,7 +560,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -603,7 +608,7 @@ function craving_boston_site_field_default_field_instances() {
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -652,7 +657,7 @@ function craving_boston_site_field_default_field_instances() {
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -701,7 +706,7 @@ function craving_boston_site_field_default_field_instances() {
           'type' => 'none',
         ),
         'type' => 'radioactivity_combo_formatter',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -743,7 +748,7 @@ function craving_boston_site_field_default_field_instances() {
           'player_type' => 'classic',
         ),
         'type' => 'soundcloud_html5',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -851,7 +856,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -890,7 +895,7 @@ function craving_boston_site_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -956,7 +961,7 @@ function craving_boston_site_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -996,7 +1001,7 @@ function craving_boston_site_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );

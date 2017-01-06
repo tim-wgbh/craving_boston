@@ -25,7 +25,11 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['title'] = 'About';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '21600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '21600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -40,30 +44,8 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'About text';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>WGBH and award-winning food journalist Catherine Smart have come together to provide you thoughtful content you can use everyday, and to inspire you to explore the deep connection between our region and its cuisine.</p>
-<p>Whether you want to learn more about how innovation is affecting our fare culture, read about a local new restaurant, or to look for a locally inspired recipe for dinner tonight, Craving Boston is your daily destination for food in Boston and New England.</p>
-<h3>Catherine Smart, managing editor</h3>
-<div class="bio">
-  <div class="row">
-    <div class="col-md-4 col-sm-12">
-      <div class="field-content">
-        <img typeof="foaf:Image" src="http://craving-boston.s3.amazonaws.com/production/styles/mobile_square/s3/hN-h1h1y.jpg?itok=fPM1NOE_" width="320" height="320" alt="" />
-      </div>
-    </div>
-    <div class="col-md-8 col-sm-12">
-      <div class="bio-text">
-        <p>Managing editor Catherine Smart spends most of her waking hours thinking, writing about, or eating food.</p>
-        <p>A New Hampshire native, she grew up in a family that cooked, gardened, canned and tapped trees to make maple syrup, so you could say New England cuisine is in her blood.</p>
-        <p>After graduating from the University of New Hampshire in 2007, she moved to the Boston area to pursue a culinary certificate and MLA in gastronomy at Boston University.  While working toward her degree Catherine fell in love with the Boston food scene, started a personal chef business, <a href="http://smartentertaining.com/hire-me/">The Pocket Garden</a>, and became a regular contributor to The Boston Globe food section. </p>
-        <p>When Catherine isn’t cooking for personal chef clients or freelancing for various food publications, she enjoys yoga, travel, gardening, and spending time with her friends and family.  Catherine and her husband Artie are proud Somervillians, living in Union Square with their black lab Scout, and two cats, Lily and Oliver.</p>
-        <p>This WGBH gig came at the perfect time, as they will have yet another hungry mouth to feed when they welcome their first child in February of next year.</p>
-      </div>
-      <div class="social-media">
-        <a href="https://twitter.com/catherinesmart" target="_blank"><span class="social-media-icon twitter"></span></a> <a href="https://instagram.com/cjsmart" target="_blank"><span class="social-media-icon instagram"></span></a> <a href="https://www.facebook.com/smartentertaining" target="_blank"><span class="social-media-icon facebook"></span></a> <a href="https://www.pinterest.com/catherinesmart" target="_blank"><span class="social-media-icon pinterest"></span></a>
-      </div>
-    </div>
-  </div>
-</div>
+  $handler->display->display_options['header']['area']['content'] = '<p>WGBH’s Craving Boston aims to provide you thoughtful content you can use everyday, and to inspire you to explore the deep connection between our region and its cuisine.</p>
+<p>Whether you want to learn more about how innovation is affecting our fare culture, read about a new restaurant, or to look for a locally inspired recipe for dinner tonight, we\'re your destination for all things food in Boston and New England.</p>
 ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Relationship: Nodequeue: Queue */
