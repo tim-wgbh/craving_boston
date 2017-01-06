@@ -155,7 +155,7 @@
  *   These settings are available as of MySQL 5.5.14, and are defaults in
  *   MySQL 5.7.7 and up.
  * - The PHP MySQL driver must support the utf8mb4 charset (libmysqlclient
-     5.5.3 and up, as well as mysqlnd 5.0.9 and up).
+ *   5.5.3 and up, as well as mysqlnd 5.0.9 and up).
  * - The MySQL server must support the utf8mb4 charset (5.5.3 and up).
  *
  * You can optionally set prefixes for some or all database table names
@@ -668,3 +668,41 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
   }
 }
 
+/**
+ * Smart start:
+ *
+ * If you would prefer to be redirected to the installation system when a
+ * valid settings.php file is present but no tables are installed, remove
+ * the leading hash sign below.
+ */
+# $conf['pressflow_smart_start'] = TRUE;
+
+/**
+ * Theme debugging:
+ *
+ * When debugging is enabled:
+ * - The markup of each template is surrounded by HTML comments that contain
+ *   theming information, such as template file name suggestions.
+ * - Note that this debugging markup will cause automated tests that directly
+ *   check rendered HTML to fail.
+ *
+ * For more information about debugging theme templates, see
+ * https://www.drupal.org/node/223440#theme-debug.
+ *
+ * Not recommended in production environments.
+ *
+ * Remove the leading hash sign to enable.
+ */
+# $conf['theme_debug'] = TRUE;
+
+/**
+ * CSS identifier double underscores allowance:
+ *
+ * To allow CSS identifiers to contain double underscores (.example__selector)
+ * for Drupal's BEM-style naming standards, uncomment the line below.
+ * Note that if you change this value in existing sites, existing page styles
+ * may be broken.
+ *
+ * @see drupal_clean_css_identifier()
+ */
+# $conf['allow_css_double_underscores'] = TRUE;
