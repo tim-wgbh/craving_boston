@@ -34,6 +34,12 @@ function craving_boston_site_user_default_roles() {
     'weight' => 5,
   );
 
+  // Exported role: food & wine admin.
+  $roles['food & wine admin'] = array(
+    'name' => 'food & wine admin',
+    'weight' => 7,
+  );
+
   // Exported role: site administrator.
   $roles['site administrator'] = array(
     'name' => 'site administrator',

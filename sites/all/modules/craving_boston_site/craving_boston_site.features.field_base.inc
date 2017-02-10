@@ -22,6 +22,8 @@ function craving_boston_site_field_default_field_bases() {
     'module' => 'date',
     'required' => TRUE,
     'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
       'enddate' => 1,
       'enddate_required' => 0,
       'granularity' => array(
@@ -33,7 +35,7 @@ function craving_boston_site_field_default_field_bases() {
         'year' => 'year',
       ),
       'repeat' => 0,
-      'timezone_db' => 'UTC',
+      'timezone_db' => '',
       'todate' => 'optional',
       'tz_handling' => 'none',
     ),
@@ -110,6 +112,27 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_business'.
+  $field_bases['field_business'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_business',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_carousel'.
   $field_bases['field_carousel'] = array(
     'active' => 1,
@@ -150,6 +173,51 @@ function craving_boston_site_field_default_field_bases() {
       'allowed_values' => array(
         0 => array(
           'vocabulary' => 'dfp_ad_categories',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_event_position_s_'.
+  $field_bases['field_event_position_s_'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_position_s_',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_event_type'.
+  $field_bases['field_event_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_event_type',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'event_type',
           'parent' => 0,
         ),
       ),
@@ -448,6 +516,27 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_location'.
+  $field_bases['field_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_location',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_npr_byline'.
   $field_bases['field_npr_byline'] = array(
     'active' => 1,
@@ -579,6 +668,71 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_participant'.
+  $field_bases['field_participant'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_participant',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'article' => 0,
+        'bio' => 0,
+        'corporate_sponsor' => 'corporate_sponsor',
+        'event_calendar' => 0,
+        'faq' => 0,
+        'food_wine_event' => 0,
+        'food_wine_page' => 0,
+        'landing_page' => 0,
+        'multi_recipe' => 0,
+        'npr_story' => 0,
+        'page' => 0,
+        'recipe' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_person_type'.
+  $field_bases['field_person_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_person_type',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'bio_type',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_pinterest'.
   $field_bases['field_pinterest'] = array(
     'active' => 1,
@@ -680,6 +834,25 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'radioactivity',
   );
 
+  // Exported field_base: 'field_position_description'.
+  $field_bases['field_position_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_position_description',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_recent_popularity'.
   $field_bases['field_recent_popularity'] = array(
     'active' => 1,
@@ -730,6 +903,27 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
+  // Exported field_base: 'field_shifts_available'.
+  $field_bases['field_shifts_available'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_shifts_available',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_soundcloud'.
   $field_bases['field_soundcloud'] = array(
     'active' => 1,
@@ -743,6 +937,44 @@ function craving_boston_site_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'soundcloud',
+  );
+
+  // Exported field_base: 'field_sponsor'.
+  $field_bases['field_sponsor'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sponsor',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'article' => 0,
+        'bio' => 0,
+        'corporate_sponsor' => 'corporate_sponsor',
+        'event_calendar' => 0,
+        'faq' => 0,
+        'food_wine_event' => 0,
+        'landing_page' => 0,
+        'multi_recipe' => 0,
+        'npr_story' => 0,
+        'page' => 0,
+        'recipe' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_subhead'.
@@ -858,6 +1090,44 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_vermont_marketplace'.
+  $field_bases['field_vermont_marketplace'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_vermont_marketplace',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'article' => 0,
+        'bio' => 0,
+        'corporate_sponsor' => 'corporate_sponsor',
+        'event_calendar' => 0,
+        'faq' => 0,
+        'food_wine_event' => 0,
+        'landing_page' => 0,
+        'multi_recipe' => 0,
+        'npr_story' => 0,
+        'page' => 0,
+        'recipe' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
+  );
+
   // Exported field_base: 'field_video_file'.
   $field_bases['field_video_file'] = array(
     'active' => 1,
@@ -898,6 +1168,44 @@ function craving_boston_site_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_vip_lounge_sponsor'.
+  $field_bases['field_vip_lounge_sponsor'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_vip_lounge_sponsor',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'article' => 0,
+        'bio' => 0,
+        'corporate_sponsor' => 'corporate_sponsor',
+        'event_calendar' => 0,
+        'faq' => 0,
+        'food_wine_event' => 0,
+        'landing_page' => 0,
+        'multi_recipe' => 0,
+        'npr_story' => 0,
+        'page' => 0,
+        'recipe' => 0,
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'npr_audio'.

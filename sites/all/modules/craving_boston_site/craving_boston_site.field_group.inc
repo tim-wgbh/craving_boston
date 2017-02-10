@@ -42,6 +42,36 @@ function craving_boston_site_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_food_wine_volunteeering|node|food_wine_event|form';
+  $field_group->group_name = 'group_food_wine_volunteeering';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'food_wine_event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Volunteering',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_event_position_s_',
+      1 => 'field_shifts_available',
+      2 => 'field_position_description',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-food-wine-volunteeering field-group-fieldset',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_food_wine_volunteeering|node|food_wine_event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_hero|node|article|form';
   $field_group->group_name = 'group_hero';
   $field_group->entity_type = 'node';
@@ -163,6 +193,7 @@ function craving_boston_site_field_group_info() {
   t('Audio');
   t('Hero');
   t('Video');
+  t('Volunteering');
 
   return $field_groups;
 }

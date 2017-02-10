@@ -168,6 +168,14 @@ function craving_boston_preprocess_node(&$vars) {
     }
   }
 
+  //Handle corporate sponsor for food & wine
+  if ($node->type == 'corporate_sponsor') {
+    $style_name = 'food_wine_logo';
+    $url = image_style_url($style_name, $node->field_image['und'][0]['uri']);
+    $vars['sponsor_link'] = $node->field_link['url'];
+    $vars['logo'] = "<img src='$url' alt='$node->title' />";
+  }
+
   # Set up video display for articles
   if ($node->type == 'article') {
 

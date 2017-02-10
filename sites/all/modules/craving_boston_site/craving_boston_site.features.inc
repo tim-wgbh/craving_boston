@@ -322,6 +322,22 @@ function craving_boston_site_image_default_styles() {
     ),
   );
 
+  // Exported image style: food_wine_logo.
+  $styles['food_wine_logo'] = array(
+    'label' => 'Food Wine Logo',
+    'effects' => array(
+      19 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 100,
+          'height' => 100,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: half_mobile_square.
   $styles['half_mobile_square'] = array(
     'label' => 'Half Mobile Square',
@@ -407,9 +423,17 @@ function craving_boston_site_node_info() {
       'help' => '',
     ),
     'bio' => array(
-      'name' => t('Bio'),
+      'name' => t('Person'),
       'base' => 'node_content',
-      'description' => t('Site contributor biographies'),
+      'description' => t('Biographies and photos for site contributors and F&WF participants'),
+      'has_title' => '1',
+      'title_label' => t('Name'),
+      'help' => '',
+    ),
+    'corporate_sponsor' => array(
+      'name' => t('Corporate Sponsor'),
+      'base' => 'node_content',
+      'description' => t('A sponsor of a particular event or feature'),
       'has_title' => '1',
       'title_label' => t('Name'),
       'help' => '',
@@ -428,6 +452,22 @@ function craving_boston_site_node_info() {
       'description' => t('Frequently asked question'),
       'has_title' => '1',
       'title_label' => t('Question'),
+      'help' => '',
+    ),
+    'food_wine_event' => array(
+      'name' => t('Food & Wine Event'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'food_wine_page' => array(
+      'name' => t('Food & Wine Page'),
+      'base' => 'node_content',
+      'description' => t('For adding pages about the Food & Wine Festival to the site'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'multi_recipe' => array(

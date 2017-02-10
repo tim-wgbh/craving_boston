@@ -81,7 +81,7 @@ function craving_boston_site_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Rail Newsletter Signup';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'rail_newsletter_signup';
-  $fe_block_boxes->body = '<p>Sign-up for our weekly newsletter and get new stories delivered to your inbox!</p>
+  $fe_block_boxes->body = '<p>Sign-up for Craving Boston&#39;s weekly newsletter and get new stories delivered to your inbox!</p>
 
 <p><iframe align="left" frameborder="0" height="90" marginheight="0" marginwidth="0" scrolling="no" src="http://be.wgbh.org/subscription/cravingboston.htm" width="250"></iframe></p>
 

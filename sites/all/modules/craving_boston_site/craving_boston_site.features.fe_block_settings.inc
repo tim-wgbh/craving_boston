@@ -865,7 +865,7 @@ admin/*',
         'region' => 'dashboard_sidebar',
         'status' => 1,
         'theme' => 'ember',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -1025,6 +1025,45 @@ admin/*',
         'region' => 'dashboard_sidebar',
         'status' => 1,
         'theme' => 'ember',
+        'weight' => 1,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['menu-menu-food-wine-festival'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-food-wine-festival',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => 'food-and-wine-festival/*',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'craving_boston',
+        'weight' => -33,
+      ),
+      'ember' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ember',
         'weight' => 0,
       ),
       'seven' => array(
@@ -1036,6 +1075,45 @@ admin/*',
     ),
     'title' => '',
     'visibility' => 1,
+  );
+
+  $export['menu-menu-food-wine-tasks'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'menu-food-wine-tasks',
+    'module' => 'menu',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'ember' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'ember',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['menu-menu-site-management-tasks'] = array(
@@ -1066,7 +1144,7 @@ admin/*',
         'region' => 'dashboard_sidebar',
         'status' => 1,
         'theme' => 'ember',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'seven' => array(
         'region' => '',
@@ -1164,7 +1242,7 @@ admin/*',
     'delta' => 'wgbh-related-links-menu',
     'module' => 'menu',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -1790,7 +1868,7 @@ recipes/*',
     'delta' => 1,
     'module' => 'twitter_block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -2062,9 +2140,17 @@ recipes/*',
     'custom' => 0,
     'delta' => 'dashboard-block',
     'module' => 'views',
-    'node_types' => array(),
+    'node_types' => array(
+      0 => 'article',
+      1 => 'multi_recipe',
+      2 => 'recipe',
+    ),
     'pages' => 'admin/dashboard',
-    'roles' => array(),
+    'roles' => array(
+      'contributor' => 4,
+      'editor' => 5,
+      'site administrator' => 3,
+    ),
     'themes' => array(
       'bartik' => array(
         'region' => '',
@@ -2093,6 +2179,92 @@ recipes/*',
     ),
     'title' => '',
     'visibility' => 1,
+  );
+
+  $export['views-dashboard-block_1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'dashboard-block_1',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(
+      'editor' => 5,
+      'food & wine admin' => 8,
+      'site administrator' => 3,
+    ),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'ember' => array(
+        'region' => 'dashboard_main',
+        'status' => 1,
+        'theme' => 'ember',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-dashboard-block_2'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'dashboard-block_2',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(
+      'editor' => 5,
+      'food & wine admin' => 8,
+      'site administrator' => 3,
+    ),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'craving_boston' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'craving_boston',
+        'weight' => 0,
+      ),
+      'ember' => array(
+        'region' => 'dashboard_main',
+        'status' => 1,
+        'theme' => 'ember',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-featured-lead_article'] = array(
@@ -2141,7 +2313,7 @@ recipes/*',
     'delta' => 'most_popular_now-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -2180,7 +2352,7 @@ recipes/*',
     'delta' => 'most_popular_now-block_1',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(

@@ -73,7 +73,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <div id="mobile-menu">
-  <?php 
+  <?php
     $topic_menu = menu_navigation_links('menu-topics');
     print theme('links__menu_topics_menu', array('links' => $topic_menu));
   ?>
@@ -108,25 +108,25 @@
       <div class="no-padding col-md-9 col-sm-12">
         <nav id="navigation" role="navigation">
           <div id="main-menu">
-            <?php 
+            <?php
               $topic_menu = menu_navigation_links('menu-topics');
               print theme('links__menu_topics_menu', array('links' => $topic_menu));
             ?>
           </div>
         </nav>
       </div>
-      <div class="col-md-3 col-sm-12 no-padding"> 
+      <div class="col-md-3 col-sm-12 no-padding">
         <div id="search-form">
           <?php
             $block = module_invoke('search', 'block_view', 'search');
-            print render($block); 
+            print render($block);
           ?>
         </div>
       </div>
     </div>
     <div id="mobile-select"><img src="/sites/all/themes/craving_boston/images/menu-button.png" /></div>
   </header>
-  
+
   <?php if ($is_front): ?>
     <div class="container">
       <?php print views_embed_view('featured', 'lead_article'); ?>
@@ -165,7 +165,7 @@
   <?php endif; ?>
 
     <div id="main-content">
-    <div class="container"> 
+    <div class="container">
       <div class="row">
         <?php if($page['sidebar_first'] && !$admin_page) { $primary_col = 8; } else { $primary_col = 12; } ?>
         <div id="primary" class="content-area col-md-<?php print $primary_col; ?> col-print-offset-1 col-print-10">
@@ -190,12 +190,12 @@
         <?php if ($page['sidebar_first'] && !$admin_page): ?>
           <aside id="sidebar" class="col-md-4 col-xs-12" role="complementary">
            <?php print render($page['sidebar_first']); ?>
-          </aside> 
+          </aside>
         <?php endif; ?>
       </div>
     </div>
   </div>
-  
+
   <?php if($page['footer']) : ?>
     <div id="footer-block">
       <div class="container">

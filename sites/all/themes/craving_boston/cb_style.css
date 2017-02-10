@@ -116,6 +116,18 @@ blockquote::before {
 #colophon {
   text-align: center;
 }
+/* Food & Wine Festival */
+#block-menu-menu-food-wine-festival {
+  background-color: #fda;
+  padding: 10px;
+  border-radius: 3px;
+}
+#block-menu-menu-food-wine-festival ul, #block-menu-menu-food-wine-festival li, #block-menu-menu-food-wine-festival li.leaf {
+  list-style-type: none;
+  list-style-image: none;
+  font-size: 18px;
+  line-height: 1.4;
+}
 
 /* All posts page */
 .row.post {

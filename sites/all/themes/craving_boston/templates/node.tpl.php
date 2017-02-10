@@ -90,7 +90,9 @@
   <h2 class="title" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title_icon; ?><?php print $title; ?></a></h2>
 <?php endif; ?>
 <?php if ($page): ?>
-  <span class="publication_date"><?php print $publication_date; ?></span>
+  <?php if ($type != 'food_wine_event'): ?>
+    <span class="publication_date"><?php print $publication_date; ?></span>
+  <?php endif; ?>
   <div class="pull-right a2a_kit a2a_kit_size_16 a2a_default_style">
     <a class="a2a_button_facebook"></a>
     <a class="a2a_button_twitter"></a>
@@ -105,7 +107,7 @@
   <?php endif; ?>
 <?php endif; ?>
 <?php print render($title_suffix); ?>
-  
+
 <?php if (!$page): ?>
   </header>
 <?php endif; ?>
@@ -118,10 +120,10 @@
   ?>
   <?php print render($content); ?>
 </div>
-  
+
 <?php if ($display_submitted): ?>
   <ul class="meta clearfix">
-    <li><?php print $date; ?></li> 
+    <li><?php print $date; ?></li>
   </ul>
 <?php endif; ?>
 
