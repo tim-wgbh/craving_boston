@@ -562,6 +562,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['administer shortcut per role'] = array(
     'name' => 'administer shortcut per role',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'shortcutperrole',
@@ -751,6 +752,17 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'create bio content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create corporate_sponsor content'.
+  $permissions['create corporate_sponsor content'] = array(
+    'name' => 'create corporate_sponsor content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -773,6 +785,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'create faq content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -796,6 +809,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'create food_wine_event content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -805,6 +819,17 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'create food_wine_page content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create landing_page content'.
+  $permissions['create landing_page content'] = array(
+    'name' => 'create landing_page content',
+    'roles' => array(
+      'designer' => 'designer',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -858,6 +883,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'create volunteering content'.
+  $permissions['create volunteering content'] = array(
+    'name' => 'create volunteering content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'customize shortcut links'.
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
@@ -892,6 +927,17 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete any bio content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any corporate_sponsor content'.
+  $permissions['delete any corporate_sponsor content'] = array(
+    'name' => 'delete any corporate_sponsor content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -921,6 +967,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete any faq content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -931,6 +978,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete any food_wine_event content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -940,6 +988,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete any food_wine_page content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -948,9 +997,20 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete any image files'] = array(
     'name' => 'delete any image files',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete any landing_page content'.
+  $permissions['delete any landing_page content'] = array(
+    'name' => 'delete any landing_page content',
+    'roles' => array(
+      'designer' => 'designer',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'delete any multi_recipe content'.
@@ -999,6 +1059,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'delete any volunteering content'.
+  $permissions['delete any volunteering content'] = array(
+    'name' => 'delete any volunteering content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
@@ -1023,6 +1093,17 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete own bio content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own corporate_sponsor content'.
+  $permissions['delete own corporate_sponsor content'] = array(
+    'name' => 'delete own corporate_sponsor content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1054,6 +1135,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete own faq content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1064,6 +1146,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete own food_wine_event content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -1073,6 +1156,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'delete own food_wine_page content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -1081,9 +1165,20 @@ function craving_boston_site_user_default_permissions() {
   $permissions['delete own image files'] = array(
     'name' => 'delete own image files',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'delete own landing_page content'.
+  $permissions['delete own landing_page content'] = array(
+    'name' => 'delete own landing_page content',
+    'roles' => array(
+      'designer' => 'designer',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'delete own multi_recipe content'.
@@ -1132,6 +1227,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'delete own volunteering content'.
+  $permissions['delete own volunteering content'] = array(
+    'name' => 'delete own volunteering content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
@@ -1145,6 +1250,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in bio_type'.
+  $permissions['delete terms in bio_type'] = array(
+    'name' => 'delete terms in bio_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in dfp_ad_categories'.
   $permissions['delete terms in dfp_ad_categories'] = array(
     'name' => 'delete terms in dfp_ad_categories',
@@ -1152,9 +1264,30 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in event_calendar_status'.
+  $permissions['delete terms in event_calendar_status'] = array(
+    'name' => 'delete terms in event_calendar_status',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in event_type'.
+  $permissions['delete terms in event_type'] = array(
+    'name' => 'delete terms in event_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in flavor_profile'.
   $permissions['delete terms in flavor_profile'] = array(
     'name' => 'delete terms in flavor_profile',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in food_wine_event'.
+  $permissions['delete terms in food_wine_event'] = array(
+    'name' => 'delete terms in food_wine_event',
     'roles' => array(),
     'module' => 'taxonomy',
   );
@@ -1207,6 +1340,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['download any image files'] = array(
     'name' => 'download any image files',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -1243,6 +1377,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['download own image files'] = array(
     'name' => 'download own image files',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
@@ -1281,6 +1416,17 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit any bio content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any corporate_sponsor content'.
+  $permissions['edit any corporate_sponsor content'] = array(
+    'name' => 'edit any corporate_sponsor content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1310,6 +1456,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit any faq content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1320,6 +1467,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit any food_wine_event content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -1329,6 +1477,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit any food_wine_page content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -1337,9 +1486,20 @@ function craving_boston_site_user_default_permissions() {
   $permissions['edit any image files'] = array(
     'name' => 'edit any image files',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit any landing_page content'.
+  $permissions['edit any landing_page content'] = array(
+    'name' => 'edit any landing_page content',
+    'roles' => array(
+      'designer' => 'designer',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit any multi_recipe content'.
@@ -1387,6 +1547,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'edit any volunteering content'.
+  $permissions['edit any volunteering content'] = array(
+    'name' => 'edit any volunteering content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit meta tags'.
   $permissions['edit meta tags'] = array(
     'name' => 'edit meta tags',
@@ -1422,6 +1592,17 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit own bio content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own corporate_sponsor content'.
+  $permissions['edit own corporate_sponsor content'] = array(
+    'name' => 'edit own corporate_sponsor content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1453,6 +1634,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit own faq content',
     'roles' => array(
       'editor' => 'editor',
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'node',
@@ -1463,6 +1645,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit own food_wine_event content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -1472,6 +1655,7 @@ function craving_boston_site_user_default_permissions() {
     'name' => 'edit own food_wine_page content',
     'roles' => array(
       'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
     ),
     'module' => 'node',
   );
@@ -1480,9 +1664,20 @@ function craving_boston_site_user_default_permissions() {
   $permissions['edit own image files'] = array(
     'name' => 'edit own image files',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit own landing_page content'.
+  $permissions['edit own landing_page content'] = array(
+    'name' => 'edit own landing_page content',
+    'roles' => array(
+      'designer' => 'designer',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit own multi_recipe content'.
@@ -1533,6 +1728,16 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: 'edit own volunteering content'.
+  $permissions['edit own volunteering content'] = array(
+    'name' => 'edit own volunteering content',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit radioactivity'.
   $permissions['edit radioactivity'] = array(
     'name' => 'edit radioactivity',
@@ -1543,6 +1748,13 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'radioactivity',
   );
 
+  // Exported permission: 'edit terms in bio_type'.
+  $permissions['edit terms in bio_type'] = array(
+    'name' => 'edit terms in bio_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in dfp_ad_categories'.
   $permissions['edit terms in dfp_ad_categories'] = array(
     'name' => 'edit terms in dfp_ad_categories',
@@ -1550,9 +1762,30 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit terms in event_calendar_status'.
+  $permissions['edit terms in event_calendar_status'] = array(
+    'name' => 'edit terms in event_calendar_status',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in event_type'.
+  $permissions['edit terms in event_type'] = array(
+    'name' => 'edit terms in event_type',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit terms in flavor_profile'.
   $permissions['edit terms in flavor_profile'] = array(
     'name' => 'edit terms in flavor_profile',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in food_wine_event'.
+  $permissions['edit terms in food_wine_event'] = array(
+    'name' => 'edit terms in food_wine_event',
     'roles' => array(),
     'module' => 'taxonomy',
   );
@@ -1680,6 +1913,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['masquerade as user'] = array(
     'name' => 'masquerade as user',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'masquerade',
@@ -1698,6 +1932,7 @@ function craving_boston_site_user_default_permissions() {
   $permissions['preview focal point'] = array(
     'name' => 'preview focal point',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'focal_point',
@@ -1780,6 +2015,17 @@ function craving_boston_site_user_default_permissions() {
   $permissions['set bio published on date'] = array(
     'name' => 'set bio published on date',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set corporate_sponsor published on date'.
+  $permissions['set corporate_sponsor published on date'] = array(
+    'name' => 'set corporate_sponsor published on date',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),
     'module' => 'publication_date',
@@ -1788,7 +2034,10 @@ function craving_boston_site_user_default_permissions() {
   // Exported permission: 'set event_calendar published on date'.
   $permissions['set event_calendar published on date'] = array(
     'name' => 'set event_calendar published on date',
-    'roles' => array(),
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
     'module' => 'publication_date',
   );
 
@@ -1796,7 +2045,37 @@ function craving_boston_site_user_default_permissions() {
   $permissions['set faq published on date'] = array(
     'name' => 'set faq published on date',
     'roles' => array(
+      'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set food_wine_event published on date'.
+  $permissions['set food_wine_event published on date'] = array(
+    'name' => 'set food_wine_event published on date',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set food_wine_page published on date'.
+  $permissions['set food_wine_page published on date'] = array(
+    'name' => 'set food_wine_page published on date',
+    'roles' => array(
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set landing_page published on date'.
+  $permissions['set landing_page published on date'] = array(
+    'name' => 'set landing_page published on date',
+    'roles' => array(
+      'designer' => 'designer',
     ),
     'module' => 'publication_date',
   );
@@ -1834,6 +2113,13 @@ function craving_boston_site_user_default_permissions() {
       'editor' => 'editor',
       'site administrator' => 'site administrator',
     ),
+    'module' => 'publication_date',
+  );
+
+  // Exported permission: 'set volunteering published on date'.
+  $permissions['set volunteering published on date'] = array(
+    'name' => 'set volunteering published on date',
+    'roles' => array(),
     'module' => 'publication_date',
   );
 
@@ -1917,6 +2203,17 @@ function craving_boston_site_user_default_permissions() {
       'contributor' => 'contributor',
       'editor' => 'editor',
       'event contributor' => 'event contributor',
+      'food & wine admin' => 'food & wine admin',
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: 'use text format landing_page'.
+  $permissions['use text format landing_page'] = array(
+    'name' => 'use text format landing_page',
+    'roles' => array(
+      'designer' => 'designer',
       'food & wine admin' => 'food & wine admin',
       'site administrator' => 'site administrator',
     ),

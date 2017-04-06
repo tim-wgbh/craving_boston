@@ -431,7 +431,7 @@ function craving_boston_site_node_info() {
       'help' => '',
     ),
     'corporate_sponsor' => array(
-      'name' => t('Corporate Sponsor'),
+      'name' => t('Sponsor/Vendor'),
       'base' => 'node_content',
       'description' => t('A sponsor of a particular event or feature'),
       'has_title' => '1',
@@ -484,6 +484,14 @@ function craving_boston_site_node_info() {
       'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
       'has_title' => '1',
       'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'volunteering' => array(
+      'name' => t('Volunteering'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Task'),
       'help' => '',
     ),
   );

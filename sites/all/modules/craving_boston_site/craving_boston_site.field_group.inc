@@ -52,9 +52,7 @@ function craving_boston_site_field_group_info() {
     'label' => 'Volunteering',
     'weight' => '11',
     'children' => array(
-      0 => 'field_event_position_s_',
-      1 => 'field_shifts_available',
-      2 => 'field_position_description',
+      0 => 'field_task',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

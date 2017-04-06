@@ -834,25 +834,6 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'radioactivity',
   );
 
-  // Exported field_base: 'field_position_description'.
-  $field_bases['field_position_description'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_position_description',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
   // Exported field_base: 'field_recent_popularity'.
   $field_bases['field_recent_popularity'] = array(
     'active' => 1,
@@ -1020,6 +1001,46 @@ function craving_boston_site_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_task'.
+  $field_bases['field_task'] = array(
+    'active' => 1,
+    'cardinality' => 4,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_task',
+    'indexes' => array(
+      'nid' => array(
+        0 => 'nid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'node_reference',
+    'settings' => array(
+      'referenceable_types' => array(
+        'article' => 0,
+        'bio' => 0,
+        'corporate_sponsor' => 0,
+        'event_calendar' => 0,
+        'faq' => 0,
+        'food_wine_event' => 0,
+        'food_wine_page' => 0,
+        'landing_page' => 0,
+        'multi_recipe' => 0,
+        'npr_story' => 0,
+        'page' => 0,
+        'recipe' => 0,
+        'volunteering' => 'volunteering',
+      ),
+      'view' => array(
+        'args' => array(),
+        'display_name' => '',
+        'view_name' => '',
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'node_reference',
   );
 
   // Exported field_base: 'field_test_field'.
