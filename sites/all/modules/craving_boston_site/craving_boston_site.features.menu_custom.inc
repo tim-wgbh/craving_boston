@@ -28,12 +28,6 @@ function craving_boston_site_menu_default_menu_custom() {
     'title' => 'Food & Wine Festival',
     'description' => 'News, information, and goings-on for the Food & Wine Festival',
   );
-  // Exported menu: menu-food-wine-tasks.
-  $menus['menu-food-wine-tasks'] = array(
-    'menu_name' => 'menu-food-wine-tasks',
-    'title' => 'Food & Wine Tasks',
-    'description' => 'Tasks for people who are admins for the food & wine festival',
-  );
   // Exported menu: menu-site-management-tasks.
   $menus['menu-site-management-tasks'] = array(
     'menu_name' => 'menu-site-management-tasks',
@@ -70,11 +64,9 @@ function craving_boston_site_menu_default_menu_custom() {
   t('Craving Boston');
   t('Editorial Tasks');
   t('Food & Wine Festival');
-  t('Food & Wine Tasks');
   t('Footer menu for Craving Boston business');
   t('News, information, and goings-on for the Food & Wine Festival');
   t('Site Management Tasks');
-  t('Tasks for people who are admins for the food & wine festival');
   t('The main topic menu');
   t('Topics');
   t('WGBH Identity Links');

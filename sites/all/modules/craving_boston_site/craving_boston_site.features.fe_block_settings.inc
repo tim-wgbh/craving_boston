@@ -1078,45 +1078,6 @@ admin/*',
     'visibility' => 1,
   );
 
-  $export['menu-menu-food-wine-tasks'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'menu-food-wine-tasks',
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'craving_boston' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'craving_boston',
-        'weight' => 0,
-      ),
-      'ember' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'ember',
-        'weight' => -11,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['menu-menu-site-management-tasks'] = array(
     'cache' => -1,
     'css_class' => '',

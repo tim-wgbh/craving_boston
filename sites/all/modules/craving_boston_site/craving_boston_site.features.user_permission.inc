@@ -315,6 +315,15 @@ function craving_boston_site_user_default_permissions() {
     'module' => 'field_group',
   );
 
+  // Exported permission: 'administer fields'.
+  $permissions['administer fields'] = array(
+    'name' => 'administer fields',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'field',
+  );
+
   // Exported permission: 'administer file types'.
   $permissions['administer file types'] = array(
     'name' => 'administer file types',
@@ -1851,6 +1860,15 @@ function craving_boston_site_user_default_permissions() {
       'site administrator' => 'site administrator',
     ),
     'module' => 'features',
+  );
+
+  // Exported permission: 'import or export menu'.
+  $permissions['import or export menu'] = array(
+    'name' => 'import or export menu',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+    ),
+    'module' => 'menu_import',
   );
 
   // Exported permission: 'import recipes'.
