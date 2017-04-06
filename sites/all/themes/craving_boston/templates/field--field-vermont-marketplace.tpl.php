@@ -44,8 +44,11 @@
  * @ingroup themeable
  */
 ?>
-<span class="corporate-logo">
-  <?php foreach ($items as $delta => $item): ?>
-    <?php print render($item); ?>
-  <?php endforeach; ?>
-</span>
+<div class="sponsors">
+  <h3>Vermont Marketplace</h3>
+  <span class="corporate-logo">
+    <?php foreach ($items as $delta => $item): ?>
+      <?php print render($item); ?>
+    <?php endforeach; ?>
+  </span>
+</div>

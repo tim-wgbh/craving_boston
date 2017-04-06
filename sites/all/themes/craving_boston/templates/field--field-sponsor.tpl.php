@@ -44,8 +44,15 @@
  * @ingroup themeable
  */
 ?>
-<span class="corporate-logo">
-  <?php foreach ($items as $delta => $item): ?>
-    <?php print render($item); ?>
-  <?php endforeach; ?>
-</span>
+<div class="sponsors">
+  <?php if (count($items) > 1): ?>
+    <h3>Sponsors</h3>
+  <?php else: ?>
+    <h3>Sponsor</h3>
+  <?php endif; ?>
+  <span class="corporate-logo">
+    <?php foreach ($items as $delta => $item): ?>
+      <?php print render($item); ?>
+    <?php endforeach; ?>
+  </span>
+</div>

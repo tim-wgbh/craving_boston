@@ -117,8 +117,47 @@ blockquote::before {
   text-align: center;
 }
 /* Food & Wine Festival */
-#block-menu-menu-food-wine-festival {
-  background-color: #fda;
+.food-and-wine-festival #site-banner {
+  width: 100%;
+}
+
+.food-and-wine-festival.page-node h1.page-title,
+.food-and-wine-festival h1.page-title
+{
+  color: #8b1946;
+}
+
+.food-and-wine-festival #sidebar .block > h2 {
+  color: black;
+}
+
+.food-and-wine-festival a, .food-and-wine-festival a:visited {
+  color: #3b114b;
+  padding: 1px 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.food-and-wine-festival table {
+  font-size: 1.75rem;
+}
+
+.food-and-wine-festival ul.menu li {
+  padding-bottom: 7px;
+}
+
+.food-and-wine-festival a:hover {
+  font-style: italic;
+  background-color: #f59729;
+  text-decoration: none;
+}
+.food-and-wine-festival .menu .nolink {
+  color: black;
+  font-weight: bold;
+}
+
+#block-menu-menu-food-wine-festival,
+.food-and-wine-festival .block.signup {
+  background-color: #ffe476;
   padding: 10px;
   border-radius: 3px;
 }
@@ -127,6 +166,9 @@ blockquote::before {
   list-style-image: none;
   font-size: 18px;
   line-height: 1.4;
+}
+h2, h3 {
+  color: #5C9E4C;
 }
 
 /* All posts page */
