@@ -95,7 +95,7 @@ function craving_boston_preprocess_page(&$vars) {
 
   // Food and wine page template
   $path = explode('/',preg_replace("/#.*/", '',drupal_get_path_alias()));
-  if (preg_match('/food\-and\-wine\-festival/', $path[0])) {
+  if (preg_match('/food\-and\-wine\-festival\/.+/', $path[0])) {
     $vars['theme_hook_suggestions'][] = 'page__food_wine';
   }
 
