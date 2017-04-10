@@ -448,7 +448,8 @@ function craving_boston_site_default_fe_block_settings() {
     'delta' => 'leaderboard',
     'module' => 'dfp',
     'node_types' => array(),
-    'pages' => 'users/*
+    'pages' => 'food-and-wine-festival/*
+users/*
 admin/*
 faqs
 about

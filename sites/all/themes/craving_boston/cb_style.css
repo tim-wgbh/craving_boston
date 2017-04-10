@@ -157,9 +157,10 @@ blockquote::before {
 
 #block-menu-menu-food-wine-festival,
 .food-and-wine-festival .block.signup {
-  background-color: #ffe476;
-  padding: 10px;
-  border-radius: 3px;
+  border-radius: 10px;
+  border: solid 3px #8b1946;
+  background-color: #eee;
+  padding: 1rem 1.5rem;
 }
 #block-menu-menu-food-wine-festival ul, #block-menu-menu-food-wine-festival li, #block-menu-menu-food-wine-festival li.leaf {
   list-style-type: none;
