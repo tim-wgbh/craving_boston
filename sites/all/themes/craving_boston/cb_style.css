@@ -119,12 +119,20 @@ blockquote::before {
 /* Food & Wine Festival */
 .food-and-wine-festival #site-banner {
   width: 100%;
+  margin: 10px 0 50px;
+}
+
+.food-and-wine-festival .publication_date {
+  display: none;
 }
 
 .food-and-wine-festival.page-node h1.page-title,
 .food-and-wine-festival h1.page-title
 {
-  color: #8b1946;
+  color: #f59729; /* gold */
+  text-shadow: 1px 1px 3px rgb(128,128, 128);
+/*  color: #074a58;  teal */
+/*  color: #8b1946; maroon */
 }
 
 .food-and-wine-festival #sidebar .block > h2 {
