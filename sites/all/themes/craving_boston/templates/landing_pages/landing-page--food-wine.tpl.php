@@ -1,11 +1,23 @@
 <div id="page" class="landing-page">
+  <header id="masthead" class="site-header container" role="banner">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="site-banner">
+          <a href="/food-and-wine-festival/welcome" title="Food & Wine Festival home">
+            <img src="/sites/all/themes/craving_boston/images/food-wine-logo-2017-temp.jpg" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-select"><img src="/sites/all/themes/craving_boston/images/menu-button.png" /></div>
+  </header>
   <div id="main-content" class="container">
     <div class="row">
       <div class="col-md-12">
         <?php print $node->body['und'][0]['value']; ?>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
 <div id="cb-bottom-links">
   <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third'] || $page['footer_fourth']): ?>
