@@ -127,14 +127,17 @@ blockquote::before {
 }
 
 .food-and-wine-festival.page-node h1.page-title,
-.food-and-wine-festival h1.page-title
+.food-and-wine-festival h1.page-title,
+.food-and-wine-festival.page-node h2,
+.food-and-wine-festival h2
 {
-  color: #f59729; /* gold */
-  text-shadow: 1px 1px 3px rgb(128,128, 128);
-/*  color: #074a58;  teal */
-/*  color: #8b1946; maroon */
+  color: #454545; /* dark gray */
+  font-size: 3rem;
 }
-
+.food-and-wine-festival.page-node h2,
+.food-and-wine-festival h2 {
+  font-size: 2rem;
+}
 .food-and-wine-festival #sidebar .block > h2 {
   color: black;
 }
