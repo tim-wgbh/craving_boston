@@ -50,7 +50,7 @@ function craving_boston_site_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Volunteering',
-    'weight' => '11',
+    'weight' => '10',
     'children' => array(
       0 => 'field_task',
     ),
@@ -168,8 +168,8 @@ function craving_boston_site_field_group_info() {
     'label' => 'Video',
     'weight' => '8',
     'children' => array(
-      0 => 'field_internet_video',
-      1 => 'field_hide_hero',
+      0 => 'field_hide_hero',
+      1 => 'field_internet_video',
       2 => 'field_video_file',
       3 => 'field_video_poster',
     ),

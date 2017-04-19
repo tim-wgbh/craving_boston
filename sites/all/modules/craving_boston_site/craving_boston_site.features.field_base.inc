@@ -357,6 +357,32 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_food_wine_event_type'.
+  $field_bases['field_food_wine_event_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_food_wine_event_type',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'food_wine_event',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_headline'.
   $field_bases['field_headline'] = array(
     'active' => 1,
@@ -796,6 +822,25 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_popular'.
+  $field_bases['field_popular'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_popular',
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
+  );
+
   // Exported field_base: 'field_popularity_all_time'.
   $field_bases['field_popularity_all_time'] = array(
     'active' => 1,
@@ -1227,6 +1272,25 @@ function craving_boston_site_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'node_reference',
+  );
+
+  // Exported field_base: 'field_what_s_hot'.
+  $field_bases['field_what_s_hot'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_what_s_hot',
+    'indexes' => array(
+      'energy' => array(
+        0 => 'radioactivity_energy',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'radioactivity',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'radioactivity',
   );
 
   // Exported field_base: 'npr_audio'.

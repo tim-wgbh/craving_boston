@@ -1315,7 +1315,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['fields']['event_calendar_date']['label'] = '';
   $handler->display->display_options['fields']['event_calendar_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['event_calendar_date']['settings'] = array(
-    'format_type' => 'time_only',
+    'format_type' => 'event_time',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1337,6 +1337,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1381,7 +1382,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    0 => '831',
+    0 => '2086',
   );
   $handler->display->display_options['filters']['tid']['vocabulary'] = 'food_wine_event';
   $handler->display->display_options['path'] = 'food-and-wine-festival/demos';
@@ -1643,7 +1644,7 @@ Volunteer & Marketing Manager, WGBH';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'food-and-wine-festival/volunteering';
+  $handler->display->display_options['path'] = 'food-and-wine-festival/volunteer';
   $export['food_wine_volunteering'] = $view;
 
   $view = new view();

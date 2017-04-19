@@ -292,7 +292,7 @@ function craving_boston_site_default_fe_block_settings() {
     'machine_name' => 'rail_newsletter_signup',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'food-and-wine-festival',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -453,7 +453,8 @@ users/*
 admin/*
 faqs
 about
-rss.xml',
+rss.xml
+food-and-wine-festival',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -493,7 +494,8 @@ rss.xml',
     'module' => 'dfp',
     'node_types' => array(),
     'pages' => 'users/*
-admin/*',
+admin/*
+food-and-wine-festival',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -533,7 +535,8 @@ admin/*',
     'module' => 'dfp',
     'node_types' => array(),
     'pages' => 'users/*
-admin/*',
+admin/*
+food-and-wine-festival',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -1205,7 +1208,8 @@ admin/*',
     'delta' => 'wgbh-related-links-menu',
     'module' => 'menu',
     'node_types' => array(),
-    'pages' => 'food-and-wine-festival/*',
+    'pages' => 'food-and-wine-festival
+food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -1831,7 +1835,8 @@ recipes/*',
     'delta' => 1,
     'module' => 'twitter_block',
     'node_types' => array(),
-    'pages' => 'food-and-wine-festival/*',
+    'pages' => 'food-and-wine-festival
+food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -2400,7 +2405,8 @@ recipes/*',
     'delta' => 'most_popular_now-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'food-and-wine-festival/*',
+    'pages' => 'food-and-wine-festival
+food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -2439,7 +2445,8 @@ recipes/*',
     'delta' => 'most_popular_now-block_1',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'food-and-wine-festival/*',
+    'pages' => 'food-and-wine-festival
+food-and-wine-festival/*',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
