@@ -156,6 +156,15 @@ blockquote::before {
   padding-bottom: 7px;
 }
 
+.food-and-wine-festival .content > ul.menu > li {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.food-and-wine-festival li.expanded > ul.menu > li {
+  font-weight: normal;
+  text-transform: none;
+}
+
 .food-and-wine-festival a:hover {
   font-style: italic;
   background-color: #f59729;
