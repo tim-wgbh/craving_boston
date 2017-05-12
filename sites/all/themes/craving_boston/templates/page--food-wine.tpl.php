@@ -87,7 +87,7 @@
       <div class="col-md-12">
         <div id="site-banner">
           <a href="/food-and-wine-festival/welcome" title="Food & Wine Festival home">
-            <img src="/sites/all/themes/craving_boston/images/food-wine-logo-2017-temp.jpg" />
+            <img src="/sites/all/themes/craving_boston/images/logo-food-wine-fest-2017-960x165-3.png" />
           </a>
         </div>
       </div>
