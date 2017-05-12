@@ -170,6 +170,9 @@ blockquote::before {
   background-color: #f59729;
   text-decoration: none;
 }
+.food-and-wine-festival #site-banner a:hover {
+  background-color: transparent;
+}
 .food-and-wine-festival .menu .nolink {
   color: black;
   font-weight: bold;
@@ -182,6 +185,7 @@ blockquote::before {
   font-weight: bold;
   color: #8b1946;
 }
+
 
 #block-menu-menu-food-wine-festival,
 .food-and-wine-festival .block.signup {
