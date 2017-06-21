@@ -133,9 +133,10 @@ function craving_boston_site_fe_nodequeue_export_fields() {
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
-      1 => 'multi_recipe',
-      2 => 'npr_story',
-      3 => 'recipe',
+      1 => 'featured_web_link',
+      2 => 'multi_recipe',
+      3 => 'npr_story',
+      4 => 'recipe',
     ),
     'roles' => array(
       0 => 'editor',
@@ -452,6 +453,14 @@ function craving_boston_site_node_info() {
       'description' => t('Frequently asked question'),
       'has_title' => '1',
       'title_label' => t('Question'),
+      'help' => '',
+    ),
+    'featured_web_link' => array(
+      'name' => t('Featured Web Link'),
+      'base' => 'node_content',
+      'description' => t('Allows a featured post from the front page to lead to a non-post web link'),
+      'has_title' => '1',
+      'title_label' => t('Headline'),
       'help' => '',
     ),
     'food_wine_event' => array(

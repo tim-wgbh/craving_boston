@@ -1708,6 +1708,43 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-corporate_sponsor-field_sponsor_type'.
+  $field_instances['node-corporate_sponsor-field_sponsor_type'] = array(
+    'bundle' => 'corporate_sponsor',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'For categorizing on the sponsor page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sponsor_type',
+    'label' => 'Sponsor type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-event_calendar-body'.
   $field_instances['node-event_calendar-body'] = array(
     'bundle' => 'event_calendar',
@@ -2088,6 +2125,153 @@ function craving_boston_site_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-featured_web_link-field_image'.
+  $field_instances['node-featured_web_link-field_image'] = array(
+    'bundle' => 'featured_web_link',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image',
+    'label' => 'Image',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-featured_web_link-field_link'.
+  $field_instances['node-featured_web_link-field_link'] = array(
+    'bundle' => 'featured_web_link',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Link to the web page or site',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_plain',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'URL',
+    'required' => 1,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-featured_web_link-field_subhead'.
+  $field_instances['node-featured_web_link-field_subhead'] = array(
+    'bundle' => 'featured_web_link',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subhead',
+    'label' => 'Subhead',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-food_wine_event-body'.
   $field_instances['node-food_wine_event-body'] = array(
     'bundle' => 'food_wine_event',
@@ -2143,12 +2327,12 @@ function craving_boston_site_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'event_time',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -2197,9 +2381,8 @@ function craving_boston_site_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 9,
       ),
       'teaser' => array(
@@ -2253,14 +2436,14 @@ function craving_boston_site_field_default_field_instances() {
     'label' => 'Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2590,14 +2773,14 @@ function craving_boston_site_field_default_field_instances() {
     'label' => 'Hero Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4831,6 +5014,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Favorite dish to make');
   t('Flavor Profile');
   t('Food & Wine Event Type');
+  t('For categorizing on the sponsor page.');
   t('Get more info >>');
   t('Hero Image');
   t('Hide hero');
@@ -4849,6 +5033,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Internet Video');
   t('Is this person a site contributor or a Food & Wine event participant?');
   t('Least favorite food');
+  t('Link to the web page or site');
   t('Location');
   t('Logo');
   t('Multiple tags should be separated by commas, e.g. red, green, blue (limit of 10)');
@@ -4880,6 +5065,7 @@ function craving_boston_site_field_default_field_instances() {
   t('Shifts Available');
   t('Soundcloud');
   t('Sponsor');
+  t('Sponsor type');
   t('Status');
   t('Step by step instructions on how to prepare and cook the recipe.');
   t('Subhead');

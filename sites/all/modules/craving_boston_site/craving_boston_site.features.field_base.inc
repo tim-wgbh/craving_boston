@@ -1003,6 +1003,32 @@ function craving_boston_site_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
+  // Exported field_base: 'field_sponsor_type'.
+  $field_bases['field_sponsor_type'] = array(
+    'active' => 1,
+    'cardinality' => 3,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_sponsor_type',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'sponsor_type',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_subhead'.
   $field_bases['field_subhead'] = array(
     'active' => 1,

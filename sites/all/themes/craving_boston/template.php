@@ -257,8 +257,18 @@ function craving_boston_preprocess_views_view_fields(&$vars) {
 
 
   # Handle title/headline
-  if (!empty($fields['field_headline']->content)) {
+  # Featured web link has title and image linked to page
+  if ($fields['type']->raw == 'featured_web_link') {
+    $vars['headline'] = _format_link($fields['title']->raw, $fields['field_link']->content);
+
+    # This is a little ugly, but it works...
+    $fields['field_image']->content = preg_replace("/href=[\"\']([a-z0-9\-\/]+)[\"\']/m", "href=\"{$fields['field_link']->content}\"", $fields['field_image']->content);
+
+  # If a zinger headline exists, use that
+  } else if (!empty($fields['field_headline']->content)) {
     $vars['headline'] =  $fields['field_headline']->content;
+
+  # Otherwise just use the title
   } else {
     $vars['headline'] =  $fields['title']->content;
   }
@@ -334,8 +344,11 @@ function craving_boston_form_search_block_form_alter(&$form, &$form_state, $form
 }
 
 /**********
- * Utility functions to handle S3 and streaming files
+ * Utility functions
  */
+function  _format_link($text, $url) {
+  return "<a href=\"{$url}\" title=\"Go to {$url}\">{$text}</a>";
+}
 function cloudfront_file($filename) {
   global $conf;
   return 'http://' . $conf['cloudfront_domain'] . '/video/' . $filename;

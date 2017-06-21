@@ -232,69 +232,6 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -46,
     'customized' => 1,
   );
-  // Exported menu link: menu-food-wine-festival_artisan-taste:node/1233.
-  $menu_links['menu-food-wine-festival_artisan-taste:node/1233'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1233',
-    'router_path' => 'node/%',
-    'link_title' => 'Artisan Taste',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_artisan-taste:node/1233',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_experience:<nolink>',
-  );
-  // Exported menu link: menu-food-wine-festival_brunch-bar:node/1232.
-  $menu_links['menu-food-wine-festival_brunch-bar:node/1232'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1232',
-    'router_path' => 'node/%',
-    'link_title' => 'Brunch Bar',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_brunch-bar:node/1232',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_experience:<nolink>',
-  );
-  // Exported menu link: menu-food-wine-festival_chefs-gala:node/1234.
-  $menu_links['menu-food-wine-festival_chefs-gala:node/1234'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1234',
-    'router_path' => 'node/%',
-    'link_title' => 'Chef\'s Gala',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_chefs-gala:node/1234',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -48,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_experience:<nolink>',
-  );
   // Exported menu link: menu-food-wine-festival_demos--signings:food-and-wine-festival/demos.
   $menu_links['menu-food-wine-festival_demos--signings:food-and-wine-festival/demos'] = array(
     'menu_name' => 'menu-food-wine-festival',
@@ -356,48 +293,6 @@ function craving_boston_site_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-food-wine-festival_food-fight:node/1231.
-  $menu_links['menu-food-wine-festival_food-fight:node/1231'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1231',
-    'router_path' => 'node/%',
-    'link_title' => 'Food Fight',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_food-fight:node/1231',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -45,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_experience:<nolink>',
-  );
-  // Exported menu link: menu-food-wine-festival_hotels--accommodations:node/1258.
-  $menu_links['menu-food-wine-festival_hotels--accommodations:node/1258'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1258',
-    'router_path' => 'node/%',
-    'link_title' => 'Hotels & Accommodations',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_hotels--accommodations:node/1258',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_information:<nolink>',
-  );
   // Exported menu link: menu-food-wine-festival_information:<nolink>.
   $menu_links['menu-food-wine-festival_information:<nolink>'] = array(
     'menu_name' => 'menu-food-wine-festival',
@@ -417,48 +312,6 @@ function craving_boston_site_menu_default_menu_links() {
     'expanded' => 1,
     'weight' => -46,
     'customized' => 1,
-  );
-  // Exported menu link: menu-food-wine-festival_location-parking-and-faqs:node/1237.
-  $menu_links['menu-food-wine-festival_location-parking-and-faqs:node/1237'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1237',
-    'router_path' => 'node/%',
-    'link_title' => 'Location, Parking, and FAQs',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_location-parking-and-faqs:node/1237',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_information:<nolink>',
-  );
-  // Exported menu link: menu-food-wine-festival_participating-beverage-producers:node/1238.
-  $menu_links['menu-food-wine-festival_participating-beverage-producers:node/1238'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1238',
-    'router_path' => 'node/%',
-    'link_title' => 'Participating Beverage Producers',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_participating-beverage-producers:node/1238',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -47,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_information:<nolink>',
   );
   // Exported menu link: menu-food-wine-festival_schedule:food-and-wine-festival/schedule.
   $menu_links['menu-food-wine-festival_schedule:food-and-wine-festival/schedule'] = array(
@@ -481,47 +334,6 @@ function craving_boston_site_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'menu-food-wine-festival_experience:<nolink>',
   );
-  // Exported menu link: menu-food-wine-festival_tickets-for-trade-professionals:node/1240.
-  $menu_links['menu-food-wine-festival_tickets-for-trade-professionals:node/1240'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1240',
-    'router_path' => 'node/%',
-    'link_title' => 'Tickets for Trade Professionals',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_tickets-for-trade-professionals:node/1240',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_information:<nolink>',
-  );
-  // Exported menu link: menu-food-wine-festival_tickets:node/1257.
-  $menu_links['menu-food-wine-festival_tickets:node/1257'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1257',
-    'router_path' => 'node/%',
-    'link_title' => 'Tickets',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_tickets:node/1257',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -49,
-    'customized' => 1,
-  );
   // Exported menu link: menu-food-wine-festival_volunteer:food-and-wine-festival/volunteer.
   $menu_links['menu-food-wine-festival_volunteer:food-and-wine-festival/volunteer'] = array(
     'menu_name' => 'menu-food-wine-festival',
@@ -540,47 +352,6 @@ function craving_boston_site_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -48,
-    'customized' => 1,
-    'parent_identifier' => 'menu-food-wine-festival_information:<nolink>',
-  );
-  // Exported menu link: menu-food-wine-festival_welcome:node/1235.
-  $menu_links['menu-food-wine-festival_welcome:node/1235'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1235',
-    'router_path' => 'node/%',
-    'link_title' => 'Welcome',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_welcome:node/1235',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-food-wine-festival_wgbh-culinary-stewardship-award:node/1239.
-  $menu_links['menu-food-wine-festival_wgbh-culinary-stewardship-award:node/1239'] = array(
-    'menu_name' => 'menu-food-wine-festival',
-    'link_path' => 'node/1239',
-    'router_path' => 'node/%',
-    'link_title' => 'WGBH Culinary Stewardship Award',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-food-wine-festival_wgbh-culinary-stewardship-award:node/1239',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -45,
     'customized' => 1,
     'parent_identifier' => 'menu-food-wine-festival_information:<nolink>',
   );
@@ -1111,10 +882,7 @@ function craving_boston_site_menu_default_menu_links() {
   t('About');
   t('About WGBH');
   t('America\'s Test Kitchen >>');
-  t('Artisan Taste');
   t('Become a Member');
-  t('Brunch Bar');
-  t('Chef\'s Gala');
   t('Clear Cache');
   t('Contact Us');
   t('Contact WGBH');
@@ -1134,33 +902,25 @@ function craving_boston_site_menu_default_menu_links() {
   t('Featured Personalities');
   t('Features');
   t('Food & Wine Links');
-  t('Food Fight');
   t('Go to Blocks');
   t('Go to Features');
   t('Go to Modules');
   t('Go to Permissions');
   t('Go to Views');
   t('Home');
-  t('Hotels & Accommodations');
   t('Information');
   t('Lidia\'s Kitchen >>');
-  t('Location, Parking, and FAQs');
   t('Mind of a Chef >>');
   t('Neighborhood Kitchens >>');
   t('Order featured articles');
-  t('Participating Beverage Producers');
   t('Privacy Policy');
   t('RSS Feed');
   t('Recreate CB Feature');
   t('Schedule');
   t('Simply Ming >>');
   t('Terms of Use');
-  t('Tickets');
-  t('Tickets for Trade Professionals');
   t('Volunteer');
   t('Volunteering');
-  t('WGBH Culinary Stewardship Award');
-  t('Welcome');
 
   return $menu_links;
 }

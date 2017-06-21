@@ -1078,7 +1078,7 @@ food-and-wine-festival',
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 1,
   );
 
