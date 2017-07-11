@@ -171,7 +171,7 @@ function craving_boston_site_taxonomy_default_vocabularies() {
       ),
     ),
     'sponsor_type' => array(
-      'name' => 'Sponsor Type',
+      'name' => 'Sponsor/Vendor Type',
       'machine_name' => 'sponsor_type',
       'description' => 'For the food and wine festival',
       'hierarchy' => 0,

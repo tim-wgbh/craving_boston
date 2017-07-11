@@ -774,6 +774,7 @@ features[views_view][] = faqs
 features[views_view][] = featured
 features[views_view][] = food_and_wine_people
 features[views_view][] = food_wine_event_schedule
+features[views_view][] = food_wine_event_sponsors
 features[views_view][] = food_wine_featured_personalities
 features[views_view][] = food_wine_sponsors
 features[views_view][] = food_wine_volunteering

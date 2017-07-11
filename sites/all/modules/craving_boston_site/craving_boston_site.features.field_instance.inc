@@ -3796,7 +3796,7 @@ function craving_boston_site_field_default_field_instances() {
     'bundle' => 'npr_story',
     'default_value' => array(
       0 => array(
-        'tid' => 815,
+        'tid' => 1036,
       ),
     ),
     'deleted' => 0,

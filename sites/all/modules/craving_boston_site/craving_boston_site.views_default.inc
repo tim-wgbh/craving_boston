@@ -1409,6 +1409,184 @@ function craving_boston_site_views_default_views() {
   $export['food_wine_event_schedule'] = $view;
 
   $view = new view();
+  $view->name = 'food_wine_event_sponsors';
+  $view->description = '';
+  $view->tag = 'Food & Wine Festival';
+  $view->base_table = 'node';
+  $view->human_name = 'Food & Wine Event Sponsors';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Food & Wine Event Sponsors & Participants';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_sponsor_type',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<div style="width:650px;height:400px;"><iframe align="left" frameborder="0" height="400" marginheight="0" marginwidth="0" scrolling="no" src="http://be.wgbh.org/2017FoodandWineSponsor.htm" style="padding:20px 20px 25px 10px;!important;margin:0!important;" width="650"></iframe></div>
+';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Field: Content: Sponsor type */
+  $handler->display->display_options['fields']['field_sponsor_type']['id'] = 'field_sponsor_type';
+  $handler->display->display_options['fields']['field_sponsor_type']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['fields']['field_sponsor_type']['field'] = 'field_sponsor_type';
+  $handler->display->display_options['fields']['field_sponsor_type']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sponsor_type']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_sponsor_type']['delta_offset'] = '0';
+  /* Field: Content: URL */
+  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
+  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['label'] = '';
+  $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link']['type'] = 'link_plain';
+  /* Sort criterion: Content: Sponsor type (field_sponsor_type) */
+  $handler->display->display_options['sorts']['field_sponsor_type_tid']['id'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['sorts']['field_sponsor_type_tid']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['sorts']['field_sponsor_type_tid']['field'] = 'field_sponsor_type_tid';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'corporate_sponsor' => 'corporate_sponsor',
+  );
+  /* Filter criterion: Content: Sponsor type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['id'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['field'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['value'] = array(
+    839 => '839',
+    838 => '838',
+  );
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['vocabulary'] = 'sponsor_type';
+
+  /* Display: Sponsor Page */
+  $handler = $view->new_display('page', 'Sponsor Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Food & Wine Event Sponsors';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<div style="width:650px;height:400px;"><iframe align="left" frameborder="0" height="400" marginheight="0" marginwidth="0" scrolling="no" src="http://be.wgbh.org/2017FoodandWineSponsor.htm" style="padding:20px 20px 25px 10px;!important;margin:0!important;" width="650"></iframe></div>
+';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'corporate_sponsor' => 'corporate_sponsor',
+  );
+  /* Filter criterion: Content: Sponsor type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['id'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['field'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['value'] = array(
+    833 => '833',
+    834 => '834',
+    836 => '836',
+    835 => '835',
+    837 => '837',
+  );
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['vocabulary'] = 'sponsor_type';
+  $handler->display->display_options['path'] = 'food-and-wine-festival/sponsors';
+
+  /* Display: Vendor Page */
+  $handler = $view->new_display('page', 'Vendor Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Food & Wine Event Vendors';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'corporate_sponsor' => 'corporate_sponsor',
+  );
+  /* Filter criterion: Content: Sponsor type (field_sponsor_type) */
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['id'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['field'] = 'field_sponsor_type_tid';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['value'] = array(
+    839 => '839',
+    838 => '838',
+  );
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sponsor_type_tid']['vocabulary'] = 'sponsor_type';
+  $handler->display->display_options['path'] = 'food-and-wine-festival/vendors';
+  $export['food_wine_event_sponsors'] = $view;
+
+  $view = new view();
   $view->name = 'food_wine_featured_personalities';
   $view->description = 'About section plus contributors';
   $view->tag = 'Food & Wine Festival';
@@ -1595,7 +1773,7 @@ function craving_boston_site_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<p>Calling all food and wine enthusiasts!</p>
 
-<p>WGBH is excited to host the fifth season of the Taste of WGBH Food &amp; Wine Festival, September 14-17, 2017. We are again collaborating with the best chefs, producers, wineries and breweries to deliver the finest food and wine in the region. The four-day festival will include an Opening Chef&rsquo;s Gala Reception, The Artisan Taste, Brunch Bar and the return of the WGBH Food Fight. Thousands of guests are expected to join us for a weekend full of delicious festivities.</p>
+<p>WGBH is excited to host the fifth season of the Taste of WGBH Food &amp; Wine Festival, October 5-8, 2017. We are again collaborating with the best chefs, producers, wineries and breweries to deliver the finest food and wine in the region. The four-day festival will include an Opening Chef&rsquo;s Gala Reception, The Artisan Taste, Brunch Bar and the return of the WGBH Food Fight. Thousands of guests are expected to join us for a weekend full of delicious festivities.</p>
 
 <p>We need your help to ensure this year&rsquo;s festival is even bigger and better than last year&rsquo;s. Volunteer positions range from set-up crew, on-site event assistants and breakdown crew...this will be an amazing opportunity to get on-site events/festival experience and help produce one of Boston&#39;s most fun food festivals!</p>
 
