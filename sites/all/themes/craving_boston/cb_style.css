@@ -148,6 +148,14 @@ blockquote::before {
   border-radius: 5px;
   cursor: pointer;
 }
+.food-and-wine-festival a:hover {
+  font-style: italic;
+  background-color: #f59729;
+  text-decoration: none;
+}
+.food-and-wine-festival a:hover.image  {
+  background-color: transparent;
+}
 .food-and-wine-festival table {
   font-size: 1.75rem;
 }
@@ -165,11 +173,6 @@ blockquote::before {
   text-transform: none;
 }
 
-.food-and-wine-festival a:hover {
-  font-style: italic;
-  background-color: #f59729;
-  text-decoration: none;
-}
 .food-and-wine-festival #site-banner a:hover {
   background-color: transparent;
 }
