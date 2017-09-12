@@ -46,9 +46,24 @@
 ?>
 <div class="sponsors">
   <h3>Vermont Marketplace</h3>
-  <span class="corporate-logo">
-    <?php foreach ($items as $delta => $item): ?>
-      <?php print render($item); ?>
-    <?php endforeach; ?>
-  </span>
+  <?php $num_cols = 3; ?>
+  <table class="views-view-grid cols-3">
+    <tbody>
+      <?php foreach ($items as $delta => $item): ?>
+        <?php
+          $row = floor($delta/$num_cols) + 1;
+          $col = ($delta % $num_cols) + 1;
+        ?>
+        <?php if ($col == 1): ?>
+          <tr class="row-<?php print $row; ?>">
+        <?php endif; ?>
+        <td class="col-<?php print $col; ?>">
+          <?php print render($item); ?>
+        </td>
+        <?php if ($col == $num_cols): ?>
+          </tr>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
 </div>
