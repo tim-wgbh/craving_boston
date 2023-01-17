@@ -1,5 +1,8 @@
 
 # OBSOLETE
+
+This site is has been removed and is no longer active.
+
 ---------------------
 
  * About Drupal
