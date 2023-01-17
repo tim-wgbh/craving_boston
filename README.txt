@@ -1,5 +1,5 @@
 
-CONTENTS OF THIS FILE
+# OBSOLETE
 ---------------------
 
  * About Drupal
